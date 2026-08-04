@@ -1,0 +1,24 @@
+schema_version: '1'
+slug: sugar-tree
+display_name: Sugar Tree Golf Club
+original_prompt_file: original-prompt.md
+update_notes_file: update-notes.md
+additional_context_files: []
+required_output_markers:
+- '`destination: "pro_shop"`'
+- '`destination: "eatery"`'
+- 'The Pro Shop must process tee-time cancellations for Sugar Tree Golf Club.'
+forbidden_output_patterns:
+- 'returns-500'
+- '(?<![A-Za-z0-9_-])get-available-tee-times(?!-staging)'
+- '(?<![A-Za-z0-9_-])book-tee-time(?!-staging)'
+- '(?<![A-Za-z0-9_-])get-weather-forecast(?!-staging)'
+- '<fetch-inventory-for-date'
+- 'destination[=:][ ''"]*stay_and_play'
+- 'destination[=:][ ''"]*events'
+- 'destination[=:][ ''"]*the_eatery'
+preservation:
+  knowledge_base: exact
+  identity_and_voice: preserve
+  transfer_destinations: revise
+  unmentioned_behavior: preserve_when_compatible

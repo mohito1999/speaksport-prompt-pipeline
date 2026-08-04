@@ -1,0 +1,1905 @@
+call_id,from_number,to_number,call_date,call_time,duration_ms,duration,ended_reason,transcript
+019fba76-18be-7aae-9d9e-6d8e4d4fb24c,+15054004651,+15052576914,2026-07-31,23:15:30,50476,0:50,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: A restaurant. Hours.
+AI: Our restaurant will reopen for the season on April 20 ninth. Once open, our hours are Wednesday, Thursday, and Sunday from 7 30 in the morning until 5 o'clock in the evening, serving breakfast and lunch. On Fridays and Saturdays, we're open from 7 30 in the morning until 8 o'clock at night. The restaurant is closed on Mondays and Tuesdays. There anything else I can help you with today?
+User: Is the restaurant open tonight?
+AI: The restaurant is currently closed for the season and will reopen on April 20 ninth. If you have any other questions,
+"
+019fba3a-4c0c-777d-8f23-1f3a30c2034c,+15059088081,+15052576914,2026-07-31,22:10:11,67062,1:07,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I was just wondering hours of service.
+AI: Absolutely. I can help with that. Our golf shop is open Wednesday through Sunday from 7 30 AM to 6 o'clock PM. The restaurant is open Wednesday, Thursday, and Sunday from 7 30 AM to 5 o'clock PM. And on Friday and Saturday from 7 30 AM to 8 o'clock PM. Both are closed on Mondays and Tuesdays. Is there a particular service or day you're interested in?
+User: Yeah. Friday. Is there a bar
+AI: Yes. We do have a bar at the restaurant. On Fridays, the restaurant and bar are open from 7 30 AM until 8 o'clock PM. You'll find a great selection of beverages, and snacks are also available at the bar. Is there anything else I can help you with regarding your visit?
+User: No. Thank you.
+AI: Thank you for calling Paco Ridge
+"
+019fba25-e6aa-7aa4-8f66-ffc21b18b57e,+15129545525,+15052576914,2026-07-31,21:47:54,58033,0:58,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Calling back in regards to a key time reservation.
+AI: Thank you for following up about your tea time reservation. Could you please clarify if you are looking to book a new tea time, modify an existing 1, or if you have a specific question about your reservation.
+User: I need to provide a credit card number to confirm a reservation.
+AI: Thank you for letting me know. I'm not able to take credit card information directly. The golf shop can securely assist you with confirming your reservation and processing your payment. Would you like me to transfer you to the golf shop to help with that?
+User: Yes, please.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb9e7-a933-7dd1-8499-04fe8f3d79eb,+19099021012,+15052576914,2026-07-31,20:39:55,27495,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: May I speak to Ryan in the pro shop, please?
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please
+"
+019fb9cd-5fdd-799d-8d52-e63a6e8f963f,+15059883279,+15052576914,2026-07-31,20:11:13,34627,0:34,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Looking for head golf pro.
+AI: Our director of golf is Ryan, who handles all golf operations group reservations. Would you like me to transfer you to Ryan so you can speak with him directly?
+User: Yes.
+AI: Transferring you to Ryan our director of golf. Please wait a
+"
+019fb9c4-34e8-788f-a3dd-a274f05a5866,+18325888974,+15052576914,2026-07-31,20:01:12,36764,0:36,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Can I speak to a human being?
+AI: Of course. Are there any questions I can assist you before transferring you?
+User: The It's too complicated. I don't wanna explain it twice.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb9af-8a05-7004-ac36-165528949afc,+15057152773,+15052576914,2026-07-31,19:38:37,30042,0:30,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dine in.
+AI: Are there any questions I can assist you with before transferring you to the restaurant?
+User: No.
+AI: Transferring you to the restaurant.
+AI: Please wait a moment.
+"
+019fb9ac-81d7-7004-ac0c-946544633f8a,+14158289223,+15052576914,2026-07-31,19:35:18,46098,0:46,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Noah Rutland.
+AI: Thank you, Noah Rutland. Just to confirm, that's N O A h Romeo uniform tango Lima alpha November. How may I assist you today?
+User: Connect me with Noah Rutland.
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to transfer you to the golf shop to help with that?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"
+019fb9a5-30f2-777d-8732-f03eb2588400,+15053626041,+15052576914,2026-07-31,19:27:19,42086,0:42,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yeah. I need to schedule a, uh, tea time for twentieth of August.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb99a-064f-7000-a0bf-b8e32892ed05,+15059330298,+15052576914,2026-07-31,19:15:08,33318,0:33,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Check on when dinner starts being served at the restaurant tonight.
+AI: Dinner service at our restaurant begins tonight at 5 o'clock and continues until 8 o'clock. Since today is Friday. Is there anything else I can assist you with?
+User: No. Thank you.
+AI: Thank
+"
+019fb98e-7919-7330-9235-60d74795e48b,+19083959305,+15052576914,2026-07-31,19:02:30,41311,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Can I speak to somebody in the golf shop?
+AI: Are there any questions I can assist you with before transfer you?
+User: 20 27 opening dates.
+AI: Our golf course and restaurant reopened for the season on April 20 ninth. Is there anything else I can help you with before I transfer you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please Please wait a moment.
+"
+019fb98c-9a06-7000-9238-dde064e211af,+19255808462,+15052576914,2026-07-31,19:00:28,74706,1:14,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm trying to confirm my key time.
+AI: I want to make sure I understand. Are you looking to confirm your tea time reservation? If so, I don't have access to individual booking details here. But the golf shop can assist you directly. Would you like me to transfer you to the golf shop to confirm your tee time?
+AI: I'll proceed with scheduling unless you have any questions.
+User: For the Bobcat shop.
+AI: Just to clarify, are you asking to be transferred to the bobcatch shop, or do you have a specific question I can help with before transferring you? Are there any questions I can assist you with before transferring you?
+User: Enter me to the golf shop.
+AI: Transferring you to the golf shop.
+"
+019fb98c-22d3-7000-974e-a118829d30c0,+19083959305,+15052576914,2026-07-31,18:59:57,39231,0:39,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I wanna see the opening date for March eleventh 20 27.
+AI: Our golf course and restaurant reopened for the season on April 20 ninth. So we will not be open on March eleventh. If you'd like to book a tea time after April 20 ninth, I can text you the link to our online tee sheet or connect you with the golf shop for advanced reservations. Which would you prefer?
+User: Nothing.
+"
+019fb97d-e2c1-7dda-9677-e4985a9442bd,+17192867932,+15052576914,2026-07-31,18:44:23,9748,0:09,customer-ended-call,"AI: Thank you for calling Packer Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for
+"
+019fb973-2d79-7000-8347-8b66e98ad850,+12146977203,+15052576914,2026-07-31,18:32:41,27888,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer me to the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb96f-e074-7220-97a6-e9c333b07725,+12146977203,+15052576914,2026-07-31,18:29:05,27488,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'll shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb96e-11df-7000-86ac-524892dd8d4a,+19707699467,+15052576914,2026-07-31,18:27:07,33586,0:33,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Cancel a reservation.
+AI: I don't have ability to cancel reservations directly, but the golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation?
+User: Yes.
+AI: Transferring you to the golf shop. Please
+"
+019fb96d-345a-799a-a82b-80ac4908fee0,+12146977203,+15052576914,2026-07-31,18:26:10,70605,1:10,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I was calling check on the time availability on August fourteenth and fifteenth.
+AI: Thank you for your interest in playing at Paco Ridge. Our online tee sheet allows reservations up to 30 days in advance. So at the moment, August fourteenth and fifteenth are outside that booking window. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop to assist with your request or would you prefer to check back closer to your desired dates?
+User: Goff up.
+AI: Just to confirm, would you like me to transfer you to the golf shop now, is there anything else I can assist you with before transferring you?
+User: Transfer to Golf South.
+AI: Are there any questions I can assist with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb965-92c2-7ee6-bb28-67d59dad58e2,Anonymous,+15052576914,2026-07-31,18:17:50,3521,0:03,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf
+"
+019fb950-9350-7000-8931-b4539d508edf,+14077184587,+15052576914,2026-07-31,17:54:54,27024,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thank you.
+AI: Transferring you to the golf shop. Please wait a moment. the golf shop. Please wait a moment.
+"
+019fb939-2141-700c-9f87-6671f803596a,+15616352697,+15052576914,2026-07-31,17:29:17,25729,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb930-736d-788c-bb9a-600769650e7f,+16168352448,+15052576914,2026-07-31,17:19:49,28127,0:28,assistant-forwarded-call,"AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Go shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. All set.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb927-ca65-7113-bd48-1ebf74d7ad8a,+18062024846,+15052576914,2026-07-31,17:10:21,24754,0:24,customer-ended-call,"AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: What time does the restaurant open in the morning for breakfast?
+AI: Our restaurant opens at 7 30 in the morning for breakfast. Is there anything else I can assist you with today?
+"
+019fb926-c4a2-7000-867c-4c8636fb79fd,+18062024846,+15052576914,2026-07-31,17:09:14,24320,0:24,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please
+"
+019fb907-1968-7dd2-b0f2-3e01ba6cafc2,+15054605199,+15052576914,2026-07-31,16:34:39,30228,0:30,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Brochop.
+AI: Just to confirm, did you mean you'd like to be transferred to the golf shop? Are there any questions I can assist you with before transferring you?
+User: Yes. No.
+AI: Transferring you to the golf shop. Please
+"
+019fb8c0-a2c1-7bb6-9921-4c68ff01b433,+17024037107,+15052576914,2026-07-31,15:17:43,44011,0:44,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Trying to reach reservations.
+AI: It sounds like you're trying to reach someone specific. Are there any questions I can assist you with before transferring you?
+User: Need to change 2 times.
+AI: I'd be happy to help guide you. Tee time changes are handled directly by our golf shop staff. Would you like me to transfer you to the golf shop to assist with your reservation changes?
+User: Yes, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb8b8-fa71-7aab-afd0-202b1d014585,+14328130601,+15052576914,2026-07-31,15:09:19,28095,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with? Before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb8b7-3f60-7dd4-971a-5b35c0306e8c,+14328130601,+15052576914,2026-07-31,15:07:25,25069,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: There any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb8b6-3610-755f-ad4b-eb5e23c8dc04,+14086050998,+15052576914,2026-07-31,15:06:17,38955,0:38,assistant-forwarded-call,"AI: Thank you for calling Piaco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Do I need reservations for lunch? Today?
+AI: Our restaurant is open for breakfast and lunch. And while reservations are recommended, walk ins are always welcome. Today is Friday. So we're serving until 8 o'clock this evening. Would you like me to connect you with the restaurant to make a reservation?
+User: Sure.
+AI: Transferring you to the restaurant. Please Transferring you to the restaurant. Please wait a moment.
+"
+019fb8b1-7eda-722f-9816-83bb458b8425,+13162530500,+15052576914,2026-07-31,15:01:08,28731,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Looking to talk to the first shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb8a2-dd75-7113-b50d-fdd2624375e7,+13035036239,+15052576914,2026-07-31,14:45:10,46769,0:46,assistant-forwarded-call,"AI: Thank you for calling Piaco Ridge Golf Club. To the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Pro shop.
+AI: Are there any I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb88c-e7e0-7aa4-a766-3415898108e9,+13039959311,+15052576914,2026-07-31,14:21:11,58511,0:58,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: We have a tea time at 10 40, and I wanted to find out if we can add a person.
+AI: We generally allow up to 4 players per group. If you're looking to add a fifth player, we do permit 5 some starting at 12 o'clock noon. May I ask how many players you currently have in your group?
+User: 4.
+AI: Thank you for confirming you have 4 players. You can add a fifth player only if tee time is at 12 o'clock noon or later. Since your tee time is at 10 40, groups are limited to 4 players. If you'd like, I can transfer you to the golf shop to discuss your options or see if there's any you like me to transfer you to the golf shop for further assistance?
+User: Yes, ma'am.
+AI: Transferring you to the golf shop. Please
+"
+019fb5a5-d62e-7aa1-9efc-c255d9ff1703,+17603006813,+15052576914,2026-07-31,00:49:34,47445,0:47,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Golf reservation.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb57e-e42a-7116-9cd8-2c5119c95dc7,+19725231816,+15052576914,2026-07-31,00:07:00,29604,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Can you transfer me to the cart barn
+AI: Are there any questions I can assist you with before you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019fb57b-8006-7004-87ca-3017b15cca02,+19725231816,+15052576914,2026-07-31,00:03:18,49317,0:49,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Is anybody still at the
+AI: It sounds like your question was cut off.
+User: golf desk
+AI: Could you please repeat what you'd like to know about who is still at the club? I'm happy to help.
+User: Golf cart or golf disc.
+AI: Thank you for clarifying. If you're asking about golf carts, we do require all golfers to use a cart here at Paco Ridge. Walking is not permitted due to our elevation and the distance between holes. Carts are included in your greens fee. If you're asking about disc golf we do not offer disc golf at Paco Ridge.
+"
+019fb579-b6af-7fff-a269-8a39b415b1d4,+19725231816,+15052576914,2026-07-31,00:01:21,65916,1:05,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Hello. How may I assist you today?
+User: Golf. Golf shop.
+AI: Are there any questions I can assist you with before you to the golf shop?
+AI: I will continue, but feel free to ask me any questions. Okay?
+User: Did I leave my ear adhesive in the golf cart
+AI: I don't have that specific information right here, but the golf shop team can check lost and found items for you. Would you like me to transfer you to the golf shop to help with that?
+User: Yes. Or the cart barn.
+AI: Transferring you to the golf shop. Please
+"
+019fb566-965b-755b-ba2c-c79317bc1324,+12819611765,+15052576914,2026-07-30,23:40:27,2481,0:02,customer-ended-call,"AI: Thank you for
+"
+019fb555-7264-755e-b21c-a56fcc525e32,+19156673842,+15052576914,2026-07-30,23:21:44,37331,0:37,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded
+User: Oh, no. Happy to pack.
+AI: Thank you. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb53f-a0d7-7ddf-a859-77b0e97a5e23,+15127918612,+15052576914,2026-07-30,22:57:54,45043,0:45,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Tea time request.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop, please.
+AI: Transferring you to the golf shop. Please
+"
+019fb530-fdd6-7000-86dd-89df0ead531b,+19156673842,+15052576914,2026-07-30,22:41:55,91734,1:31,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club.
+User: Thank you.
+AI: Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes.
+User: Sheepdog.
+AI: How may I help you today?
+User: Booking a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Coughtop.
+AI: Could you please clarify your request? Are you looking to book a tea time, or is there something else I can assist you with today?
+User: Golf stop. Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Stop shop.
+AI: Just to confirm, are there any questions I can assist you with before transferring you to the golf shop?
+User: What is the limitations
+AI: It sounds like your question was cut off.
+User: for
+AI: Could you please repeat what you'd like to know? I'm here to help.
+User: Yeah.
+"
+019fb52b-b882-7112-96b9-f57568ae1598,+15054497065,+15052576914,2026-07-30,22:36:10,29692,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Did you count the 1 that I need to speak to the manager of the restaurant.
+AI: Thank you for letting me know you'd like to speak with the manager of the restaurant. Are there any questions I can you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment. Please wait a moment.
+"
+019fb523-f8b8-755f-a55c-47a436c20934,+15056293743,+15052576914,2026-07-30,22:27:42,31470,0:31,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico.
+User: All the browns. We could we could you wanna do gray this time?
+AI: Could you
+AI: It sounds like you might be referring to colors or themes perhaps for apparel, merchandise, or an event. Could you please clarify your question a bit?
+User: Speak to the restaurant.
+AI: Are there any questions I can
+User: Speak to the restaurant.
+AI: Are there any
+User: No. It's personal.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019fb520-80ec-7000-b85e-961cceb40e7c,+16196067536,+15052576914,2026-07-30,22:23:54,26268,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: ProShop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb51a-3197-7992-ba3d-43f2f66db62c,+15054001803,+15052576914,2026-07-30,22:17:01,49124,0:49,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hi, Emily. I was, uh, just calling to see how far out I can schedule a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: If you can text me the link to the online teach sheet, that would be great. And then if you could also transfer me to the pro shop, that would be great.
+AI: Just a sec. Transferring you to the golf shop. Please wait a moment.
+"
+019fb516-1674-7003-b08b-6ef110071b1f,+17174376802,+15052576914,2026-07-30,22:12:32,12370,0:12,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+"
+019fb508-d024-7000-848d-0c65dabfc481,+12062353809,+15052576914,2026-07-30,21:58:02,28773,0:28,assistant-forwarded-call,"AI: Thank you for calling Packer Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'd like to speak to somebody at Paco Ridge dinner.
+AI: Are there any questions I can assist you with before transferring you to the restaurant?
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019fb501-51ec-755a-bf2e-b6bdc3f9b922,+18472073571,+15052576914,2026-07-30,21:49:51,50159,0:50,assistant-forwarded-call,"AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I like the clubhouse. I have no further questions.
+AI: Thank you so much for your kind words about the clubhouse. We look forward to welcoming you back to Paco Ridge Golf Club soon. Have a wonderful day.
+AI: Sorry. I kind of lost track for a moment. Mind if we continued?
+User: Can I have the pro shop? No further questions.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb4fe-d3f6-7ccb-aeab-1c82e5175118,+18083921798,+15052576914,2026-07-30,21:47:07,28262,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Can I talk to the golf shop?
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment. Transferring you to the golf shop. Please wait a moment.
+"
+019fb4f7-6a75-799c-9c88-86f245519ffa,+18083921798,+15052576914,2026-07-30,21:39:02,58923,0:58,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Looking to see if I can play golf today as a single.
+AI: Singles are absolutely welcome to play at Paco Ridge. There is a high possibility you may be paired with other golfers, but we do our best to accommodate everyone. Tee time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Off shop, please.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: Nope.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb4ee-6cee-7000-b125-877e6a3eb0a7,+16304040182,+15052576914,2026-07-30,21:29:13,25177,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. Call will be recorded for training and quality purposes. May I help you today?
+User: Pro shop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb4e7-7186-7000-85b1-23a48ef72089,+16128171869,+15052576914,2026-07-30,21:21:35,34150,0:34,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Confirming a tea time reservation.
+AI: I don't have access to individual tea time reservations here. For confirmation or changes to your booking, would you like me to transfer you to the golf shop to assist you?
+User: Yes, please.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb4e0-0b7d-766d-8c5e-b9ef76b45f23,+15056293743,+15052576914,2026-07-30,21:13:30,32093,0:32,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. I need to speak about something personal.
+AI: Transferring you to the golf shop.
+"
+019fb4cd-57a0-7000-b469-6252299dca13,+15058815404,+15052576914,2026-07-30,20:53:04,40955,0:40,customer-ended-call,"AI: Thank you for calling PACCAR Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Front desk.
+AI: Are there any questions I can assist you with before transferring you?
+User: Cost to ride in a cart but not play golf.
+AI: Spectators and ride alongs are welcome at no charge. If you'd like to ride along but not play golf, you can do so for free. Just let the golf shop know when you check-in. Is there any
+"
+019fb4c8-1389-7559-84f2-ed65143f424d,+12198639829,+15052576914,2026-07-30,20:47:19,40502,0:40,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Looking to get information on transportation to and from the course. We're staying at the Buffalo Thunder Hotel Casino in Santa Fe.
+AI: I don't have specific information about transportation options to and from the course. However, I can transfer you to our staff who can provide more details or recommendations. Would you like me to transfer you to the golf shop for assistance?
+"
+019fb4a1-92d3-7000-8675-b7d4c06a96ea,+12138080370,+15052576914,2026-07-30,20:05:16,30822,0:30,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Emily, I was just calling to if I could talk to the owner of the restaurant.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant.
+AI: Please wait a moment.
+"
+019fb499-8f00-7000-b178-1432ed822a33,+18064403030,+15052576914,2026-07-30,19:56:31,26686,0:26,assistant-forwarded-call,"AI: Thank you for calling Pecko Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop, please.
+AI: Are there any questions I can assist you with? Be before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb498-5292-7000-ac54-37b69a93b841,+15129175000,+15052576914,2026-07-30,19:55:10,34131,0:34,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: First up.
+AI: Of course. How can I assist you with your first question today?
+User: I need to talk to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: Nope.
+AI: Transferring you to the golf shop.
+"
+019fb497-e274-799c-96cc-ef68a5bbcb40,+18064403030,+15052576914,2026-07-30,19:54:41,25540,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Brochop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb48a-67c3-7995-bd8d-ff0168349904,+18064403030,+15052576914,2026-07-30,19:39:58,54233,0:54,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Reservations. Feed times.
+AI: Absolutely. I'd be happy to help with reservations. Are you looking to reserve a tea time for golf, or are you interested in dining at our
+User: Yeah. Reservations for tee times for golf.
+AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop, please.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb487-5661-7dda-aa04-6b2704fb4006,+15053699288,+15052576914,2026-07-30,19:36:37,46023,0:46,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book tee time for August fourteenth at 9 30 AM.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Stop shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please
+"
+019fb47c-243b-7aaa-be9b-3062da72a287,+12155188621,+15052576914,2026-07-30,19:24:23,25745,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb460-bf31-7aaa-bcde-67776249ec8c,+13154065778,+15052576914,2026-07-30,18:54:29,41024,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Check on tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb45c-3949-7000-8458-a36763f21715,+14062618032,+15052576914,2026-07-30,18:49:31,26977,0:26,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dining. Dining.
+AI: Are there any questions I can assist you with before transferring you to the restaurant?
+User: No.
+AI: Transferring you to the restaurant. Please wait a
+"
+019fb455-dc24-7112-b8c7-b8aef6dcf847,+15054637448,+15052576914,2026-07-30,18:42:34,26069,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Talk to Pro Shop.
+AI: Are there any questions I can assist you with before you?
+User: No. Thank you.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb44e-e669-7eed-a73b-b8d37e58e684,+15054140934,+15052576914,2026-07-30,18:34:58,37321,0:37,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb441-a831-7112-b7ad-d64ccaeb1f47,+17739549804,+15052576914,2026-07-30,18:20:30,45158,0:45,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Bro's up.
+AI: Hello. How can I assist you today? Are you interested in booking a tea time, learning more about our rates, or do you have another question about Paco Ridge Golf Club?
+User: Road shop.
+AI: Just to confirm, are you asking to be transferred to the golf shop? Are there any questions I can assist you with before transferring you?
+User: Yes. No. Thank you.
+AI: Transferring you to the golf shop.
+"
+019fb43b-9474-7112-b740-da06ac034086,+15054637448,+15052576914,2026-07-30,18:13:56,27254,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Talk to Pro Shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb43a-697a-7000-9141-54391d50229d,+17739549804,+15052576914,2026-07-30,18:12:35,53080,0:53,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hello?
+AI: Hello. This is Emily at Paco Ridge Golf Club. How may I assist you today?
+User: Bro, something. Cross up.
+AI: Of course.
+AI: Of course. Could you please clarify what you'd like help with today? Are you interested in booking a tea time? Learning more about our rates, or do you have another question about Paco Ridge Golf Club?
+User: All of the above. Pro shop, please.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No. Thank you.
+AI: Transferring you to the golf shop. Please wait a Please wait a moment.
+"
+019fb439-9bfe-7224-95ea-6ff90d59ce1e,+15054637448,+15052576914,2026-07-30,18:11:44,27232,0:27,assistant-forwarded-call,"AI: Thank you for calling Apaco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to Pro Shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb437-04fb-7000-81fd-0134e440560b,+15054637448,+15052576914,2026-07-30,18:08:53,26131,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to the pro shop.
+AI: Are there any I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb433-84ca-711c-a45a-b836a94f11a4,+14257491301,+15052576914,2026-07-30,18:05:04,47562,0:47,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home
+User: You for calling Cox bridge Means.
+AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Set a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Connect me to the golf shop.
+AI: Transferring you to the golf shop. Please wait a Please wait a moment.
+"
+019fb407-218d-711d-ab0a-6232f3f5c67f,+18325670207,+15052576914,2026-07-30,17:16:34,67162,1:07,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Uh, golf shirt.
+AI: Are you interested in purchasing a golf shirt from our golf shop? Or do you have a question about returns or exchanges?
+User: Reservation.
+AI: Just to clarify, you looking to reserve a tee time for golf, or are you in making a dining reservation at our restaurant?
+User: Golf reservation 2 time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more
+User: Oh my god.
+AI: I understand it can be a bit confusing. Would you like me to transfer you to the golf shop for assistance, or would you prefer I text you the link to book your tee time online?
+User: Yes. Transfer to golf shop.
+User: Transfer
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb402-0f56-7dd4-a841-0168fba0d832,+15305218244,+15052576914,2026-07-30,17:11:02,28197,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Connect me with the golf shop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019fb3f1-2c78-799c-8b98-242411a27fb2,+15059330307,+15052576914,2026-07-30,16:52:35,54332,0:54,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Plumhouse.
+AI: Could you please clarify your question about Plumhouse? Are you asking about a membership, a dining reservation, or something else related to Paco Ridge Golf Club? I'm here to help.
+User: Anytime.
+AI: Thank you for your response. Could you let me know a bit more about what you're interested in regarding Plumhouse or if you have a specific question about Paco Ridge Golf Club. I'm happy to assist with tee times, memberships, dining, or any other information you need.
+User: Eat time.
+AI: Thank you for asking about dining times. Our restaurant is open Wednesday.
+User: Oh my god.
+"
+019fb3ec-4516-7223-9a1b-5773e5982229,+13125824839,+15052576914,2026-07-30,16:47:14,41686,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I was looking to speak with Ryan about a past purchase of a Honeywell scanner. That we sold them.
+AI: I don't have that specific information right here, but I can transfer to our staff to find out. Would you like me to transfer you to Ryan, our director of golf? To assist with your inquiry?
+User: Yeah. That would be great.
+AI: Transferring you to Ryan, our director of golf. Please wait a moment.
+"
+019fb3e6-0258-744a-85ce-f3a8585ebb90,+12024603258,+15052576914,2026-07-30,16:40:24,28859,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to the pro shop about a tee time.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait
+"
+019fb3e5-d88f-700f-a885-ef97139544d6,+12146687346,+15052576914,2026-07-30,16:40:14,31296,0:31,assistant-forwarded-call,"AI: Thank you for calling PACCO Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Photoshop, please.
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to transfer you to the golf shop to help with that?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb3dd-944e-7000-8e04-3bcaaff98417,+18009632424,+15052576914,2026-07-30,16:31:14,83882,1:23,silence-timed-out,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+AI: I will continue, but feel free to ask me any questions. Okay?
+AI: Sorry. I kind of lost track for a moment. Mind if we continued?
+AI: I'll proceed with scheduling unless you have any questions.
+"
+019fb3ca-a62a-7223-978a-8217eaacca26,+17138761718,+15052576914,2026-07-30,16:10:31,38300,0:38,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club home. To the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm looking to see if I can book a tea time more than 30 days out. Sometime early October.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+"
+019fb3ae-bff1-7dd9-9385-cd409e5ea8cf,+15057150075,+15052576914,2026-07-30,15:40:03,43022,0:43,assistant-forwarded-call,"AI: Thank you for calling Piaco Ridge
+User: No.
+AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Tea times.
+AI: Tea time reservations up to 30 days out
+User: Preach off.
+AI: can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop.
+AI: Transferring you to the golf shop.
+"
+019fb39b-665a-7444-a213-7b300cb672ab,+18009632424,+15052576914,2026-07-30,15:18:54,41534,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. The call will be recorded for training and quality purposes. How may I help you today?
+User: Hello. This is DJ calling from Pepsi to get your beverage order. May I know your name?
+AI: Thank you for reaching out, DJ. My name is Emily, and I'm the virtual assistant here at Popaco Ridge Golf Club. I don't have access to place or manage beverage orders directly. Would you like me to transfer you to our restaurant team so they can assist you with your request?
+User: Yes. Yes.
+AI: Transferring you to the restaurant. Please wait a
+"
+019fb393-e84f-7883-a558-b303bf6da705,+15057150075,+15052576914,2026-07-30,15:10:43,40835,0:40,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: The golf shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb393-e888-7443-a20b-d8e5bb4968d8,+12024603258,+15052576914,2026-07-30,15:10:43,37582,0:37,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Uh, golf tee time, please.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer to golf shop.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fb391-fee4-7772-bab6-13b4d70d52cb,+15124976766,+15052576914,2026-07-30,15:08:38,29917,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Proper shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"
+019fb391-cf0d-799c-b2b4-18896b3cb93b,+15124976766,+15052576914,2026-07-30,15:08:26,81284,1:21,silence-timed-out,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+AI: Are you ready to proceed?
+AI: I'll proceed with scheduling unless you have any questions.
+AI: I'll proceed with scheduling unless you have any questions.
+"
+019fb38d-5a82-755e-94ea-087e1cfad87c,+14123892419,+15052576914,2026-07-30,15:03:34,25699,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb37f-a64a-7000-9e2f-7d1b9d21236e,+18009632424,+15052576914,2026-07-30,14:48:37,40856,0:40,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hi. This is DJ calling from Pepsi to get air beverage order. May I know your name?
+AI: Thank you for reaching out, DJ. My name is Emily, and I'm the automated assistant here at Paco Ridge Golf Club. I don't have access to our beverage ordering details directly. Would you like me to transfer you to our restaurant team so they can assist you with the beverage order?
+User: Yes.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019fb37f-2dfc-7000-9835-1a5ca0294b54,+15053105499,+15052576914,2026-07-30,14:48:06,31322,0:31,assistant-forwarded-call,"User: So we don't need any members.
+AI: Thank you for calling Thank you for letting me know. If you have any other questions about playing at Paco Ridge as a guest, our daily rates, or anything else, I'm happy to help. Is there anything else I can assist you with today?
+User: Representative?
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Transferring you to the golf shop. Please wait a moment.
+"
+019fb361-8efd-7000-9bf7-d34f77ec9afc,+18009632424,+15052576914,2026-07-30,14:15:43,36064,0:36,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm calling from Pepsi checking in about the beverages order today.
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to transfer you to the restaurant to help with that?
+User: Yes, please.
+AI: Transferring you to the restaurant. Please wait a
+"
+019fb359-1902-7000-8039-6f7d09c1fced,+15052805088,+15052576914,2026-07-30,14:06:29,37989,0:37,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This
+User: Have you got booked?
+AI: If you're asking about booking a tea time, I can help guide you. Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Book shop, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb070-1fa2-722b-a65f-933bb884d925,+16196067536,+15052576914,2026-07-30,00:32:47,27862,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club,
+User: Thank you
+AI: home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fb023-7905-7778-bcfe-557de4620642,+19016740243,+15052576914,2026-07-29,23:09:03,40091,0:40,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I would like to book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop.
+AI: Transferring you to the golf shop. Please wait Transferring you to the golf shop. Please wait a moment.
+"
+019fb014-7eff-7bbe-8692-4ec780765dd5,+16053906085,+15052576914,2026-07-29,22:52:42,30723,0:30,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I would like like to speak to the person in the pro shop, please.
+AI: Are there any I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faffd-7045-733c-bce4-781ec57afafe,+16294008581,+15052576914,2026-07-29,22:27:30,46032,0:46,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Run. I'm sorry. Brian Zanski.
+AI: Hello, Brian. How may I assist you today?
+User: Trying to reach Ryan Zansky.
+AI: Thank you for letting me know. Are there any questions I can assist you with before transferring you to Ryan, our director of golf?
+User: No. Thank you.
+AI: Transferring you to Ryan, our director of golf. Please wait a moment. Please wait a moment.
+"
+019faff7-a3c9-7000-8075-bc6ed2562986,+15056881635,+15052576914,2026-07-29,22:21:12,19357,0:19,assistant-forwarded-call,"AI: Thank you for calling Paco Golf Club, home to the finest golf in New Mexico.
+User: Golf shop, please.
+AI: This is Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait
+"
+019faff6-006f-733c-bca2-2b5699ea424a,+15056881635,+15052576914,2026-07-29,22:19:23,41249,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I like to schedule a tea time. Can you me through the golf shop?
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: The Golf Shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faff5-b8ff-7bb7-9014-46d9ac7413d0,+15209825842,+15052576914,2026-07-29,22:19:05,31277,0:31,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Need to cancel my tea time.
+AI: I can't cancel tee times directly, but our golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation?
+User: Yeah.
+AI: Transferring you to the golf shop. Please
+"
+019faff5-0ad5-755d-8a06-40635e805f7a,+15056881635,+15052576914,2026-07-29,22:18:20,36512,0:36,customer-ended-call,"User: Hello? Hello there. Hello? Can you hear me? There's no air there. Hello? Hello?
+"
+019faff4-26df-744d-a749-b15fd849f6bc,+15209825842,+15052576914,2026-07-29,22:17:22,29353,0:29,customer-ended-call,"User: Hello? Hello?
+"
+019fafe8-ca0a-755e-9c07-d1e22ff717e0,+19155985500,+15052576914,2026-07-29,22:04:57,44363,0:44,customer-ended-call,"User: Hello? Hello? Hello?
+"
+019fafdf-5a97-7eef-bc8d-59d1d7e020d7,+15056881635,+15052576914,2026-07-29,21:54:39,51308,0:51,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hi, Emily. Hello?
+AI: Hello.
+User: Yeah. I was calling about
+AI: You
+User: hello. I was calling about tea times for tomorrow. Wondering if, uh, I can play by myself. What would be a good time for that?
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text the link to the online tee sheet?
+User: To the golf shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fafc2-6eac-700f-b5c0-edb976a35285,+18327020787,+15052576914,2026-07-29,21:23:03,65704,1:05,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+AI: I will continue but feel free to ask me any questions. Okay?
+User: Okay.
+AI: Thank you, How may I you today? Are you interested in booking a tea time learning more about our course? Or do you have another question?
+User: I'm trying to book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Connect me. With the golf shop.
+AI: Transferring you to the golf shop.
+"
+019fafb7-587f-7551-ac0c-58abec29deb1,+12146976702,+15052576914,2026-07-29,21:10:57,31417,0:31,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Club rental reservations.
+AI: The golf shop handles all rental club reservations. Would you like me to transfer you to the golf shop so they can assist you?
+User: Yes.
+User: Meatless
+AI: Transferring you to the golf shop. Transferring you to the golf shop. Please wait a moment.
+"
+019fafaa-518c-7000-8bfb-3af9c70f5373,+15053506316,+15052576914,2026-07-29,20:56:43,34524,0:34,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Order lunch carryout.
+AI: I'd be happy to help with your lunch order. I can connect you with our restaurant team to place a carryout order. Would you like me to transfer you to the restaurant to assist with that?
+User: Please. Yes.
+AI: Transferring you to the restaurant.
+"
+019fafa5-edc8-7550-96c1-779758179ebb,+15052804165,+15052576914,2026-07-29,20:51:55,32739,0:32,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: I'd like to place a order from the kitchen.
+AI: I'd be happy to help with your food order. The restaurant team handles all kitchen orders directly. Would you like me to transfer you to the restaurant so they can assist you?
+User: Yes, please.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019faf7a-91c5-7000-95d7-bed7cfd2af3a,+12103913075,+15052576914,2026-07-29,20:04:36,50225,0:50,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Okay. Tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced Tea Time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Duff shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faf79-9a76-7bbf-9473-c615904ca970,+17192152700,+15052576914,2026-07-29,20:03:31,10074,0:10,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training
+"
+019faf68-4ee1-7330-968f-2793071b3022,+14123892419,+15052576914,2026-07-29,19:44:37,28047,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: First shop.
+AI: Are there any questions I can assist you with? Before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment.
+"
+019faf5a-edf3-7ee1-b5fa-fd8ec5d95110,+15207059586,+15052576914,2026-07-29,19:30:00,24532,0:24,assistant-forwarded-call,"AI: Thank you for calling Piaco Ridge Golf home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak with the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019faf57-338a-7bbe-a317-0dbafb755742,+14123892419,+15052576914,2026-07-29,19:25:56,61577,1:01,assistant-forwarded-call,"User: Oh, it's in Albuquerque.
+AI: Thank you for calling
+User: Hello?
+AI: Packo Ridge Golf Club is actually located in Sandia Park. Just east of Albuquerque in the foothills of the Sandia Mountains. About 25 minutes from Albuquerque and 30 minutes from the airport. How may I help you today?
+User: Hi. So
+AI: Thank you for calling Paco Ridge Golf Club, home
+User: 2 times for to
+AI: Just to confirm, are you looking to book 2 tee times for 4 players each? Or did you mean 2 tee times for 2 players? Could you clarify the number of players and the
+User: Can you do
+AI: I'm happy to help.
+User: tomorrow, 3 players.
+AI: You asking if I can book Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Yes. Golf shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faf4c-c51f-7cc5-a0b7-4abfff7450ed,+19016740243,+15052576914,2026-07-29,19:14:32,49597,0:49,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Tea Time question.
+AI: Of course. What would you like to know about tee times at Paco Ridge Golf Club?
+User: How far in advance can you book t tones?
+AI: Tea time reservation reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+"
+019faf23-3de0-7990-b12c-1a52e6015cd7,+15059293870,+15052576914,2026-07-29,18:29:12,29749,0:29,assistant-forwarded-call,"AI: Thank you for calling PACO Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'd like to order lunch.
+AI: It would be my pleasure to assist you with your lunch order.
+AI: Let me transfer you over to the restaurant. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019faf18-5cdd-7114-8c0b-d42bc11a6d35,+18062680817,+15052576914,2026-07-29,18:17:18,43724,0:43,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home
+User: calling.
+AI: the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yes. I'd like to make a tea time golf reservation for August 8.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop.
+AI: Transferring you to the golf shop. Please wait
+"
+019faf16-a04c-7000-82a8-d260d48e386a,+18062680817,+15052576914,2026-07-29,18:15:25,14887,0:14,customer-ended-call,"User: What's what's Saturday?
+AI: Thank you for calling pack This coming Saturday will be August first. There something specific you'd like to know about that day?
+"
+019faf0a-ff53-7008-9c4f-bcb585c2b7a3,+15053289186,+15052576914,2026-07-29,18:02:42,27938,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop. Talk to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait
+"
+019faf08-0512-7000-987b-140bfdc892a7,+15053289186,+15052576914,2026-07-29,17:59:27,39555,0:39,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'd like to book a tournament
+AI: Thank you for your interest in hosting a tournament at Paco Ridge. For large groups and tournament bookings, Ryan, our director of golf, handles those arrangements. Would you like me to transfer you to him to assist you?
+User: Yes, please.
+AI: Transferring you to Ryan, our of golf. Please wait a moment. of golf. Please wait a moment.
+"
+019faf05-ac36-7110-9559-73b98191a2e1,+18325670207,+15052576914,2026-07-29,17:56:53,26526,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: A golf shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: Uh, no.
+AI: Transferring you to the golf shop. Please
+"
+019faeff-c0c0-7553-a591-a412a31fba92,+15058047345,+15052576914,2026-07-29,17:50:25,45082,0:45,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Brian Zanski.
+AI: Thank you for providing your name, Brian Zansky. That's bravo Romeo India alpha November. Zulu alpha November Sierra kilo India. How may I assist you today, Brian?
+User: Lock. To talk to Ryan Zansky.
+AI: Just to confirm, are there any questions I can assist you with? Before transferring you to Ryan, our director of golf?
+User: No.
+AI: Transferring you to Ryan, our director of golf. Please wait a moment.
+"
+019faefc-257e-7221-8392-47607ad32ebf,+16316781984,+15052576914,2026-07-29,17:46:28,59859,0:59,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm looking to see if you have any tee times available on Tuesday, August fourth.
+AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Yes, please. Me the link to the online tee sheet.
+AI: 1 moment. Okay. I've just sent that link to your phone. Is there anything else I can help you with today?
+User: No. Thank you.
+AI: Thank you for calling Paco Ridge Golf Club. Look forward to seeing you on the mountain soon.
+"
+019faeec-bcb7-7ffb-b844-14a49a32e7b2,+15055000325,+15052576914,2026-07-29,17:29:39,26521,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019faeeb-a874-711d-885d-ad5c45113ca7,+15055000325,+15052576914,2026-07-29,17:28:28,27720,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: A golf shop.
+AI: Are there any questions I can assist you with before transferring you to the
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faee5-fcd1-7000-8e3c-3be7812379a5,+15056156650,+15052576914,2026-07-29,17:22:16,36154,0:36,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes.
+User: Yeah.
+AI: How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer to golf shop.
+AI: Transferring you to the golf shop.
+"
+019faee1-082e-7777-a2d8-60438ef5539f,+15056156650,+15052576914,2026-07-29,17:16:51,26541,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative.
+AI: Are there any questions I can assist you with before transferring you?
+User: No, ma'am.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019faee0-04e2-744e-abc5-e9c51632c49d,+12065710446,+15052576914,2026-07-29,17:15:45,32734,0:32,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yeah. I wanted to edit a tea time. Existing.
+AI: I'd be happy to help with your existing tea time. Are there any questions I can assist you with before transferring you to the golf shop to make that change?
+User: No. No questions.
+AI: Transferring you to the golf shop.
+AI: Please wait a Please wait a moment.
+"
+019faec4-3e65-7000-8565-757dabd473e2,+19152401984,+15052576914,2026-07-29,16:45:25,68548,1:08,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'd like to speak to someone about golf.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: What's the cost of the driving range?
+AI: Use of the practice facility, including the driving range, is included with your daily greens fee at Packer Ridge Golf Club. There is no separate charge for the driving range. There anything else I can help you with, or would you like to be transferred to the golf shop?
+User: Can I use the driving range without paying for a round of golf?
+AI: I don't have that specific information right here, but I can transfer to our staff to find out. Would you like me to transfer you to the golf shop to get a definite answer?
+User: Yeah.
+AI: Transferring you to the golf shop. Please wait
+"
+019faec3-39f9-7000-933d-5eb562e86037,+12032472403,+15052576914,2026-07-29,16:44:18,29419,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer to the golf shop.
+AI: Are there any questions I can you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019faeb6-3e14-7aa7-a610-a7870d2757b5,+12102915001,+15052576914,2026-07-29,16:30:11,43972,0:43,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Good. Tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Yes.
+AI: Just to confirm, would you like me to transfer you to the golf shop to assist with your tee time reservation?
+User: Yes. Transfer me to the golf shop.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment. Please wait a moment.
+"
+019faeb1-57a3-7cce-8372-009c512dd8ec,+15059679881,+15052576914,2026-07-29,16:24:46,40909,0:40,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I need to check a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop.
+AI: Transferring you to the golf shop.
+"
+019faead-67be-7cce-8332-ffecebe43b4b,+15058047345,+15052576914,2026-07-29,16:20:28,29593,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Talk to Ryan Tonski.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to Ryan, our director of golf.
+AI: Please wait a moment.
+"
+019fae9b-5dff-7000-901f-9ec4e9d6647d,+18324573666,+15052576914,2026-07-29,16:00:46,26495,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Gonna talk to the pro shop?
+AI: Are there any questions I can assist you with before transferring you?
+User: Nope.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fae8c-f37b-7997-a889-832ad953aceb,+15054637439,+15052576914,2026-07-29,15:45:06,31518,0:31,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak with Pro Shop.
+AI: Are there any questions I can assist you with? Before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fae87-8e6d-722c-9900-1ce6651c1361,+14062618032,+15052576914,2026-07-29,15:39:08,26679,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fae77-cc6e-7cce-8e27-db813bb2db91,+18066642843,+15052576914,2026-07-29,15:21:56,37510,0:37,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop.
+AI: Transferring you to the golf shop. Please wait a Please wait a moment.
+"
+019fae6d-9f58-7cc8-ae3d-4f6e712c28d3,+16824126826,+15052576914,2026-07-29,15:10:48,27353,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fae69-7e3d-7333-93f0-7bf9650e2b71,+16159485252,+15052576914,2026-07-29,15:06:17,56631,0:56,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf. In New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Tekon.
+AI: I'm sorry. I didn't quite catch that. Could you please repeat your question or let me
+User: Make a tea time. Tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer to golf stop.
+AI: Are there any questions I can assist you with? Before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait Please wait a moment.
+"
+019fae68-1d35-7009-9fac-c57b1b49ae3e,+16159485252,+15052576914,2026-07-29,15:04:47,36225,0:36,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Reservation.
+AI: Tea time reservations up to 30 days out can be made using our online sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop.
+AI: Transferring you to the golf shop. Please
+"
+019fae63-593a-7000-a35d-bd25c246430d,+14028361690,+15052576914,2026-07-29,14:59:34,8246,0:08,customer-ended-call,"User: I leave the house
+AI: Thank you for calling
+AI: Thank you
+"
+019fae61-a726-7ff5-b033-43d4b18ef851,+13154065778,+15052576914,2026-07-29,14:57:44,45628,0:45,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hi, Emily. We're gonna be there September fourteenth through the twentieth. They're looking to make a tee time for 8 people from the Seattle area that are coming down.
+AI: Thank you for sharing your plans. For large groups like yours, our director of golf, Ryan, handles all group reservations and can ensure your party of 8 is accommodated. Would you like me to transfer you to Ryan so he can assist with your booking?
+User: Well, that would be great. Yes. Thank you.
+AI: Transferring you to Ryan, our director of golf. Please wait a moment.
+"
+019fae5f-0192-7009-9ee8-c7daf0aa39fe,+14028361690,+15052576914,2026-07-29,14:54:50,7547,0:07,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico.
+"
+019fae4d-5aa7-7994-a26a-9e582ddf041c,+886932715498,+15052576914,2026-07-29,14:35:33,84031,1:24,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: The dog
+AI: I wanna make sure I understand your request. Could you please clarify what you mean by the dog? Are you asking about bringing a dog to the golf course, or is there something else I can assist you with?
+User: Soft shop.
+AI: Just to confirm, are you asking about the golf shop? If you have a specific question about merchandise,
+User: Yes.
+AI: rentals, or lessons, I can help answer it. Or I can transfer you to the golf shop for more details. Are there any questions I can assist you with before transferring you?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fae49-2746-7772-b3f4-6782eb603d59,+18472073571,+15052576914,2026-07-29,14:31:01,23881,0:23,assistant-forwarded-call,"AI: Thank you for calling Paco Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Like, the ProShop, and I have no further questions.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faab2-a1b8-7cc4-b18a-439647531d10,+18069283435,+15052576914,2026-07-28,21:47:42,28342,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I like speak to a person
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019faaa0-e35b-7444-af98-a3e4aefc16bb,+18069283435,+15052576914,2026-07-28,21:28:19,28514,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Finance.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the finance team. Please wait a moment.
+"
+019faa9c-db33-7eea-92ca-1273a9c63566,+18069283435,+15052576914,2026-07-28,21:23:57,27971,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to somebody in Prosha.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019faa8a-a60f-7cc4-bfc9-7c853ecfbe71,+17064803248,+15052576914,2026-07-28,21:04:09,28219,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019faa83-e7a0-7cc4-afb9-1dc201cd1b21,+12032472403,+15052576914,2026-07-28,20:56:40,26684,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer to the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019faa82-7d65-7228-90d4-6e9135370c2a,+12032472403,+15052576914,2026-07-28,20:55:07,28203,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer. To the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019faa55-fe57-7336-b4a4-7ae06f0f794d,+18069283435,+15052576914,2026-07-28,20:06:31,67473,1:07,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+AI: If you don't mind, I will continue with booking your appointment.
+AI: If you don't mind, I will continue with booking your appointment.
+User: I like to speak to finance.
+AI: Are there any questions I can assist you with before transferring you to our finance department?
+User: My credit card my credit card was overcharged.
+AI: Thank you for letting me know. For any billing or payment issues, I will connect you with our finance department.
+AI: 1 moment. Transferring you now. Transferring you to the finance team. Please wait a moment.
+"
+019faa1f-2ced-7ee3-a2c5-11c52c7f5348,+15207059586,+15052576914,2026-07-28,19:06:39,26884,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment.
+"
+019faa10-5535-755f-bf83-39813fc4b722,+12032472403,+15052576914,2026-07-28,18:50:25,27129,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Please transfer me to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+"
+019faa0e-4a00-7331-aa4d-8435c5223c66,+12032472403,+15052576914,2026-07-28,18:48:13,40232,0:40,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hi. I'd like to make a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer to the pro shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa9f7-9013-7aa0-8c45-6eb8246af79a,+12033938704,+15052576914,2026-07-28,18:23:22,45479,0:45,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Chad Twal.
+AI: Thank you for providing your name. Just to confirm, is that spelled c h a d Charlie hotel alpha delta and t w a l tango whiskey alpha Lima? How may I assist you today, Chad?
+User: I would like to speak with Chad Twaddle.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thank you.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa9e3-e8a3-7669-998c-bfcbdddf781f,+19152401984,+15052576914,2026-07-28,18:01:54,49743,0:49,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Golf's job.
+AI: Just to clarify, are you asking to be transferred to the golf shop? Are there any questions I can assist you with before transferring you?
+User: Yeah.
+AI: I will continue, but feel free to ask me any questions. Okay?
+User: Transfer me to the golf shop.
+AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment.
+"
+019fa9e2-933b-7775-a41c-1331912bf5c9,+19152401984,+15052576914,2026-07-28,18:00:28,29112,0:29,assistant-forwarded-call,"AI: Thank you for calling Payak Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer me to the golf shop.
+AI: Are there any questions I can assist you with before
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"
+019fa9cc-16fa-7000-80b7-cd9c84796b4f,+17573397436,+15052576914,2026-07-28,17:35:53,31666,0:31,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: ProShop.
+AI: Are there any questions I can assist you with before transferring you?
+User: I don't think so.
+AI: Transferring you to the golf shop. Please wait a Please wait a moment.
+"
+019fa994-2561-7dd8-bcad-c1c8862d6785,+12065511096,+15052576914,2026-07-28,16:34:47,94698,1:34,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hey, Emily. I know that the golf course is closed Mondays and Tuesdays, but I'm wondering if the driving range or chipping or putting areas are open to members. Monday to Tuesday.
+AI: Thank you for your question. While the restaurant is closed on Mondays and Tuesdays, the golf course and practice facilities, including the driving range, chipping, and putting areas. Follow the same seasonal schedule. They are not open to members or the public on those days during the off season. All facilities, including the practice areas, will reopen for the season on April 20 ninth. Is there anything else I can help you with today?
+User: Yeah. Are the chipping and putting in practice areas open during the on season? For on Tuesdays and Mondays?
+AI: Yes. Great question. During the golf season, the driving range and practice facilities including the chipping and putting areas, are open daily from 7 30 AM to 5 o'clock PM. However, the course and restaurant are closed on Mondays and Tuesdays, so the practice facilities are also closed on those days. All facilities operate Wednesday through Sunday during the season. Is there anything else I can help you with today?
+User: Nope. That answers it. Thanks so much.
+AI: Thank
+"
+019fa97b-b329-7000-9344-2c138a132d85,+19152401984,+15052576914,2026-07-28,16:08:06,35724,0:35,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: 12. Shop.
+AI: Just to confirm, are you asking to be transferred to the golf shop or do you have a question I can help you with before connecting you?
+User: Transfer to the golf shop.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019fa978-4059-777b-bfe0-933c2fbc2587,+18069283435,+15052576914,2026-07-28,16:04:19,41654,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: It was fun.
+AI: I'm glad to hear you had a great time. Would you like to speak with the golf shop about anything specific, or is there something else I can help you with today?
+User: No. Just would like to talk to a pro shop.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fa973-fdae-7000-9714-3b0f8685f120,+19152401984,+15052576914,2026-07-28,15:59:39,26577,0:26,assistant-forwarded-call,"AI: You for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop?
+AI: Please wait a moment.
+"
+019fa972-7f1c-777f-af16-a13d8d60953f,+19152401984,+15052576914,2026-07-28,15:58:01,26052,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait
+"
+019fa970-b9e2-7555-98d5-4d46c5e17d0b,+19152401984,+15052576914,2026-07-28,15:56:06,29429,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thank you.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa94b-238d-7441-8849-494b81cc64d4,+18069283435,+15052576914,2026-07-28,15:15:02,42355,0:42,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yes. May I speak with somebody in finance?
+AI: Are there any questions I can assist you with before transferring you?
+User: My card was charged more
+AI: For any billing or payment issues, I will connect you with our finance department. Would you like me to transfer you to finance to help with that?
+User: Yeah. Yes.
+AI: Transferring you to the finance team.
+"
+019fa925-2a5a-7aab-87c1-67df582c28de,+15054561414,+15052576914,2026-07-28,14:33:33,2942,0:02,customer-ended-call,"AI: Thank you for calling
+"
+019fa875-4ba5-711a-b7f2-80e905c64fc1,+18069283435,+15052576914,2026-07-28,11:21:27,41466,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yes. Can I speak to the golf shop?
+AI: Are there any questions I can assist you with before transferring you?
+User: Yes. I was overcharged on my credit card.
+AI: For any billing or payment issues, I will connect you with our finance department. Would you like me to transfer you to finance to help with that?
+User: Yes.
+AI: Transferring you to the finance team.
+AI: Please wait a moment.
+"
+019fa60b-05c8-7cc2-8aa2-68f515c036b0,+17853019800,+15052576914,2026-07-28,00:06:08,11547,0:11,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you
+"
+019fa5ff-bdfe-700e-b84d-7277137d904b,+15804810589,+15052576914,2026-07-27,23:53:49,45151,0:45,assistant-forwarded-call,"AI: Thank you for calling PACCAR Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yes. Is this a live person?
+AI: You're speaking with Emily, the assistant for Paco Ridge Golf Club. I'm here to help answer your questions and connect you with our staff if needed. How may I assist you today?
+User: Clubhouse.
+AI: Are there any questions I can assist you with before transferring you to the clubhouse?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fa5c3-f8f6-7000-9ffd-dfd310e8eafc,+15059301600,+15052576914,2026-07-27,22:48:32,37386,0:37,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: When does Paco close for the year?
+AI: Our golf course and restaurant typically close for the season before winter, but I don't have the exact closing date for the year right here. If you'd like, I can transfer you to our staff in the golf shop for the most up to date information. Would you like me to connect you with them?
+User: Yes.
+AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment.
+"
+019fa5bc-21c7-7bbf-90c5-7c41f4c8497c,+12087202441,+15052576914,2026-07-27,22:39:58,59419,0:59,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I was interested on what your rates are for AT and Hole. For residents. And if you're part are you part of the Sandia Casino that?
+AI: Our standard 18 hole rate is 225 dollars, which includes your cart, use of the practice facility, and complimentary bottled water. For residents of the Paco community, San Pedro Creek Estates, or San Pedro Overlook, we offer resident membership at 6500 dollars plus tax which includes unlimited golf for your household. To clarify, Paco Ridge Golf Club is not affiliated with Sandia Casino. However, we do recommend Sandia Resort in North Albuquerque for lodging if you're visiting. Would you like more details about our resident membership options?
+User: No. Thank you. Thank you. Bye.
+"
+019fa58a-fce8-777d-850a-7fe291304bcd,+12253299706,+15052576914,2026-07-27,21:46:18,39781,0:39,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Clubhouse Pro.
+AI: Are there any questions I can assist you with before transferring you?
+User: I just have need to talk to the clubhouse.
+AI: Certainly. Just to con
+User: Stop shop.
+AI: just to confirm, would you like me to transfer you to the golf shop now?
+User: Place. Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa571-79e1-7558-9ebb-d443e87b4af5,+15055000325,+15052576914,2026-07-27,21:18:26,34863,0:34,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm calling about gift certificates.
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to transfer you to the golf shop to help with your gift certificate question?
+User: Yep.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa553-5172-7000-9af2-8c17f3c4a852,+12024603258,+15052576914,2026-07-27,20:45:29,59715,0:59,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf tee time.
+AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Text to online key sheet.
+AI: Hold on a sec.
+AI: Okay. I've just sent that link to your phone. Is there anything else I can help you with today?
+User: No. Thank you.
+AI: Thank you for calling Paco Ridge Golf Club. We look forward to seeing you on the mountain soon.
+"
+019fa551-9bde-7bb5-bf32-8d51e1a56180,+15056156650,+15052576914,2026-07-27,20:43:37,46349,0:46,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily.
+User: They're available Friday.
+AI: This call will be record thank you for letting me know they're available on Friday. Are you interested in booking a tea time for this coming Friday? Or a different Friday in the future? And would you like me to text you the link to our online tee sheet
+User: This upcoming Friday.
+AI: Great. You'd like to book a tee time for this upcoming Friday. Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer to golf shop.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"
+019fa54e-f291-7aad-9e33-620a548d0c03,+15056156650,+15052576914,2026-07-27,20:40:43,48131,0:48,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Text me the link.
+AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today?
+User: No. Thank you.
+AI: Thank you for
+"
+019fa502-e227-7000-81dc-ff0129bc6aae,+12142076427,+15052576914,2026-07-27,19:17:38,38704,0:38,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to golf shop, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa4ea-24f2-7ccc-b444-93dbe5848384,+15056814441,+15052576914,2026-07-27,18:50:36,69162,1:09,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I have a gift card.
+AI: Thank you for letting me know you have a gift card? Are you looking to use your gift card for a tea time? Merchandise, or dining? Or do you have a question about your gift card?
+User: Well, I'm I'm yes. I'm trying to find out if it's still with
+AI: No problem.
+AI: Of course, I'd be happy to help clarify. Are you asking if your gift card is still valid? And can be used at Paco Ridge Golf Club?
+User: Yes, ma'am.
+AI: Thank you for confirming. I don't have specific gift card details right here, but our golf shop staff can quickly check the status and validity for you. Would you like me to transfer you to the golf shop so they can assist you with your gift card?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fa4e4-f46b-711b-bf8c-1a3ee9fece45,+12096620195,+15052576914,2026-07-27,18:44:56,48027,0:48,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Driving range price?
+AI: Use of our practice facility, including the driving range, is included with your daily greens fee at no additional charge. If you have any other questions about the course or our amenities, I'm happy to help.
+User: Just the use of the driving range.
+AI: Access to the driving range is only available as part of your daily green fee when you play a round of golf at Paco Ridge. We do not offer a separate rate for just the driving range.
+"
+019fa4e2-b7f2-777f-9566-37670f670191,+15052383448,+15052576914,2026-07-27,18:42:30,26800,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dinner reservation.
+AI: It would be my pleasure to assist you with that. Let me transfer you over to the restaurant. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019fa4e1-4449-7000-84d8-bee74484bc10,+16316781984,+15052576914,2026-07-27,18:40:55,33356,0:33,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a key 5.
+AI: Just to confirm, are you to book a tee time for 5 players? We do allow fivesome starting at 12 o'clock noon. Let me connect you with the golf shop to help get that set up. 1 moment. Transferring you now. Transferring you to the golf shop. Please wait a moment.
+"
+019fa4b1-2cef-7000-8489-4507737f88b8,+12817708848,+15052576914,2026-07-27,17:48:23,56214,0:56,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes.
+User: Hello?
+AI: How may I help you today?
+User: Well, how?
+AI: I'm here to assist you with any questions about tee times, rates, course details, memberships, dining, or anything else related to Paco Ridge Golf Club. What can I help you with today?
+User: Club rentals.
+AI: We offer Titleist and Taylor Made rental club sets for 100 dollars per person, and that includes 2 sleeves of golf balls. Advance reservation is highly recommended. Would you like me to transfer you to the golf shop to arrange your rental?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa474-08a3-7226-842d-575a14289dc9,+19048421411,+15052576914,2026-07-27,16:41:36,14599,0:14,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+"
+019fa473-f0a1-7226-8428-8eb6787b604f,+19562040789,+15052576914,2026-07-27,16:41:30,66724,1:06,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Calling to speak to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: Trying to confirm 2 times.
+AI: I'd be happy to help. Just to clarify, are you looking to confirm 2 tee times you already have booked or are you hoping to book 2 new tea times?
+User: I'm confirming 2 t times on Friday, 7 31, and 2 t times on 8 2.
+AI: Thank you for clarifying. To confirm existing tee times, you'll need to speak directly with our golf shop team as I don't have access to booking details. Would you like me to transfer you to the golf shop so they can assist you with your tee time confirmations?
+User: Yes. Please.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fa44e-c73e-7226-818b-9f9d21e0c14b,+14806888617,+15052576914,2026-07-27,16:00:54,28053,0:28,assistant-forwarded-call,"AI: Thank you for calling Packer Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with?
+User: Golf shop.
+AI: Before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa418-b69a-711b-b289-8ed84738c0b3,+12132774232,+15052576914,2026-07-27,15:01:51,27509,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Please connect me with the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa40e-1196-7ccc-a66b-91a25d7cb801,+14055178703,+15052576914,2026-07-27,14:50:14,41416,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tea on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop would be great.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fa401-20da-7339-b846-0f4554d81dde,+15752055163,+15052576914,2026-07-27,14:36:06,46216,0:46,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Hi. I'm Ayesha calling at the request of Comcast Business.
+AI: Hello, Ayesha. How may I assist you today regarding Comcast Business?
+User: I need to speak to the person in charge of your Comcast business account.
+AI: Thank you, Ayesha. Are there any questions I can assist you with before you to our staff?
+"
+019fa3f9-0488-7dd1-9bbc-745fe0475444,+19158208833,+15052576914,2026-07-27,14:27:14,41901,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: May I speak to the pro shop, please?
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Um, because I am returning a voice mail, um, about an inquiry that I made about trying to reserve a time to play.
+AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment.
+"
+019fa0b0-2424-7003-a004-fea94feb55db,+15756075439,+15052576914,2026-07-26,23:08:46,27468,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Clubhouse.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant. Transferring you to the restaurant. Please wait a moment.
+"
+019fa08d-5c14-7ffd-a110-0fb5c912fa5d,+15059913081,+15052576914,2026-07-26,22:30:50,26219,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to representative.
+AI: Are there any questions I can assist you with transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019fa078-a6c6-777c-9771-94614f6eb54b,+15026430235,+15052576914,2026-07-26,22:08:11,42626,0:42,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I wanna confirm a tee time for Wednesday.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: To the golf shop. Please.
+AI: Transferring you to the golf shop. Please wait a
+"
+019fa06d-98e7-777c-b4af-423a81512ca6,+15052593652,+15052576914,2026-07-26,21:56:09,26186,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a Please wait a moment.
+"
+019fa06c-6cd5-788b-a20d-01a1f4d40975,+16129652810,+15052576914,2026-07-26,21:54:54,39832,0:39,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: ProShop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+AI: Are you ready to proceed?
+User: Yep. Transfer, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019fa06a-2592-733d-a4ba-3723c6b1b557,+15052593652,+15052576914,2026-07-26,21:52:20,33776,0:33,assistant-forwarded-call,"User: I'm I'm living off the double.
+AI: Thank you for sharing that. Just to clarify, are you referring to living off the Double Eagle golf course? Or did you mean something else? If you're interested in membership or have questions about our community qualifications, I'd be happy to help.
+User: Representative.
+AI: Could you please confirm your location or let me know what information you're looking for?
+User: Representative. Representative.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019fa00a-7f5d-7ee9-a1cc-1c6e9f789d69,+13106868055,+15052576914,2026-07-26,20:07:50,25426,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9fe3-8a5c-7aa0-8721-2f53c0c7082e,+15056811649,+15052576914,2026-07-26,19:25:18,26141,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Restaurant.
+AI: Are there any questions I can assist you with before transferring you to the restaurant?
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment. Please wait a moment.
+"
+019f9fe0-d585-7aac-ba20-0fc37599b3ca,+15056811649,+15052576914,2026-07-26,19:22:20,26588,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dining room.
+AI: Are there any questions I can assist you with before transferring you to the restaurant?
+User: No.
+AI: Transferring you to the restaurant.
+AI: Please wait a moment.
+"
+019f9fd3-a721-7aac-b9fd-8c378c4860b8,+15059891555,+15052576914,2026-07-26,19:07:57,23739,0:23,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Reservations at the restaurant.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. No.
+AI: Transferring you to the restaurant. Please wait a
+"
+019f9fd2-72b6-744c-b05b-34f2187ca54e,+15059891555,+15052576914,2026-07-26,19:06:37,38095,0:38,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Reservations.
+AI: You looking to reserve a tee time for golf, or are you in making a dining reservation at our restaurant?
+User: Dining reservation.
+AI: It would be my pleasure to assist you with that. Let me transfer you over to the restaurant. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019f9faf-3603-7ffd-9edd-a83f3bedc4e5,+15052637907,+15052576914,2026-07-26,18:28:08,25899,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Drop shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a
+"
+019f9fae-81eb-7668-9eb1-2d77f7b9bcc3,+15052637907,+15052576914,2026-07-26,18:27:22,26013,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club.
+User: Yeah.
+AI: Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019f9fab-d69b-733f-87c3-3f24d5fa0416,+15054704403,+15052576914,2026-07-26,18:24:28,28794,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Move restaurant reservations.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019f9fa7-8cd0-7339-bfbc-656eacdc0b16,+15054704403,+15052576914,2026-07-26,18:19:46,24887,0:24,assistant-forwarded-call,"AI: Thank you for calling Paco Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to an the restaurant.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019f9f9c-bd59-7ddf-b6a3-2fa208013353,+15056811649,+15052576914,2026-07-26,18:07:58,27342,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dining reservation.
+AI: It would be my pleasure to assist you with your dining reservation. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019f9f92-060c-7ddf-b640-30ccd09abd74,+19523039003,+15052576914,2026-07-26,17:56:15,25724,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thank you.
+AI: Transferring you to the golf shop.
+"
+019f9f6c-e994-711a-98f9-1b12a2dfae21,+19038197415,+15052576914,2026-07-26,17:15:43,25007,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. Call will be recorded for training and quality purposes. How may I help you today?
+User: Restaurant.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019f9f51-c8e0-7bbf-9657-200a5057a356,+17074813911,+15052576914,2026-07-26,16:46:09,42765,0:42,assistant-forwarded-call,"AI: Thank you for calling Packer Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: What is your last day?
+AI: Our golf course and restaurant are open seasonally. With operations typically running from April 20 ninth through the end of the golf season. However, I don't have the exact closing date for this year right here. If you'd like, I can transfer you to our staff in the golf shop for the up to date information. Would you like me to connect you with them?
+User: Yes, Emily.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9f24-511f-744c-acb1-840098d4837d,+13606086271,+15052576914,2026-07-26,15:56:25,27492,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club.
+User: Thank you.
+AI: Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop, please
+"
+019f9f21-2520-7444-8879-e911e953ce02,+16615990201,+15052576914,2026-07-26,15:52:58,27058,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I want to speak to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9efb-378a-7ee5-a1f3-c528fce16793,+15756501450,+15052576914,2026-07-26,15:11:33,27900,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily.
+User: Pro shop.
+AI: This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019f9efa-0084-7ee5-b5c7-f6f55be11848,+15756501450,+15052576914,2026-07-26,15:10:12,11193,0:11,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf You're very welcome.
+User: Thank you so much.
+AI: Thank you for calling Paco Ridge Golf Club.
+"
+019f9ef8-ddf7-7bbf-9484-269c6a40a200,+15756501450,+15052576914,2026-07-26,15:08:58,42480,0:42,assistant-forwarded-call,"AI: Thank you for calling PAC Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Hello. Hello. Card.
+AI: Hello. How may I assist you today?
+User: Reservation. Thank you.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9ef5-05ae-799a-aa73-5f7e80f2faec,+14062618032,+15052576914,2026-07-26,15:04:46,44548,0:44,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: What are the hours for Sunday brunch?
+AI: Our restaurant is open on Sundays from 7 30 in the morning. Until 5 o'clock in the afternoon, serving both breakfast and lunch. You're welcome to join us anytime during those hours. No brunch specific menu, but you'll find a great selection for both meals, Is there anything else I can assist you with?
+User: No.
+AI: Thank you for calling Paco Ridge Golf Club. Look forward to seeing
+"
+019f9ef2-9922-7bb9-b36d-17bb9b28dbef,+14065601701,+15052576914,2026-07-26,15:02:07,30586,0:30,assistant-forwarded-call,"AI: Thank you for calling PIAC Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a
+"
+019f9eda-2a45-7ddf-b332-15dd815f52f0,+15616352697,+15052576914,2026-07-26,14:35:26,26965,0:26,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Topshop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9ea1-7438-7668-9a04-01895109a637,+19523039003,+15052576914,2026-07-26,13:33:29,36570,0:36,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Do you have a shower facility
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to connect you to the golf shop for assistance?
+User: Of course, I would.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9e88-211c-7ee9-9b48-625d10b52247,+17134176152,+15052576914,2026-07-26,13:05:49,29275,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Need to cancel a tea time.
+AI: I can't cancel tee times myself, but the golf shop can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation?
+User: Yes.
+AI: Transferring you to the golf shop.
+"
+019f9b9b-faf9-7559-a9f9-8e8bfff8ee59,+15753090700,+15052576914,2026-07-25,23:28:39,20611,0:20,assistant-forwarded-call,"User: Yeah. I'm
+AI: Thank you for calling Paco Ridge Golf
+User: okay. No.
+AI: you for letting me know. How may I help you today?
+User: Speak to somebody, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No, ma'am.
+AI: Transferring you to the golf shop.
+AI: Please wait Please wait a moment.
+"
+019f9b9a-7c3e-7225-98fd-1213aae56322,+15753090700,+15052576914,2026-07-25,23:27:01,56329,0:56,assistant-forwarded-call,"User: Hi, Todd.
+AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes.
+User: Meatballs.
+AI: How may I help you today?
+User: Hello?
+AI: Hello. This is Emily at Paco Ridge Golf Club. How may I assist you today?
+AI: If you don't mind, I will continue with booking your appointment.
+User: Speak to a guest.
+AI: Are there any questions I can assist you with before transferring you?
+User: No, ma'am. Please transfer me.
+AI: Transferring you to the golf shop. Please wait
+"
+019f9b7c-3d8c-7ddd-8535-bcae518abd43,+15056609858,+15052576914,2026-07-25,22:53:59,27869,0:27,assistant-forwarded-call,"AI: You for calling Piaco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily.
+User: Drop over.
+AI: This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer me to the pro shop. Please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment. Transferring you to the golf shop. Please wait a moment.
+"
+019f9b7b-9f6d-7aa8-adef-c7caf7ef8b7b,+15056609858,+15052576914,2026-07-25,22:53:18,36639,0:36,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+AI: Sorry. I kind of lost track for a moment. Mind if we continued?
+"
+019f9b75-bb5d-7332-9122-4cc5a6173c58,+15756932328,+15052576914,2026-07-25,22:46:52,38242,0:38,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Prices.
+AI: Our standard 18 hole rate is 225 dollars. Which includes your cart, use of the practice facility, and bottled water. We also offer an all day replay rate for 325 dollars. Are you looking to play a single round or all day?
+"
+019f9b49-64d1-7ee9-9397-f4b3e6445121,+16507032022,+15052576914,2026-07-25,21:58:26,49923,0:49,assistant-forwarded-call,"AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Check out a tea time.
+AI: Tea time reservation reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: No. That's alright. Uh, the adult shop, please.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9b31-7cb1-7dd9-986b-54074846ab22,+19702900331,+15052576914,2026-07-25,21:32:20,39608,0:39,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yes. Uh, tea times, please.
+AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9b19-29d7-7ee9-9307-364ed1dadc8c,+15054807001,+15052576914,2026-07-25,21:05:46,33509,0:33,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be record
+User: I mean, cheese.
+AI: Of course. Are you asking about cheese options available in our restaurant, or
+User: Hi there.
+AI: is there something specific I can help you with regarding cheese today?
+User: Connect me to the restaurant for a pickup order.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thanks.
+AI: Transferring you to the restaurant. Please
+"
+019f9b12-c1ce-7779-913f-65031b09997f,+17134176152,+15052576914,2026-07-25,20:58:46,3432,0:03,customer-ended-call,"AI: Thank you for calling Piaco Ridge Golf Club.
+"
+019f9aff-2105-7bbc-9ee8-b51fb782c268,+15059346814,+15052576914,2026-07-25,20:37:19,47188,0:47,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily.
+User: Pro shop.
+AI: This call will be recorded for training and quality purposes. How may I help you today?
+User: Does Taco Ridge rent clubs
+AI: Just to confirm, you're asking about Payaco Ridge Golf Club Sometimes people mix up the name. Yes. We do offer rental clubs here. We have Titleist and tailor made sets available for 100 dollars per person. And that includes 2 sleeves of golf balls. Advance reservation is highly recommended. Would you like me to transfer you to the golf shop to reserve a set or answer any other questions about rentals?
+User: Yes, please.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"
+019f9aed-65c4-7ccb-b726-1e1282e0a1c8,+15052631890,+15052576914,2026-07-25,20:17:57,35056,0:35,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Gift card.
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to transfer you to the golf shop to help with your gift card question?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9aec-1f4b-755f-a095-005cac208498,+15052631890,+15052576914,2026-07-25,20:16:34,39624,0:39,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak with a representative.
+AI: Are there any questions I can assist you with? Before transferring you?
+User: Gift gift cards.
+AI: I don't have that specific information right here. But the golf shop team can assist you with gift card purchases. Would you like me to transfer you to the golf shop to help with that?
+User: Yes.
+"
+019f9adf-9162-7000-b894-041fb387070c,+17134176152,+15052576914,2026-07-25,20:02:52,46289,0:46,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Tea time for 1 tomorrow.
+AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer me to the golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop? Please wait a
+"
+019f9ac8-2fbd-711a-ad39-465e1b09735c,+19014129043,+15052576914,2026-07-25,19:37:19,45105,0:45,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+AI: Sorry. I kinda lost track for a moment. Mind if we continued?
+User: I need to modify a reservation.
+AI: I can't modify reservations directly, but the golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your reservation?
+User: Yeah.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9abc-7fc1-7bb0-921a-41285280abb6,+14065601701,+15052576914,2026-07-25,19:24:33,27012,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative. Ryan Zonskate.
+AI: Are there any questions I can assist you with, before transferring you to Ryan Zanskate?
+User: No.
+User: No.
+AI: Transferring you to Ryan, our director of golf.
+"
+019f9aa4-7f48-7448-bc81-cd44fb21e8e7,+15057389923,+15052576914,2026-07-25,18:58:20,25868,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer me to golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: Nope.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9a96-e87c-7000-a856-7ccbc28afec6,+15054174265,+15052576914,2026-07-25,18:43:29,26281,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9a94-05a3-7bbc-9d18-546dd55952bf,+15054174265,+15052576914,2026-07-25,18:40:20,44548,0:44,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dining.
+AI: It would be my pleasure to assist you with dining. Are you looking to make a reservation, inquire about our menu, do you have another question about the restaurant?
+User: Place an order.
+AI: I'm not able to place food orders directly. But our restaurant team can help you with that. Would you like me to transfer you to the restaurant to assist with your order?
+User: Yes.
+AI: Transferring you to the restaurant. Please wait a
+"
+019f9a92-4597-7ccb-b55d-a06b3816e27a,+15054174265,+15052576914,2026-07-25,18:38:25,24461,0:24,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019f9a91-a10e-7ff4-9a9a-f82d45c6223b,+15756501450,+15052576914,2026-07-25,18:37:44,35662,0:35,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: She's, like, opening my pocket. I have any tea time.
+AI: I apologize. Just to clarify, are you looking to book a tea time with us? So, tea time reservations up to 30 days out can be made using our online tea sheet on our website.
+User: Yes.
+AI: Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to
+"
+019f9a78-fded-7991-86f8-41e89b715a6a,+15305218244,+15052576914,2026-07-25,18:10:49,26514,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Uh, golf shop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thanks.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9a73-edf1-7cce-9ea9-67e57d26cf25,+15053823865,+15052576914,2026-07-25,18:05:17,33571,0:33,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes.
+User: Traveling?
+AI: How may I help you today?
+User: I wanna speak somebody to change my tea time and change player.
+AI: I can help with that. Would you like me to transfer you to the golf shop?
+User: Really?
+AI: So they can assist you with changing your tee time and updating the players?
+User: Yeah. Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9a72-a07e-7cce-9e9e-29bc9ec378db,+15053823865,+15052576914,2026-07-25,18:03:51,27262,0:27,assistant-forwarded-call,"User: So I'm putting it there then.
+AI: Thank you for calling Could you please clarify what you're referring to? Are you looking to book a tea time, make a reservation, or do something else at Piaco Ridge?
+User: Shop.
+AI: I'm here to help.
+User: Pro shop.
+AI: Just let me know what you'd like to do.
+User: Proshop. I wanna speak to somebody in a pro shop.
+AI: Are there any there are there any questions I can
+User: Gosh. So I know. No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9a32-8d7e-7bb0-8df1-162edcb99ec9,+14025476007,+15052576914,2026-07-25,16:53:52,53315,0:53,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Uh, I wanted to double check the tea time I made. Because on the confirmation, 1 thing said it's on 9 30. 1 thing says it's 10 30. And it was, uh, this Wednesday, under the name of Nolan Geier.
+AI: Thank you for providing your name. Just to confirm, is that Nolan Geier spelled n o l l n g e I e r? I don't have access to individual tee time confirmations, but the golf shop can look up your reservation and clarify the correct time. Would you like me to transfer you to the golf shop to help with that?
+User: Yes.
+AI: Transferring you to the golf shop.
+"
+019f9a18-7b32-7000-9908-b29b0a26d204,+15126579948,+15052576914,2026-07-25,16:25:24,46948,0:46,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Transfer to BellStop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9a12-cb65-766f-9644-7b7e294006d6,+15126579948,+15052576914,2026-07-25,16:19:11,48548,0:48,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Yes. I'd like to make a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Text me the link.
+AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today?
+User: No.
+AI: Thank you for calling Paco Ridge
+"
+019f9a08-6773-777d-abba-0ebb870f979d,+17724759131,+15052576914,2026-07-25,16:07:50,24595,0:24,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019f99fd-9b7e-7aac-b113-6c37586e38a5,+13853150966,+15052576914,2026-07-25,15:56:03,25976,0:25,assistant-forwarded-call,"AI: Thank you for calling Pucko Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Talk to pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019f99f2-c63e-7888-9b16-193437bc864c,+15053855952,+15052576914,2026-07-25,15:44:13,25888,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: O shop.
+AI: Are there any questions I can assist you with before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a
+"
+019f99f0-52f5-744d-97f5-31f580e7eacb,+15053855952,+15052576914,2026-07-25,15:41:33,59737,0:59,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a 10
+AI: Tea time reservations up to 30 days out can be made using our online sheet on our website. Advanced tea time reservation more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+AI: I'll proceed with scheduling unless you have any questions.
+User: Transfer.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f99ee-6999-7dd3-9d4c-3d33cc287406,+15053855952,+15052576914,2026-07-25,15:39:27,50644,0:50,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Gotcha.
+AI: Thank you. Would you prefer that I transfer you to the golf shop, or would you like me to text you the link to book your tee time online?
+User: Transfer.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f99e9-ceb6-7cc3-9fc5-f1e1c96d2081,+15054807001,+15052576914,2026-07-25,15:34:25,42596,0:42,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Uh, golf shop, please.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f99e4-178a-7000-b0a3-7bad2293d87e,+15055734991,+15052576914,2026-07-25,15:28:10,25829,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Representative.
+AI: Are there any questions I can assist you with before you?
+User: No.
+AI: Transferring you to the golf shop. Please wait
+"
+019f99e1-ca90-7000-8218-75880de2c5b7,+15057389923,+15052576914,2026-07-25,15:25:40,24205,0:24,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Transfer me to the golf shop. Yeah.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019f99da-2cc6-7ff4-93b7-60a9cf5608fe,+15053855952,+15052576914,2026-07-25,15:17:20,48242,0:48,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Book shop.
+AI: Just to confirm, you like me to transfer you to the golf shop now to help with your tee time reservation?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment. Transferring you to the golf shop. Please wait a moment.
+"
+019f99d8-8a26-7000-a1f3-869a39f9e366,+15053855952,+15052576914,2026-07-25,15:15:33,3722,0:03,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf
+"
+019f99b3-e504-7888-9771-efd64cbd5a83,+15805129329,+15052576914,2026-07-25,14:35:32,66382,1:06,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm calling about the dining
+AI: Thank you for your interest in dining with us. Are you looking to make a reservation, inquire about our menu, or is there something specific I can assist you with regarding the restaurant?
+User: Yeah. I was calling about making a reservation and seeing about what time they that y'all were open to eat.
+AI: Our restaurant reopens for the season on April 20 ninth.
+AI: Once open, our hours are 7 30 AM to 5 o'clock PM on Wednesdays Thursdays, and Sundays. And 7 30 AM to 8 o'clock PM on Fridays and Saturdays. We're closed on Mondays and Tuesdays. Since you're interested in making a reservation, let me transfer you to the restaurant team who can assist you with that. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019f99ae-e266-7888-972a-469cecf5917f,+15052634833,+15052576914,2026-07-25,14:30:07,29008,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Dining reservation.
+AI: It would be my pleasure to assist you with that. Let me transfer you over to the restaurant. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019f999f-c7ae-7772-9b23-dccef1c91c03,+15635903266,+15052576914,2026-07-25,14:13:34,28550,0:28,assistant-forwarded-call,"User: I mean,
+AI: Thank you for calling Paco Ridge Golf Club.
+User: unbelievable.
+AI: Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: We wanna order some food.
+AI: I'd be happy to help with that. Are there any I can assist you with before transferring you to the restaurant?
+User: Nope.
+AI: Transferring you to the restaurant. Please wait a
+"
+019f999f-5b00-7cc4-a4f9-50e9793120e9,+15635903266,+15052576914,2026-07-25,14:13:08,10422,0:10,customer-ended-call,"User: That's why it helps.
+AI: Thank you for
+User: Nope.
+AI: Alright. Is there anything else I can help you with today?
+"
+019f9983-0feb-7000-9e3c-9c399c7e7d25,+19727682710,+15052576914,2026-07-25,13:42:11,24356,0:24,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a moment.
+"
+019f9981-efa4-7ff4-8f84-01d784199449,+16615990201,+15052576914,2026-07-25,13:40:58,26988,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I want to speak with the pro shop.
+AI: Are there any questions I can assist you with before you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9955-d9b6-744f-befd-00ff91fdf0eb,+17604505783,+15052576914,2026-07-25,12:52:48,41139,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: I'm just checking on lead times today.
+AI: Thank you for your question. Tea time reservations can be made up to 30 days in advance using our online tee sheet. You're looking to book for today, can check real time availability on our website. Would you like me to text you the link to our online tee sheet, or would you prefer to speak the golf shop for assistance?
+User: Yes. Speak with the golf shop.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f965a-8f8c-722e-9e05-0a426415be21,+19784304845,+15052576914,2026-07-24,22:59:05,41841,0:41,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Speak to the pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: Yes. Are you typically opened around Christmas time? Late December?
+AI: Thank you for asking. Paco Ridge Golf Club is a seasonal facility and typically closes for the winter. The golf course and restaurant reopened for the season on April 20 ninth. We are not open around Christmas, or in late December. Is there anything else I can help you with today?
+"
+019f964a-978d-7ff2-a6ba-7f61ad57d466,+19152401984,+15052576914,2026-07-24,22:41:39,32417,0:32,assistant-forwarded-call,"AI: Thank you for calling PACCO Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I'd like to speak to the restaurant, please.
+AI: Are there any I can assist you with before transferring you?
+User: No. Thank you.
+AI: Transferring you to the restaurant,
+"
+019f9635-2d1f-7000-8f15-2ffb9ae4d21a,+12487633376,+15052576914,2026-07-24,22:18:16,27590,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Could I speak to the pro shop to book a tea time?
+AI: Are there any questions I can assist you with before transferring you?
+User: No. Thank you.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f962a-5cc5-7000-8ec2-227cfefc325d,+19152040287,+15052576914,2026-07-24,22:06:27,28716,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f961e-4f57-799d-b11f-87bf1eff3c67,+19152040287,+15052576914,2026-07-24,21:53:17,27840,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Cough shop.
+AI: Are there any questions I can assist you with? Before transferring you to the golf shop?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f961d-1d06-7eef-92e1-ba1318ed7d99,+19152040287,+15052576914,2026-07-24,21:51:58,28562,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: ProShop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f9609-e74b-7000-8aa4-031e1aa2609a,+19729794178,+15052576914,2026-07-24,21:31:10,34444,0:34,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Has the facility been purchased in the last, say, 5 year?
+AI: I don't have that specific information right here, but I can transfer you to our staff to find out. Would you like me to connect you to the golf shop for more details?
+User: Yes.
+AI: Transferring you to the golf shop?
+AI: Please wait a moment.
+"
+019f95ff-caa3-7000-837d-4cd2119e2647,+15052398021,+15052576914,2026-07-24,21:19:57,26036,0:26,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: ProShop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019f95e2-c23c-7000-9f86-98aa3fdc966c,+15054800220,+15052576914,2026-07-24,20:48:14,29036,0:29,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+User: Speak to the pro shop. Speak
+AI: There any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+"
+019f95c7-802e-7663-94e3-e10c1f2ce7db,+18178215601,+15052576914,2026-07-24,20:18:28,24937,0:24,assistant-forwarded-call,"AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality How may I help you today?
+User: Pro shop.
+AI: There any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"
+019f959a-0665-7000-80e7-7e9b8c208dc5,+16302058210,+15052576914,2026-07-24,19:28:48,39936,0:39,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: I need to rent, boss. Golf clubs.
+AI: The golf shop handles all rental club requests. Would you like me to transfer you to the golf shop to arrange your rental?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f958f-316f-799a-b5e3-cf292bc0c6b6,+19704731356,+15052576914,2026-07-24,19:16:58,34186,0:34,assistant-forwarded-call,"AI: Thank you for calling Faco Pucker Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded
+User: The finest golf.
+AI: Thank you. We're proud to be ranked the number 1 golf course in New Mexico. Offering a truly breathtaking experience at 6500 feet above sea level. How may I help you today?
+User: Pro shop.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please
+"
+019f958e-2b7b-7000-8856-19a7d0291186,+17202445771,+15052576914,2026-07-24,19:15:51,67143,1:07,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I just need to find out hours and availability.
+AI: Of course. Our golf course and restaurant are open Wednesday through Sunday. The golf shop and practice facility open at 7 30 AM. And the golf shop closes at 6 o'clock in the evening. The restaurant serves breakfast and lunch from 7 30 to 5 on Wednesday, Thursday, and Sunday, and stays open until 8 o'clock on Friday and Saturday. We are closed on Mondays and Tuesdays. Is there a specific date or service you'd like to check availability for?
+User: Representative.
+AI: Are there any questions I can assist you with? Before transferring you?
+User: No.
+AI: Transferring you to the golf shop? Please wait a moment.
+"
+019f9576-bd29-7220-b073-06fce5c901be,+14143508213,+15052576914,2026-07-24,18:50:15,54140,0:54,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Reservations.
+AI: Tea time reservation's up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop.
+User: Dining.
+AI: Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: No. Dining reservations.
+AI: Thank you for clarifying. I can help with dining reservations by connecting you to our restaurant team. Would you like me to transfer you to the restaurant to assist with your reservation?
+User: Yes.
+AI: Transferring you to the restaurant.
+"
+019f955e-1635-7220-af1e-300a1131f792,+15805129329,+15052576914,2026-07-24,18:23:19,44901,0:44,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily.
+User: They call it Taiyaka Ridge.
+AI: Thank you for sharing that. Our club is actually called Paco Ridge Golf Club. Spelled p a a k o. Papa alpha alpha kilo osculo. Is there anything I can assist you with today?
+User: Yeah. I'm just calling to confirm my pay time for tomorrow.
+AI: I don't have access to individual tea time reservations, but I help you get that information. Would you like me to transfer you to the golf shop so they can confirm your tee time for tomorrow?
+User: Yes.
+AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment.
+"
+019f9542-b931-7220-ad9a-7f0e4ad81d89,+12143924394,+15052576914,2026-07-24,17:53:26,38434,0:38,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today?
+User: Book a tea time.
+AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. You like me to transfer you to the golf shop or text you the link to the online tee sheet?
+User: Golf shop, please.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9534-3008-7bb7-bea3-46362a288a08,+16235215826,+15052576914,2026-07-24,17:37:34,27384,0:27,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Restaurant.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant. Please wait a moment.
+"
+019f9527-a32d-7334-b327-91dc97c2d903,+15052591998,+15052576914,2026-07-24,17:23:51,29881,0:29,assistant-forwarded-call,"AI: Thank you for calling Payaco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Reservations for dining
+AI: It would be my pleasure to assist you with a dining reservation. Let me transfer you over to the restaurant. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019f9525-ccc0-7ff5-867f-e549b4f8fc99,+15059809706,+15052576914,2026-07-24,17:21:51,31781,0:31,assistant-forwarded-call,"AI: Thank you for calling Packer Ridge Golf Club home the finest golf in New Mexico. This is Emily. This call will be recorded training and quality purposes. How may I help you today?
+User: Can I cancel my reservation, please? For today at 2 o'clock?
+AI: I'm not able to cancel reservations myself, but the golf shop can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a Transferring you to the golf shop. Please wait a moment.
+"
+019f94f0-7142-722d-a4fc-e014a9ebede1,Anonymous,+15052576914,2026-07-24,16:23:34,9108,0:09,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality
+"
+019f94e7-3208-7cc9-98b4-336879f76dfb,Anonymous,+15052576914,2026-07-24,16:13:28,10666,0:10,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality
+"
+019f94e6-db85-7555-ba0f-8701619551af,Anonymous,+15052576914,2026-07-24,16:13:06,15029,0:15,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today?
+"
+019f94e4-ed59-7000-8147-0cb53d567ff6,+16235215826,+15052576914,2026-07-24,16:10:59,28452,0:28,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Emily, I'd like to talk to somebody about lunch reservations.
+AI: It would be my pleasure to assist you with that. Me transfer you over to the restaurant. 1 moment. Transferring you now. Transferring you to the restaurant. Please wait a moment.
+"
+019f94b5-2dc7-7cce-8caf-8480690e3211,+12144350807,+15052576914,2026-07-24,15:18:50,25821,0:25,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Restaurant.
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the restaurant. Please wait a
+"
+019f947c-e950-7000-8b3b-f0694c51851c,+16628529267,+15052576914,2026-07-24,14:17:24,35490,0:35,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Cancel a reservation.
+AI: I don't have the ability to cancel reservations directly. The golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation?
+User: Yes.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f946e-3990-7446-9566-1d2756ec8dea,+15056970772,+15052576914,2026-07-24,14:01:23,27362,0:27,assistant-forwarded-call,"AI: Thank you calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Golf shop.
+AI: Are there any questions I can assist you with before you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a
+"
+019f9464-5cbb-7335-9d00-7b8363235b5e,+15055540053,+15052576914,2026-07-24,13:50:35,61565,1:01,customer-ended-call,"AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pricing question.
+AI: Our standard 18 hole rate is 225 dollars, which includes your cart, use of the practice facility, and complimentary bottled water. We also offer an all day replay rate for 325 dollars. Are you looking to play a single round or all day?
+User: I'm looking for the pricing of a rider.
+AI: Riders or spectators are welcome to join at no additional charge. Just let the golf shop know when you check-in, and they'll be happy to accommodate your guests Is there anything else I can help you with today?
+User: No. That is it.
+AI: Thank you for calling Paco Ridge Golf Club. We look forward to seeing you on the mountain soon.
+"
+019f943b-4b8f-7884-8400-d2ef763638f0,+18774378324,+15052576914,2026-07-24,13:05:43,31323,0:31,assistant-forwarded-call,"AI: Thank you calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Superintendent
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop. Please wait a moment.
+"
+019f91c8-d90d-7ffe-b01e-3bd7d69e1539,+13256687979,+15052576914,2026-07-24,01:41:27,29178,0:29,assistant-forwarded-call,"User: Can I cut for a
+AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: I need you to, uh, transfer me to the pro job?
+AI: Are there any questions I can assist you with before transferring you?
+User: No.
+AI: Transferring you to the golf shop.
+AI: Please wait a
+"
+019f91c7-7058-700e-a74c-e2aa32084410,+13256687979,+15052576914,2026-07-24,01:40:02,41857,0:41,assistant-forwarded-call,"AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today?
+User: Pro shop, please.
+AI: Are there any questions I can assist you with before transferring you?
+User: I need to cancel a, uh, tea time for tomorrow.
+AI: I'm not able to cancel tee times myself, but the golf shop can take care of that for you. Would you like me to transfer you to the golf shop to help with your cancellation?
+User: I would.
+AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment.
+"

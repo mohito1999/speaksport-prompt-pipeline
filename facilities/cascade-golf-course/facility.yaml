@@ -1,0 +1,111 @@
+schema_version: '1'
+slug: cascade-golf-course
+display_name: Cascade Golf Course
+website_url: https://www.golfcascade.net/
+timezone: America/Boise
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+
+enabled_tools:
+  - check-booking-eligibility-staging
+  - get-available-tee-times-staging
+  - book-tee-time-staging
+  - transfer_call-staging
+  - get-day-of-week-staging
+  - fetch-inventory-for-date
+  - get-weather-forecast-staging
+  - get-bookings
+  - get-eligibility-for-cancellation
+  - cancel-reservation
+
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+
+transfer_destinations:
+  - identifier: pro_shop
+    responsibility: >-
+      Tee-time assistance, booking modifications and rescheduling,
+      cancellations that the AI cannot process, prepaid cancellation refunds,
+      course conditions, and general golf operations.
+    display_name: Pro Shop
+
+  - identifier: events
+    responsibility: >-
+      Golf outings, tournaments, private events, and event planning.
+    display_name: Events Team
+
+  - identifier: restaurant
+    responsibility: >-
+      Restaurant hours, dining questions, reservations, and food and beverage
+      inquiries.
+    display_name: Restaurant
+
+booking_rules:
+  - >-
+    If the requested booking date is before the facility-local current date,
+    the caller is not eligible. Exact reason: "That date has already passed."
+
+  - >-
+    No facility-specific advance-booking window, minimum-player requirement,
+    membership requirement, pass requirement, card-on-file requirement, or
+    other booking eligibility restriction has been supplied.
+
+  - >-
+    Do not apply any other eligibility restrictions based on memberships,
+    passes, groups, price classes, card-on-file status, player count, course,
+    day of week, time of day, or any other criteria.
+
+  - >-
+    If the requested booking date has not passed, the caller is eligible.
+    Exact reason: "Eligible to book."
+
+  - Both nine-hole and eighteen-hole tee times are supported.
+
+  - >-
+    This is a single-course facility; omit course and course_name filters from
+    availability searches.
+
+  - >-
+    When booking, preserve and pass the exact course returned with the selected
+    availability slot.
+
+cancellation_modification_policy: >-
+  The AI may cancel a reservation only when the tee time is at least 24 hours
+  after the facility-local current date and time. If hours until tee off is
+  less than 24, the reservation is not eligible for cancellation. Exact reason:
+  "I can only process cancellations for tee times that are at least 24 hours
+  from now. The Pro Shop can help you with this cancellation." If hours until
+  tee off is exactly 24 or greater than 24, the reservation is eligible. Exact
+  reason: "Eligible for cancellation." Do not apply any other cancellation
+  restrictions based on number of players, course, passes, card-on-file status,
+  groups, price class, day of week, time of day, or any other criteria.
+  Booking modifications and rescheduling cannot be completed by the AI and
+  must use the normal two-step Pro Shop transfer process. After a successful
+  cancellation, tell the caller that if the tee time was prepaid and is
+  eligible for a refund, the Pro Shop can process the refund. Ask whether the
+  caller would like a transfer to the Pro Shop and use the normal two-step
+  transfer process if they agree.
+
+walking_riding_cart_policies: []
+
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+
+allowed_source_urls:
+  - https://www.golfcascade.net/
+
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

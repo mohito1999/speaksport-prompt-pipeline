@@ -1,0 +1,63 @@
+schema_version: '1'
+slug: northville-hills-golf
+display_name: Northville Hills Golf Club
+website_url: https://northvillehillsgolfclub.com/
+timezone: America/Detroit
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+- get-bookings
+- get-eligibility-for-cancellation
+- cancel-reservation
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_destinations:
+- identifier: pro_shop
+  responsibility: Tee-time assistance, booking changes, cancellations, course conditions, and general golf operations.
+  display_name: Pro Shop
+- identifier: banquet_sales
+  responsibility: Banquets, weddings, corporate events, and private function sales inquiries.
+  display_name: Banquet Sales
+- identifier: golf_pro
+  responsibility: Head Golf Professional inquiries, instruction, and golf pro services.
+  display_name: Golf Pro
+- identifier: general_manager
+  responsibility: General Manager (GM) management and executive facility inquiries.
+  display_name: General Manager
+- identifier: banquet_bar
+  responsibility: Banquet bar hours, lounge, and event bar inquiries.
+  display_name: Banquet Bar
+booking_rules:
+- All players can book tee times up to fourteen calendar days in advance, inclusive of the fourteenth future date.
+- Bookings require a minimum of 2 players; single-player bookings are not permitted.
+- Bookings require the customer to have a card on file (`customer_has_card_on_file`), UNLESS the active labels in `customer_passes` semantically identify a Northville Card, Northville Pass, Northville Member Card, or equivalent Northville-designated pass.
+- Both nine-hole and eighteen-hole tee times are supported.
+- This is a single-course facility; omit course and course_name filters from availability searches.
+- When booking, preserve and pass the exact course returned with the selected availability slot.
+cancellation_modification_policy: The AI may cancel a reservation only when the tee time is at least 24 hours after the facility-local current date and time. If hours until tee off is less than 24, the exact denial reason is "Cancellations must be made at least 24 hours before the tee time. Cancellations within 24 hours may be subject to a no-show fee. Please contact the Golf Shop for assistance." If hours until tee off is exactly 24 or greater, the exact eligible reason is "Eligible for cancellation." Do not apply any other cancellation restrictions.
+walking_riding_cart_policies: []
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls:
+- https://northvillehillsgolfclub.com/
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

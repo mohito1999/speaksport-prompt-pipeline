@@ -1,0 +1,210 @@
+schema_version: "1"
+version: "2026-07-31"
+status: owner_confirmed_with_rich_availability_results
+tools:
+  - capability: eligibility
+    logical_name: check-booking-eligibility-staging
+    compatible_modes: [integrated]
+    required_arguments:
+      date: {type: string, format: YYYY-MM-DD}
+      time: {type: string, format: "HH:MM"}
+    optional_arguments:
+      num_players:
+        type: integer
+        description: Pass before eligibility only when the facility eligibility policy evaluates player count.
+      course_name:
+        type: string
+        description: Pass only when the facility eligibility policy requires an exact multi-course value.
+    result_fields:
+      eligible: {type: boolean, required: true}
+      reason: {type: string, required: true}
+    preconditions:
+      - requested date and approximate time are known
+      - player count is known before the call only when the facility eligibility policy evaluates num_players
+      - holes, riding, identity, and inventory have not been requested
+  - capability: availability
+    logical_name: get-available-tee-times-staging
+    compatible_modes: [integrated]
+    required_arguments:
+      date:
+        type: string
+        format: YYYY-MM-DD_or_MM-DD-YYYY
+    optional_arguments:
+      when:
+        type: string
+        format: HH:MM_preferred
+        allowed_values: [morning, afternoon, evening, all, "HH:MM"]
+        aliases: [time]
+        description: >-
+          Generated prompts must pass the caller's current exact 24-hour clock
+          time when known. If the caller asks about a different exact time after
+          seeing results, call availability again and replace when with that new
+          exact time. Do not invent free-form windows.
+      num_players:
+        type: integer
+        aliases: [players]
+        description: >-
+          Optional to the backend but mandatory in every generated receptionist
+          availability call because player count changes usable inventory.
+      num_holes:
+        type: integer
+        allowed_values: [9, 18]
+        aliases: [holes]
+        description: >-
+          Optional to the backend with a default of 18, but mandatory in every
+          generated receptionist availability call.
+      course:
+        type: string
+        format: exact_courses_variable_value
+        aliases: [course_name]
+        description: Usually omitted for a single-course facility; required as a filter for the owner-approved multi-course flow.
+    result_fields:
+      results:
+        type: array_of_availability_records_with_time_course_spots_remaining_and_price_per_player
+        required: true
+        description: >-
+          The result is a list whose individual slot objects each contain
+          time (caller-facing tee time), course (exact value to preserve for
+          booking), spots_remaining (integer bookable capacity), and
+          price_per_player (current tee-sheet rate per player). The price may
+          be quoted when asked, with the qualification that the caller's exact
+          rate may vary based on status, eligibility, discounts, or check-in
+          treatment. An empty list means no tee times are available for the
+          requested date under the supplied holes and course criteria; it does
+          not mean merely that nothing is close to when.
+    preconditions:
+      - eligibility succeeded
+      - requested date and preferred time are known
+      - caller explicitly provided number of players
+      - caller explicitly selected 9 or 18 holes
+      - every availability call passes num_players and num_holes
+      - returned nearest-time results are not treated as exhaustive inventory
+      - facility single-player presentation policy is applied to spots_remaining
+      - an empty list is treated as no availability for the full requested date and supplied search criteria
+      - a newly requested exact time triggers another call with that time as when while preserving the other search context
+      - multi-course facilities have an exact course selected from the initialized courses variable
+  - capability: booking
+    logical_name: book-tee-time-staging
+    compatible_modes: [integrated]
+    required_arguments:
+      course:
+        type: string
+        format: exact_selected_availability_course
+        aliases: [course_name]
+        description: Always pass the exact course associated with the selected slot; the backend permits omission only for a single-course default.
+      date: {type: string, format: YYYY-MM-DD_or_MM-DD-YYYY}
+      time: {type: string, format: "HH:MM"}
+      num_players: {type: integer, aliases: [players]}
+      num_holes: {type: integer, allowed_values: [9, 18], aliases: [holes]}
+      first_name: {type: string}
+      last_name: {type: string}
+      email: {type: string, format: email}
+    optional_arguments:
+      riding: {type: boolean, description: Cart versus walk.}
+    result_fields:
+      result: {type: string, required: true, allowed_values: [success]}
+      booking_reference: {type: integer, required: false}
+      amount_due: {type: number, required: false}
+    preconditions:
+      - caller selected an exact returned time and course pair
+      - first name, last name, email, players, holes, and riding preference are known
+      - returned 12-hour time has been converted to 24-hour HH:MM
+  - capability: booking_lookup
+    logical_name: get-bookings
+    compatible_modes: [integrated]
+    required_arguments: {}
+    optional_arguments:
+      booking_reference:
+        type: string
+        description: Pass only as the fallback after a phone-number search returns no bookings and the caller supplies a reference. Do not pass course_name. ForeUp references must use the TTID_ prefix.
+    result_fields:
+      bookings:
+        type: array_of_booking_records
+        required: true
+        description: Zero or more records containing the internal booking reference and caller-facing reservation details such as date, time, player count, and course name. Never speak the booking reference to the caller.
+    preconditions:
+      - initial lookup is called with no parameters so the tool uses the caller phone number automatically
+      - fallback lookup passes only booking_reference
+  - capability: cancellation_eligibility
+    logical_name: get-eligibility-for-cancellation
+    compatible_modes: [integrated]
+    required_arguments:
+      date: {type: string, format: YYYY-MM-DD}
+      time: {type: string, format: "HH:MM"}
+    optional_arguments: {}
+    result_fields:
+      eligible: {type: boolean, required: true}
+      reason: {type: string, required: false}
+    preconditions:
+      - get-bookings returned the selected reservation
+      - caller identified the exact reservation to cancel
+      - date and time come from that selected reservation
+  - capability: cancellation
+    logical_name: cancel-reservation
+    compatible_modes: [integrated]
+    required_arguments:
+      booking_reference:
+        type: string
+        description: Exact internal reference associated with the caller-selected reservation returned by get-bookings.
+    optional_arguments: {}
+    result_fields:
+      success:
+        type: boolean
+        required: true
+        description: The assistant may confirm cancellation only after the tool reports success.
+    preconditions:
+      - get-eligibility-for-cancellation returned eligible true
+      - booking_reference is the exact hidden reference associated with the selected reservation
+  - capability: sms
+    logical_name: send_sms
+    compatible_modes: [integrated, non_integrated]
+    required_arguments:
+      phone: {type: string}
+      message: {type: string}
+    optional_arguments: {}
+    result_fields:
+      success: {type: boolean, required: true}
+    preconditions:
+      - caller consented to receive the booking link
+  - capability: transfer
+    logical_name: transfer_call-staging
+    compatible_modes: [integrated, non_integrated]
+    required_arguments:
+      destination: {type: string, format: exact_configured_identifier}
+    optional_arguments: {}
+    result_fields:
+      success: {type: boolean, required: true}
+    preconditions:
+      - destination is configured in Vapi and facility intake with exactly matching spelling
+      - integrated normal transfers have current-turn verbal confirmation unless an approved reference exception applies
+  - capability: day_of_week
+    logical_name: get-day-of-week-staging
+    compatible_modes: [integrated]
+    required_arguments:
+      date: {type: string, format: YYYY-MM-DD}
+    optional_arguments: {}
+    result_fields:
+      day_of_week: {type: string, required: true}
+    preconditions:
+      - caller provided a valid requested date
+  - capability: inventory_warmup
+    logical_name: fetch-inventory-for-date
+    compatible_modes: [integrated]
+    required_arguments:
+      date: {type: string, format: MM-DD-YYYY}
+    optional_arguments: {}
+    result_fields:
+      success: {type: boolean, required: false}
+    preconditions:
+      - facility reference flow enables inventory warm-up
+  - capability: weather
+    logical_name: get-weather-forecast-staging
+    compatible_modes: [integrated, non_integrated]
+    required_arguments:
+      date: {type: string, format: MM-DD-YYYY}
+    optional_arguments:
+      granularity: {type: string, allowed_values: [daily, hourly]}
+    result_fields:
+      forecast: {type: object, required: true}
+    preconditions:
+      - caller asked about weather for a known date

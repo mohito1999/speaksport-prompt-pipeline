@@ -1,0 +1,118 @@
+schema_version: "1"
+status: owner_confirmed_from_reference_payload
+variables:
+  - name: phone_recognized
+    placeholder: "{{phone_recognized}}"
+    required: true
+    value_type: boolean
+    owner: phone_integration
+  - name: first_name
+    placeholder: "{{first_name}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: last_name
+    placeholder: "{{last_name}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: email
+    placeholder: "{{email}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: caller_phone
+    placeholder: "{{caller_phone}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: greeting
+    placeholder: "{{greeting}}"
+    required: true
+    value_type: string
+    owner: assistant_configuration
+  - name: disclaimer
+    placeholder: "{{disclaimer}}"
+    required: true
+    value_type: string
+    owner: assistant_configuration
+  - name: announcement
+    placeholder: "{{announcement}}"
+    required: true
+    value_type: string
+    owner: assistant_configuration
+  - name: booking_url
+    placeholder: "{{booking_url}}"
+    required: false
+    value_type: string
+    owner: assistant_configuration
+  - name: courses
+    placeholder: "{{courses}}"
+    required: false
+    value_type: array
+    owner: phone_integration
+  - name: caller_is_customer
+    placeholder: "{{caller_is_customer}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration
+  - name: customer_passes
+    placeholder: "{{customer_passes}}"
+    required: false
+    value_type: array
+    owner: phone_integration
+  - name: customer_groups
+    placeholder: "{{customer_groups}}"
+    required: false
+    value_type: array
+    owner: phone_integration
+  - name: price_class
+    placeholder: "{{price_class}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: customer_has_card_on_file
+    placeholder: "{{customer_has_card_on_file}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration
+  - name: zipcode
+    placeholder: "{{zipcode}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: current_date
+    placeholder: "{{current_date}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: facility_gms
+    placeholder: "{{facility_gms}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration
+  - name: facility_name
+    placeholder: "{{facility_name}}"
+    required: false
+    value_type: string
+    owner: phone_integration
+  - name: price_class_names
+    placeholder: "{{price_class_names}}"
+    required: false
+    value_type: array
+    owner: phone_integration
+  - name: customer_is_member
+    placeholder: "{{customer_is_member}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration
+  - name: confirmation_sms_enabled
+    placeholder: "{{confirmation_sms_enabled}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration
+  - name: booking_requires_card_on_file
+    placeholder: "{{booking_requires_card_on_file}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration

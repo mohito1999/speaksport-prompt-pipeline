@@ -1,0 +1,61 @@
+{
+  "facility": "The Golf Club at the Highlands",
+  "operating_model": "non_integrated",
+  "service_model_label": "Online booking link + staff hand-off",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {"label": "Booking opportunities captured", "value": "98"},
+    {"label": "Calls handled", "value": "4,395"},
+    {"label": "Time saved", "value": "42h 41m"},
+    {"label": "Estimated cost saved", "value": "$896.60"}
+  ],
+  "kpi_note": {
+    "title": "A new view of booking demand",
+    "text": "Booking Opportunities Captured was introduced in the last week of July, so 98 is a partial-period baseline rather than a since-launch total. It counts calls where someone expressed an intent to book, play or reserve and SpeakSport took the correct next action—sending the booking link or transferring the caller to staff."
+  },
+  "after_hours_metrics": [
+    {"label": "After-hours opportunities", "value": "46"},
+    {"label": "After-hours calls", "value": "1,806"},
+    {"label": "After-hours time saved", "value": "17h 56m"}
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 365,
+  "highlights": [
+    {
+      "title": "A three-player request took the online route immediately",
+      "summary": "After confirming the group size, SpeakSport offered the standard booking link for a three-player tee time. The caller accepted, and the link was delivered by text without a staff handoff.",
+      "source": "Call on 31 July at 9:05 PM",
+      "quote": "“We handle bookings for up to 4 players through our online system. Would you like me to send you a text with the booking link?” The caller agreed, and SpeakSport confirmed it was sent."
+    },
+    {
+      "title": "A caller preferring phone booking reached the right team",
+      "summary": "A two-player caller declined the online route and asked to book by phone. SpeakSport explained that the golf shop could complete the reservation and transferred the caller directly.",
+      "source": "Call on 31 July at 9:09 PM",
+      "quote": "“For booking your tee time over the phone, the golf shop team can assist you directly.”"
+    },
+    {
+      "title": "Online-booking difficulty was handled with a helpful alternative",
+      "summary": "When a single-player caller reported trouble with the online system, SpeakSport provided the direct tee-time website and offered immediate staff support. The caller chose the golf-shop transfer.",
+      "source": "Call on 31 July at 7:26 PM",
+      "quote": "“You can also visit our website … anytime to make your booking. If you’d prefer, I can transfer you to the golf shop so a staff member can assist you directly.”"
+    }
+  ],
+  "features_intro": "For The Golf Club at the Highlands, we have focused recent improvements on capturing booking demand reliably, giving callers the right online path and making each hand-off easier to understand.",
+  "features": [
+    {"title": "Booking-opportunity tracking", "description": "The new KPI makes previously invisible booking demand measurable, including both text-link delivery and appropriate transfers to staff."},
+    {"title": "Stronger booking-intent recognition", "description": "SpeakSport is better able to recognise when a caller wants to book, reserve or play—even when speech recognition turns “tee time” into something less obvious."},
+    {"title": "Clearer online-booking hand-off", "description": "Standard booking callers can receive the direct link by text, while exceptions and callers who need human help are routed to the golf shop."},
+    {"title": "Richer back-office reporting", "description": "The dashboard now supports filtering calls by intent, category and outcome, making demand patterns and operational opportunities easier to find."}
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love The Golf Club at the Highlands to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {"title": "Self-serve knowledge base", "description": "Make it easier for your team to keep answers, hours and operating information current."},
+    {"title": "Even better reporting", "description": "Add clearer views of booking demand, link delivery, hand-offs and caller outcomes."}
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from The Golf Club at the Highlands SpeakSport dashboard. Booking Opportunities Captured was introduced in the last week of July 2026. Call excerpts were selected from 365 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

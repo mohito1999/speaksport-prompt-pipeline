@@ -1,0 +1,124 @@
+schema_version: "1"
+status: owner_confirmed
+prompt_architecture:
+  section_order:
+    - core-shell
+    - knowledge-base
+    - logic-module
+    - core-shell
+  knowledge_base_embedded: true
+  allow_multiple_core_shells: true
+transfer_protocol:
+  status: owner_confirmed_from_reference_prompts
+  integrated:
+    require_current_turn_verbal_confirmation: true
+    first_general_golf_shop_request_uses_deflection: facility_configured
+    default_first_shop_transfer_deflection: false
+    automatic_transfer_exceptions:
+      - booking tool failure after attempted booking
+      - post-booking profile email update already explained to caller
+      - general tool failure when the reference flow explicitly requires golf shop recovery
+  non_integrated:
+    require_current_turn_verbal_confirmation: false
+    transfer_transition_and_tool_call_must_share_response: true
+    first_general_golf_shop_request_uses_deflection: facility_configured
+    default_first_shop_transfer_deflection: false
+  all_modes:
+    destination_identifier_must_match_vapi_configuration: true
+phone_numbers_in_prompts:
+  status: owner_confirmed
+  allowed: false
+booking:
+  pass_returned_course_for_single_course:
+    status: owner_confirmed
+    value: true
+  multi_course:
+    ask_for_course_first: true
+    course_source_variable: courses
+    availability_filter_argument: course_name
+    booking_course_must_match_selected_availability_slot: true
+availability_when:
+  status: owner_confirmed_2026_07_31
+  backend_accepted_values:
+    - morning
+    - afternoon
+    - evening
+    - all
+    - HH:MM
+  generated_prompt_preference: HH:MM
+  allow_arbitrary_natural_language: false
+  required_context:
+    - date
+    - num_players
+    - num_holes
+  nearest_results_are_exhaustive: false
+  exact_time_requery:
+    required_when_caller_requests_new_exact_time: true
+    replace_when_with_new_exact_hh_mm: true
+    preserve_date: true
+    preserve_num_players: true
+    preserve_num_holes: true
+    preserve_course_filter_or_omission: true
+    prohibit_unavailable_claim_before_requery: true
+    prohibit_web_discrepancy_claim_before_requery: true
+  result_fields:
+    - time
+    - course
+    - spots_remaining
+    - price_per_player
+  price_quoting:
+    quote_when_caller_asks: true
+    describe_as_current_tee_sheet_price_per_player: true
+    qualify_that_exact_rate_may_vary_by_caller_status_or_discount: true
+  empty_result:
+    means_no_times_for_full_requested_date: true
+    scoped_to_requested_num_holes_and_course_filter: true
+    offer_alternate_date: true
+    offer_alternate_holes_only_when_facility_supports_them: true
+    offer_alternate_course_only_for_multi_course_facilities: true
+  single_player_filter:
+    facility_configured: true
+    configuration_path: availability_policy.single_player_requires_partially_filled_slot
+    restricted_rule: present_only_slots_with_spots_remaining_below_four
+    default: false
+date_time_context:
+  status: owner_confirmed_2026_07_27
+  current_date_and_time_required: true
+  date_format: "%A, %B %d, %Y"
+  time_format: "%I:%M %p"
+  timezone_source: facility_configured_iana_timezone
+  sentence_template: >-
+    Today is {{"now" | date: "%A, %B %d, %Y", "<facility timezone>"}},
+    and the current time is {{"now" | date: "%I:%M %p", "<facility timezone>"}}.
+existing_bookings:
+  status: owner_confirmed_2026_07_22
+  initial_lookup:
+    tool: get-bookings
+    arguments: none
+    identity_source: caller_phone_automatically_resolved_by_tool
+  fallback_lookup:
+    argument: booking_reference
+    pass_only_booking_reference: true
+    pass_course_name: false
+    foreup_reference_prefix: TTID_
+  spoken_results:
+    fields: [date, time, num_players, course_name]
+    never_speak_booking_reference: true
+  empty_result:
+    ask_for_booking_reference_before_transfer: true
+    transfer_uses_standard_two_step_protocol: true
+cancellations:
+  status: owner_confirmed_2026_07_22
+  required_tools: [get-bookings, get-eligibility-for-cancellation, cancel-reservation]
+  preserve_hidden_reference_from_lookup: true
+  caller_selects_exact_booking_before_eligibility: true
+  eligibility_arguments: [date, time]
+  ineligible_behavior:
+    speak_exact_reason: true
+    transfer_uses_standard_two_step_protocol: true
+  eligible_behavior:
+    cancel_immediately_without_reconfirming: true
+    cancellation_argument: booking_reference
+    confirm_only_after_success: true
+  modifications_and_rescheduling_remain_transfer_only: true
+human_approval_required: true

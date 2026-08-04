@@ -1,0 +1,1408 @@
+{
+  "source": "inputs/paako_ridge/calls.csv",
+  "period": {
+    "start": "2026-07-24",
+    "end": "2026-07-31"
+  },
+  "calls": 288,
+  "total_duration_minutes": 173.4,
+  "average_duration_seconds": 36.1,
+  "ended_reason": {
+    "customer-ended-call": 47,
+    "assistant-forwarded-call": 239,
+    "silence-timed-out": 2
+  },
+  "candidate_counts": {
+    "booking_success": 0,
+    "eligibility_verification": 0,
+    "booking_lookup": 0,
+    "cancellation": 6,
+    "information_answered": 26,
+    "booking_link_offered": 56,
+    "booking_link_sent": 4,
+    "booking_intent_routed": 79
+  },
+  "candidates": {
+    "booking_success": [],
+    "eligibility_verification": [],
+    "booking_lookup": [],
+    "cancellation": [
+      {
+        "call_id": "019fb96e-11df-7000-86ac-524892dd8d4a",
+        "date": "2026-07-31",
+        "time": "18:27:07",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel a reservation. AI: I don't have ability to cancel reservations directly, but the golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019faff5-b8ff-7bb7-9014-46d9ac7413d0",
+        "date": "2026-07-29",
+        "time": "22:19:05",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Need to cancel my tea time. AI: I can't cancel tee times directly, but our golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yeah. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019f9e88-211c-7ee9-9b48-625d10b52247",
+        "date": "2026-07-26",
+        "time": "13:05:49",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Need to cancel a tea time. AI: I can't cancel tee times myself, but the golf shop can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019f9525-ccc0-7ff5-867f-e549b4f8fc99",
+        "date": "2026-07-24",
+        "time": "17:21:51",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Packer Ridge Golf Club home the finest golf in New Mexico. This is Emily. This call will be recorded training and quality purposes. How may I help you today? User: Can I cancel my reservation, please? For today at 2 o'clock? AI: I'm not able to cancel reservations myself, but the golf shop can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop. Please wait a Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f947c-e950-7000-8b3b-f0694c51851c",
+        "date": "2026-07-24",
+        "time": "14:17:24",
+        "duration": "0:35",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel a reservation. AI: I don't have the ability to cancel reservations directly. The golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f91c7-7058-700e-a74c-e2aa32084410",
+        "date": "2026-07-24",
+        "time": "01:40:02",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Pro shop, please. AI: Are there any questions I can assist you with before transferring you? User: I need to cancel a, uh, tea time for tomorrow. AI: I'm not able to cancel tee times myself, but the golf shop can take care of that for you. Would you like me to transfer you to the golf shop to help with your cancellation? User: I would. AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment."
+      }
+    ],
+    "information_answered": [
+      {
+        "call_id": "019fba76-18be-7aae-9d9e-6d8e4d4fb24c",
+        "date": "2026-07-31",
+        "time": "23:15:30",
+        "duration": "0:50",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: A restaurant. Hours. AI: Our restaurant will reopen for the season on April 20 ninth. Once open, our hours are Wednesday, Thursday, and Sunday from 7 30 in the morning until 5 o'clock in the evening, serving breakfast and lunch. On Fridays and Saturdays, we're open from 7 30 in the morning until 8 o'clock at night. The restaurant is closed on Mondays and Tuesdays. There anything else I can help you with today? User: Is the restaurant open tonight? AI: The restaurant is currently closed for the season and will reopen on April 20 ninth. If you have any other questions,"
+      },
+      {
+        "call_id": "019fba3a-4c0c-777d-8f23-1f3a30c2034c",
+        "date": "2026-07-31",
+        "time": "22:10:11",
+        "duration": "1:07",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I was just wondering hours of service. AI: Absolutely. I can help with that. Our golf shop is open Wednesday through Sunday from 7 30 AM to 6 o'clock PM. The restaurant is open Wednesday, Thursday, and Sunday from 7 30 AM to 5 o'clock PM. And on Friday and Saturday from 7 30 AM to 8 o'clock PM. Both are closed on Mondays and Tuesdays. Is there a particular service or day you're interested in? User: Yeah. Friday. Is there a bar AI: Yes. We do have a bar at the restaurant. On Fridays, the restaurant and bar are open from 7 30 AM until 8 o'clock PM. You'll find a great selection of beverages, and snacks are also available at the bar. Is there anything else I can help you with regarding your visit?…"
+      },
+      {
+        "call_id": "019fb98c-22d3-7000-974e-a118829d30c0",
+        "date": "2026-07-31",
+        "time": "18:59:57",
+        "duration": "0:39",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna see the opening date for March eleventh 20 27. AI: Our golf course and restaurant reopened for the season on April 20 ninth. So we will not be open on March eleventh. If you'd like to book a tea time after April 20 ninth, I can text you the link to our online tee sheet or connect you with the golf shop for advanced reservations. Which would you prefer? User: Nothing."
+      },
+      {
+        "call_id": "019fb927-ca65-7113-bd48-1ebf74d7ad8a",
+        "date": "2026-07-31",
+        "time": "17:10:21",
+        "duration": "0:24",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: What time does the restaurant open in the morning for breakfast? AI: Our restaurant opens at 7 30 in the morning for breakfast. Is there anything else I can assist you with today?"
+      },
+      {
+        "call_id": "019fb8b6-3610-755f-ad4b-eb5e23c8dc04",
+        "date": "2026-07-31",
+        "time": "15:06:17",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Piaco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Do I need reservations for lunch? Today? AI: Our restaurant is open for breakfast and lunch. And while reservations are recommended, walk ins are always welcome. Today is Friday. So we're serving until 8 o'clock this evening. Would you like me to connect you with the restaurant to make a reservation? User: Sure. AI: Transferring you to the restaurant. Please Transferring you to the restaurant. Please wait a moment."
+      },
+      {
+        "call_id": "019fb57b-8006-7004-87ca-3017b15cca02",
+        "date": "2026-07-31",
+        "time": "00:03:18",
+        "duration": "0:49",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Is anybody still at the AI: It sounds like your question was cut off. User: golf desk AI: Could you please repeat what you'd like to know about who is still at the club? I'm happy to help. User: Golf cart or golf disc. AI: Thank you for clarifying. If you're asking about golf carts, we do require all golfers to use a cart here at Paco Ridge. Walking is not permitted due to our elevation and the distance between holes. Carts are included in your greens fee. If you're asking about disc golf we do not offer disc golf at Paco Ridge."
+      },
+      {
+        "call_id": "019fb4cd-57a0-7000-b469-6252299dca13",
+        "date": "2026-07-30",
+        "time": "20:53:04",
+        "duration": "0:40",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling PACCAR Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Front desk. AI: Are there any questions I can assist you with before transferring you? User: Cost to ride in a cart but not play golf. AI: Spectators and ride alongs are welcome at no charge. If you'd like to ride along but not play golf, you can do so for free. Just let the golf shop know when you check-in. Is there any"
+      },
+      {
+        "call_id": "019fb441-a831-7112-b7ad-d64ccaeb1f47",
+        "date": "2026-07-30",
+        "time": "18:20:30",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Bro's up. AI: Hello. How can I assist you today? Are you interested in booking a tea time, learning more about our rates, or do you have another question about Paco Ridge Golf Club? User: Road shop. AI: Just to confirm, are you asking to be transferred to the golf shop? Are there any questions I can assist you with before transferring you? User: Yes. No. Thank you. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fb43a-697a-7000-9141-54391d50229d",
+        "date": "2026-07-30",
+        "time": "18:12:35",
+        "duration": "0:53",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hello? AI: Hello. This is Emily at Paco Ridge Golf Club. How may I assist you today? User: Bro, something. Cross up. AI: Of course. AI: Of course. Could you please clarify what you'd like help with today? Are you interested in booking a tea time? Learning more about our rates, or do you have another question about Paco Ridge Golf Club? User: All of the above. Pro shop, please. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: No. Thank you. AI: Transferring you to the golf shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb3f1-2c78-799c-8b98-242411a27fb2",
+        "date": "2026-07-30",
+        "time": "16:52:35",
+        "duration": "0:54",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Plumhouse. AI: Could you please clarify your question about Plumhouse? Are you asking about a membership, a dining reservation, or something else related to Paco Ridge Golf Club? I'm here to help. User: Anytime. AI: Thank you for your response. Could you let me know a bit more about what you're interested in regarding Plumhouse or if you have a specific question about Paco Ridge Golf Club. I'm happy to assist with tee times, memberships, dining, or any other information you need. User: Eat time. AI: Thank you for asking about dining times. Our restaurant is open Wednesday. User: Oh my god."
+      },
+      {
+        "call_id": "019fb37f-2dfc-7000-9835-1a5ca0294b54",
+        "date": "2026-07-30",
+        "time": "14:48:06",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: So we don't need any members. AI: Thank you for calling Thank you for letting me know. If you have any other questions about playing at Paco Ridge as a guest, our daily rates, or anything else, I'm happy to help. Is there anything else I can assist you with today? User: Representative? AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019faf08-0512-7000-987b-140bfdc892a7",
+        "date": "2026-07-29",
+        "time": "17:59:27",
+        "duration": "0:39",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to book a tournament AI: Thank you for your interest in hosting a tournament at Paco Ridge. For large groups and tournament bookings, Ryan, our director of golf, handles those arrangements. Would you like me to transfer you to him to assist you? User: Yes, please. AI: Transferring you to Ryan, our of golf. Please wait a moment. of golf. Please wait a moment."
+      },
+      {
+        "call_id": "019faec4-3e65-7000-8565-757dabd473e2",
+        "date": "2026-07-29",
+        "time": "16:45:25",
+        "duration": "1:08",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to speak to someone about golf. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: What's the cost of the driving range? AI: Use of the practice facility, including the driving range, is included with your daily greens fee at Packer Ridge Golf Club. There is no separate charge for the driving range. There anything else I can help you with, or would you like to be transferred to the golf shop? User: Can I use the driving range without paying for a round of golf? AI: I don't have that specific information right here, but I can transfer to our staff to find out. Would you like me to transfer you to the golf shop to get a definite answer? User: Yea…"
+      },
+      {
+        "call_id": "019fa994-2561-7dd8-bcad-c1c8862d6785",
+        "date": "2026-07-28",
+        "time": "16:34:47",
+        "duration": "1:34",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hey, Emily. I know that the golf course is closed Mondays and Tuesdays, but I'm wondering if the driving range or chipping or putting areas are open to members. Monday to Tuesday. AI: Thank you for your question. While the restaurant is closed on Mondays and Tuesdays, the golf course and practice facilities, including the driving range, chipping, and putting areas. Follow the same seasonal schedule. They are not open to members or the public on those days during the off season. All facilities, including the practice areas, will reopen for the season on April 20 ninth. Is there anything else I can help you with today? User: Yeah. Are the chipping and putting in practice areas open during the on…"
+      },
+      {
+        "call_id": "019fa5c3-f8f6-7000-9ffd-dfd310e8eafc",
+        "date": "2026-07-27",
+        "time": "22:48:32",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: When does Paco close for the year? AI: Our golf course and restaurant typically close for the season before winter, but I don't have the exact closing date for the year right here. If you'd like, I can transfer you to our staff in the golf shop for the most up to date information. Would you like me to connect you with them? User: Yes. AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa5bc-21c7-7bbf-90c5-7c41f4c8497c",
+        "date": "2026-07-27",
+        "time": "22:39:58",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I was interested on what your rates are for AT and Hole. For residents. And if you're part are you part of the Sandia Casino that? AI: Our standard 18 hole rate is 225 dollars, which includes your cart, use of the practice facility, and complimentary bottled water. For residents of the Paco community, San Pedro Creek Estates, or San Pedro Overlook, we offer resident membership at 6500 dollars plus tax which includes unlimited golf for your household. To clarify, Paco Ridge Golf Club is not affiliated with Sandia Casino. However, we do recommend Sandia Resort in North Albuquerque for lodging if you're visiting. Would you like more details about our resident membership options? User: No. Thank yo…"
+      },
+      {
+        "call_id": "019fa4e4-f46b-711b-bf8c-1a3ee9fece45",
+        "date": "2026-07-27",
+        "time": "18:44:56",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Driving range price? AI: Use of our practice facility, including the driving range, is included with your daily greens fee at no additional charge. If you have any other questions about the course or our amenities, I'm happy to help. User: Just the use of the driving range. AI: Access to the driving range is only available as part of your daily green fee when you play a round of golf at Paco Ridge. We do not offer a separate rate for just the driving range."
+      },
+      {
+        "call_id": "019fa4b1-2cef-7000-8489-4507737f88b8",
+        "date": "2026-07-27",
+        "time": "17:48:23",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Hello? AI: How may I help you today? User: Well, how? AI: I'm here to assist you with any questions about tee times, rates, course details, memberships, dining, or anything else related to Paco Ridge Golf Club. What can I help you with today? User: Club rentals. AI: We offer Titleist and Taylor Made rental club sets for 100 dollars per person, and that includes 2 sleeves of golf balls. Advance reservation is highly recommended. Would you like me to transfer you to the golf shop to arrange your rental? User: Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa06a-2592-733d-a4ba-3723c6b1b557",
+        "date": "2026-07-26",
+        "time": "21:52:20",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: I'm I'm living off the double. AI: Thank you for sharing that. Just to clarify, are you referring to living off the Double Eagle golf course? Or did you mean something else? If you're interested in membership or have questions about our community qualifications, I'd be happy to help. User: Representative. AI: Could you please confirm your location or let me know what information you're looking for? User: Representative. Representative. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. AI: Please wait a moment."
+      },
+      {
+        "call_id": "019f9f51-c8e0-7bbf-9657-200a5057a356",
+        "date": "2026-07-26",
+        "time": "16:46:09",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Packer Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: What is your last day? AI: Our golf course and restaurant are open seasonally. With operations typically running from April 20 ninth through the end of the golf season. However, I don't have the exact closing date for this year right here. If you'd like, I can transfer you to our staff in the golf shop for the up to date information. Would you like me to connect you with them? User: Yes, Emily. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9ef5-05ae-799a-aa73-5f7e80f2faec",
+        "date": "2026-07-26",
+        "time": "15:04:46",
+        "duration": "0:44",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: What are the hours for Sunday brunch? AI: Our restaurant is open on Sundays from 7 30 in the morning. Until 5 o'clock in the afternoon, serving both breakfast and lunch. You're welcome to join us anytime during those hours. No brunch specific menu, but you'll find a great selection for both meals, Is there anything else I can assist you with? User: No. AI: Thank you for calling Paco Ridge Golf Club. Look forward to seeing"
+      },
+      {
+        "call_id": "019f9b75-bb5d-7332-9122-4cc5a6173c58",
+        "date": "2026-07-25",
+        "time": "22:46:52",
+        "duration": "0:38",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Prices. AI: Our standard 18 hole rate is 225 dollars. Which includes your cart, use of the practice facility, and bottled water. We also offer an all day replay rate for 325 dollars. Are you looking to play a single round or all day?"
+      },
+      {
+        "call_id": "019f99b3-e504-7888-9771-efd64cbd5a83",
+        "date": "2026-07-25",
+        "time": "14:35:32",
+        "duration": "1:06",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: I'm calling about the dining AI: Thank you for your interest in dining with us. Are you looking to make a reservation, inquire about our menu, or is there something specific I can assist you with regarding the restaurant? User: Yeah. I was calling about making a reservation and seeing about what time they that y'all were open to eat. AI: Our restaurant reopens for the season on April 20 ninth. AI: Once open, our hours are 7 30 AM to 5 o'clock PM on Wednesdays Thursdays, and Sundays. And 7 30 AM to 8 o'clock PM on Fridays and Saturdays. We're closed on Mondays and Tuesdays. Since you're interested in making a reservation, let me transfer you to the restaurant team who can assist you with that. 1…"
+      },
+      {
+        "call_id": "019f965a-8f8c-722e-9e05-0a426415be21",
+        "date": "2026-07-24",
+        "time": "22:59:05",
+        "duration": "0:41",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Speak to the pro shop. AI: Are there any questions I can assist you with before transferring you? User: Yes. Are you typically opened around Christmas time? Late December? AI: Thank you for asking. Paco Ridge Golf Club is a seasonal facility and typically closes for the winter. The golf course and restaurant reopened for the season on April 20 ninth. We are not open around Christmas, or in late December. Is there anything else I can help you with today?"
+      },
+      {
+        "call_id": "019f958e-2b7b-7000-8856-19a7d0291186",
+        "date": "2026-07-24",
+        "time": "19:15:51",
+        "duration": "1:07",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I just need to find out hours and availability. AI: Of course. Our golf course and restaurant are open Wednesday through Sunday. The golf shop and practice facility open at 7 30 AM. And the golf shop closes at 6 o'clock in the evening. The restaurant serves breakfast and lunch from 7 30 to 5 on Wednesday, Thursday, and Sunday, and stays open until 8 o'clock on Friday and Saturday. We are closed on Mondays and Tuesdays. Is there a specific date or service you'd like to check availability for? User: Representative. AI: Are there any questions I can assist you with? Before transferring you? User: No. AI: Transferring you to the golf shop? Please wait a moment."
+      },
+      {
+        "call_id": "019f9464-5cbb-7335-9d00-7b8363235b5e",
+        "date": "2026-07-24",
+        "time": "13:50:35",
+        "duration": "1:01",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Pricing question. AI: Our standard 18 hole rate is 225 dollars, which includes your cart, use of the practice facility, and complimentary bottled water. We also offer an all day replay rate for 325 dollars. Are you looking to play a single round or all day? User: I'm looking for the pricing of a rider. AI: Riders or spectators are welcome to join at no additional charge. Just let the golf shop know when you check-in, and they'll be happy to accommodate your guests Is there anything else I can help you with today? User: No. That is it. AI: Thank you for calling Paco Ridge Golf Club. We look forward to seeing you on the mountain soon."
+      }
+    ],
+    "booking_link_offered": [
+      {
+        "call_id": "019fb9a5-30f2-777d-8732-f03eb2588400",
+        "date": "2026-07-31",
+        "time": "19:27:19",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. I need to schedule a, uh, tea time for twentieth of August. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb98c-22d3-7000-974e-a118829d30c0",
+        "date": "2026-07-31",
+        "time": "18:59:57",
+        "duration": "0:39",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna see the opening date for March eleventh 20 27. AI: Our golf course and restaurant reopened for the season on April 20 ninth. So we will not be open on March eleventh. If you'd like to book a tea time after April 20 ninth, I can text you the link to our online tee sheet or connect you with the golf shop for advanced reservations. Which would you prefer? User: Nothing."
+      },
+      {
+        "call_id": "019fb8a2-dd75-7113-b50d-fdd2624375e7",
+        "date": "2026-07-31",
+        "time": "14:45:10",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Piaco Ridge Golf Club. To the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Pro shop. AI: Are there any I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb5a5-d62e-7aa1-9efc-c255d9ff1703",
+        "date": "2026-07-31",
+        "time": "00:49:34",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Golf reservation. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb53f-a0d7-7ddf-a859-77b0e97a5e23",
+        "date": "2026-07-30",
+        "time": "22:57:54",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time request. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop, please. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fb530-fdd6-7000-86dd-89df0ead531b",
+        "date": "2026-07-30",
+        "time": "22:41:55",
+        "duration": "1:31",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. User: Thank you. AI: Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Sheepdog. AI: How may I help you today? User: Booking a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Coughtop. AI: Could you please clarify your request? Are you looking to book a tea time, or is there something else I can assist you with today? User: Golf stop. Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through t…"
+      },
+      {
+        "call_id": "019fb51a-3197-7992-ba3d-43f2f66db62c",
+        "date": "2026-07-30",
+        "time": "22:17:01",
+        "duration": "0:49",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. I was, uh, just calling to see how far out I can schedule a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: If you can text me the link to the online teach sheet, that would be great. And then if you could also transfer me to the pro shop, that would be great. AI: Just a sec. Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb4f7-6a75-799c-9c88-86f245519ffa",
+        "date": "2026-07-30",
+        "time": "21:39:02",
+        "duration": "0:58",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Looking to see if I can play golf today as a single. AI: Singles are absolutely welcome to play at Paco Ridge. There is a high possibility you may be paired with other golfers, but we do our best to accommodate everyone. Tee time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Off shop, please. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: Nope. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb48a-67c3-7995-bd8d-ff0168349904",
+        "date": "2026-07-30",
+        "time": "19:39:58",
+        "duration": "0:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Reservations. Feed times. AI: Absolutely. I'd be happy to help with reservations. Are you looking to reserve a tea time for golf, or are you interested in dining at our User: Yeah. Reservations for tee times for golf. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop, please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb487-5661-7dda-aa04-6b2704fb4006",
+        "date": "2026-07-30",
+        "time": "19:36:37",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book tee time for August fourteenth at 9 30 AM. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Stop shop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fb460-bf31-7aaa-bcde-67776249ec8c",
+        "date": "2026-07-30",
+        "time": "18:54:29",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Check on tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb44e-e669-7eed-a73b-b8d37e58e684",
+        "date": "2026-07-30",
+        "time": "18:34:58",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb433-84ca-711c-a45a-b836a94f11a4",
+        "date": "2026-07-30",
+        "time": "18:05:04",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home User: You for calling Cox bridge Means. AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Set a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Connect me to the golf shop. AI: Transferring you to the golf shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb407-218d-711d-ab0a-6232f3f5c67f",
+        "date": "2026-07-30",
+        "time": "17:16:34",
+        "duration": "1:07",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Uh, golf shirt. AI: Are you interested in purchasing a golf shirt from our golf shop? Or do you have a question about returns or exchanges? User: Reservation. AI: Just to clarify, you looking to reserve a tee time for golf, or are you in making a dining reservation at our restaurant? User: Golf reservation 2 time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more User: Oh my god. AI: I understand it can be a bit confusing. Would you like me to transfer you to the golf shop for assistance, or would you prefer I text you the link to book your tee time online? User: Yes. Transfer to golf shop. User: Transfer AI: T…"
+      },
+      {
+        "call_id": "019fb3ca-a62a-7223-978a-8217eaacca26",
+        "date": "2026-07-30",
+        "time": "16:10:31",
+        "duration": "0:38",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home. To the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to see if I can book a tea time more than 30 days out. Sometime early October. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?"
+      },
+      {
+        "call_id": "019fb3ae-bff1-7dd9-9385-cd409e5ea8cf",
+        "date": "2026-07-30",
+        "time": "15:40:03",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Piaco Ridge User: No. AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea times. AI: Tea time reservations up to 30 days out User: Preach off. AI: can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fb393-e84f-7883-a558-b303bf6da705",
+        "date": "2026-07-30",
+        "time": "15:10:43",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: The golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb393-e888-7443-a20b-d8e5bb4968d8",
+        "date": "2026-07-30",
+        "time": "15:10:43",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Uh, golf tee time, please. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf shop. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb359-1902-7000-8039-6f7d09c1fced",
+        "date": "2026-07-30",
+        "time": "14:06:29",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This User: Have you got booked? AI: If you're asking about booking a tea time, I can help guide you. Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Book shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb023-7905-7778-bcfe-557de4620642",
+        "date": "2026-07-29",
+        "time": "23:09:03",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Transferring you to the golf shop. Please wait Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019faff6-006f-733c-bca2-2b5699ea424a",
+        "date": "2026-07-29",
+        "time": "22:19:23",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I like to schedule a tea time. Can you me through the golf shop? AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: The Golf Shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fafdf-5a97-7eef-bc8d-59d1d7e020d7",
+        "date": "2026-07-29",
+        "time": "21:54:39",
+        "duration": "0:51",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. Hello? AI: Hello. User: Yeah. I was calling about AI: You User: hello. I was calling about tea times for tomorrow. Wondering if, uh, I can play by myself. What would be a good time for that? AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text the link to the online tee sheet? User: To the golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fafc2-6eac-700f-b5c0-edb976a35285",
+        "date": "2026-07-29",
+        "time": "21:23:03",
+        "duration": "1:05",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? AI: I will continue but feel free to ask me any questions. Okay? User: Okay. AI: Thank you, How may I you today? Are you interested in booking a tea time learning more about our course? Or do you have another question? User: I'm trying to book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Connect me. With the golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019faf7a-91c5-7000-95d7-bed7cfd2af3a",
+        "date": "2026-07-29",
+        "time": "20:04:36",
+        "duration": "0:50",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Okay. Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced Tea Time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Duff shop. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: No. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019faf57-338a-7bbe-a317-0dbafb755742",
+        "date": "2026-07-29",
+        "time": "19:25:56",
+        "duration": "1:01",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: Oh, it's in Albuquerque. AI: Thank you for calling User: Hello? AI: Packo Ridge Golf Club is actually located in Sandia Park. Just east of Albuquerque in the foothills of the Sandia Mountains. About 25 minutes from Albuquerque and 30 minutes from the airport. How may I help you today? User: Hi. So AI: Thank you for calling Paco Ridge Golf Club, home User: 2 times for to AI: Just to confirm, are you looking to book 2 tee times for 4 players each? Or did you mean 2 tee times for 2 players? Could you clarify the number of players and the User: Can you do AI: I'm happy to help. User: tomorrow, 3 players. AI: You asking if I can book Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop Would you like me to transfer you to the golf shop or text you the link to…"
+      },
+      {
+        "call_id": "019faf4c-c51f-7cc5-a0b7-4abfff7450ed",
+        "date": "2026-07-29",
+        "time": "19:14:32",
+        "duration": "0:49",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea Time question. AI: Of course. What would you like to know about tee times at Paco Ridge Golf Club? User: How far in advance can you book t tones? AI: Tea time reservation reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?"
+      },
+      {
+        "call_id": "019faf18-5cdd-7114-8c0b-d42bc11a6d35",
+        "date": "2026-07-29",
+        "time": "18:17:18",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home User: calling. AI: the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I'd like to make a tea time golf reservation for August 8. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop. Please wait"
+      },
+      {
+        "call_id": "019faefc-257e-7221-8392-47607ad32ebf",
+        "date": "2026-07-29",
+        "time": "17:46:28",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to see if you have any tee times available on Tuesday, August fourth. AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes, please. Me the link to the online tee sheet. AI: 1 moment. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling Paco Ridge Golf Club. Look forward to seeing you on the mountain soon."
+      },
+      {
+        "call_id": "019faee5-fcd1-7000-8e3c-3be7812379a5",
+        "date": "2026-07-29",
+        "time": "17:22:16",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Yeah. AI: How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019faeb6-3e14-7aa7-a610-a7870d2757b5",
+        "date": "2026-07-29",
+        "time": "16:30:11",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Good. Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes. AI: Just to confirm, would you like me to transfer you to the golf shop to assist with your tee time reservation? User: Yes. Transfer me to the golf shop. AI: Transferring you to the golf shop. AI: Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019faeb1-57a3-7cce-8372-009c512dd8ec",
+        "date": "2026-07-29",
+        "time": "16:24:46",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to check a tea time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fae77-cc6e-7cce-8e27-db813bb2db91",
+        "date": "2026-07-29",
+        "time": "15:21:56",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Transferring you to the golf shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fae69-7e3d-7333-93f0-7bf9650e2b71",
+        "date": "2026-07-29",
+        "time": "15:06:17",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf. In New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Tekon. AI: I'm sorry. I didn't quite catch that. Could you please repeat your question or let me User: Make a tea time. Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf stop. AI: Are there any questions I can assist you with? Before transferring you? User: No. AI: Transferring you to the golf shop. Please wait Please wait a moment."
+      },
+      {
+        "call_id": "019fae68-1d35-7009-9fac-c57b1b49ae3e",
+        "date": "2026-07-29",
+        "time": "15:04:47",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservation. AI: Tea time reservations up to 30 days out can be made using our online sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fae4d-5aa7-7994-a26a-9e582ddf041c",
+        "date": "2026-07-29",
+        "time": "14:35:33",
+        "duration": "1:24",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: The dog AI: I wanna make sure I understand your request. Could you please clarify what you mean by the dog? Are you asking about bringing a dog to the golf course, or is there something else I can assist you with? User: Soft shop. AI: Just to confirm, are you asking about the golf shop? If you have a specific question about merchandise, User: Yes. AI: rentals, or lessons, I can help answer it.…"
+      },
+      {
+        "call_id": "019faa0e-4a00-7331-aa4d-8435c5223c66",
+        "date": "2026-07-28",
+        "time": "18:48:13",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi. I'd like to make a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to the pro shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa553-5172-7000-9af2-8c17f3c4a852",
+        "date": "2026-07-27",
+        "time": "20:45:29",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily This call will be recorded for training and quality purposes. How may I help you today? User: Golf tee time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text to online key sheet. AI: Hold on a sec. AI: Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling Paco Ridge Golf Club. We look forward to seeing you on the mountain soon."
+      },
+      {
+        "call_id": "019fa551-9bde-7bb5-bf32-8d51e1a56180",
+        "date": "2026-07-27",
+        "time": "20:43:37",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. User: They're available Friday. AI: This call will be record thank you for letting me know they're available on Friday. Are you interested in booking a tea time for this coming Friday? Or a different Friday in the future? And would you like me to text you the link to our online tee sheet User: This upcoming Friday. AI: Great. You'd like to book a tee time for this upcoming Friday. Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf shop. AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019fa54e-f291-7aad-9e33-620a548d0c03",
+        "date": "2026-07-27",
+        "time": "20:40:43",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text me the link. AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for"
+      },
+      {
+        "call_id": "019fa502-e227-7000-81dc-ff0129bc6aae",
+        "date": "2026-07-27",
+        "time": "19:17:38",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa40e-1196-7ccc-a66b-91a25d7cb801",
+        "date": "2026-07-27",
+        "time": "14:50:14",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop would be great. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fa078-a6c6-777c-9771-94614f6eb54b",
+        "date": "2026-07-26",
+        "time": "22:08:11",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna confirm a tee time for Wednesday. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: To the golf shop. Please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9ef8-ddf7-7bbf-9484-269c6a40a200",
+        "date": "2026-07-26",
+        "time": "15:08:58",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling PAC Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hello. Hello. Card. AI: Hello. How may I assist you today? User: Reservation. Thank you. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9b49-64d1-7ee9-9397-f4b3e6445121",
+        "date": "2026-07-25",
+        "time": "21:58:26",
+        "duration": "0:49",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Check out a tea time. AI: Tea time reservation reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: No. That's alright. Uh, the adult shop, please. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9b31-7cb1-7dd9-986b-54074846ab22",
+        "date": "2026-07-25",
+        "time": "21:32:20",
+        "duration": "0:39",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. Uh, tea times, please. AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9adf-9162-7000-b894-041fb387070c",
+        "date": "2026-07-25",
+        "time": "20:02:52",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time for 1 tomorrow. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop? Please wait a"
+      },
+      {
+        "call_id": "019f9a91-a10e-7ff4-9a9a-f82d45c6223b",
+        "date": "2026-07-25",
+        "time": "18:37:44",
+        "duration": "0:35",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: She's, like, opening my pocket. I have any tea time. AI: I apologize. Just to clarify, are you looking to book a tea time with us? So, tea time reservations up to 30 days out can be made using our online tea sheet on our website. User: Yes. AI: Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to"
+      },
+      {
+        "call_id": "019f9a18-7b32-7000-9908-b29b0a26d204",
+        "date": "2026-07-25",
+        "time": "16:25:24",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to BellStop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9a12-cb65-766f-9644-7b7e294006d6",
+        "date": "2026-07-25",
+        "time": "16:19:11",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I'd like to make a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text me the link. AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. AI: Thank you for calling Paco Ridge"
+      },
+      {
+        "call_id": "019f99f0-52f5-744d-97f5-31f580e7eacb",
+        "date": "2026-07-25",
+        "time": "15:41:33",
+        "duration": "0:59",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a 10 AI: Tea time reservations up to 30 days out can be made using our online sheet on our website. Advanced tea time reservation more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? AI: I'll proceed with scheduling unless you have any questions. User: Transfer. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f99ee-6999-7dd3-9d4c-3d33cc287406",
+        "date": "2026-07-25",
+        "time": "15:39:27",
+        "duration": "0:50",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Gotcha. AI: Thank you. Would you prefer that I transfer you to the golf shop, or would you like me to text you the link to book your tee time online? User: Transfer. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f99e9-ceb6-7cc3-9fc5-f1e1c96d2081",
+        "date": "2026-07-25",
+        "time": "15:34:25",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Uh, golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f99da-2cc6-7ff4-93b7-60a9cf5608fe",
+        "date": "2026-07-25",
+        "time": "15:17:20",
+        "duration": "0:48",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Book shop. AI: Just to confirm, you like me to transfer you to the golf shop now to help with your tee time reservation? User: Yes. AI: Transferring you to the golf shop. Please wait a moment. Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9955-d9b6-744f-befd-00ff91fdf0eb",
+        "date": "2026-07-25",
+        "time": "12:52:48",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: I'm just checking on lead times today. AI: Thank you for your question. Tea time reservations can be made up to 30 days in advance using our online tee sheet. You're looking to book for today, can check real time availability on our website. Would you like me to text you the link to our online tee sheet, or would you prefer to speak the golf shop for assistance? User: Yes. Speak with the golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9576-bd29-7220-b073-06fce5c901be",
+        "date": "2026-07-24",
+        "time": "18:50:15",
+        "duration": "0:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservations. AI: Tea time reservation's up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. User: Dining. AI: Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: No. Dining reservations. AI: Thank you for clarifying. I can help with dining reservations by connecting you to our restaurant team. Would you like me to transfer you to the restaurant to assist with your reservation? User: Yes. AI: Transferring you to the restaurant."
+      },
+      {
+        "call_id": "019f9542-b931-7220-ad9a-7f0e4ad81d89",
+        "date": "2026-07-24",
+        "time": "17:53:26",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. You like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop, please. AI: Transferring you to the golf shop. Please wait a"
+      }
+    ],
+    "booking_link_sent": [
+      {
+        "call_id": "019faefc-257e-7221-8392-47607ad32ebf",
+        "date": "2026-07-29",
+        "time": "17:46:28",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to see if you have any tee times available on Tuesday, August fourth. AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes, please. Me the link to the online tee sheet. AI: 1 moment. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling Paco Ridge Golf Club. Look forward to seeing you on the mountain soon."
+      },
+      {
+        "call_id": "019fa553-5172-7000-9af2-8c17f3c4a852",
+        "date": "2026-07-27",
+        "time": "20:45:29",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily This call will be recorded for training and quality purposes. How may I help you today? User: Golf tee time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text to online key sheet. AI: Hold on a sec. AI: Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling Paco Ridge Golf Club. We look forward to seeing you on the mountain soon."
+      },
+      {
+        "call_id": "019fa54e-f291-7aad-9e33-620a548d0c03",
+        "date": "2026-07-27",
+        "time": "20:40:43",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text me the link. AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for"
+      },
+      {
+        "call_id": "019f9a12-cb65-766f-9644-7b7e294006d6",
+        "date": "2026-07-25",
+        "time": "16:19:11",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I'd like to make a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text me the link. AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. AI: Thank you for calling Paco Ridge"
+      }
+    ],
+    "booking_intent_routed": [
+      {
+        "call_id": "019fba25-e6aa-7aa4-8f66-ffc21b18b57e",
+        "date": "2026-07-31",
+        "time": "21:47:54",
+        "duration": "0:58",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Payaco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Calling back in regards to a key time reservation. AI: Thank you for following up about your tea time reservation. Could you please clarify if you are looking to book a new tea time, modify an existing 1, or if you have a specific question about your reservation. User: I need to provide a credit card number to confirm a reservation. AI: Thank you for letting me know. I'm not able to take credit card information directly. The golf shop can securely assist you with confirming your reservation and processing your payment. Would you like me to transfer you to the golf shop to help with that? User: Yes, please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb9a5-30f2-777d-8732-f03eb2588400",
+        "date": "2026-07-31",
+        "time": "19:27:19",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. I need to schedule a, uh, tea time for twentieth of August. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb98c-9a06-7000-9238-dde064e211af",
+        "date": "2026-07-31",
+        "time": "19:00:28",
+        "duration": "1:14",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm trying to confirm my key time. AI: I want to make sure I understand. Are you looking to confirm your tea time reservation? If so, I don't have access to individual booking details here. But the golf shop can assist you directly. Would you like me to transfer you to the golf shop to confirm your tee time? AI: I'll proceed with scheduling unless you have any questions. User: For the Bobcat shop. AI: Just to clarify, are you asking to be transferred to the bobcatch shop, or do you have a specific question I can help with before transferring you? Are there any questions I can assist you with before transferring you? User: Enter me to the golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fb98c-22d3-7000-974e-a118829d30c0",
+        "date": "2026-07-31",
+        "time": "18:59:57",
+        "duration": "0:39",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna see the opening date for March eleventh 20 27. AI: Our golf course and restaurant reopened for the season on April 20 ninth. So we will not be open on March eleventh. If you'd like to book a tea time after April 20 ninth, I can text you the link to our online tee sheet or connect you with the golf shop for advanced reservations. Which would you prefer? User: Nothing."
+      },
+      {
+        "call_id": "019fb96e-11df-7000-86ac-524892dd8d4a",
+        "date": "2026-07-31",
+        "time": "18:27:07",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel a reservation. AI: I don't have ability to cancel reservations directly, but the golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fb96d-345a-799a-a82b-80ac4908fee0",
+        "date": "2026-07-31",
+        "time": "18:26:10",
+        "duration": "1:10",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I was calling check on the time availability on August fourteenth and fifteenth. AI: Thank you for your interest in playing at Paco Ridge. Our online tee sheet allows reservations up to 30 days in advance. So at the moment, August fourteenth and fifteenth are outside that booking window. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop to assist with your request or would you prefer to check back closer to your desired dates? User: Goff up. AI: Just to confirm, would you like me to transfer you to the golf shop now, is there anything else I can assist you with before transferring you? User: Transfer to Golf So…"
+      },
+      {
+        "call_id": "019fb8c0-a2c1-7bb6-9921-4c68ff01b433",
+        "date": "2026-07-31",
+        "time": "15:17:43",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Trying to reach reservations. AI: It sounds like you're trying to reach someone specific. Are there any questions I can assist you with before transferring you? User: Need to change 2 times. AI: I'd be happy to help guide you. Tee time changes are handled directly by our golf shop staff. Would you like me to transfer you to the golf shop to assist with your reservation changes? User: Yes, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb8a2-dd75-7113-b50d-fdd2624375e7",
+        "date": "2026-07-31",
+        "time": "14:45:10",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Piaco Ridge Golf Club. To the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Pro shop. AI: Are there any I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb88c-e7e0-7aa4-a766-3415898108e9",
+        "date": "2026-07-31",
+        "time": "14:21:11",
+        "duration": "0:58",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: We have a tea time at 10 40, and I wanted to find out if we can add a person. AI: We generally allow up to 4 players per group. If you're looking to add a fifth player, we do permit 5 some starting at 12 o'clock noon. May I ask how many players you currently have in your group? User: 4. AI: Thank you for confirming you have 4 players. You can add a fifth player only if tee time is at 12 o'clock noon or later. Since your tee time is at 10 40, groups are limited to 4 players. If you'd like, I can transfer you to the golf shop to discuss your options or see if there's any you like me to transfer you to the golf shop for further assistance? User: Yes, ma'am. AI: Transferring you to the golf shop. Pl…"
+      },
+      {
+        "call_id": "019fb5a5-d62e-7aa1-9efc-c255d9ff1703",
+        "date": "2026-07-31",
+        "time": "00:49:34",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Golf reservation. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb53f-a0d7-7ddf-a859-77b0e97a5e23",
+        "date": "2026-07-30",
+        "time": "22:57:54",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time request. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop, please. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fb530-fdd6-7000-86dd-89df0ead531b",
+        "date": "2026-07-30",
+        "time": "22:41:55",
+        "duration": "1:31",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. User: Thank you. AI: Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Sheepdog. AI: How may I help you today? User: Booking a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Coughtop. AI: Could you please clarify your request? Are you looking to book a tea time, or is there something else I can assist you with today? User: Golf stop. Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through t…"
+      },
+      {
+        "call_id": "019fb51a-3197-7992-ba3d-43f2f66db62c",
+        "date": "2026-07-30",
+        "time": "22:17:01",
+        "duration": "0:49",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. I was, uh, just calling to see how far out I can schedule a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: If you can text me the link to the online teach sheet, that would be great. And then if you could also transfer me to the pro shop, that would be great. AI: Just a sec. Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb4f7-6a75-799c-9c88-86f245519ffa",
+        "date": "2026-07-30",
+        "time": "21:39:02",
+        "duration": "0:58",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Looking to see if I can play golf today as a single. AI: Singles are absolutely welcome to play at Paco Ridge. There is a high possibility you may be paired with other golfers, but we do our best to accommodate everyone. Tee time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Off shop, please. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: Nope. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb4e7-7186-7000-85b1-23a48ef72089",
+        "date": "2026-07-30",
+        "time": "21:21:35",
+        "duration": "0:34",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Confirming a tea time reservation. AI: I don't have access to individual tea time reservations here. For confirmation or changes to your booking, would you like me to transfer you to the golf shop to assist you? User: Yes, please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb48a-67c3-7995-bd8d-ff0168349904",
+        "date": "2026-07-30",
+        "time": "19:39:58",
+        "duration": "0:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Reservations. Feed times. AI: Absolutely. I'd be happy to help with reservations. Are you looking to reserve a tea time for golf, or are you interested in dining at our User: Yeah. Reservations for tee times for golf. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop, please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb487-5661-7dda-aa04-6b2704fb4006",
+        "date": "2026-07-30",
+        "time": "19:36:37",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book tee time for August fourteenth at 9 30 AM. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Stop shop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fb460-bf31-7aaa-bcde-67776249ec8c",
+        "date": "2026-07-30",
+        "time": "18:54:29",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Check on tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb44e-e669-7eed-a73b-b8d37e58e684",
+        "date": "2026-07-30",
+        "time": "18:34:58",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb441-a831-7112-b7ad-d64ccaeb1f47",
+        "date": "2026-07-30",
+        "time": "18:20:30",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Bro's up. AI: Hello. How can I assist you today? Are you interested in booking a tea time, learning more about our rates, or do you have another question about Paco Ridge Golf Club? User: Road shop. AI: Just to confirm, are you asking to be transferred to the golf shop? Are there any questions I can assist you with before transferring you? User: Yes. No. Thank you. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fb43a-697a-7000-9141-54391d50229d",
+        "date": "2026-07-30",
+        "time": "18:12:35",
+        "duration": "0:53",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hello? AI: Hello. This is Emily at Paco Ridge Golf Club. How may I assist you today? User: Bro, something. Cross up. AI: Of course. AI: Of course. Could you please clarify what you'd like help with today? Are you interested in booking a tea time? Learning more about our rates, or do you have another question about Paco Ridge Golf Club? User: All of the above. Pro shop, please. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: No. Thank you. AI: Transferring you to the golf shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb433-84ca-711c-a45a-b836a94f11a4",
+        "date": "2026-07-30",
+        "time": "18:05:04",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home User: You for calling Cox bridge Means. AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Set a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Connect me to the golf shop. AI: Transferring you to the golf shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb407-218d-711d-ab0a-6232f3f5c67f",
+        "date": "2026-07-30",
+        "time": "17:16:34",
+        "duration": "1:07",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Uh, golf shirt. AI: Are you interested in purchasing a golf shirt from our golf shop? Or do you have a question about returns or exchanges? User: Reservation. AI: Just to clarify, you looking to reserve a tee time for golf, or are you in making a dining reservation at our restaurant? User: Golf reservation 2 time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more User: Oh my god. AI: I understand it can be a bit confusing. Would you like me to transfer you to the golf shop for assistance, or would you prefer I text you the link to book your tee time online? User: Yes. Transfer to golf shop. User: Transfer AI: T…"
+      },
+      {
+        "call_id": "019fb3e6-0258-744a-85ce-f3a8585ebb90",
+        "date": "2026-07-30",
+        "time": "16:40:24",
+        "duration": "0:28",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Speak to the pro shop about a tee time. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait"
+      },
+      {
+        "call_id": "019fb3ca-a62a-7223-978a-8217eaacca26",
+        "date": "2026-07-30",
+        "time": "16:10:31",
+        "duration": "0:38",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home. To the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to see if I can book a tea time more than 30 days out. Sometime early October. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?"
+      },
+      {
+        "call_id": "019fb3ae-bff1-7dd9-9385-cd409e5ea8cf",
+        "date": "2026-07-30",
+        "time": "15:40:03",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Piaco Ridge User: No. AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea times. AI: Tea time reservations up to 30 days out User: Preach off. AI: can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fb393-e84f-7883-a558-b303bf6da705",
+        "date": "2026-07-30",
+        "time": "15:10:43",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: The golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb393-e888-7443-a20b-d8e5bb4968d8",
+        "date": "2026-07-30",
+        "time": "15:10:43",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Uh, golf tee time, please. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf shop. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fb359-1902-7000-8039-6f7d09c1fced",
+        "date": "2026-07-30",
+        "time": "14:06:29",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This User: Have you got booked? AI: If you're asking about booking a tea time, I can help guide you. Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Book shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb023-7905-7778-bcfe-557de4620642",
+        "date": "2026-07-29",
+        "time": "23:09:03",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Site. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Transferring you to the golf shop. Please wait Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019faff6-006f-733c-bca2-2b5699ea424a",
+        "date": "2026-07-29",
+        "time": "22:19:23",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I like to schedule a tea time. Can you me through the golf shop? AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: The Golf Shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fafdf-5a97-7eef-bc8d-59d1d7e020d7",
+        "date": "2026-07-29",
+        "time": "21:54:39",
+        "duration": "0:51",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. Hello? AI: Hello. User: Yeah. I was calling about AI: You User: hello. I was calling about tea times for tomorrow. Wondering if, uh, I can play by myself. What would be a good time for that? AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text the link to the online tee sheet? User: To the golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fafc2-6eac-700f-b5c0-edb976a35285",
+        "date": "2026-07-29",
+        "time": "21:23:03",
+        "duration": "1:05",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? AI: I will continue but feel free to ask me any questions. Okay? User: Okay. AI: Thank you, How may I you today? Are you interested in booking a tea time learning more about our course? Or do you have another question? User: I'm trying to book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Connect me. With the golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019faf57-338a-7bbe-a317-0dbafb755742",
+        "date": "2026-07-29",
+        "time": "19:25:56",
+        "duration": "1:01",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: Oh, it's in Albuquerque. AI: Thank you for calling User: Hello? AI: Packo Ridge Golf Club is actually located in Sandia Park. Just east of Albuquerque in the foothills of the Sandia Mountains. About 25 minutes from Albuquerque and 30 minutes from the airport. How may I help you today? User: Hi. So AI: Thank you for calling Paco Ridge Golf Club, home User: 2 times for to AI: Just to confirm, are you looking to book 2 tee times for 4 players each? Or did you mean 2 tee times for 2 players? Could you clarify the number of players and the User: Can you do AI: I'm happy to help. User: tomorrow, 3 players. AI: You asking if I can book Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop Would you like me to transfer you to the golf shop or text you the link to…"
+      },
+      {
+        "call_id": "019faf4c-c51f-7cc5-a0b7-4abfff7450ed",
+        "date": "2026-07-29",
+        "time": "19:14:32",
+        "duration": "0:49",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea Time question. AI: Of course. What would you like to know about tee times at Paco Ridge Golf Club? User: How far in advance can you book t tones? AI: Tea time reservation reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?"
+      },
+      {
+        "call_id": "019faf18-5cdd-7114-8c0b-d42bc11a6d35",
+        "date": "2026-07-29",
+        "time": "18:17:18",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home User: calling. AI: the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I'd like to make a tea time golf reservation for August 8. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop. Please wait"
+      },
+      {
+        "call_id": "019faefc-257e-7221-8392-47607ad32ebf",
+        "date": "2026-07-29",
+        "time": "17:46:28",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to see if you have any tee times available on Tuesday, August fourth. AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes, please. Me the link to the online tee sheet. AI: 1 moment. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling Paco Ridge Golf Club. Look forward to seeing you on the mountain soon."
+      },
+      {
+        "call_id": "019faee5-fcd1-7000-8e3c-3be7812379a5",
+        "date": "2026-07-29",
+        "time": "17:22:16",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Yeah. AI: How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019faeb6-3e14-7aa7-a610-a7870d2757b5",
+        "date": "2026-07-29",
+        "time": "16:30:11",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Good. Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes. AI: Just to confirm, would you like me to transfer you to the golf shop to assist with your tee time reservation? User: Yes. Transfer me to the golf shop. AI: Transferring you to the golf shop. AI: Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019faeb1-57a3-7cce-8372-009c512dd8ec",
+        "date": "2026-07-29",
+        "time": "16:24:46",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to check a tea time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019fae77-cc6e-7cce-8e27-db813bb2db91",
+        "date": "2026-07-29",
+        "time": "15:21:56",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Transferring you to the golf shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fae69-7e3d-7333-93f0-7bf9650e2b71",
+        "date": "2026-07-29",
+        "time": "15:06:17",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf. In New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Tekon. AI: I'm sorry. I didn't quite catch that. Could you please repeat your question or let me User: Make a tea time. Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf stop. AI: Are there any questions I can assist you with? Before transferring you? User: No. AI: Transferring you to the golf shop. Please wait Please wait a moment."
+      },
+      {
+        "call_id": "019fae68-1d35-7009-9fac-c57b1b49ae3e",
+        "date": "2026-07-29",
+        "time": "15:04:47",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservation. AI: Tea time reservations up to 30 days out can be made using our online sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop. AI: Transferring you to the golf shop. Please"
+      },
+      {
+        "call_id": "019fae4d-5aa7-7994-a26a-9e582ddf041c",
+        "date": "2026-07-29",
+        "time": "14:35:33",
+        "duration": "1:24",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: The dog AI: I wanna make sure I understand your request. Could you please clarify what you mean by the dog? Are you asking about bringing a dog to the golf course, or is there something else I can assist you with? User: Soft shop. AI: Just to confirm, are you asking about the golf shop? If you have a specific question about merchandise, User: Yes. AI: rentals, or lessons, I can help answer it.…"
+      },
+      {
+        "call_id": "019faa0e-4a00-7331-aa4d-8435c5223c66",
+        "date": "2026-07-28",
+        "time": "18:48:13",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi. I'd like to make a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to the pro shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa553-5172-7000-9af2-8c17f3c4a852",
+        "date": "2026-07-27",
+        "time": "20:45:29",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily This call will be recorded for training and quality purposes. How may I help you today? User: Golf tee time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tea time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text to online key sheet. AI: Hold on a sec. AI: Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling Paco Ridge Golf Club. We look forward to seeing you on the mountain soon."
+      },
+      {
+        "call_id": "019fa551-9bde-7bb5-bf32-8d51e1a56180",
+        "date": "2026-07-27",
+        "time": "20:43:37",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. User: They're available Friday. AI: This call will be record thank you for letting me know they're available on Friday. Are you interested in booking a tea time for this coming Friday? Or a different Friday in the future? And would you like me to text you the link to our online tee sheet User: This upcoming Friday. AI: Great. You'd like to book a tee time for this upcoming Friday. Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to golf shop. AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019fa54e-f291-7aad-9e33-620a548d0c03",
+        "date": "2026-07-27",
+        "time": "20:40:43",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. May I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online t sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text me the link. AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for"
+      },
+      {
+        "call_id": "019fa502-e227-7000-81dc-ff0129bc6aae",
+        "date": "2026-07-27",
+        "time": "19:17:38",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa4e1-4449-7000-84d8-bee74484bc10",
+        "date": "2026-07-27",
+        "time": "18:40:55",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a key 5. AI: Just to confirm, are you to book a tee time for 5 players? We do allow fivesome starting at 12 o'clock noon. Let me connect you with the golf shop to help get that set up. 1 moment. Transferring you now. Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa4b1-2cef-7000-8489-4507737f88b8",
+        "date": "2026-07-27",
+        "time": "17:48:23",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Hello? AI: How may I help you today? User: Well, how? AI: I'm here to assist you with any questions about tee times, rates, course details, memberships, dining, or anything else related to Paco Ridge Golf Club. What can I help you with today? User: Club rentals. AI: We offer Titleist and Taylor Made rental club sets for 100 dollars per person, and that includes 2 sleeves of golf balls. Advance reservation is highly recommended. Would you like me to transfer you to the golf shop to arrange your rental? User: Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa473-f0a1-7226-8428-8eb6787b604f",
+        "date": "2026-07-27",
+        "time": "16:41:30",
+        "duration": "1:06",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Calling to speak to the pro shop. AI: Are there any questions I can assist you with before transferring you? User: Trying to confirm 2 times. AI: I'd be happy to help. Just to clarify, are you looking to confirm 2 tee times you already have booked or are you hoping to book 2 new tea times? User: I'm confirming 2 t times on Friday, 7 31, and 2 t times on 8 2. AI: Thank you for clarifying. To confirm existing tee times, you'll need to speak directly with our golf shop team as I don't have access to booking details. Would you like me to transfer you to the golf shop so they can assist you with your tee time confirmations? User: Yes. Please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fa40e-1196-7ccc-a66b-91a25d7cb801",
+        "date": "2026-07-27",
+        "time": "14:50:14",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop would be great. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019fa3f9-0488-7dd1-9bbc-745fe0475444",
+        "date": "2026-07-27",
+        "time": "14:27:14",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: May I speak to the pro shop, please? AI: Are there any questions I can assist you with before transferring you? User: No. Um, because I am returning a voice mail, um, about an inquiry that I made about trying to reserve a time to play. AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa078-a6c6-777c-9771-94614f6eb54b",
+        "date": "2026-07-26",
+        "time": "22:08:11",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna confirm a tee time for Wednesday. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: To the golf shop. Please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9ef8-ddf7-7bbf-9484-269c6a40a200",
+        "date": "2026-07-26",
+        "time": "15:08:58",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling PAC Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hello. Hello. Card. AI: Hello. How may I assist you today? User: Reservation. Thank you. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9b9a-7c3e-7225-98fd-1213aae56322",
+        "date": "2026-07-25",
+        "time": "23:27:01",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: Hi, Todd. AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Meatballs. AI: How may I help you today? User: Hello? AI: Hello. This is Emily at Paco Ridge Golf Club. How may I assist you today? AI: If you don't mind, I will continue with booking your appointment. User: Speak to a guest. AI: Are there any questions I can assist you with before transferring you? User: No, ma'am. Please transfer me. AI: Transferring you to the golf shop. Please wait"
+      },
+      {
+        "call_id": "019f9b49-64d1-7ee9-9397-f4b3e6445121",
+        "date": "2026-07-25",
+        "time": "21:58:26",
+        "duration": "0:49",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Check out a tea time. AI: Tea time reservation reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: No. That's alright. Uh, the adult shop, please. AI: Are there any questions I can assist you with before transferring you to the golf shop? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9b31-7cb1-7dd9-986b-54074846ab22",
+        "date": "2026-07-25",
+        "time": "21:32:20",
+        "duration": "0:39",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. Uh, tea times, please. AI: Tea time reservations up to 30 days out can be made using our online t on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9aff-2105-7bbc-9ee8-b51fb782c268",
+        "date": "2026-07-25",
+        "time": "20:37:19",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. User: Pro shop. AI: This call will be recorded for training and quality purposes. How may I help you today? User: Does Taco Ridge rent clubs AI: Just to confirm, you're asking about Payaco Ridge Golf Club Sometimes people mix up the name. Yes. We do offer rental clubs here. We have Titleist and tailor made sets available for 100 dollars per person. And that includes 2 sleeves of golf balls. Advance reservation is highly recommended. Would you like me to transfer you to the golf shop to reserve a set or answer any other questions about rentals? User: Yes, please. AI: Transferring you to the golf shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019f9adf-9162-7000-b894-041fb387070c",
+        "date": "2026-07-25",
+        "time": "20:02:52",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time for 1 tomorrow. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer me to the golf shop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop? Please wait a"
+      },
+      {
+        "call_id": "019f9ac8-2fbd-711a-ad39-465e1b09735c",
+        "date": "2026-07-25",
+        "time": "19:37:19",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? AI: Sorry. I kinda lost track for a moment. Mind if we continued? User: I need to modify a reservation. AI: I can't modify reservations directly, but the golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your reservation? User: Yeah. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9a91-a10e-7ff4-9a9a-f82d45c6223b",
+        "date": "2026-07-25",
+        "time": "18:37:44",
+        "duration": "0:35",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: She's, like, opening my pocket. I have any tea time. AI: I apologize. Just to clarify, are you looking to book a tea time with us? So, tea time reservations up to 30 days out can be made using our online tea sheet on our website. User: Yes. AI: Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to"
+      },
+      {
+        "call_id": "019f9a73-edf1-7cce-9ea9-67e57d26cf25",
+        "date": "2026-07-25",
+        "time": "18:05:17",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. User: Traveling? AI: How may I help you today? User: I wanna speak somebody to change my tea time and change player. AI: I can help with that. Would you like me to transfer you to the golf shop? User: Really? AI: So they can assist you with changing your tee time and updating the players? User: Yeah. Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9a72-a07e-7cce-9e9e-29bc9ec378db",
+        "date": "2026-07-25",
+        "time": "18:03:51",
+        "duration": "0:27",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: So I'm putting it there then. AI: Thank you for calling Could you please clarify what you're referring to? Are you looking to book a tea time, make a reservation, or do something else at Piaco Ridge? User: Shop. AI: I'm here to help. User: Pro shop. AI: Just let me know what you'd like to do. User: Proshop. I wanna speak to somebody in a pro shop. AI: Are there any there are there any questions I can User: Gosh. So I know. No. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9a32-8d7e-7bb0-8df1-162edcb99ec9",
+        "date": "2026-07-25",
+        "time": "16:53:52",
+        "duration": "0:53",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Uh, I wanted to double check the tea time I made. Because on the confirmation, 1 thing said it's on 9 30. 1 thing says it's 10 30. And it was, uh, this Wednesday, under the name of Nolan Geier. AI: Thank you for providing your name. Just to confirm, is that Nolan Geier spelled n o l l n g e I e r? I don't have access to individual tee time confirmations, but the golf shop can look up your reservation and clarify the correct time. Would you like me to transfer you to the golf shop to help with that? User: Yes. AI: Transferring you to the golf shop."
+      },
+      {
+        "call_id": "019f9a18-7b32-7000-9908-b29b0a26d204",
+        "date": "2026-07-25",
+        "time": "16:25:24",
+        "duration": "0:46",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Transfer to BellStop. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9a12-cb65-766f-9644-7b7e294006d6",
+        "date": "2026-07-25",
+        "time": "16:19:11",
+        "duration": "0:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I'd like to make a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop, Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Text me the link. AI: Just a sec. Okay. I've just sent that link to your phone. Is there anything else I can help you with today? User: No. AI: Thank you for calling Paco Ridge"
+      },
+      {
+        "call_id": "019f99f0-52f5-744d-97f5-31f580e7eacb",
+        "date": "2026-07-25",
+        "time": "15:41:33",
+        "duration": "0:59",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a 10 AI: Tea time reservations up to 30 days out can be made using our online sheet on our website. Advanced tea time reservation more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? AI: I'll proceed with scheduling unless you have any questions. User: Transfer. AI: Are there any questions I can assist you with before transferring you? User: No. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f99ee-6999-7dd3-9d4c-3d33cc287406",
+        "date": "2026-07-25",
+        "time": "15:39:27",
+        "duration": "0:50",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Gotcha. AI: Thank you. Would you prefer that I transfer you to the golf shop, or would you like me to text you the link to book your tee time online? User: Transfer. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f99e9-ceb6-7cc3-9fc5-f1e1c96d2081",
+        "date": "2026-07-25",
+        "time": "15:34:25",
+        "duration": "0:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Uh, golf shop, please. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f99da-2cc6-7ff4-93b7-60a9cf5608fe",
+        "date": "2026-07-25",
+        "time": "15:17:20",
+        "duration": "0:48",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tea sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Book shop. AI: Just to confirm, you like me to transfer you to the golf shop now to help with your tee time reservation? User: Yes. AI: Transferring you to the golf shop. Please wait a moment. Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9955-d9b6-744f-befd-00ff91fdf0eb",
+        "date": "2026-07-25",
+        "time": "12:52:48",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: I'm just checking on lead times today. AI: Thank you for your question. Tea time reservations can be made up to 30 days in advance using our online tee sheet. You're looking to book for today, can check real time availability on our website. Would you like me to text you the link to our online tee sheet, or would you prefer to speak the golf shop for assistance? User: Yes. Speak with the golf shop. AI: Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9635-2d1f-7000-8f15-2ffb9ae4d21a",
+        "date": "2026-07-24",
+        "time": "22:18:16",
+        "duration": "0:27",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Could I speak to the pro shop to book a tea time? AI: Are there any questions I can assist you with before transferring you? User: No. Thank you. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9576-bd29-7220-b073-06fce5c901be",
+        "date": "2026-07-24",
+        "time": "18:50:15",
+        "duration": "0:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservations. AI: Tea time reservation's up to 30 days out can be made using our online tee sheet on our website. Advance tee time reservations more than 30 days out can be made through the golf shop. User: Dining. AI: Would you like me to transfer you to the golf shop or text you the link to the online tee sheet? User: No. Dining reservations. AI: Thank you for clarifying. I can help with dining reservations by connecting you to our restaurant team. Would you like me to transfer you to the restaurant to assist with your reservation? User: Yes. AI: Transferring you to the restaurant."
+      },
+      {
+        "call_id": "019f955e-1635-7220-af1e-300a1131f792",
+        "date": "2026-07-24",
+        "time": "18:23:19",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Payaco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily. User: They call it Taiyaka Ridge. AI: Thank you for sharing that. Our club is actually called Paco Ridge Golf Club. Spelled p a a k o. Papa alpha alpha kilo osculo. Is there anything I can assist you with today? User: Yeah. I'm just calling to confirm my pay time for tomorrow. AI: I don't have access to individual tea time reservations, but I help you get that information. Would you like me to transfer you to the golf shop so they can confirm your tee time for tomorrow? User: Yes. AI: Transferring you to the golf shop. Please Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9542-b931-7220-ad9a-7f0e4ad81d89",
+        "date": "2026-07-24",
+        "time": "17:53:26",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club. Home to the finest golf in New Mexico. This is Emily, This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: Tea time reservations up to 30 days out can be made using our online tee sheet on our website. Advanced tee time reservations more than 30 days out can be made through the golf shop. You like me to transfer you to the golf shop or text you the link to the online tee sheet? User: Golf shop, please. AI: Transferring you to the golf shop. Please wait a"
+      },
+      {
+        "call_id": "019f9525-ccc0-7ff5-867f-e549b4f8fc99",
+        "date": "2026-07-24",
+        "time": "17:21:51",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Packer Ridge Golf Club home the finest golf in New Mexico. This is Emily. This call will be recorded training and quality purposes. How may I help you today? User: Can I cancel my reservation, please? For today at 2 o'clock? AI: I'm not able to cancel reservations myself, but the golf shop can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop. Please wait a Transferring you to the golf shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f947c-e950-7000-8b3b-f0694c51851c",
+        "date": "2026-07-24",
+        "time": "14:17:24",
+        "duration": "0:35",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling Paco Ridge Golf Club, home to the finest golf in New Mexico. This is Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel a reservation. AI: I don't have the ability to cancel reservations directly. The golf shop team can assist you with that. Would you like me to transfer you to the golf shop to help with your cancellation? User: Yes. AI: Transferring you to the golf shop. Please wait a moment."
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+schema_version: '1'
+slug: legend-oaks-golf
+display_name: Legend Oaks Golf Club
+website_url: https://legendoaksgolf.com/
+timezone: America/New_York
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_destinations:
+- identifier: golf_shop
+  responsibility: Tee-time assistance, booking changes, cancellations, course conditions, and general golf operations.
+  display_name: Golf Shop
+- identifier: events
+  responsibility: Outings, tournaments, private events, and event planning.
+  display_name: Events Team
+- identifier: bistro_118
+  responsibility: Restaurant hours, dining questions, reservations, and Bistro 118 inquiries.
+  display_name: Bistro 118 Restaurant
+- identifier: instruction
+  responsibility: Golf lessons, clinics, coaching, swimming instruction, and tennis instruction inquiries.
+  display_name: Instruction
+- identifier: desmond_garner
+  responsibility: General Manager Desmond Garner inquiries.
+  display_name: Desmond Garner (GM)
+- identifier: kurt_knost
+  responsibility: Golf Course Superintendent Kurt Knost inquiries.
+  display_name: Kurt Knost (Superintendent)
+- identifier: chris_mccullough
+  responsibility: Golf Operations Chris McCullough inquiries.
+  display_name: Chris McCullough (Golf Operations)
+- identifier: hannah_banks
+  responsibility: Assistant General Manager Hannah Banks inquiries.
+  display_name: Hannah Banks (AGM)
+booking_rules:
+- Public players can book tee times up to seven calendar days in advance, inclusive of the seventh future date.
+- Members can book tee times up to fourteen calendar days in advance, inclusive of the fourteenth future date.
+- Both nine-hole and eighteen-hole tee times are supported.
+- This is a single-course facility; omit course and course_name filters from availability searches.
+- When booking, preserve and pass the exact course returned with the selected availability slot.
+cancellation_modification_policy: ''
+walking_riding_cart_policies: []
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls:
+- https://legendoaksgolf.com/
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

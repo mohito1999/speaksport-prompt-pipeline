@@ -1,0 +1,75 @@
+{
+  "facility": "San Juan Oaks",
+  "operating_model": "integrated",
+  "service_model_label": "Direct booking integration",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {"label": "Calls handled", "value": "771"},
+    {"label": "Bookings completed", "value": "83"},
+    {"label": "Booking revenue", "value": "$34,892.00"},
+    {"label": "Time saved", "value": "13h 56m"}
+  ],
+  "after_hours_metrics": [
+    {"label": "Calls", "value": "145"},
+    {"label": "Bookings", "value": "66"},
+    {"label": "Booking revenue", "value": "$28,121.00"}
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 305,
+  "highlights": [
+    {
+      "title": "A nearby tee time was found and confirmed in one call",
+      "summary": "A two-player caller asked to play at 4:45 PM that day. SpeakSport presented the closest available times, completed the 4:50 PM booking and answered the follow-up question about cart availability.",
+      "source": "Call on 31 July at 10:46 PM",
+      "quote": "“The closest available tee times I have for 2 players today are 4:30, 4:40, 4:50, and 5:00 PM.” The caller selected 4:50 PM, and SpeakSport confirmed the reservation."
+    },
+    {
+      "title": "A four-player request was converted from a preferred time",
+      "summary": "When a four-player group asked for 10:00 AM the next day, SpeakSport provided the closest choices, secured 10:10 AM and completed the confirmation during the call.",
+      "source": "Call on 31 July at 10:00 PM",
+      "quote": "“We have tee times available for 4 players tomorrow at 10:10 AM, 10:40 AM, 10:50 AM, and 11:00 AM.” The 10:10 AM tee time was then confirmed."
+    },
+    {
+      "title": "Practice-facility information was handled immediately",
+      "summary": "A caller looking to use the range received a clear explanation of the daily-access option, what it includes and the cashless-payment policy—without needing staff assistance.",
+      "source": "Call on 31 July at 8:26 PM",
+      "quote": "“The daily access fee is $35, which includes unlimited use of the driving range, chipping areas, and the putting green.”"
+    }
+  ],
+  "features_intro": "We have continued strengthening the integrated experience around booking accuracy, reservation servicing and clearer operational insight.",
+  "features": [
+    {
+      "title": "Cancellations on the call",
+      "description": "Golfers can now cancel eligible bookings directly with SpeakSport, reducing avoidable transfers and making it easier to release tee times promptly."
+    },
+    {
+      "title": "Stronger booking-eligibility verification",
+      "description": "Booking windows, customer context and other applicable booking rules are checked before a reservation is created."
+    },
+    {
+      "title": "Upcoming-booking confirmations",
+      "description": "When golfers ask about an upcoming reservation, SpeakSport can retrieve and confirm the booking details during the call."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making performance patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love San Juan Oaks to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep rates, policies, facility information and caller guidance current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, eligibility, preferred playing times and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the San Juan Oaks SpeakSport dashboard. Call excerpts were selected from 305 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

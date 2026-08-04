@@ -1,0 +1,138 @@
+schema_version: '1'
+slug: todd-creek
+display_name: Todd Creek Golf Club
+website_url: https://www.toddcreekgolfclub.com/
+timezone: America/Denver
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- get-bookings
+- get-eligibility-for-cancellation
+- cancel-reservation
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_policy:
+  first_shop_transfer_deflection: false
+availability_policy:
+  single_player_requires_partially_filled_slot: true
+transfer_destinations:
+- identifier: agronomy
+  responsibility: Course maintenance inquiries or explicit requests for Eric Phillips.
+  display_name: Agronomy and Maintenance Team
+- identifier: david_clifton
+  responsibility: Golf outings, shotgun buyouts, tournaments, and explicit requests for David Clifton.
+  display_name: David Clifton
+- identifier: grant_payton
+  responsibility: Golf lessons, camps, clinics, fittings, and explicit requests for Grant Payton.
+  display_name: Grant Payton
+- identifier: pro_shop
+  responsibility: >-
+    General golf operations, booking assistance, modifications, profile updates,
+    refunds, and cancellations the AI cannot process. The modification is for
+    after-hours operation, so the assistant must never transfer to this
+    destination during the current call and must instead ask the caller to call
+    the same number after eight o'clock A M tomorrow.
+  display_name: Pro Shop
+- identifier: restaurant
+  responsibility: The Grill at Todd Creek, dining, bar, menu, event, and catering inquiries.
+  display_name: The Grill at Todd Creek
+booking_rules:
+- >-
+  If the requested booking date is before the facility-local current date, the
+  caller is not eligible. Exact reason: "That date has already passed."
+- >-
+  Semantically inspect customer_passes. A caller with an active, unexpired Todd
+  Creek Season Pass may book up to 14 calendar days in advance, inclusive of
+  the fourteenth future date.
+- >-
+  If an active Season Pass holder requests a date more than 14 calendar days
+  after the facility-local current date, the caller is not eligible. Exact
+  reason: "Active Todd Creek Season Pass holders may book up to 14 calendar
+  days in advance, including the fourteenth future date."
+- >-
+  A public caller without an active Todd Creek Season Pass may book up to 10
+  calendar days in advance, inclusive of the tenth future date.
+- >-
+  If a public caller requests a date more than 10 calendar days after the
+  facility-local current date, the caller is not eligible. Exact reason:
+  "Public guests may book up to 10 calendar days in advance, including the
+  tenth future date."
+- >-
+  Pass labels may identify covered days such as Monday through Thursday,
+  Monday through Friday, or Monday through Sunday. Playing outside covered days
+  does not make the caller ineligible to book, but standard public green fees
+  apply and the assistant must disclose that before continuing.
+- >-
+  Do not apply any other booking-eligibility rules based on groups, price
+  class, card-on-file status, number of players, holes, course, time of day, or
+  other criteria.
+- >-
+  If none of the approved rules makes the caller ineligible, the caller is
+  eligible. Exact reason: "Eligible to book."
+- Both nine-hole and eighteen-hole tee times are supported.
+- >-
+  This is a single-course facility. Omit course and course_name from
+  availability searches, retain every returned time-and-course record, and
+  pass the selected result's exact course to booking.
+- >-
+  Single players may be shown only returned slots where spots_remaining is less
+  than 4. Do not transfer a solo caller merely because they are a single.
+- >-
+  If asked about a returned slot's rate, quote price_per_player as the current
+  tee-sheet rate per player while explaining that exact rates can vary by pass
+  status, eligibility, discounts, or check-in treatment. Never calculate a
+  final group total.
+cancellation_modification_policy: >-
+  Use the complete get-bookings, get-eligibility-for-cancellation, and
+  cancel-reservation flow. Keep every booking reference hidden from callers and
+  preserve the exact reference associated with the caller-selected booking.
+  Todd Creek uses ForeUp references; if a caller provides a transcribed
+  reference without the TTID_ prefix, normalize it to the required ForeUp
+  format for fallback lookup. The AI may cancel only when the tee time is at
+  least 24 hours after the facility-local current date and time. If hours until
+  tee off is less than 24, return ineligible. Exact reason: "Cancellations must
+  be made at least 24 hours before the tee time. The Pro Shop is currently
+  closed, so please call back after eight o'clock A M tomorrow on this same
+  number for assistance." If hours until tee off is exactly 24 or greater,
+  return eligible. Exact reason: "Eligible for cancellation." Apply no other
+  cancellation restrictions. Booking modifications and rescheduling cannot be
+  completed by the AI. Because this assistant operates only after hours, never
+  transfer those callers to pro_shop; tell them the Pro Shop is closed and ask
+  them to call the same number after eight o'clock A M tomorrow. After a
+  successful cancellation, tell the caller that if the tee time was prepaid
+  and eligible for a refund, the Pro Shop can process it, but it is currently
+  closed and they must call the same number after eight o'clock A M tomorrow.
+  Do not offer or attempt an immediate Pro Shop transfer.
+walking_riding_cart_policies:
+- >-
+  Carts are mandatory Friday through Sunday. For a selected Friday, Saturday,
+  or Sunday time, explain the requirement and pass riding as true without
+  asking a preference.
+- >-
+  Walking is permitted Monday through Thursday. For those days, ask whether the
+  caller will walk or ride and pass the corresponding riding boolean.
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls: []
+included_source_paths: []
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

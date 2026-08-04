@@ -1,0 +1,96 @@
+{
+  "facility": "The Meadows Golf Club",
+  "operating_model": "integrated",
+  "service_model_label": "Direct booking integration",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {
+      "label": "Calls handled",
+      "value": "2,316"
+    },
+    {
+      "label": "Bookings completed",
+      "value": "259"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$44,848.46"
+    },
+    {
+      "label": "Time saved",
+      "value": "42h 43m"
+    }
+  ],
+  "after_hours_metrics": [
+    {
+      "label": "Calls",
+      "value": "1,001"
+    },
+    {
+      "label": "Bookings",
+      "value": "111"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$19,431.12"
+    }
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 358,
+  "highlights": [
+    {
+      "title": "A single-player request was converted from earliest availability",
+      "summary": "A caller asked for the earliest nine-hole tee time that day. SpeakSport found the 2:10 PM slot, completed the walking reservation and answered the caller’s follow-up question about whether they might be paired with other golfers.",
+      "source": "Call on 29 July at 5:24 PM",
+      "quote": "“The earliest available tee time for 9 holes today is 2:10 PM.” SpeakSport then confirmed the booking and explained the likely pairing experience for a single player."
+    },
+    {
+      "title": "An unavailable request became a confirmed nearby option",
+      "summary": "When a two-player request for 10:30 AM could not be accommodated, SpeakSport clearly gave the next available choices. The caller selected 11:50 AM and the nine-hole cart booking was confirmed without a staff handoff.",
+      "source": "Call on 29 July at 1:21 PM",
+      "quote": "“Our first available tee time for 9 holes today is at 11:50 AM. After that we have 2:10, 2:20 and 2:30.”"
+    },
+    {
+      "title": "Booking details were clarified before confirmation",
+      "summary": "A three-player group asked for 18 holes at 10:40 AM and initially gave an unclear response about carts. SpeakSport checked the detail, captured the group’s correction to riding, verified availability and confirmed the requested time.",
+      "source": "Call on 30 July at 4:07 PM",
+      "quote": "“Thank you for clarifying. I’ll mark your group as riding in carts.” SpeakSport then confirmed three players at 10:40 AM."
+    }
+  ],
+  "features_intro": "We have continued strengthening the integrated experience around booking accuracy, reservation servicing and clearer operational insight.",
+  "features": [
+    {
+      "title": "Cancellations on the call",
+      "description": "Golfers can now cancel eligible bookings directly with SpeakSport, reducing avoidable transfers and making it easier to release tee times promptly."
+    },
+    {
+      "title": "Stronger booking-eligibility verification",
+      "description": "Booking windows, customer context and other applicable booking rules are checked before a reservation is created."
+    },
+    {
+      "title": "Upcoming-booking confirmations",
+      "description": "When golfers ask about an upcoming reservation, SpeakSport can retrieve and confirm the booking details during the call."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making performance patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love The Meadows to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep rates, policies, facility information and caller guidance current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, eligibility, preferred playing times and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from The Meadows SpeakSport dashboard. Call excerpts were selected from 358 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

@@ -1,0 +1,56 @@
+schema_version: '1'
+slug: gold-hills-golf
+display_name: Gold Hills Golf Club
+website_url: https://www.goldhillsgolf.com/
+timezone: America/Los_Angeles
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_destinations:
+- identifier: golf_shop
+  responsibility: Tee-time assistance, booking changes, cancellations, course conditions, and general golf operations.
+  display_name: Golf Shop
+- identifier: events
+  responsibility: Outings, tournaments, private events, and event planning.
+  display_name: Events Team
+- identifier: the_grille
+  responsibility: Restaurant hours, dining questions, reservations, and The Grille inquiries.
+  display_name: The Grille
+- identifier: chad_white
+  responsibility: Director of Golf Chad White, PGA inquiries.
+  display_name: Chad White (Director of Golf)
+booking_rules:
+- Public players can book tee times up to seven calendar days in advance, inclusive of the current day (meaning the current day plus six future calendar days).
+- Members can book tee times up to fourteen calendar days in advance, inclusive of the current day (meaning the current day plus thirteen future calendar days).
+- Both nine-hole and eighteen-hole tee times are supported.
+- This is a single-course facility; omit course and course_name filters from availability searches.
+- When booking, preserve and pass the exact course returned with the selected availability slot.
+cancellation_modification_policy: ''
+walking_riding_cart_policies: []
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls:
+- https://www.goldhillsgolf.com/
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

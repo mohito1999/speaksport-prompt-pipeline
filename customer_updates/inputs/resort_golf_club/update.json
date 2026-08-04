@@ -1,0 +1,75 @@
+{
+  "facility": "The Resort Golf Club",
+  "operating_model": "integrated",
+  "service_model_label": "Direct booking integration",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {"label": "Calls handled", "value": "1,970"},
+    {"label": "Bookings completed", "value": "197"},
+    {"label": "Booking revenue", "value": "$28,042.42"},
+    {"label": "Time saved", "value": "34h 54m"}
+  ],
+  "after_hours_metrics": [
+    {"label": "Calls", "value": "368"},
+    {"label": "Bookings", "value": "106"},
+    {"label": "Booking revenue", "value": "$14,968.58"}
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 404,
+  "highlights": [
+    {
+      "title": "Booking eligibility was checked before a reservation was made",
+      "summary": "A public guest requested a Sunday morning tee time. SpeakSport confirmed that the date was within the seven-day booking window, presented available times and completed the 6:45 AM 18-hole reservation.",
+      "source": "Call on 31 July at 9:38 PM",
+      "quote": "“As a public guest, our tee times can be booked up to 7 days in advance … August 2 falls within your booking window, so we’re all set.”"
+    },
+    {
+      "title": "A foursome was converted to the latest available nearby option",
+      "summary": "When a four-player group requested 4:45 PM and that exact time was unavailable, SpeakSport presented the closest choices, explained that 4:30 PM was the latest option and confirmed the 18-hole booking.",
+      "source": "Call on 30 July at 8:34 PM",
+      "quote": "“It looks like the latest available tee time for your group … is 4:30 PM.” The caller chose it, and SpeakSport confirmed the foursome."
+    },
+    {
+      "title": "A same-day request was completed with a close alternative",
+      "summary": "A two-player caller seeking approximately 3:30 PM that afternoon received a set of nearby tee times, selected 3:36 PM and received a confirmed 18-hole reservation during the call.",
+      "source": "Call on 30 July at 7:49 PM",
+      "quote": "“We have tee times available at 3:18, 3:27, 3:36, and 3:45 this afternoon.” The caller selected 3:36 PM."
+    }
+  ],
+  "features_intro": "We have continued strengthening the integrated experience around booking accuracy, reservation servicing and clearer operational insight.",
+  "features": [
+    {
+      "title": "Cancellations on the call",
+      "description": "Golfers can now cancel eligible bookings directly with SpeakSport, reducing avoidable transfers and making it easier to release tee times promptly."
+    },
+    {
+      "title": "Stronger booking-eligibility verification",
+      "description": "Booking windows, customer context and other applicable booking rules are checked before a reservation is created."
+    },
+    {
+      "title": "Upcoming-booking confirmations",
+      "description": "When golfers ask about an upcoming reservation, SpeakSport can retrieve and confirm the booking details during the call."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making performance patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love The Resort Golf Club to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep rates, policies, facility information and caller guidance current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, eligibility, preferred playing times and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from The Resort Golf Club SpeakSport dashboard. Call excerpts were selected from 404 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

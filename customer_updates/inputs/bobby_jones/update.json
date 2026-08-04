@@ -1,0 +1,112 @@
+{
+  "facility": "Bobby Jones Golf Course",
+  "operating_model": "non_integrated",
+  "service_model_label": "Online booking link + staff hand-off",
+  "report_date": "24 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {
+      "label": "Booking opportunities captured",
+      "value": "175"
+    },
+    {
+      "label": "Calls handled",
+      "value": "1,209"
+    },
+    {
+      "label": "Time saved",
+      "value": "12h 56m"
+    },
+    {
+      "label": "First-call resolution",
+      "value": "34.2%"
+    },
+    {
+      "label": "Calls transferred",
+      "value": "796"
+    },
+    {
+      "label": "Estimated cost saved",
+      "value": "$271.86"
+    }
+  ],
+  "kpi_note": {
+    "title": "A new view of booking demand",
+    "text": "Booking Opportunities Captured was introduced last week, so 175 is a partial-period baseline rather than a since-launch total. It counts calls where someone expressed an intent to book, play or reserve and SpeakSport took the correct next action—sending the booking link or transferring the caller to staff."
+  },
+  "after_hours_metrics": [
+    {
+      "label": "After-hours opportunities",
+      "value": "64"
+    },
+    {
+      "label": "After-hours calls",
+      "value": "608"
+    },
+    {
+      "label": "After-hours time saved",
+      "value": "6h 22m"
+    },
+    {
+      "label": "After-hours FCR",
+      "value": "36.0%"
+    }
+  ],
+  "call_review_period": "16–23 July 2026",
+  "call_review_count": 944,
+  "highlights": [
+    {
+      "title": "Booking intent converted into an immediate next step",
+      "summary": "When a caller wanted a tee time, SpeakSport recognised the intent and delivered the online booking route without requiring staff involvement.",
+      "source": "Call on 22 July at 1:59 PM",
+      "quote": "Caller: “Looking for a tee time today.” SpeakSport offered to text the direct booking link; after the caller agreed: “I’ve just sent that link straight to your phone.”"
+    },
+    {
+      "title": "Special booking rules triggered the right hand-off",
+      "summary": "SpeakSport distinguished a Youth on Course request from a standard online booking and connected the caller with the golf shop for the reservation that required staff support.",
+      "source": "Call on 23 July at 1:58 PM",
+      "quote": "“For Youth on Course tee times at the $5 rate, those must be booked directly with our golf shop. Would you like me to transfer you?”"
+    },
+    {
+      "title": "Practice-facility questions resolved on the call",
+      "summary": "Callers received precise operating information immediately, avoiding an unnecessary transfer for routine questions.",
+      "source": "Call on 22 July at 10:39 PM",
+      "quote": "Caller: “Driving range hours.” SpeakSport provided the weekday, Tuesday and weekend opening times and confirmed that the range closes at dark each day."
+    }
+  ],
+  "features_intro": "For Bobby Jones, we have focused recent improvements on capturing booking demand reliably, giving callers the right online path and making each hand-off easier to understand.",
+  "features": [
+    {
+      "title": "Booking-opportunity tracking",
+      "description": "The new KPI makes previously invisible booking demand measurable, including both text-link delivery and appropriate transfers to staff."
+    },
+    {
+      "title": "Stronger booking-intent recognition",
+      "description": "SpeakSport is better able to recognise when a caller wants to book, reserve or play—even when speech recognition turns “tee time” into something less obvious."
+    },
+    {
+      "title": "Clearer online-booking hand-off",
+      "description": "Standard booking callers can receive the direct link by text, while exceptions and callers who need human help are routed to the golf shop."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making demand patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love Bobby Jones to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep answers, hours and operating information current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, link delivery, hand-offs and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the Bobby Jones SpeakSport dashboard. Call excerpts were selected from 944 calls reviewed for 16–23 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

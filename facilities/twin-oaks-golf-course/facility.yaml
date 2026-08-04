@@ -1,0 +1,179 @@
+schema_version: '1'
+slug: twin-oaks-golf-course
+display_name: Twin Oaks Golf Course
+website_url: https://www.jcgolf.com/san-diego-tee-times/san-marcos-ca-golf-courses
+timezone: America/Los_Angeles
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+
+enabled_tools:
+  - check-booking-eligibility-staging
+  - get-available-tee-times-staging
+  - book-tee-time-staging
+  - transfer_call-staging
+  - get-day-of-week-staging
+  - fetch-inventory-for-date
+  - get-weather-forecast-staging
+  - get-bookings
+  - get-eligibility-for-cancellation
+  - cancel-reservation
+  - send_sms
+
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: https://www.jcgolf.com/public-players-tee-times
+
+transfer_policy:
+  first_shop_transfer_deflection: false
+
+transfer_destinations:
+  - identifier: pro_shop
+    responsibility: >-
+      Tee-time assistance, booking modifications and rescheduling,
+      cancellations that the AI cannot process, prepaid cancellation refunds,
+      course conditions, and general golf operations.
+    display_name: Pro Shop
+
+  - identifier: golf_instruction
+    responsibility: >-
+      Golf lessons, clinics, camps, coaching, instructors, and player
+      development inquiries.
+    display_name: Golf Instruction
+
+  - identifier: the_bevy
+    responsibility: >-
+      The Bevy hours, food, drinks, happy hour, dining, and restaurant
+      inquiries.
+    display_name: The Bevy
+
+  - identifier: weddings_at_twin_oaks
+    responsibility: >-
+      Weddings, receptions, private venue tours, banquets, celebrations,
+      corporate events, and wedding or special-event planning.
+    display_name: Weddings at Twin Oaks Team
+
+booking_rules:
+  - >-
+    If the requested booking date is before the facility-local current date,
+    the caller is not eligible. Exact reason: "That date has already passed."
+
+  - >-
+    Semantically infer from the caller's price class whether the caller holds
+    the standard JC Players Card, even if the label contains abbreviations,
+    formatting differences, or other minor wording variations.
+
+  - >-
+    Do not classify a JC 20/30 Club participant or a JC Junior Player Card
+    holder as a standard JC Players Card holder for advance-booking purposes.
+    Those callers use the public seven-day window.
+
+  - >-
+    A standard JC Players Card holder may book up to 8 calendar days in
+    advance. The eighth future calendar date is eligible.
+
+  - >-
+    If a standard JC Players Card holder requests a date more than 8 calendar
+    days after the facility-local current date, the caller is not eligible.
+    Exact reason: "JC Players Card holders may book by phone up to 8 calendar
+    days in advance, including the eighth future date. Prepaid,
+    non-refundable tee times up to 60 days in advance are available online."
+
+  - >-
+    Public guests and all callers who are not inferred to hold the standard JC
+    Players Card may book up to 7 calendar days in advance. The seventh future
+    calendar date is eligible.
+
+  - >-
+    If a public guest or other non-standard-card caller requests a date more
+    than 7 calendar days after the facility-local current date, the caller is
+    not eligible. Exact reason: "Public guests may book by phone up to 7
+    calendar days in advance, including the seventh future date. Prepaid,
+    non-refundable tee times up to 60 days in advance are available online."
+
+  - >-
+    When booking eligibility fails only because the request is outside the
+    seven-day or eight-day phone-booking window, explain the online prepaid,
+    non-refundable option and offer to text the booking link. Ask for explicit
+    SMS consent, stop and wait, and call send_sms only after the caller agrees.
+
+  - >-
+    Do not apply any other eligibility restrictions based on memberships,
+    passes, groups, card-on-file status, player count, course, day of week,
+    time of day, senior status, SoCal status, or any other criteria.
+
+  - >-
+    If none of the approved rules makes the caller ineligible, the caller is
+    eligible. Exact reason: "Eligible to book."
+
+  - >-
+    Twin Oaks offers eighteen-hole tee times only. Never ask whether the caller
+    wants nine or eighteen holes. Always pass num_holes as 18 to availability
+    and booking tools.
+
+  - >-
+    Twin Oaks rates include a cart. Never ask whether the caller will ride or
+    walk. Always pass riding as true to the booking tool.
+
+  - >-
+    SoCal and Senior discounted rates are applied at check-in. These discounts
+    are informational and are not booking-eligibility rules.
+
+  - >-
+    This is a single-course facility; omit course and course_name filters from
+    availability searches.
+
+  - >-
+    When booking, preserve and pass the exact course returned with the selected
+    availability slot.
+
+cancellation_modification_policy: >-
+  Twin Oaks uses Club Prophet. Its booking references are numeric values such
+  as 366135, not ForeUp references. Never add, restore, expect, or request a
+  TTID_ prefix. For fallback booking lookup and cancellation, preserve and pass
+  the exact numeric booking reference returned by the tool or supplied by the
+  caller. The AI may cancel a reservation only when the tee time is at least
+  24 hours after the facility-local current date and time. If hours until tee
+  off is less than 24, cancellation eligibility must return false. Exact
+  reason: "I can only process cancellations for tee times that are at least 24
+  hours from now. The Pro Shop can help you with this cancellation. A no-show
+  charge may apply to cancellations within 24 hours." If hours until tee off
+  is exactly 24 or greater than 24, the reservation is eligible. Exact reason:
+  "Eligible for cancellation." Do not apply any other cancellation
+  restrictions based on number of players, course, passes, card-on-file
+  status, groups, price class, day of week, time of day, or any other criteria.
+  Booking modifications and rescheduling cannot be completed by the AI and
+  must use the normal two-step Pro Shop transfer process. After a successful
+  cancellation, tell the caller that if the tee time was prepaid and is
+  eligible for a refund, the Pro Shop can process the refund. Ask whether the
+  caller would like a transfer to the Pro Shop and use the normal two-step
+  transfer process if they agree.
+
+walking_riding_cart_policies:
+  - >-
+    All Twin Oaks golf rates include a cart. Do not ask for a riding or walking
+    preference during booking, and pass riding as true.
+
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+
+allowed_source_urls:
+  - https://www.jcgolf.com/san-diego-tee-times/san-marcos-ca-golf-courses
+  - https://www.weddingsattwinoaks.com/
+
+included_source_paths:
+  - /san-diego-tee-times/san-marcos-ca-golf-courses
+
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

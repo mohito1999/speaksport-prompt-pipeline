@@ -1,0 +1,108 @@
+{
+  "facility": "Cog Hill Golf & Country Club",
+  "operating_model": "integrated",
+  "service_model_label": "Direct booking integration",
+  "report_date": "25 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {
+      "label": "Calls handled",
+      "value": "12,036"
+    },
+    {
+      "label": "Bookings completed",
+      "value": "684"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$34,696"
+    },
+    {
+      "label": "Cancellations completed",
+      "value": "10"
+    },
+    {
+      "label": "Time saved",
+      "value": "22h 46m"
+    },
+    {
+      "label": "First-call resolution",
+      "value": "49.5%"
+    }
+  ],
+  "after_hours_metrics": [
+    {
+      "label": "After-hours calls",
+      "value": "6,566"
+    },
+    {
+      "label": "After-hours bookings",
+      "value": "383"
+    },
+    {
+      "label": "After-hours booking revenue",
+      "value": "$19,269"
+    },
+    {
+      "label": "After-hours FCR",
+      "value": "50.9%"
+    }
+  ],
+  "call_review_period": "16–23 July 2026",
+  "call_review_count": 1607,
+  "highlights": [
+    {
+      "title": "Complex booking rules handled without losing the booking",
+      "summary": "When the caller’s first-choice course required online prepayment, SpeakSport explained the rule, helped the caller choose another course and completed the alternative booking during the same conversation.",
+      "source": "Call on 23 July at 5:00 PM",
+      "quote": "“For tee times on the Ravines on Fridays, prepayment is required.” After the caller switched to Course 1, SpeakSport offered three available times and confirmed: “You’re all set for tomorrow at 6:57 AM for 3 players.”"
+    },
+    {
+      "title": "The correct reservation was cancelled on the call",
+      "summary": "SpeakSport found two upcoming reservations, confirmed which one the caller meant, checked the cancellation policy and completed the cancellation without staff intervention.",
+      "source": "Call on 22 July at 10:35 AM",
+      "quote": "“You have two upcoming tee times.” After the caller selected the later reservation: “Your tee time on July 27 at 6:03 PM on Course 1 has been successfully cancelled.”"
+    },
+    {
+      "title": "Pass-holder context produced a personalised booking",
+      "summary": "SpeakSport recognised an active senior club pass, searched across the requested courses and times, and confirmed the selected reservation with the appropriate check-in guidance.",
+      "source": "Call on 23 July at 2:42 PM",
+      "quote": "“On both Course 1 and Course 3, I have 8:00 AM and 8:09 AM available.” After the caller chose Course 1: “You’re all set for one player at 8:00 AM.”"
+    }
+  ],
+  "features_intro": "We have continued strengthening the integrated experience around booking accuracy, reservation servicing and clearer operational insight.",
+  "features": [
+    {
+      "title": "Cancellations on the call",
+      "description": "Golfers can now cancel eligible bookings directly with SpeakSport, reducing avoidable transfers and releasing tee times promptly."
+    },
+    {
+      "title": "Stronger booking-eligibility verification",
+      "description": "Eligibility, pass context and booking rules are checked before a reservation is created, helping prevent bookings that should not be completed."
+    },
+    {
+      "title": "Upcoming-booking confirmations",
+      "description": "When golfers ask about an upcoming reservation, SpeakSport can retrieve and confirm the booking details during the call."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making performance patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love Cog Hill to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep course information, policies and caller guidance current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, course preferences, cancellations and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the Cog Hill SpeakSport dashboard. Call excerpts were selected from 1,607 calls reviewed for 16–23 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

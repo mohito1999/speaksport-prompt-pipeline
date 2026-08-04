@@ -1,0 +1,45 @@
+schema_version: "1"
+forbidden_endpoint_version_patterns:
+  - "(?i)\\bv[0-9]+\\b"
+forbidden_reference_leakage_terms:
+  integrated:
+    - Sugarmill Woods
+    - Citrus National
+  non_integrated:
+    - Bobby Jones Golf Course
+    - Murray Golf House
+phone_number_pattern: "(?x)(?:\\+?1[-.\\s]?)?(?:\\(?\\d{3}\\)?[-.\\s]?)\\d{3}[-.\\s]?\\d{4}"
+minimum_section_words:
+  core_shell: 1
+  knowledge_base: 1
+  logic_module: 1
+report_target_prompt_words:
+  minimum: 4000
+  maximum: 5000
+integrated_forbidden_runtime_variables:
+  - zipcode
+  - current_date
+  - facility_gms
+  - facility_name
+  - price_class_names
+  - customer_is_member
+  - confirmation_sms_enabled
+  - booking_requires_card_on_file
+  - caller_phone
+  - booking_url
+integrated_required_reference_patterns:
+  - name: explicit verbal transfer confirmation
+    pattern: "(?is)(?:(?:never call|strictly forbidden from calling).{0,80}transfer_call-staging.{0,120}without explicit\\s*,?\\s*verbal confirmation|never transfer.{0,100}without.{0,60}explicit\\s*,?\\s*verbal confirmation|(?:normal integrated )?transfer.{0,100}(?:obtain|require).{0,50}explicit\\s*,?\\s*verbal confirmation.{0,80}before transfer)"
+  - name: confirmation and transfer cannot share a response
+    pattern: "(?is)(?:(?:do not|never).{0,20}ask.{0,50}(?:transfer[- ]confirmation|confirmation question).{0,60}(?:call )?(?:the )?transfer(?: tool)?.{0,80}same (?:response|turn)|(?:do not|never).{0,20}(?:call )?(?:the )?transfer tool.{0,60}ask.{0,50}(?:transfer[- ]confirmation|confirmation question).{0,80}same (?:response|turn))"
+shop_transfer_deflection_pattern: "(?is)(?:Our staff in the (?:Golf|Pro) Shop is currently busy (?:with guests|helping (?:guests|golfers)(?: check in)?)|(?:first|initial)(?:-request)?.{0,80}(?:Golf|Pro) Shop.{0,140}(?:(?:must|should|do) (?:not transfer|be deflected)|help.{0,40}first))"
+integrated_required_availability_markers:
+  - "## Mandatory Availability Search Guardrails"
+  - "Before every `get-available-tee-times-staging` call, the caller's exact `num_players` and `num_holes` must be known."
+  - "Every availability call must pass both `num_players` and `num_holes`"
+  - "The returned times are nearest-time matches around the queried `when`, not an exhaustive list of the day's availability."
+  - "Each returned slot is one inseparable record containing `time`, `course`, `spots_remaining`, and `price_per_player`."
+  - "quote `price_per_player` as the current tee-sheet price per player"
+  - "If the tool returns an empty list, it means there are no tee times available for the full requested date under the supplied `num_holes` and course criteria"
+  - "call `get-available-tee-times-staging` again"
+  - "Do not say the new time is unavailable and do not claim a website or inventory discrepancy before that targeted re-query returns."

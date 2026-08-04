@@ -1,0 +1,66 @@
+schema_version: '1'
+slug: shaker-hills-golf
+display_name: Shaker Hills Country Club
+website_url: https://www.shakerhills.com/
+timezone: America/New_York
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_destinations:
+- identifier: pro_shop
+  responsibility: Tee-time assistance, booking changes, cancellations, course conditions, and general golf operations.
+  display_name: Pro Shop
+- identifier: events
+  responsibility: Golf outings, tournaments, private events, banquets, and event planning.
+  display_name: Events Team
+- identifier: golf_instruction
+  responsibility: Golf lessons, clinics, coaching, and instructor inquiries.
+  display_name: Golf Instruction
+- identifier: andy_jordan
+  responsibility: PGA General Manager & Head Golf Professional Andy Jordan inquiries.
+  display_name: Andy Jordan (PGA GM & Head Golf Professional)
+- identifier: crystal_navaroli
+  responsibility: Director of F&B, Sales & Event Coordinator Crystal Navaroli inquiries.
+  display_name: Crystal Navaroli (Director of F&B / Sales & Event Coordinator)
+- identifier: brian_daigneau
+  responsibility: GCSAA Golf Course Superintendent Brian Daigneau inquiries.
+  display_name: Brian Daigneau (Golf Course Superintendent)
+booking_rules:
+- Public players can book tee times 1 to 7 days in advance with no extra fee.
+- Public players booking 8 to 90 days in advance incur a $30 non-refundable fee per player; prompt must confirm caller acceptance before proceeding.
+- Platinum and Weekday Hybrid Members can book up to 14 days in advance.
+- Gold and Twilight Hybrid Members can book up to 12 days in advance.
+- Silver, Weekday, and Twilight Members can book up to 10 days in advance.
+- Junior Members can only book under junior member benefits up to 24 hours in advance.
+- Both nine-hole and eighteen-hole tee times are supported.
+- This is a single-course facility; omit course and course_name filters from availability searches.
+- When booking, preserve and pass the exact course returned with the selected availability slot.
+cancellation_modification_policy: ''
+walking_riding_cart_policies: []
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls:
+- https://www.shakerhills.com/
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

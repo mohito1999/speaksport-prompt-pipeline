@@ -1,0 +1,61 @@
+{
+  "facility": "Fort Walton Beach Golf Club",
+  "operating_model": "non_integrated",
+  "service_model_label": "Online booking link + staff hand-off",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {"label": "Booking opportunities captured", "value": "160"},
+    {"label": "Calls handled", "value": "2,296"},
+    {"label": "Time saved", "value": "33h 16m"},
+    {"label": "Estimated cost saved", "value": "$698.73"}
+  ],
+  "kpi_note": {
+    "title": "A new view of booking demand",
+    "text": "Booking Opportunities Captured was introduced in the last week of July, so 160 is a partial-period baseline rather than a since-launch total. It counts calls where someone expressed an intent to book, play or reserve and SpeakSport took the correct next action—sending the booking link or transferring the caller to staff."
+  },
+  "after_hours_metrics": [
+    {"label": "After-hours opportunities", "value": "21"},
+    {"label": "After-hours calls", "value": "387"},
+    {"label": "After-hours time saved", "value": "5h 43m"}
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 380,
+  "highlights": [
+    {
+      "title": "Dynamic-pricing booking demand became an immediate online path",
+      "summary": "A tee-time caller received a clear explanation of the dynamic-pricing model, chose to receive the booking link and was directed to live Pines and Oaks availability and rates.",
+      "source": "Call on 29 July at 6:27 PM",
+      "quote": "“You can view all real-time rates and secure your tee time directly on our website or mobile app.” SpeakSport then confirmed: “I have sent that link directly to your phone.”"
+    },
+    {
+      "title": "A caller who preferred staff support was handed off appropriately",
+      "summary": "After hearing the online booking option, a tee-time caller asked to speak with the clubhouse instead. SpeakSport respected that preference and transferred the caller to the pro shop.",
+      "source": "Call on 31 July at 5:27 PM",
+      "quote": "“No. Could I have the clubhouse?” SpeakSport responded by transferring the caller to the pro shop."
+    },
+    {
+      "title": "Range information was delivered before a targeted transfer",
+      "summary": "A caller asking about range reservations received the available Trackman range hours, payment guidance and bucket price, then chose a transfer for the one detail that required staff confirmation.",
+      "source": "Call on 24 July at 2:44 PM",
+      "quote": "“Our Trackman driving range is open Tuesday through Sunday from 6 AM to 10 PM … The ball machine is card only, and a large bucket is $15.”"
+    }
+  ],
+  "features_intro": "For Fort Walton Beach, we have focused recent improvements on capturing booking demand reliably, giving callers the right online path and making each hand-off easier to understand.",
+  "features": [
+    {"title": "Booking-opportunity tracking", "description": "The new KPI makes previously invisible booking demand measurable, including both text-link delivery and appropriate transfers to staff."},
+    {"title": "Stronger booking-intent recognition", "description": "SpeakSport is better able to recognise when a caller wants to book, reserve or play—even when speech recognition turns “tee time” into something less obvious."},
+    {"title": "Clearer online-booking hand-off", "description": "Standard booking callers can receive the direct link by text, while exceptions and callers who need human help are routed to the golf shop."},
+    {"title": "Richer back-office reporting", "description": "The dashboard now supports filtering calls by intent, category and outcome, making demand patterns and operational opportunities easier to find."}
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love Fort Walton Beach to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {"title": "Self-serve knowledge base", "description": "Make it easier for your team to keep answers, hours and operating information current."},
+    {"title": "Even better reporting", "description": "Add clearer views of booking demand, link delivery, hand-offs and caller outcomes."}
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the Fort Walton Beach SpeakSport dashboard. Booking Opportunities Captured was introduced in the last week of July 2026. Call excerpts were selected from 380 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

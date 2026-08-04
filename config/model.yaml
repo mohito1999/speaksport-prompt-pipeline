@@ -1,0 +1,9 @@
+schema_version: "1"
+status: owner_confirmed
+provider: openrouter
+model_slug: openai/gpt-5.6-terra
+fallback_models: []
+max_cost_usd: 1.5
+timeout_seconds: 120
+max_output_tokens: 20000
+reproducibility_requires_pinned_model: true

@@ -1,0 +1,7 @@
+version: "2026-07-10"
+created_date: "2026-07-10"
+status: historical_non_authoritative
+summary: Historical SpeakSport customer-success and prompting SOP supplied by the product owner.
+content_file: customer-success-prompting-guide.pdf
+content_hash: "7f356f0be72b723c14cf6fc6e1cacfde71b9746229b7ed7b9ede12acb3fe93e2"
+authority_note: Newer owner instructions, current tool contracts, and active reference prompts override conflicting guidance in this document.

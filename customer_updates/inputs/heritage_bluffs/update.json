@@ -1,0 +1,96 @@
+{
+  "facility": "Heritage Bluffs Golf Club",
+  "operating_model": "integrated",
+  "service_model_label": "Direct booking integration",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {
+      "label": "Calls handled",
+      "value": "4,118"
+    },
+    {
+      "label": "Bookings completed",
+      "value": "1,016"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$197,037.00"
+    },
+    {
+      "label": "Time saved",
+      "value": "91h 13m"
+    }
+  ],
+  "after_hours_metrics": [
+    {
+      "label": "Calls",
+      "value": "842"
+    },
+    {
+      "label": "Bookings",
+      "value": "567"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$106,962.00"
+    }
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 672,
+  "highlights": [
+    {
+      "title": "Two reservations were completed in a single call",
+      "summary": "A caller first booked a single-player round for Tuesday, then asked for a second tee time for two players on Thursday. SpeakSport found nearby alternatives to the requested 10:00 AM times and confirmed both reservations without a staff handoff.",
+      "source": "Call on 31 July at 12:24 PM",
+      "quote": "“The closest available tee time to 10:00 AM on Tuesday is 10:50 AM.” SpeakSport confirmed that booking, then completed the caller’s second reservation for Thursday at 11:00 AM."
+    },
+    {
+      "title": "Booking eligibility was checked before offering alternatives",
+      "summary": "For an August 6 request, SpeakSport confirmed that the date was inside the two-week booking window, collected the playing details and offered the nearest available times when 9:00 AM was unavailable. The caller selected 8:50 AM and the reservation was completed.",
+      "source": "Call on 29 July at 1:26 PM",
+      "quote": "“August 6 is next Thursday, which is within our two-week booking window.” SpeakSport then offered 8:30, 8:40, 8:50 and 9:30 AM as alternatives."
+    },
+    {
+      "title": "A senior-rate question flowed directly into a booking",
+      "summary": "SpeakSport explained when the senior special applies, gathered the caller’s preferred day, time and cart choice, and found two nearby options. The caller selected 10:50 AM and the two-player reservation was confirmed.",
+      "source": "Call on 31 July at 6:46 PM",
+      "quote": "“The senior special is available for golfers ages 55 and older, Monday through Friday from 7:30 AM to 5:50 PM, excluding holidays.”"
+    }
+  ],
+  "features_intro": "We have continued strengthening the integrated experience around booking accuracy, reservation servicing and clearer operational insight.",
+  "features": [
+    {
+      "title": "Cancellations on the call",
+      "description": "Golfers can now cancel eligible bookings directly with SpeakSport, reducing avoidable transfers and making it easier to release tee times promptly."
+    },
+    {
+      "title": "Stronger booking-eligibility verification",
+      "description": "Booking windows, customer context and other applicable booking rules are checked before a reservation is created."
+    },
+    {
+      "title": "Upcoming-booking confirmations",
+      "description": "When golfers ask about an upcoming reservation, SpeakSport can retrieve and confirm the booking details during the call."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making performance patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love Heritage Bluffs to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep rates, policies, facility information and caller guidance current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, eligibility, preferred playing times and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the Heritage Bluffs SpeakSport dashboard. Call excerpts were selected from 672 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

@@ -1,0 +1,220 @@
+from pathlib import Path
+from typing import TypeVar
+
+import pytest
+from pydantic import BaseModel
+
+from speaksport_pipeline.cache import StageCache
+from speaksport_pipeline.exceptions import ConfigurationError
+from speaksport_pipeline.models import (
+    AvailabilityPolicy,
+    CourseConfiguration,
+    FacilityConfig,
+    Fact,
+    FactInventory,
+    GeneratedSections,
+    IntegrationType,
+    LLMResult,
+    NormalizedPage,
+    ReferenceSelection,
+)
+from speaksport_pipeline.pipeline import (
+    BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    MANDATORY_AVAILABILITY_GUARDRAILS,
+    SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL,
+    SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
+    PromptPipeline,
+    _normalize_eligibility_decision_prompt,
+    _validate_eligibility_decision_prompt,
+    write_generation_outputs,
+)
+
+OutputT = TypeVar("OutputT", bound=BaseModel)
+
+
+class FakeLLM:
+    def __init__(self) -> None:
+        self.calls = 0
+
+    def generate_structured(
+        self,
+        *,
+        messages: list[dict[str, str]],
+        output_model: type[OutputT],
+        schema_name: str,
+        audit_directory: Path | None = None,
+    ) -> tuple[OutputT, LLMResult]:
+        self.calls += 1
+        if output_model is FactInventory:
+            output: BaseModel = FactInventory(
+                facts=[
+                    Fact(
+                        category="identity",
+                        subject="Example Club",
+                        fact_text="Example Club is a golf facility.",
+                        source_type="website",
+                        source_identifier="WEB-001",
+                        source_url_or_file="https://example.com",
+                        source_excerpt="golf facility",
+                        confidence=1,
+                    )
+                ]
+            )
+        else:
+            output = GeneratedSections(
+                core_shell="Use the initialized runtime variables.",
+                knowledge_base="Example Club is a golf facility.",
+                logic_module="Use the configured booking tools in order.",
+                eligibility_policy=(
+                    "Initialize the following variables:\n\n"
+                    "'date' = requested booking date.\n"
+                    "'time' = requested tee time.\n"
+                    "'current_date' = today's date in the facility's local timezone.\n\n"
+                    "Apply these rules in order:\n\n"
+                    "- If the requested booking date is before today's date, the caller is not "
+                    'eligible. Reason: "That date has already passed."\n'
+                    "- Do not apply any other eligibility criteria.\n"
+                    '- Otherwise, the caller is eligible. Reason: "Eligible to book."'
+                ),
+                transfer_destinations=["golf_shop"],
+            )
+        result = LLMResult(
+            request_id=f"request-{self.calls}",
+            requested_model="model",
+            returned_model="model",
+            content=output.model_dump(mode="json"),
+            usage={"total_tokens": 10},
+            cost_usd=0.01,
+        )
+        return output_model.model_validate(output.model_dump()), result
+
+
+def _facility() -> FacilityConfig:
+    return FacilityConfig(
+        slug="example-club",
+        display_name="Example Club",
+        website_url="https://example.com",
+        timezone="America/New_York",
+        integration_type=IntegrationType.INTEGRATED,
+        course_configuration=CourseConfiguration.SINGLE_COURSE,
+        references=ReferenceSelection(prompt="2026-07-10", eligibility="2026-07-10"),
+    )
+
+
+def test_pipeline_caches_fact_and_generation_stages(tmp_path: Path) -> None:
+    llm = FakeLLM()
+    pipeline = PromptPipeline(llm, StageCache(tmp_path / "cache"))
+    page = NormalizedPage(
+        source_identifier="WEB-001",
+        source_url="https://example.com",
+        markdown="# Example",
+        content_hash="a" * 64,
+    )
+    kwargs = {
+        "facility": _facility(),
+        "pages": [page],
+        "client_documents": {},
+        "audit_directory": tmp_path / "audit",
+    }
+
+    facts, _, first_cached = pipeline.extract_facts(**kwargs)
+    _, _, second_cached = pipeline.extract_facts(**kwargs)
+    generation_kwargs = {
+        "facility": _facility(),
+        "facts": facts,
+        "reference_prompt": "reference",
+        "generation_instructions": "instructions",
+        "runtime_registry": "variables",
+        "tool_contracts": "tools",
+        "global_conventions": "conventions",
+        "eligibility_conventions": "eligibility conventions",
+        "audit_directory": tmp_path / "audit",
+    }
+    sections, _, generated_cached = pipeline.generate_sections(**generation_kwargs)
+    _, _, generated_second_cached = pipeline.generate_sections(**generation_kwargs)
+
+    assert not first_cached
+    assert second_cached
+    assert not generated_cached
+    assert generated_second_cached
+    # One authoritative-source extraction, one website extraction, and one generation call.
+    assert llm.calls == 3
+    prompt_path = write_generation_outputs(tmp_path / "output", _facility(), facts, sections)
+    prompt = prompt_path.read_text(encoding="utf-8")
+    assert "<knowledge-base>" in prompt
+    assert "{{phone_recognized}}" in prompt
+    assert MANDATORY_AVAILABILITY_GUARDRAILS in prompt
+    assert SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL in prompt
+    assert (tmp_path / "output" / "eligibility-backoffice-policy.md").is_file()
+
+
+def test_pipeline_writes_restricted_single_player_policy(tmp_path: Path) -> None:
+    facility = _facility().model_copy(
+        update={
+            "availability_policy": AvailabilityPolicy(
+                single_player_requires_partially_filled_slot=True
+            )
+        }
+    )
+    facts = FactInventory(facts=[])
+    sections = GeneratedSections(
+        core_shell="Use the configured runtime context.",
+        knowledge_base="Example Club is a golf facility.",
+        logic_module="Use the integrated booking workflow.",
+        eligibility_policy=(
+            "Initialize the following variables:\n"
+            "'date' = requested booking date.\n"
+            "'time' = requested tee time.\n"
+            "'current_date' = today's date.\n\n"
+            "Apply these rules in order:\n"
+            "- Do not apply any other eligibility criteria."
+        ),
+    )
+
+    prompt = write_generation_outputs(tmp_path / "output", facility, facts, sections).read_text()
+
+    assert SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL in prompt
+    assert SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL not in prompt
+
+
+def test_eligibility_policy_rejects_quoted_variables_after_initialization() -> None:
+    policy = """Initialize the following variables:
+
+'date' = requested booking date.
+'time' = requested tee time.
+'current_date' = today's date.
+
+Apply these rules in order:
+
+- If 'date' is before today, the caller is not eligible.
+- Do not apply any other eligibility criteria.
+"""
+
+    with pytest.raises(ConfigurationError, match="semantic language"):
+        _validate_eligibility_decision_prompt(
+            policy,
+            label="Booking eligibility policy",
+            required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+        )
+
+
+def test_eligibility_policy_normalizes_colon_initialization() -> None:
+    policy = """Initialize the following variables:
+- 'date': requested booking date.
+- 'time': requested tee time.
+- 'current_date': today's date.
+
+Apply these rules in order:
+- Do not apply any additional eligibility criteria.
+"""
+
+    normalized = _normalize_eligibility_decision_prompt(policy)
+
+    assert "'date' = requested booking date." in normalized
+    assert "- 'date':" not in normalized
+    assert "Do not apply any other eligibility criteria" in normalized
+    _validate_eligibility_decision_prompt(
+        normalized,
+        label="Booking eligibility policy",
+        required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    )

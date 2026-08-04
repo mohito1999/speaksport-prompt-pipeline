@@ -1,0 +1,23 @@
+{
+  "findings": [
+    {
+      "code": "INCOMPLETE_BOOKING_LOOKUP_FLOW",
+      "location": null,
+      "message": "Initial get-bookings lookup must use no parameters",
+      "severity": "error"
+    },
+    {
+      "code": "UNREQUESTED_SHOP_TRANSFER_DEFLECTION",
+      "location": null,
+      "message": "Facility disables first-shop-transfer deflection, but the prompt still gatekeeps the caller's first transfer request",
+      "severity": "error"
+    }
+  ],
+  "metrics": {
+    "core_shell_words": 942,
+    "knowledge_base_words": 2286,
+    "logic_module_words": 1477,
+    "total_words": 5142
+  },
+  "valid": false
+}

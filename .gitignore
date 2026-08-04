@@ -1,0 +1,18 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+tmp/
+
+# Runtime artifacts are local and may contain client-confidential material.
+runs/*
+!runs/.gitkeep

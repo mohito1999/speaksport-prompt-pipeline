@@ -1,0 +1,1625 @@
+{
+  "source": "inputs/san_juan_oaks/calls.csv",
+  "period": {
+    "start": "2026-07-24",
+    "end": "2026-07-31"
+  },
+  "calls": 305,
+  "total_duration_minutes": 320.2,
+  "average_duration_seconds": 63.0,
+  "ended_reason": {
+    "assistant-forwarded-call": 212,
+    "customer-ended-call": 90,
+    "assistant-said-end-call-phrase": 1,
+    "silence-timed-out": 1,
+    "assistant-ended-call": 1
+  },
+  "candidate_counts": {
+    "booking_success": 0,
+    "eligibility_verification": 0,
+    "booking_lookup": 3,
+    "cancellation": 20,
+    "information_answered": 120,
+    "booking_link_offered": 0,
+    "booking_link_sent": 0,
+    "booking_intent_routed": 55
+  },
+  "candidates": {
+    "booking_success": [],
+    "eligibility_verification": [],
+    "booking_lookup": [
+      {
+        "call_id": "019fa9da-b248-7993-9dcd-8a4ebdb02690",
+        "date": "2026-07-28",
+        "time": "17:51:52",
+        "duration": "1:28",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Customer service. AI: Of course. To make sure I connect you with the right person, could you please tell me a bit more about your customer service need? For example, is this about a recent visit, a billing question, a golf reservation, or something else? User: Golf. Gift certificate. AI: Thank you for clarifying. Are you looking for help with booking a tee time, modifying, or existing reservation, or do you have a different golf related question? User: Different golf related question. AI: Thank you for letting me know. Could you please share a bit more detail about your golf related question regarding gift certificates? That way, I can make sure to get you the most accurate information or connect you with the right team member. User: Trying to…"
+      },
+      {
+        "call_id": "019fa418-9df7-7000-813c-064de24076fc",
+        "date": "2026-07-27",
+        "time": "15:01:51",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, James. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Confirm tea time. AI: James, I'd be happy to help you confirm your tea time. Just to clarify, don't have access to existing reservations, but the golf shop team can look up and confirm your booking right away. Would you like me to transfer you to the golf shop to assist with that? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9643-f086-7002-a5cf-8b38a7670532",
+        "date": "2026-07-24",
+        "time": "22:34:25",
+        "duration": "0:48",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I want to check on a tea time. AI: Absolutely. I'd be happy to help you with your tea time. Are you looking to book a new tea time, do you need to check or modify an existing reservation? User: I need to check an existing reservation. AI: I'm not able to access or look up existing reservations directly. However, the golf shop team can assist you right away. Would you like me to transfer you to the golf shop to check on your reservation? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      }
+    ],
+    "cancellation": [
+      {
+        "call_id": "019fb89d-3070-7442-a39f-47735b6821f1",
+        "date": "2026-07-31",
+        "time": "14:39:02",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to check my cancellation. AI: I cannot process tea time cancellations or check cancellation status through the automated system. I can transfer you to the golf shop. And they'll be able to assist you right away. Would you like me to connect you to the golf shop for help with your cancellation? User: Thank you. Yes, please. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb5e6-a9ea-7776-97bb-83d65aa5e9cc",
+        "date": "2026-07-31",
+        "time": "02:00:29",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Talk to someone about a tea time AI: I'd be happy to help you with your tea time request. Just to clarify, I can assist with booking new tea times for groups of up to 4 players. If you need to modify or cancel an existing or if your group is larger than 4, the golf shop team will need to assist you directly. Would you like me to transfer you to the golf shop? To speak with someone about your tee time? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb500-183a-7ccc-b687-870d14975e34",
+        "date": "2026-07-30",
+        "time": "21:48:37",
+        "duration": "0:30",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel it 2 times. AI: I am not able to process tee time cancellations directly. The golf shop team can assist you with that right away. Would you like me to transfer you to the golf shop to handle your cancellation? User: Yes. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019fb48b-215b-7000-aebb-eecf188d0775",
+        "date": "2026-07-30",
+        "time": "19:40:47",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea times. AI: I'd be happy to help you with a tea time at San Juan Oaks. What? Date would you like to play? User: Cancel tea time. AI: I cannot process tea time cancellations through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb3c9-96dd-7663-826d-883d83f998dd",
+        "date": "2026-07-30",
+        "time": "16:09:23",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Wanna cancel a tea time. AI: I cannot process tea time cancellations through the automated system. I can transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019faf3a-f26b-7000-9a52-b3beaf4a8b43",
+        "date": "2026-07-29",
+        "time": "18:55:05",
+        "duration": "2:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Today, AI: Great. You're looking to play today. Which is Wednesday. How many players will be in your group? User: 1. AI: Thank you. What time are you hoping to play today? User: 2 40. AI: Hold on a sec. AI: We have 2 20 PM 2 30 PM, 2 40 PM, and 2 50 PM available today. Would you like to book the 2 40 PM tea time, or would you prefer a different 1? User: 2 40 PM. AI: Perfect. May I please have your first and last name for the booking? User: Steve Stewart. AI: Thank you, Steve Stewart. May I have your email address to complete your booking? If you spell it out, I'll confirm it back using the NATO phonetic alphabet for accuracy. User: S t e v e at s g…"
+      },
+      {
+        "call_id": "019fae97-fc73-7bb5-8b3f-548e87910f09",
+        "date": "2026-07-29",
+        "time": "15:57:06",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to cancel it to you, Tom. AI: I am not able to process tee time cancellations directly through the auto automated system. I can transfer you to the golf shop, and they will be happy to assist you with canceling your tee time. Would you like me to connect you to the golf shop now? User: Course. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fae86-56cf-777f-8323-8614dbf190dd",
+        "date": "2026-07-29",
+        "time": "15:37:49",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to cancel my tea time. AI: Cannot process t time cancellations through the automated system. I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes, please. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fae82-d6d0-7772-b83e-dea540637f25",
+        "date": "2026-07-29",
+        "time": "15:34:00",
+        "duration": "0:35",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to cancel my ticket. AI: I cannot process tea time cancellation. Or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes, please. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fa97a-ea6d-711c-b588-6291a7a841fe",
+        "date": "2026-07-28",
+        "time": "16:07:14",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Sam. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel reservation. AI: I cannot process tea time cancellations through the automated I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you now? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa94e-cb05-7882-a821-f5182a7979c8",
+        "date": "2026-07-28",
+        "time": "15:19:03",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel our reservation. AI: I cannot process tea time cancellations through the automated system. I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019f9f70-54da-7dd0-a133-149b2e01fe5b",
+        "date": "2026-07-26",
+        "time": "17:19:30",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel tea time. AI: I cannot process tea time cancellations through the automated system. I can transfer you to the golf shop, and they will be able to assist you right away. Would you like me to connect you to the golf shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9b52-b3ae-7776-a281-7997e85623e7",
+        "date": "2026-07-25",
+        "time": "22:08:37",
+        "duration": "0:31",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel tea time. AI: I cannot process tea time cancellations through the automated system. I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes. AI: Transferring you to the Pro Shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9ad9-7d39-7000-b87a-2e8c7835affe",
+        "date": "2026-07-25",
+        "time": "19:56:15",
+        "duration": "0:30",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Nate. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Just wanna cancel the feed time. AI: I cannot process tee time cancellations or modifications the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f96ea-d696-7aa4-9946-79fd483ed073",
+        "date": "2026-07-25",
+        "time": "01:36:42",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Daniel. Thank you for calling San Juan Oaks. User: Daniel. AI: I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Have a reservation. For 4, and I wanna cancel 1 of the players. AI: I cannot process tea time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9677-ea69-722e-b492-4f4832996de9",
+        "date": "2026-07-24",
+        "time": "23:31:11",
+        "duration": "0:39",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: Nothing is coming. AI: Hi. Hi, Leo. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Like to cancel my peak time for Sunday. At 7 30 AM. AI: I cannot process tee time cancellations through the automated system. I will transfer you to the golf shop so they can assist you with canceling your Sunday 7 30 AM tee time. Would you like me to connect you now? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9646-d156-7222-8914-602b7bbbd38c",
+        "date": "2026-07-24",
+        "time": "22:37:33",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel reservation. AI: I cannot process tee time cancellations through the automated system. I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9583-7b84-733d-b7e8-758da06ce0f7",
+        "date": "2026-07-24",
+        "time": "19:04:13",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, David. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to change the date of my repeat time. AI: I'm not able to process tee time changes or cancel cancellations directly through the automated system. I can transfer you to the golf shop, and they'll be happy to help you update your reservation. Would you like me to connect you now? User: Yes. AI: Transferring you to the Pro Shop. Please wait a"
+      },
+      {
+        "call_id": "019f94ad-c518-7777-89dd-0bdadbd90465",
+        "date": "2026-07-24",
+        "time": "15:10:46",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Detime reservation. AI: I'd be happy to help you with a tea time reservation. What date would you like to play? User: I wanna cancel my tea time reservation. Talk to an agent. AI: I cannot process tee time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you now? User: Yes. AI: Transferring you to the Pro Shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019f916f-86e6-711b-b4db-82b7945b9800",
+        "date": "2026-07-24",
+        "time": "00:03:55",
+        "duration": "0:30",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Kevin. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancellation. AI: I cannot process tea time cancellations through the automated system. I will need to transfer you to the golf shop so they can assist you with your cancellation. Would you like me to connect you now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      }
+    ],
+    "information_answered": [
+      {
+        "call_id": "019fba90-e53e-7996-9168-be8a61a9295a",
+        "date": "2026-07-31",
+        "time": "23:44:48",
+        "duration": "0:52",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Diane. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanted to know if the golf course had a senior golf rate. AI: We do not offer specific senior rates. Here at San Juan Oaks. Our green fees are based on a dynamic pricing model, which means rates fluctuate depending on the day, time, and demand. We also do not offer NCGA member rates or participate in the youth on course program. However, we do have a dedicated junior rate. If you'd like to hear today's exact prices or have any other questions about rates, I can transfer you to the golf shop. Would you like me to connect you? User: No."
+      },
+      {
+        "call_id": "019fba75-9e3f-7665-9827-e1957bb1c0de",
+        "date": "2026-07-31",
+        "time": "23:15:00",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I am calling to inquire about the corkage fee at the restaurant. AI: I don't have that specific information right in front of me, but I can transfer you to our food and beverage director James Kellogg, who can provide details about corkage fees. Would you like me to transfer you to him? User: Yes. AI: Transferring you to the director of food and beverage. Please wait a moment."
+      },
+      {
+        "call_id": "019fba5b-1300-7ffe-8944-09651647fda9",
+        "date": "2026-07-31",
+        "time": "22:46:01",
+        "duration": "3:52",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Today. AI: You're looking to play today. Which is Friday. User: Yes. AI: How many players will be in your group? User: 2. AI: What time are you hoping to play today? User: 4 45 AI: This'll just take a sec. AI: The closest available tee times I have for 2 players today? Are 4 30, 4 40, 4 50, and 5 o'clock PM. Would you like to book 1 of these times? User: 4 50, please. AI: Perfect. May I have your first and last name for the booking? User: First name is Albert, Last name is King, k I n g. AI: Thank you, Albert King. Could I please have your email address for the confirmation? If you spell it out? I'll confirm it back using the phonetic alphabe…"
+      },
+      {
+        "call_id": "019fba4c-ee08-799a-8255-c322ca13c054",
+        "date": "2026-07-31",
+        "time": "22:30:35",
+        "duration": "0:48",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservation for dinner. AI: Thank you for your interest in dining with us. We have 2 dinner options, McCann's Bar and Grill, which is casual and strictly first come, first served with no reservations, and 36 degrees north, Our upscale restaurant open for dinner Thursday through Saturday, where reservations are highly recommended. Are you looking to make a reservation for 36 degrees north? If so, User: Yes. AI: can transfer you to the restaurant to assist with your reservation. Would you like me to connect you now? User: Yes. AI: Transferring you to the 36 degree north. Please wait a moment."
+      },
+      {
+        "call_id": "019fba3f-3adf-755a-9c14-e7993d797a4d",
+        "date": "2026-07-31",
+        "time": "22:15:35",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanted to order from McCann's. AI: McCann's Bar and Grill offers casual, open air patio dining and operates strictly on a first come, first served basis. We do not take reservations. If you'd like to place a food order or have specific questions about the menu or operations, I can transfer you directly to McCann's. Would you like me to connect you now? User: Yes. Yes. AI: Transferring you to the McCann's restaurant. Please wait a"
+      },
+      {
+        "call_id": "019fba3b-1739-7339-9cb5-f2c620d7e456",
+        "date": "2026-07-31",
+        "time": "22:11:06",
+        "duration": "1:05",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: Can you give me a paper and a pen, please? AI: Thank San Juan Oaks is a completely cashless facility, and we do not provide paper or pens at the front desk. If you need to take notes, I recommend using your mobile or asking 1 of our staff members in the golf shop or restaurant if they have a pen available. Is there anything else I can help you with today? User: Yes. I'd like to speak to dining AI: Of course. User: manager. AI: We have 2 main dining options. McCann's bar and grill, which is our casual, open air patio restaurant and 36 degrees north, our upscale dinner venue. May I ask which restaurant you'd like to speak with? McCann's or 36 degrees North? User: 36 degrees north. AI: Thank you for clarifying. Would you like me to transfer you to the manager at 36 degrees north to assist you? User: Yes. AI: Transferring you to the 36 degree north. Please wait a moment."
+      },
+      {
+        "call_id": "019fba31-b8d4-7000-a810-bd511d4ec7cd",
+        "date": "2026-07-31",
+        "time": "22:00:52",
+        "duration": "3:12",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Heat times for tomorrow, please. AI: Just to confirm, are you asking about available tee times for tomorrow? Or are you interested in the weather forecast for tomorrow? Could you please clarify if you'd like to book a tee time or get information about the weather? User: Book AC time. AI: Thank you for clarifying. Just to confirm, you'd like to book a tee time for tomorrow. Many players will be in your group? User: 4. AI: Great. A group of 4 for tomorrow. What time are you hoping to play? User: 10 AM. AI: Just a sec. AI: We have tea times available for 4 players tomorrow at 10 10 AM, 10 40 AM, 10 50 AM, and 11 o'clock AM. Which time would you prefer? User: 10 10. AI: Perfect. I'll reserve a tee time for 4 players tomorrow at 10 10 AM. May I ple…"
+      },
+      {
+        "call_id": "019fb9df-e59b-7000-a9be-078b4907a58f",
+        "date": "2026-07-31",
+        "time": "20:31:28",
+        "duration": "1:58",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Joel. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. I just wanted to see what time your restaurant closes tomorrow night. AI: Thank you for asking, Joel. We have 2 dining options. McCann's Bar and Grill closes at 7 o'clock PM tomorrow night. Our upscale restaurant, 36 degrees North, is open for dinner and closes at 9 o'clock PM on Saturdays. There anything else I can help you with today? User: Well, I'm just kinda curious. What is the dinner attire? For 36 degrees north? AI: Great question, Joel. While 36 degrees north offers an upscale dining experience, there isn't a formal dress code for the restaurant itself. However, if you're coming from the golf course or practice areas, please remember that San Juan Oaks enforces a strict golf dress code. Collared shirts are required for…"
+      },
+      {
+        "call_id": "019fb9da-f930-7990-b2e1-5c87e2520308",
+        "date": "2026-07-31",
+        "time": "20:26:06",
+        "duration": "0:39",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I want to hit balls on the range. AI: You're welcome to use our practice facility. The daily access fee is 35 dollars, which includes unlimited use of the driving range, chipping areas, and the putting green. Just a quick reminder, San Juan Oaks is a strictly cashless facility so please bring a credit card, Apple Pay, or Google Pay for your visit. Is there a specific day or time you'd like to come out, or do you have any"
+      },
+      {
+        "call_id": "019fb9c6-c854-755f-be07-aa6204c6f99a",
+        "date": "2026-07-31",
+        "time": "20:04:02",
+        "duration": "1:23",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Golf course. AI: San Juan Oaks is a championship caliber. Publicly accessible golf course located in the beautiful San Juan Valley in Hollister, California. We offer 18 holes of exceptional golf, a full practice facility, and 2 dining options. Is there something specific about the golf course I can assist you with today? Such as booking a tee time, learning about our rates, or course conditions? User: Practice facility. AI: Our practice facility at San Juan Oaks features a full driving range, short game chipping areas, and a putting green. The daily access fee is 35 dollars. Which includes unlimited use of all these areas. Players Club members receive 10 dollars off the daily fee. The practice facility is open daily from 6 o'clock AM to 7 o'cl…"
+      },
+      {
+        "call_id": "019fb9a2-d21e-7bb2-a906-3cfb6ecf78bd",
+        "date": "2026-07-31",
+        "time": "19:24:45",
+        "duration": "8:39",
+        "ended_reason": "assistant-said-end-call-phrase",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: The thirteenth. User: Thursday, the thirteenth next week. Of August. AI: Thank you for confirming. Thursday, August thirteenth. How many players will be in your group? User: Just 1. AI: Thank you. What time are you hoping to play on Thursday, August thirteenth? User: About 11 30. AI: Hold on a sec. AI: We have t times available at 11 10, 11 20, 11 30, and 11 40 AM on Thursday, August thirteenth. Which time would you prefer? User: 11 40. AI: Perfect. I'll reserve 1 spot for you at 11 40 AM on Thursday, August thirteenth. May I have your first and last name? Please? User: Frank Mendez. M e n d e z. AI: Thank you, Frank Mendez. Could I please ha…"
+      },
+      {
+        "call_id": "019fb983-c783-799b-bbf6-88d7bbf78888",
+        "date": "2026-07-31",
+        "time": "18:50:51",
+        "duration": "0:51",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: McCann's. AI: McCann's Bar and Grill is our casual, open air patio dining spot overlooking the course. We're open Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Lunch service begins at 11 o'clock AM. Seating is strictly first come, first served, so no reservations are needed. There something specific you'd like to know about McCann's, or would you like to speak directly with the restaurant? User: Speak directly. AI: Transferring you to the McCann's restaurant. Please wait a moment."
+      },
+      {
+        "call_id": "019fb96c-3334-7990-ac6f-5cf2080e5ffb",
+        "date": "2026-07-31",
+        "time": "18:25:09",
+        "duration": "1:31",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Mark. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. Book a twosome at 1 30. Today. AI: Absolutely, Mark. For your twosome at 1 30, what date would you like to play? User: Today's date, please. User: Which is July AI: This will just take a sec. User: July AI: Thank you for confirming, Mark. Today is Friday, July 30 first. I have tee times available for 2 players at 1 10, 1 20, 1 30, and 1 40 PM. Would you like to book the 1 30 PM User: 1 30, please. User: Yes. AI: Your tee time for 2 players on Friday? July 30 first at 1 30 PM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you check-in. Just a quick reminder, San Juan Oaks is a completely cashless facility. So please bring a credit card, Apple Pay, or Google Pay for…"
+      },
+      {
+        "call_id": "019fb958-2dcf-7dd4-a5bf-e16103e1c3ef",
+        "date": "2026-07-31",
+        "time": "18:03:13",
+        "duration": "2:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I want to talk to someone about the cams. AI: Just to clarify, are you referring to the cameras on the property, or did you mean something else by cams? If you'd like, I can connect you with our golf operations manager Carlos Cardenas, who can assist with operational questions. Would you like me to transfer you? User: Restaurant information. No. Restaurant information. AI: Of course. We have 2 dining options at San Juan Oaks. First, McCann's Bar and Grill offers casual, open air patio dining overlooking the course. It's open Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Lunch service begins at 11 o'clock AM. McCann's is strictly first come. First served. No reservations…"
+      },
+      {
+        "call_id": "019fb92a-2467-7000-82b7-72ef3d4f2381",
+        "date": "2026-07-31",
+        "time": "17:12:56",
+        "duration": "1:10",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Push up. AI: I'm sorry. Could you please clarify what you mean by push up? Are you looking for information about tee times, our facilities, or something else at San Juan Oaks? User: Speak times. AI: I'm here to help. User: Fee times. AI: Thank you for your question. At San Juan Oaks, we use a dynamic pricing model. So green fees vary depending on the day of the week, time of day, and demand. The great news is your golf cart and range balls are included with your standard green fee. If you have a specific date and time in mind, I can check availability for you or connect you with the golf shop for an exact quote. Would you like to check a particular date and time? User: No. Connect me to the golf shop. AI: Absolutely. Would you like me to trans…"
+      },
+      {
+        "call_id": "019fb8c5-600f-7224-bbc0-237916276f85",
+        "date": "2026-07-31",
+        "time": "15:22:52",
+        "duration": "2:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Jim. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Oh, Emily, can I have the pork chop AI: Jim. I'd be happy to help clarify. If you're asking about dining, our pork chop is a featured dish at 36 degrees north, which is our upscale dinner restaurant. 36 degrees North is open for dinner Thursday, Friday, and Saturday from 4 30 PM to 9 o'clock PM. Reservations are highly recommended can be made through our website. If you're looking for food at McCann's Bar and Grill, their menu is more casual and does not feature a pork chop. McCann's is strictly first come, first served. No reservations needed. Would you like me to transfer you to 36 degrees North to check on tonight's pork chop availability or make a reservation? User: Pro chop? AI: Thank you for clarifying, Jim. If you're asking abo…"
+      },
+      {
+        "call_id": "019fb869-690d-7003-a0ec-6292871cb07d",
+        "date": "2026-07-31",
+        "time": "13:42:27",
+        "duration": "0:53",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Aeration of greens. AI: Thank you for asking about our course maintenance. Our greens undergo aerification, pronounced air faucation. Twice a year. The scheduled dates are March 20 third and 20 fourth. And again on October fifth and sixth. These dates can change depending on the weather. Is there anything else I can help you with today? User: No. Thank you. AI: Thank you for calling San Juan Oaks. Have a wonderful day."
+      },
+      {
+        "call_id": "019fb5e8-be2f-7331-8b7f-505e0477939c",
+        "date": "2026-07-31",
+        "time": "02:02:40",
+        "duration": "3:25",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality How may I help you today? User: Schedule a tea time. AI: I'd be to help you schedule a tea time. What date would you like to play? User: Saturday, August first. AI: Great. That's Saturday. August first. How many players will be in your group? User: 2. AI: What time are you hoping to play on Saturday, August first? User: 8 o'clock. AI: This will just take a sec. AI: We have 8 o'clock AM available as well as 7 27 30, and 8 10 AM. Would you like to book the 8 o'clock AM tee time for 2 players? User: Yes, please. AI: Perfect. May I have your first and last name to complete the booking? User: First name, Doug. D o u g. Last name, Heeter, h e AI: Thank you. Doug. Thank you, Doug. Could you please spell your last name Heater for me using the natto phonetic alphabet? For example, h as in hote…"
+      },
+      {
+        "call_id": "019fb58e-9f9e-7665-b4c1-c6f143e404a3",
+        "date": "2026-07-31",
+        "time": "00:24:14",
+        "duration": "1:00",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanted to inquire about the if there was music today Thursday night music. AI: Thank you for asking. We do not have a recurring Thursday night music event listed at San Juan Oaks. However, our upscale restaurant, 36 degrees north, is open for dinner on Thursdays from 4 30 PM to 9 o'clock PM. And reservations are highly recommended. If you were referring to a special event or live music night, I don't have that specific information right in front of me. But I can transfer you to the golf shop to find out. Would you like me to transfer you to confirm if there is any live or special entertainment tonight? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb57e-7fe2-7556-8d32-133b50bbe252",
+        "date": "2026-07-31",
+        "time": "00:06:36",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Booking a tournament. AI: San Juan Oaks is a fantastic for tournaments and group outings. I can't book tournaments directly, but our events and group sales department can assist you with all the details. Would you like me to transfer you to our events coordinator to get started? User: Yes. AI: Transferring you to events and group sales. Please wait a moment."
+      },
+      {
+        "call_id": "019fb577-a45e-7aa6-96e4-22064393df24",
+        "date": "2026-07-30",
+        "time": "23:59:06",
+        "duration": "0:47",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: What are the hours of your outside rest restaurant? AI: Our outside restaurant, McCann's Bar and Grill, offers casual patio dining overlooking the course. McCann's is open Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Lunch service begins at 11 o'clock AM each day. It's strictly first come, first served. No reservations are needed. Is there anything else I can help you with today? User: No. No. Thank you."
+      },
+      {
+        "call_id": "019fb56d-8d62-7995-9f7e-11cd6f49ceae",
+        "date": "2026-07-30",
+        "time": "23:48:05",
+        "duration": "0:50",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: 36 Degrees Restaurant. AI: 36 degrees north is our upscale dining experience here at San Juan Oaks. We're open for dinner on Thursdays, Fridays, and Saturdays from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made through our website using OpenTable. Would you like me to transfer you to 36 degrees north for more information or to speak with someone directly. User: Speak with someone directly. AI: Transferring you to the 36 degree north. Please wait a moment."
+      },
+      {
+        "call_id": "019fb55e-27e8-7000-b687-0604cf0b451c",
+        "date": "2026-07-30",
+        "time": "23:31:16",
+        "duration": "0:48",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: 38 degrees north. A restaurant, please. AI: Absolutely. 36 degrees north is our upscale dining restaurant, open for dinner on Thursdays, Fridays, and Saturdays from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made directly through our website. If you'd like, I can transfer you to the 36 degrees north team for more information or to assist with your reservation. Would you like me to connect you now? User: Yes. Thank you. Yes. Thank you. AI: Transferring you to the 36 degree north. AI: Please wait a moment."
+      },
+      {
+        "call_id": "019fb4e0-36f3-7ddb-a049-6a32ef964c18",
+        "date": "2026-07-30",
+        "time": "21:13:42",
+        "duration": "1:19",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality per User: No. I'm Emily. AI: Thank you for clarifying. I'm here to assist you as the San Juan Oaks receptionist. How may I help you today? User: Speak to representative. AI: I can connect you with a team member to assist further. May I ask which department or type of question you need help with? For example, is it about tea times, dining, events? Something else? User: Something else. AI: Thank you for letting me know. To make sure I connect you with the right person, could you please share a bit more about what you need help with? For example, is it about billing? Employment, golf operations, or another topic? User: Sponsorship opportunity. AI: Thank you for your interest in us sponsorship opportunity with San Juan Oaks. I am not able to handle sponsorship requests directly. But our e…"
+      },
+      {
+        "call_id": "019fb4b9-47d1-7000-afbe-7a5c1b73be75",
+        "date": "2026-07-30",
+        "time": "20:31:11",
+        "duration": "1:21",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reserve dynamic pricing for tomorrow at 8 50 AM. AI: Great. You'd like to reserve a tea time for tomorrow. Which is Friday, at 8 50 AM. How many players will be in your group? User: 2. And dine and pricing. AI: Just a sec. AI: We have an 8 50 AM tee time available for 2 players tomorrow. Before I reserve it, may I have your first and last name? Please? For dining? McCann's Bar and Grill is open for casual patio dining starting at 7 o'clock AM on Fridays with full lunch service beginning at 11 o'clock AM. No reservations are needed. It's strictly first come, first served. As for pricing, San Juan Oaks uses dynamic pricing, so green fees vary based on demand and time. Your exact rate will be calculated at check-in, but your green fee always incl…"
+      },
+      {
+        "call_id": "019fb490-8286-755b-9a5e-9ba35b3c83e7",
+        "date": "2026-07-30",
+        "time": "19:46:39",
+        "duration": "1:08",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Restaurant. AI: We have 2 dining options here at San Juan Oaks. Are you interested in McCann's Bar and Grill? Which offers casual patio dining and is open daily or 30 degrees north. Our upscale dinner restaurant open Thursday through Saturday evenings. Which restaurant can I assist you with today? User: 36 degrees north. AI: 36 degrees north is our upscale dining Open for dinner on Thursdays, Fridays, and Saturdays from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made through our website using OpenTable. Would you like me to transfer you to 36 degrees north for more information, or to speak with someone directly? User: Speak with someone directly. AI: Transferring you to the 36 degree north. Please wait a moment."
+      },
+      {
+        "call_id": "019fb476-8c54-7995-bc51-ce9cbdf9a138",
+        "date": "2026-07-30",
+        "time": "19:18:17",
+        "duration": "1:21",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi Lucas, you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time for August third Monday, at 7 50 for 2. AI: Just a sec. AI: We do have a tee time available for 2 players on Monday, August third, at 7 50 AM. Would you like me to book that for you? User: Yes. AI: Your tee time for 2 players on Monday, August third, at 7 50 AM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at golf shop when you check-in. As a quick reminder, San Juan Oaks is a completely cashless facility. So please bring a credit card, Apple Pay, or Google Pay for your visit. We also require collared shirts and do not permit denim. Is there anything else I can help you with today? User: No. AI: Thank you for calling San Juan Oaks. Have a wonderful day."
+      },
+      {
+        "call_id": "019fb46d-9a58-7669-8839-6bd28ed39d45",
+        "date": "2026-07-30",
+        "time": "19:08:31",
+        "duration": "1:19",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Make a reservation. AI: I'd be happy to help you book a tea time at San Juan Oaks. What date would you like to play? User: Dining. AI: Of course. Are you interested in dining at McCann's Bar and Grill? Which offers casual patio seating and is strictly first come, first served, or at 36 degrees north our upscale dinner restaurant that accepts reservations Thursday through Saturday evenings? Which dining option would you like more information about, or would you like to make a reservation 36 degrees north? User: McCann's. AI: McCann's Bar and Grill offers casual, open air patio dining overlooking the course. We're open Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Full lun…"
+      },
+      {
+        "call_id": "019fb448-ddf2-7112-b80b-18685365ca14",
+        "date": "2026-07-30",
+        "time": "18:28:24",
+        "duration": "1:28",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Speak to representative. AI: I'd be happy to connect you with a representative. May I ask which department or type of assistance you need? For example, are you looking for help with tea times? The golf shop, dining, events? Or something else. This will help me transfer you to the right person. User: Pizza. AI: Thank you for letting me know. If you're interested in pizza, our slices snack bar offers grab and go options. Including pizza, when it's open. The hours for slices vary based on the number of golfers scheduled for the day. You like me to transfer you to our snack shack to check if Slices is open and take pizza orders right now? User: No. Tea time. AI: Of course. I can help you with a tea time booking. What date would you like to play? U…"
+      },
+      {
+        "call_id": "019fb3dd-d9bb-744c-8d37-8bce7ac8c062",
+        "date": "2026-07-30",
+        "time": "16:31:30",
+        "duration": "1:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Good morning, Emily. I'd like to make reservation for this evening on the patio AI: Good morning. Thank you for your interest in dining with us. McCann's Bar and Grill offers casual patio dining and is strictly first come. First served. We do not take reservations for the patio or any seating. You're welcome to come by anytime. We open for dinner service at 11 o'clock AM and close at 7 o'clock PM. If you're interested in our upscale restaurant, 36 degrees north, it is open for dinner this evening from 4 30 PM to 9 o'clock PM. And reservations are highly recommended. Would you like information about 36 degrees north or assistance making a reservation there? User: Yes, please. AI: Wonderful. 36 degrees north is our experience. Open this evening…"
+      },
+      {
+        "call_id": "019fb3c6-a70b-744c-8b40-493b049723e3",
+        "date": "2026-07-30",
+        "time": "16:06:10",
+        "duration": "1:09",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Brian. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Today at 10 40 AM. AI: Thank you. Many players will be in your group for today at 10 40 AM? User: Just 1. AI: Hold on a sec. AI: We have several tee times available for 1 player. Today, including 10 20 AM, 10 40 AM, 10 50 AM, and 11 o'clock AM. Would you like to book the 10 40 AM slot? User: 10 40. Yes. AI: Your tee time for 1 player today at 10 40 AM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when"
+      },
+      {
+        "call_id": "019fb02c-999b-7dd6-bbe5-1b1f1e9f2b99",
+        "date": "2026-07-29",
+        "time": "23:19:03",
+        "duration": "2:08",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Manny. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hysteria. I wanna book a tea time. AI: Absolutely. I can help you book a tea time. What date would you like to play? User: Tomorrow at 8 AM. And can you tell me the price? AI: Just a sec. AI: We have tee times available tomorrow, Thursday, at 7 40 8 o'clock, 8 10, and 8 20 AM. Which time would you prefer? As for pricing, we use a dynamic pricing model. User: 8 AI: So green fees vary based on demand and time of day. Your golf cart and range balls are included in the standard green fee. If you'd like, I can confirm your tee time, and you'll see your exact rate at check-in. Which time works best for you? User: 8 AM. AI: Great. I'll reserve your tea time for 8 o'clock AM tomorrow for 1 May I confirm your email as m fritas at sand juan o…"
+      },
+      {
+        "call_id": "019fb029-b5a6-799c-89c9-53fbea020ddf",
+        "date": "2026-07-29",
+        "time": "23:15:53",
+        "duration": "1:21",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Pax. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. User: Operator. AI: How may I help you today? User: Can I talk to the operator? AI: I can help route your call to the right department or person. Could you please let me know what you need assistance with? So I can connect you to the best team member? User: Your time. AI: The current time is 4 15 PM. Is there anything else I can help you with today? User: Tea time. Starts AI: Just to clarify, are you looking to book a tee time to play golf at San Juan Oaks? If so, what date would you like to play? User: Can I get an operator? AI: Of course. May I ask which department or type of assistance you need? So I can connect you to the right person? For example, User: Scotia. AI: are you looking for help with tee times, events, dining, or something else? User: Gosha. Golf shop. AI:…"
+      },
+      {
+        "call_id": "019fb026-6b95-7ee1-a382-770f5dfaba6f",
+        "date": "2026-07-29",
+        "time": "23:12:17",
+        "duration": "1:00",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Nick. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Memberships. AI: Absolutely. I'd be happy to share information about our memberships at San Juan Oaks. We offer tiered memberships under the Oaks Club program. The elite membership gives you 50 percent off website, green fees every day. A 5 day advanced booking window, up to 3 guest rates per day at a 10 percent discount, and a 10 percent discount in the pro shop. The player's membership offers 20 percent off website green fees, a 5 day advance booking window, and a 10 dollar discount on facility usage fees. If you'd like full details or wanna purchase a membership, the golf shop team can assist you directly. Would you like me to transfer you to the golf shop to discuss membership options? User: Yes. Yes. AI: Transferring you to the pro sh…"
+      },
+      {
+        "call_id": "019fb022-6208-7fff-b6ff-b372eb7cdc13",
+        "date": "2026-07-29",
+        "time": "23:07:53",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Dining reservations. AI: We have 2 dining options at San Juan Oaks. For casual, first come, first served patio dining, McCann's Bar and Grill is open daily and does not take reservations. For a more upscale experience, 36 degrees North offers dinner service Thursday through Saturday, and reservations are highly recommended. Would you like me to transfer you to 36 degrees north to assist with a reservation, or is your question about McCann's? User: Yeah. Yeah. AI: Just to confirm, you like me to transfer you to 36 degrees north to help with your dinner reservation? User: Yes. AI: Transferring you to the 36 degree north. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019faff9-7f68-7667-ac31-1b367b0bafbf",
+        "date": "2026-07-29",
+        "time": "22:23:13",
+        "duration": "2:00",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Golf course. AI: San Juan Oaks is a championship caliber. Publicly accessible golf course located in the beautiful San Juan Valley in Jas California. We offer 18 holes of exceptional golf, a full practice facility, and great dining options. Is there something specific about the golf course I can assist you with today? Such as booking a tee time, learning about our rates, or inform User: Booking key type. AI: Just to clarify, are you to book a tee time to play golf at San Juan Oaks? If so, I can help you with that right now. User: Yes. AI: May I ask what date you would like to play? User: Friday. AI: Thank you. This Friday is July 30 first. How many players will be in your group? User: Yeah. 2. AI: Great. 2 players for this Friday. What time ar…"
+      },
+      {
+        "call_id": "019fafe3-33a0-7ee8-9f1f-de6fc076429c",
+        "date": "2026-07-29",
+        "time": "21:58:52",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I was wondering about the NCGA rate. Because do you guys do NCGA? AI: We do not offer specific NCGA member rates at San Juan Oaks. Instead, we use a dynamic pricing model User: Oh, okay. AI: green fees vary based on demand, day, and time. If you'd like, I can transfer you to the golf shop for today's exact rate User: Okay. AI: or to answer any other questions. Would you like me to connect you? User: Yes, please."
+      },
+      {
+        "call_id": "019fafcd-c018-7004-96d2-f87d675d01b7",
+        "date": "2026-07-29",
+        "time": "21:35:29",
+        "duration": "2:35",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Mark. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. I'd like to block a 3 10 tee time as a single. Please. AI: Thank you, Mark. I'd be happy to help you with that. Just to confirm, are you looking to play today at 3 10 PM as a single player? User: That's correct. AI: Thank you for confirming. How many holes would you like to play? Just so you know, we only offer 18 hole rounds at San Juan Oaks. User: 18. AI: Is that what you had in mind? User: Yes. Correct. AI: Give me a moment. AI: We do have a tee time available for a single player today at 3 10 PM. I'll get that set up for you. I have your email as Mark Vara 6 at Gmail dot com. Is that correct? User: That is correct. AI: Your tee time for 1 player today? Wednesday, July 20 ninth at 3 10 PM is confirmed. The amount due will be…"
+      },
+      {
+        "call_id": "019fafbb-3d92-7000-855d-a846a442819a",
+        "date": "2026-07-29",
+        "time": "21:15:14",
+        "duration": "2:21",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Michael. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Set up a tea time. AI: I'd be happy to help you book a tea time at San Juan Oaks. What date would you like to play? User: Friday. AI: Just to confirm, you'd like to play this Friday. Which is July 30 first. How many players will be in your group? User: Yes. 2. We're looking for dynamic pricing. AI: Great. 2 players for this Friday. July 30 first. What time are you hoping to play? If you have a general window, I can check available tee times and let you know the dynamic pricing options. User: 8 50. AI: Hold on a sec. AI: We have tea times available at 8 48 50, 9 30, and 9 50 in the morning this Friday. Would you like to book the 8 50 AM slot for your group of 2? User: Yes. AI: Your tee time for 2 players on Friday, July 30 first at 8 50…"
+      },
+      {
+        "call_id": "019faf69-dd54-744a-9903-06cebc6afaaf",
+        "date": "2026-07-29",
+        "time": "19:46:20",
+        "duration": "1:30",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Pax. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tell me to book a tea time for 2 10. AI: Absolutely. I can help you book a tee time for 2 players at 2 10. What date would you like to play? User: 1 player. AI: Thank you for letting me know you'll be playing as a single, What date would you like to book your tea time for? User: Today. AI: Just a sec. AI: We have a tee time available for 1 player today at 2 10 PM. Would you like to book that time? User: Yes. AI: Your tee time for 1 player today at 2 10 PM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you check-in. Just a quick reminder, San Juan Oaks is a completely cashless facility so please bring a credit card, Apple Pay, or Google Pay for your visit. We also require coll…"
+      },
+      {
+        "call_id": "019faf4b-905d-7000-803c-f5711136b23e",
+        "date": "2026-07-29",
+        "time": "19:13:14",
+        "duration": "1:52",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Mark. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. Emily, I'm trying to make a, uh, tea time for this 1. AI: Absolutely, Mark. I'd be happy to help you book a tea time. What date are you looking to play? User: Wednesday, July 20 ninth. AI: Thank you, Mark. Wednesday? July 20 ninth is today. How many players will be in your group? User: 2. AI: Great. 2 players for today. What time are you hoping to play? User: 2 30. AI: Give me a moment. AI: We have 2, 10, 2 20, 2 30, and 2 40 PM available for today. Would you like to book the 2 30 PM tea time or would you prefer a different time? User: 2 30. AI: Your tee time for 2 players today at 2 30 PM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you check-in. As a reminder, San…"
+      },
+      {
+        "call_id": "019faf48-5268-700a-a175-f61f5bd4d783",
+        "date": "2026-07-29",
+        "time": "19:09:42",
+        "duration": "4:09",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: House. AI: San Juan Oaks does not handle real estate or home sales. Trilogy by Shay Holmes is the builder for the residential community here. You will need to contact them directly or visit the Shea Homes website for all sales information. Is there anything else I can help you with today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August fifth. AI: August fifth is a Wednesday. How many players will be in your group? User: 3. AI: What time are you hoping to play on Wednesday? August fifth? User: 3 o'clock. AI: Give me a moment. AI: We have 3 o'clock PM available, as well as 2 40 PM, 2 50 PM, and 3 10 PM. Would you like to book the 3 o'clock PM tea time for 3 players? User: Yes. A…"
+      },
+      {
+        "call_id": "019faf00-bf42-7663-bc9c-e0199c595009",
+        "date": "2026-07-29",
+        "time": "17:51:31",
+        "duration": "0:27",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to talk to somebody in the pro shop. AI: Of course. Would you like me to transfer you to the golf shop now so you can speak directly with a team member? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fae21-5374-7001-b884-b769337b0880",
+        "date": "2026-07-29",
+        "time": "13:47:29",
+        "duration": "1:43",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Raymond. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to make it a tea time AI: I'd be happy to help you book a tea time. What date would you like to play? User: Today. AI: Great. You're looking to play today. Which is Wednesday. How many players will be in your group? User: 2. AI: Thank you. What time are you hoping to play today? User: Uh, 11 o'clock. AI: Hold on a sec. AI: We have tea times available at 10 20, 10 40, 11 10, and 11 20 this morning. Which of those would you prefer? User: 11 10. AI: Your tee time for 2 players today at 11 10 AM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you Just a quick reminder, San Juan Oaks is a completely cashless facility, so please bring a credit card, Apple Pay, or Google Pay f…"
+      },
+      {
+        "call_id": "019fab8b-a9eb-733d-be3b-52d605954dfa",
+        "date": "2026-07-29",
+        "time": "01:44:52",
+        "duration": "1:14",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: is your restaurant open? AI: We have 2 dining options here at San Juan Oaks. McCann's Bar and Grill is open daily. Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Our upscale restaurant, 36 degrees north, is open for dinner Thursday through Saturday from 4 30 PM to 9 o'clock PM. Is there a particular restaurant or day you were interested in? User: Today, Tuesday. AI: Today is Tuesday. So McCann's Bar and Grill is open from 8 o'clock AM until 7 o'clock PM. 36 degrees north is closed today as it is only open through Saturday for dinner. McCann's offers casual, open air patio dining and operates strictly on a first come, first served basis. No reservations are needed. Is ther…"
+      },
+      {
+        "call_id": "019faa8b-b109-7000-8723-fea6e2a0c5b6",
+        "date": "2026-07-28",
+        "time": "21:05:11",
+        "duration": "1:09",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: General inquiry. AI: Of course. What can I assist you with today? Whether you have questions about tea times, our dining options, memberships, or anything else at San Juan Oaks. I'm here to help. User: I have a question. My friend wants to come with me, but he doesn't wanna play, how much does it cost for someone to ride along with me? AI: Thank you for your question. At San Juan Oaks, we welcome non playing guests to ride along, but there is a facility usage fee for nongolfers who wish to accompany players on the course. The exact fee can vary. So for the most accurate and up to date information, I recommend checking with our golf shop. Would you like me to transfer you to the golf shop so they can provide the current facility usage fee for a…"
+      },
+      {
+        "call_id": "019faa5b-c3aa-7cc0-b4da-a5f8ad64a2d9",
+        "date": "2026-07-28",
+        "time": "20:12:50",
+        "duration": "2:10",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Steve. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Is there a key times available? This afternoon? AI: Absolutely, Steve. I'd be happy to check our available tee times for you this afternoon. Just to confirm, are you looking to play today? Which is Tuesday, July 20 eighth? And how many players will be in your group? User: Yes. 2 players. AI: Just a sec. AI: We have several tee times available for 2 players this afternoon. Some options include 1 30 PM, 1 40 PM, 2 30 PM, 2 40 PM, and 2 50 PM. Would you like to book 1 of these times, or is there a specific time you prefer? User: 1 40 45 should be fine. AI: Thank you, Steve. Just to clarify, did you mean you'd like to book the 1 40 PM tea time for 2 players today? Or were you hoping for a time closer to 1 45 PM? User: Yes. AI: The close…"
+      },
+      {
+        "call_id": "019faa57-2dea-7eea-8fd1-fc46e0ac6d93",
+        "date": "2026-07-28",
+        "time": "20:07:50",
+        "duration": "1:57",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Ken. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to schedule a key time. AI: Absolutely. Ken. I'd be happy to help you schedule a tea time. What date are you looking to play? User: August third. AI: August third falls on a Monday. How many players will be in your group for that day? User: 2. AI: Great. 2 players. What time are you hoping to play on Monday, August third? User: 7 AM. AI: This will just take a sec. AI: We have several options available for 2 players on Monday, August third. 6 50 AM, 7 o'clock AM, 7 10 AM, and 7 20 AM. Would you like to book the 7 o'clock AM tea time, or would you prefer 1 of the other options? User: 7 o'clock AM. AI: Your tee time for 2 players on Monday, User: Yes. AI: August third at 7 o'clock AM is confirmed. Since we use dynamic pricing, your ex…"
+      },
+      {
+        "call_id": "019faa3e-52f5-7117-a0ef-c1aeea311f0a",
+        "date": "2026-07-28",
+        "time": "19:40:41",
+        "duration": "0:37",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Ben. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Green verification schedule. AI: Our course undergoes verification. Pronounced erification. Maintenance twice a year. The scheduled dates are March 20 third and 20 fourth, and again on October fifth and sixth. These dates can change depending on the weather. Is there anything else I can help you with today?"
+      },
+      {
+        "call_id": "019fa9da-b248-7993-9dcd-8a4ebdb02690",
+        "date": "2026-07-28",
+        "time": "17:51:52",
+        "duration": "1:28",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Customer service. AI: Of course. To make sure I connect you with the right person, could you please tell me a bit more about your customer service need? For example, is this about a recent visit, a billing question, a golf reservation, or something else? User: Golf. Gift certificate. AI: Thank you for clarifying. Are you looking for help with booking a tee time, modifying, or existing reservation, or do you have a different golf related question? User: Different golf related question. AI: Thank you for letting me know. Could you please share a bit more detail about your golf related question regarding gift certificates? That way, I can make sure to get you the most accurate information or connect you with the right team member. User: Trying to…"
+      },
+      {
+        "call_id": "019fa9d7-5dc4-7ff4-864f-dcee18287157",
+        "date": "2026-07-28",
+        "time": "17:48:13",
+        "duration": "0:59",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I have a question about your restaurant AI: Of course. We have 2 dining options here at San Juan Oaks. Are you interested in McCann's Bar and Grill? Which offers casual patio dining or 36 degrees north? Our upscale dinner restaurant, Let me know which 1 you'd like to hear more about or if you have a specific question in mind. User: McCann's McCann. McCann. McCann. McCann. AI: McCann's Bar and Grill is our casual, open air patio dining option overlooking the golf course. We're open Monday through Thursday from 8 o'clock AM to 7 o'clock PM, User: Yeah. That's AI: and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Full lunch service begins at 11 o'clock AM. McCann's is strictly first come. First served. No reservations are"
+      },
+      {
+        "call_id": "019fa9ce-7990-700d-a925-14dcb386cc3f",
+        "date": "2026-07-28",
+        "time": "17:38:30",
+        "duration": "0:35",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Need to speak to an agent. AI: I can connect you with a member of our team to assist you further. Would you like me to transfer you to the golf shop for help with your tee time request? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa9ca-1728-7444-a5a9-516bf9095a02",
+        "date": "2026-07-28",
+        "time": "17:33:43",
+        "duration": "0:56",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to see if there is a reservation for 2 AI: Absolutely. I'd be happy to help you with that. Just to clarify, are you looking to book a tee time for 2 players to play golf? Or are you interested in dining at 1 of our restaurants? User: Dining at McCann. AI: Thank you for clarifying. McCann's Bar and Grill is our casual, open air patio dining option. We operate strictly on a first come, first served basis and do not take reservations for McCann's. You're welcome to come by anytime during our open hours. And we'll be happy to see you as soon as a table is available. Is there anything else I can help you with today? User: No. Thank you."
+      },
+      {
+        "call_id": "019fa9b4-5c1b-799f-bc36-cf82aff6170d",
+        "date": "2026-07-28",
+        "time": "17:09:59",
+        "duration": "1:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Victor. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Uh, tea times. AI: Absolutely. I'd be happy to help you with the tea time. What date would you like to play? User: Friday, User: 20 AI: Great. You're looking to play this Friday. How many players will be in your group? User: 3. AI: Thank you. What time are you hoping to play on Friday? User: 9 15 AM. AI: 1 moment. AI: The closest available tee times to 9 15 AM on Friday are 8 48 59 20, and 9 30 AM. Would you like to book 1 of these times? User: Yes. 9 20. AI: Your tee time for 3 players on Friday? July 30 first at 9 20 AM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you check-in. As a reminder, San Juan Oaks is a completely cashless facility. So please bring a credit car…"
+      },
+      {
+        "call_id": "019fa99e-6362-766c-a25f-3ecb4bb97112",
+        "date": "2026-07-28",
+        "time": "16:46:01",
+        "duration": "3:19",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Tuesday, August eleventh. AI: Tuesday, August eleventh is available for booking. How many players will be in your group? User: 2. AI: Great. 2 players. What time are you hoping to play on Tuesday, August eleventh? User: Actually, can I switch that to 4 players? AI: Absolutely. I'll update your group to 4 players. What time are you hoping to play on Tuesday, August eleventh? User: 9 30 AM. AI: Give me a moment. AI: We have 9 10 AM, 9 20 AM, 9 30 AM, and 9 40 AM available for 4 players on Tuesday, August eleventh. Would you like to book 9 30 AM, or would you prefer 1 of the other times? User: Yes. 9 30 AM, please. AI: Perfect. I'll reserve 9 30…"
+      },
+      {
+        "call_id": "019fa972-34a3-7001-83b6-eec174ce8fff",
+        "date": "2026-07-28",
+        "time": "15:57:43",
+        "duration": "3:17",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Can I please book a 2 time? AI: Absolutely. I'd be happy to help you book a tea time. What date would you like to play? User: Today. AI: Great. You're looking to play today. Which is Tuesday. How many players will be in your group? User: Dose. 2. AI: Thank you. What time are you hoping to play today? User: Possibly around 1 30 ish. AI: Hold on a sec. AI: We have tee times available today at 1 10 PM, 1 20 PM, 1 30 PM, and 1 40 PM. Which time would you prefer? User: Can we do that 1 40? AI: Absolutely. I'll reserve the 1 40 PM tee time for 2 players. May I please have your first and last name for the booking? User: Kade, k a g e. And Dubilbeis, d u e b e l d e I s. AI: Thank you, Cade. To make sure I have your last name correct, let me confirm i…"
+      },
+      {
+        "call_id": "019fa94d-6a19-7bb2-b7d8-19abf141c68e",
+        "date": "2026-07-28",
+        "time": "15:17:33",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Jim. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. May I help you today? User: Driving range open today. AI: Yes. Our driving range is open today. On Tuesdays, the official opening time is 10 o'clock AM due to scheduled maintenance. However, during the summer months, we often open a bit earlier if daylight allows. If you plan to arrive before 10 o'clock AM and wanna confirm early access, I recommend checking with the golf shop for the most up to date information. Is there anything else I can help you with today? User: Can you transfer me to the golf shop AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa90c-3709-7aaa-90ee-534f39d041f1",
+        "date": "2026-07-28",
+        "time": "14:06:19",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Bryce. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Feed time. AI: Bryce, could you clarify what you mean by feed time? Are you looking for information about dining options, restaurant hours, or something else related food service here at San Juan Oaks? Let me know how I can assist you. User: No. AI: Thank you for User: No. Post shop. AI: Thank you for clarifying, Bryce. Are you looking for information about the golf shop? Such as hours, merchandise, or something specific? Or would you like to be connected directly to the golf shop for assistance? Please let me know how I can help. User: Connected directly. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa8d5-3912-7000-b93e-2866e7dc7463",
+        "date": "2026-07-28",
+        "time": "13:06:16",
+        "duration": "1:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Steve. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Okay. It's a great tea time. AI: I'm glad to hear you're interested in booking a tea time. What date would you like to play? AI: Just to confirm, are you looking to play on the ninth of this month? August ninth, User: Today. AI: Great. You're looking to play today. How many players will be in your group? User: 2. AI: Thank you. What time are you hoping to play today? User: 8 30 AM. AI: 1 moment. AI: We have 8 10 AM, 8 20 AM, 8 30 AM, and 8 40 AM available for 2 players today. Would you like to book the 8 30 AM tee time? User: I AI: Or would you prefer 1 of the other times? User: yeah. Yes. Yes. AI: Your tee time for 2 players today at 8 30 AM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the…"
+      },
+      {
+        "call_id": "019fa657-e02d-7115-93c9-9f208c6af4d2",
+        "date": "2026-07-28",
+        "time": "01:30:07",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Dave. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Please. AI: Of course. Dave. What can I assist you with today? Are you looking to book a tea time? Have questions about your membership? Or is there something else I can help with? User: Please contact me with the pro shop. AI: I can't connect you to the pro shop myself. But I can transfer you directly so they can assist you. Would you like me to transfer you to the pro shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa641-6c5e-7000-9df5-677d91caaa72",
+        "date": "2026-07-28",
+        "time": "01:05:36",
+        "duration": "1:51",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Rick. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Pick a tea change. AI: Rick. Just to clarify. Are you looking to change your tea time reservation, or would you like to book a new tea time? If you're hoping to modify an User: Book a new t t. AI: Great. I'd be happy help you book a new tea time at San Juan Oaks. What date would you like to play? User: Tomorrow. AI: Thank you, Rick. Tomorrow is Tuesday. July 20 eighth. How many players will be in your group? User: 3. AI: Thank you. What time are you hoping to play tomorrow? User: 11 o'clock. AI: 1 moment. AI: We have tee times available for 3 players tomorrow at 10 40, 11 o'clock, 11 10, and 11 20. Which time would you prefer? User: 11 o'clock. AI: Your tee time for 3 players is confirmed for tomorrow. Tuesday, July 20 eighth. At 11…"
+      },
+      {
+        "call_id": "019fa635-2bc3-755c-a2ba-8efa05bf2821",
+        "date": "2026-07-28",
+        "time": "00:52:12",
+        "duration": "1:41",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I'd like to make reservations for 9 tomorrow at by 11 30. And could we have, like, an outside table? AI: Thank you for your interest. Just to clarify, are you looking to make a reservation for dining at McCann's Bar in and Grill or at 36 degrees north? McCann's Bar and Grill is strictly first come, first served, and does not take reservations. But you're always welcome to enjoy our open air patio seating. If you're interested in 36 degrees north, that restaurant is only open for dinner Thursday through Saturday. Could you please confirm which restaurant you'd like? Or if you're looking to book a golf tee time for 9 players? User: No. We're just wanting to eat lunch in the patio area, outside area. AI: Thank you for clarifying. McCann's Ba…"
+      },
+      {
+        "call_id": "019fa5ea-1b63-722e-8b1f-5af0a6f13eda",
+        "date": "2026-07-27",
+        "time": "23:30:14",
+        "duration": "2:20",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi Vince. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Would like to schedule a tea time. AI: I'd be happy to help you schedule a tea time. What date would you like to play? User: August sixth AI: August sixth falls on a Thursday. How many players will be in your group? User: 4 player AI: Great. 4 players. What time are you hoping to play on Thursday? August sixth? User: 11 AM. And I have a certificate. AI: Just a sec. AI: We have tea times available at 10 40, 10 50, 11 o'clock, and 11 10 AM on Thursday. August sixth. Would you like to book the 11 o'clock AM slot for your group? Also, User: Yeah. AI: just a quick note, if your certificate is for green fees or a special rate, please bring it with you and present it at check-in. All payments must be made by credit card, Apple Pay, or Google Pay…"
+      },
+      {
+        "call_id": "019fa5ca-c83a-7cc0-b779-3940080b6f2c",
+        "date": "2026-07-27",
+        "time": "22:56:00",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Greg. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. I was looking to get information on a tournament. AI: San Juan Oaks is a fantastic destination for tournaments, private events, and banquets. I can connect you directly with Charlene Corrigan, our sales event coordinator, who can provide all the details and help you plan your tournament. Would you like me to transfer you to our events and group sales team to assist with that? User: Yeah. AI: Transferring you to events and group sales. Please wait a moment."
+      },
+      {
+        "call_id": "019fa4f9-9f8c-7ff5-b381-779a9a2ee476",
+        "date": "2026-07-27",
+        "time": "19:07:32",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Golf range hours. AI: Our driving range is open daily from 6 o'clock AM to 7 o'clock PM. However, on Mondays, the range closes early for maintenance. And on Tuesday mornings, it officially opens at 10 o'clock AM. If you need the exact closing time for the range today, which is Monday, I can transfer you to the golf shop for the most accurate information. You like me to transfer you to the golf shop to confirm today's range hours? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa4e4-8607-7ccc-b3d0-495d293c6858",
+        "date": "2026-07-27",
+        "time": "18:44:29",
+        "duration": "2:04",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Today. AI: Great. You're looking to play today. Which is Monday. How many players will be in your group? User: 1. AI: Thank you. What time are you hoping to play today? User: 2 o'clock. AI: Give me a moment. AI: We have 2 o'clock PM available, as well as 1 40 1 50, and 2 10 PM. Would you like to book the 2 o'clock PM slot, or would you prefer 1 of the others? User: 2 o'clock. AI: Perfect. I'll reserve the 2 o'clock PM tea time for you. May I please have your first and last name for the booking? User: Dan Earl. AI: Thank you, Dan Earl. May I have your email address to complete your booking? If you'd like, I can verify it back to you using the NATO ph…"
+      },
+      {
+        "call_id": "019fa4b2-f056-7000-8498-4ca82fdb07df",
+        "date": "2026-07-27",
+        "time": "17:50:23",
+        "duration": "1:15",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Do you guys rent out golf clubs? AI: Yes, we do offer premium rental sets for both men and women available in right and left handed options. The cost is 95 dollars per set, and that includes a sleeve of premium golf balls and a golf glove. Is there anything else I can help you with today? User: Is that just for the day? AI: Yes, The 95 dollars rental fee covers use of the clubs for your entire round that day. If you need them for multiple rounds on the same day, just let the golf shop know when you check-in. Is there anything else I can assist you with today? User: What if it's just for the driving range? AI: If you'd like to rent clubs just for the driving range, you're welcome to do so. The same 95 dollars fee applies, and you'll receive a p…"
+      },
+      {
+        "call_id": "019fa4a6-2b52-7ff8-8908-6ddc116ab611",
+        "date": "2026-07-27",
+        "time": "17:36:23",
+        "duration": "1:53",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi Louise. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I want it for the tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Today. User: July 20 seventh. AI: Thank you for confirming. July 20 seventh is today. Which is a Monday. How many players will be in your group? User: 2. AI: Thank you. What time are you hoping to play today? User: 2 30. AI: Just a sec. AI: We have 2 10 PM 2 20 PM, 2 30 PM, and 2 40 PM available today. Would you like to book the 2 30 PM tee time for 2 players? User: Yeah. User: Yes. AI: Your tee time for 2 players today? Monday, July 20 seventh at 2 30 PM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you check-in. As a quick reminder, San Juan Oaks is a…"
+      },
+      {
+        "call_id": "019fa489-29e5-711b-baf6-bf1637fd2cf2",
+        "date": "2026-07-27",
+        "time": "17:04:43",
+        "duration": "0:43",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to be connected to the the place where you have lunch. AI: Could you please let Absolutely. Our casual lunch spot is McCann's Bar and Grill, which offers open air patio dining overlooking the course. If you'd like to speak with someone there about the menu, hours, or any other questions, I can transfer you directly to McCann's. Would you like me to connect you now? User: Yes. AI: Transferring you to the McCann's restaurant. Please wait a"
+      },
+      {
+        "call_id": "019fa473-77de-777f-8f68-0710c6d727c8",
+        "date": "2026-07-27",
+        "time": "16:41:00",
+        "duration": "1:14",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservations for McCann's. Restaurant outdoor seating. AI: McCann's Bar and Grill offers casual, open air patio dining with beautiful views, and all seating is strictly first come. First served. We do not take reservations for McCann's, so you're welcome to come by and choose a table when you arrive. Is there anything else I can help you with today? User: Notification of party of 6 AI: Thank you for letting us know. At McCann's Bar and Grill, we welcome larger parties. But please keep in mind that all seating. Including for groups of 6, is strictly first come, first served. We do not take advance notifications or reservations so your group can simply check-in with our host when you arrive and we'll do our best to accommodate you as quickly as…"
+      },
+      {
+        "call_id": "019fa470-af36-7dd2-9a68-b02f7b99dc4d",
+        "date": "2026-07-27",
+        "time": "16:37:58",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Jose. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Can I talk to someone, please? AI: Of course. I can connect you with a member of our team. Is there a specific department or topic you'd like to discuss? Such as tee times, the golf shop, User: The clubhouse. AI: dining, or something else? User: Golf shop. AI: Or would you like me to transfer you to the golf shop for general assistance? User: Golf shop. Transfer me. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019fa468-5848-7dd8-a6cd-0ad06b38a85e",
+        "date": "2026-07-27",
+        "time": "16:28:51",
+        "duration": "1:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: The restaurant. AI: We have 2 dining options here at San Juan Oaks. Are you interested in McCann's Bar and Grill? Which offers casual patio dining and is open daily? Or 36 degrees north, our upscale dinner restaurant open Thursday through Saturday evenings, Which restaurant would you like information about? User: McCann's Cup Bar and Grill. McCann's Bar and Grill. AI: Thank you for Thank you for clarifying. McCann's Bar and Grill. Pronounced moo cans, offers casual, open air patio dining overlooking the course. We're open Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Full lunch service begins at 11 o'clock AM. McCann's is strictly first come, first served, so we do not t…"
+      },
+      {
+        "call_id": "019fa441-9b8f-733d-bbda-74102e90fdfa",
+        "date": "2026-07-27",
+        "time": "15:46:33",
+        "duration": "0:24",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to speak with the pro shop. AI: I can transfer you directly to the golf shop so you can speak with a team member. Would you like me to connect you now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019fa43e-1bb6-7000-844f-b927a51a7b1b",
+        "date": "2026-07-27",
+        "time": "15:42:43",
+        "duration": "2:09",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Cameron. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Thank you. Pizza Hut. AI: Just to clarify, are you looking for information about dining options here at San Juan Oaks? Or did you mean something else by Pizza Hut? We do not have a Pizza Hut on property, but I'm happy to share details about our on-site dining, including McCann's Bar and Grill and our slices User: No. AI: Thank you for clarifying. User: I said make a tea time. AI: Thank you for letting me know you'd like to book a User: Pro shop. AI: tea time. What date would you like to play? User: Sunday, August second. AI: Thank you, Cameron. Sunday, August second is a great choice. How many players will be in your group? User: 3. AI: What time are you hoping to play on Sunday? August second? User: 10 30 or 11. AI: Just a sec. A…"
+      },
+      {
+        "call_id": "019fa43d-c0b8-777f-8bcc-77c9b8142af7",
+        "date": "2026-07-27",
+        "time": "15:42:21",
+        "duration": "4:09",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to book a tea time for 2 on Thursday around 10 AM. AI: Hold on a sec. AI: We have several tee times available for 2 players on Thursday, including 9 49 50, 10 o'clock, and 10 10 in the morning. Would you like to book the 10 o'clock AM slot, or would you prefer 1 of the other times? User: That's do the 10 10. AI: Great. I'll reserve the 10 10 AM tee time for 2 players on Thursday. May I please have your first and last name for the booking? User: Gilbert Soros. AI: Thank you, Gilbert. May I have your email address to complete your reservation? I'll confirm it back to you using the phonetic alphabet to ensure accuracy. User: Torres Gilbert 1 at gmail dot com. That's s o a r e s g I l b e r t, the number 1, at g mail dot com. AI: Thank…"
+      },
+      {
+        "call_id": "019fa17a-1c38-7226-9863-7ca8bea4dd77",
+        "date": "2026-07-27",
+        "time": "02:49:26",
+        "duration": "1:02",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Observe a table. AI: Could you please clarify what you mean by observe a table? Are you looking for information about dining at 1 of our restaurants? Reserving a table, or something else related to San Juan Oaks? User: Dining. AI: Let me know how I can assist you. User: Reserve a table for tonight. Restaurant. AI: Thank you for your interest in dining with us. We have 2 dining options at San Juan Oaks. McCann's Bar and Grill is our casual open air patio restaurant. It is strictly first come. First served, and we do not take reservations. 36 degrees north is our upscale dinner restaurant, open Thursday through Saturday evenings, and reservations are highly recommended. Since tonight is Sunday, McCann's Bar and Grill is open until 7 o'clock PM,…"
+      },
+      {
+        "call_id": "019fa16a-2d58-7003-a320-fc5e941b09bb",
+        "date": "2026-07-27",
+        "time": "02:32:02",
+        "duration": "0:52",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Pro chop. AI: Just to confirm, would you like me to transfer you to the golf shop for assistance? User: The restaurant. AI: Thank you for clarifying. We have 2 dining options. McCann's Bar and Grill, which is our casual open air patio restaurant and 36 degrees north. Our upscale dinner venue. Could you please let me know which restaurant you'd like to be connected with? User: The first 1. AI: Great. I'll transfer you to McCann's Bar and Grill now. 1 moment. Transferring you now. Transferring you to the McCann's restaurant. Please wait a moment."
+      },
+      {
+        "call_id": "019fa0f9-011b-7881-93a1-392ac4bfaecd",
+        "date": "2026-07-27",
+        "time": "00:28:22",
+        "duration": "0:27",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Is 36 degrees north open? AI: 36 degrees north is our upscale dining and it is open for dinner on Thursdays, Fridays, and Saturdays from 4 30 PM to 9 o'clock PM. The restaurant is closed Sunday through Wednesday."
+      },
+      {
+        "call_id": "019fa0bc-84c5-7999-bde4-6c3bb8d180c7",
+        "date": "2026-07-26",
+        "time": "23:22:19",
+        "duration": "3:38",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi, Emily. Is there availability to play golf today? AI: I'd be happy to check today's availability for you. How many players will be in your group? User: 2. AI: Great. And just to confirm, you'll be playing 18 holes. As we do not offer a 9 hole rate. What time are you hoping to play today? User: Probably about 5, 5 15 if possible. AI: Give me a moment. AI: We have several tea times available this afternoon. 4 40 PM, 4 50 PM, 5 o'clock PM, and 5 10 PM. Would you like to book the 5 o'clock or 5 10 slot, or would you prefer 1 of the earlier times? User: The 5 10 slot would be great. AI: Perfect. I'll reserve the 5 10 PM tea time for 2 players. May I please have your first and last name for the booking? User: James. AI: Thank you. User: Last name…"
+      },
+      {
+        "call_id": "019fa090-bcd4-7992-a02d-450fa0b79b01",
+        "date": "2026-07-26",
+        "time": "22:34:33",
+        "duration": "1:47",
+        "ended_reason": "assistant-ended-call",
+        "transcript": "AI: Hi, Joey. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna book a 2 tab for August eighth, please. AI: Thank you, Joey. Just to confirm, you'd like to book a tee time for 2 players on August eighth? At San Juan Oaks, User: No. No. I wanna book it for 4 players. AI: Thank you for clarifying. You'd like to book a tee time for 4 players on August eighth. Let me check the day of the week for August eighth and confirm availability. User: Yeah. AI: What time are you hoping to play on August eighth? User: 9 AM. AI: August eighth falls on a Saturday. For 4 players, I have tee times available at 9 o'clock AM, 9 10 AM, 9 20 AM, and 9 30 AM. Which time would you prefer? User: 9 AM, please. AI: Your tee time for 4 players on Saturday, August eighth, at 9 o'clock AM is confirmed. Since we use dynamic p…"
+      },
+      {
+        "call_id": "019fa073-132b-7337-9e12-db7e5b6d7d8d",
+        "date": "2026-07-26",
+        "time": "22:02:05",
+        "duration": "0:40",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to know how late the coffee shop is open today. AI: We don't have a dedicated coffee shop at San Juan Oaks, but User: Oh, Mckin's. AI: Thank you for clarifying. McCann's Bar and Grill. Pronounced moo cans, is our main dining option. Today, which is Sunday, McCann's is open from 7 o'clock AM until 7 o'clock PM. Is there anything else I can help you with today? User: No. That's all. Thank you."
+      },
+      {
+        "call_id": "019fa020-427c-744c-b13d-7420f59dae6b",
+        "date": "2026-07-26",
+        "time": "20:31:38",
+        "duration": "1:14",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. May I help you today? User: Uh, is the restaurant open? AI: Yes. We have 2 dining options at San Juan Oaks. McCann's Bar and Grill is open daily. Monday through Thursday from 8 o'clock AM to 7 o'clock PM, and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Lunch service begins at 11 o'clock AM, and seating is strictly first come, first served. No reservations are needed. If you're interested in a more upscale dinner experience, 36 degrees north is open for dinner Thursday, Friday, and Saturday from 4 30 PM to 9 o'clock PM. Reservations for 36 degrees north are highly recommended and can be made through our website. Is there a particular restaurant or time you're interested in? User: Not sure. AI: No problem at all. If you're looking for a casual meal or a bite after…"
+      },
+      {
+        "call_id": "019f9ffe-b29e-7111-aca9-2395fe5137b9",
+        "date": "2026-07-26",
+        "time": "19:54:58",
+        "duration": "0:20",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: What time does the driving range close today? AI: The driving range at San Juan Oaks is open today until 7 o'clock PM. If you need anything"
+      },
+      {
+        "call_id": "019f9fb5-3b6b-7aa8-b9de-9d79276f535a",
+        "date": "2026-07-26",
+        "time": "18:34:44",
+        "duration": "4:44",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Feedtime reservation. AI: Just to clarify, are you looking to book a tee time for golf? Or are you interested in making a dining reservation at 1 of our restaurants? At San Juan Oaks, tee times can be booked for golf. But dining reservations are only available for our upscale restaurant. 36 degrees north. McCann's Bar and Grill is strictly first come, first served, and does not take reservations. Could you please let me know which User: Tea time reservation. AI: great. I'd be happy to help you book a tea time at San Juan Oak. What date would you like to play? User: Sunday, August second. AI: Thank you, Sunday, August second is a Sunday. How many players will be in your group? User: 4. AI: Perfect. A group of 4. What time are you hoping to play…"
+      },
+      {
+        "call_id": "019f9f6f-8b73-777f-b303-365acf795d16",
+        "date": "2026-07-26",
+        "time": "17:18:37",
+        "duration": "0:25",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need reservations for breakfast? AI: McCann's Bar and Grill is our breakfast and lunch spot. And it's open daily starting at 8 o'clock AM. We operate strictly on a first come, first served base"
+      },
+      {
+        "call_id": "019f9f34-0cfd-7337-9964-3e96eb6b04cf",
+        "date": "2026-07-26",
+        "time": "16:13:38",
+        "duration": "2:08",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August eighth. AI: August eighth falls on a Saturday. How many players will be in your group? User: 2. AI: Great. 2 players. What time are you hoping to play on Saturday, August eighth? User: 8. 10 AM. AI: Just a sec. AI: We have 8 o'clock, 8 10, and 8 20 AM available on Saturday. August eighth. Would you like to book 8 10 AM, or would you prefer a different time? User: 8 10. AI: Perfect. I'll reserve 8 10 AM for 2 players. May I please have your first and last name for the booking? User: Ben Doyle. AI: Thank you. Ben Doyle. May I have your email address to complete the reservation? I'll confirm it back to you using the phonetic alphabet to e…"
+      },
+      {
+        "call_id": "019f9f2d-d187-7cc1-a606-31401f0443d4",
+        "date": "2026-07-26",
+        "time": "16:06:49",
+        "duration": "0:56",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. User: Thank you. AI: I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Are they surfing brunch at McCann? AI: McCann's Bar and Grill offers casual, open air patio dining, but we do not serve a dedicated brunch menu. McCann's opens daily at 8 o'clock AM Monday through Thursday and at 7 o'clock AM Friday through Sunday. Full lunch service begins at 11 o'clock AM and everything is strictly first come, first served. No reservations are needed. Is there anything else I can help you with today? User: No. AI: Thank you for calling San Juan Oaks. Have a wonderful day."
+      },
+      {
+        "call_id": "019f9f14-5fa7-7ffd-9c45-762f990d4b2c",
+        "date": "2026-07-26",
+        "time": "15:39:02",
+        "duration": "4:36",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August first, AI: August first falls on a Saturday. How many players will be in your group? User: Just 1, please. AI: Thank you. What time are you hoping to play on Saturday, August first? User: 3 PM. AI: This'll just take a sec. AI: We have 3 o'clock PM available, as well as 2 40 PM, 2 50 PM, and 3 10 PM. Would you like to book the 3 o'clock PM slot or would you prefer 1 of the other times? User: 3 PM, please. AI: Great. May I have your first and last name for the booking? User: My first name is Deepak. Spelled as delta echo echo papa alpha kilo. AI: Thank you. Deepak. And may I have your last name? Using the NATO phonetic alphabet as well?…"
+      },
+      {
+        "call_id": "019f9c4d-3bc4-7770-b1d7-fdd62dd628ae",
+        "date": "2026-07-26",
+        "time": "02:42:17",
+        "duration": "0:25",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. User: Oh my god. AI: Hello. How may I assist you today? User: Human AI: If you'd like to speak with a staff member, I can transfer you right away. Would you like me to connect you to our team at the golf shop? User: Yes. Please. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019f9b79-bc74-7776-b5b4-0aaf713f30c4",
+        "date": "2026-07-25",
+        "time": "22:51:16",
+        "duration": "2:20",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Front information. AI: Absolutely. San Juan Oaks is a championship caliber, publicly accessible 18 hole golf course located at 1 9 9 6 San Juan Oaks Road in Hollister, California. We're open to the public and welcome golfers. Diners, and guests of all experience levels. A few important things to know. We are a strictly cashless facility. Please bring a credit card, Apple Pay, or Google Pay for all purchases. Proper golf attire is required at all times. Collared shirts and tailored pants or shorts are mandatory. And denim is not allowed. Our golf shop and driving range are open daily from 6 o'clock AM to 7 o'clock PM with some seasonal variations. McCann's Bar and Grill offers casual patio dining and 36 degrees north provides an upscale dinner…"
+      },
+      {
+        "call_id": "019f9b3a-852e-744c-a22e-ba5fcf370aa2",
+        "date": "2026-07-25",
+        "time": "21:42:13",
+        "duration": "0:25",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Agent. AI: If you need to speak with a specific staff member or department, please let me know what your question is about, and I'll be happy to connect you with the right person. Who can I direct your call to today?"
+      },
+      {
+        "call_id": "019f9b31-242a-7004-855a-5282694b5b67",
+        "date": "2026-07-25",
+        "time": "21:31:58",
+        "duration": "1:24",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reception. AI: You've reached the main reception for San Juan Oaks. How can I assist you today? User: Speak to representative. AI: I'd be happy to connect you with a representative. May I ask what your question or concern is about? So I can direct you to the right person? For example, is it about tea times, dining, events? Or something else? User: Driving range. AI: Thank you for letting me know. Are you looking for information about the driving range hours? Pricing, or something else related to the range? User: Pricing. AI: The daily access fee for our practice facility, which includes unlimited use of the driving range, short game chipping areas, and the pudding green is 35 dollars. If you are a players club member, you receive 10 dollars of…"
+      },
+      {
+        "call_id": "019f9b2f-4da7-755a-9839-20749221310a",
+        "date": "2026-07-25",
+        "time": "21:29:58",
+        "duration": "0:57",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. I just wanted to know if since I'm not a member out there, can I still come out and hit golf balls? AI: Absolutely. San Juan Oaks is fully open to the public, so you do not need to be a member to use our driving range or practice facilities. The daily access fee is 35 dollars, which includes unlimited use of the driving range, chipping areas, and putting green. Just a quick reminder, we are a strictly cashless facility so please bring a credit card, Apple Pay, or Google Pay for your visit. Is there anything else I can help you with today? User: Uh, no. That's fine. Thank you so much. AI: Thank you for calling San Juan Oaks. Have a wonderful day."
+      },
+      {
+        "call_id": "019f9ac6-3948-7332-a04b-018fcb8ca1e9",
+        "date": "2026-07-25",
+        "time": "19:35:12",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Representative. AI: Of course. May I ask which department or type of assistance you need? For example, are you looking for help with tee times, events, dining? Or something else? This will help me connect you with the right person. User: Tea time. Tea time. AI: Thank you for clarifying. I can help you book a tee time directly. What date would you like to play? User: Representative. AI: I understand you'd like to speak with someone directly about tea times. Can transfer you to our golf shop. Where a team member can assist you further. Would you like me to transfer you to the golf shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019f9aa5-13ce-7993-962d-200de79c6f3b",
+        "date": "2026-07-25",
+        "time": "18:59:05",
+        "duration": "3:20",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August twelfth. AI: August twelfth falls on a Wednesday. How many players will be in your group? AI: Are you ready to proceed? User: Yes. AI: Great. How many players will be in your group for your round on Wednesday August twelfth? User: 4. AI: Thank you. What time are you hoping to play on Wednesday, August twelfth? User: 10 30. AI: 1 moment. AI: We have tea times available at 10 10 AM, 10 20 AM, 10 30 AM, and 10 40 AM. Would you like to book the 10 30 AM slot? Or would you prefer 1 of the other times? User: 10 o'clock. AI: The earliest available tee time near 10 o'clock AM is 10 10 AM. You like to book the 10 10 AM slot for your group? User…"
+      },
+      {
+        "call_id": "019f9a4e-1015-7224-babb-8082a7cc2e27",
+        "date": "2026-07-25",
+        "time": "17:23:57",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Kevin. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: What time is Twilight? AI: Our twilight rates at San Juan Oaks typically begin in the early afternoon, but the exact start time can vary depending on the day and season. If you have a specific date in mind, I can check the available tee times for you or I can transfer you to the golf shop for the most up to date twilight start time and pricing. Would you like me to connect you with the golf shop for those details? User: Yeah. Yes. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019f99e5-f4db-7332-995a-d789d09c936d",
+        "date": "2026-07-25",
+        "time": "15:30:16",
+        "duration": "1:42",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Howard McKing. AI: Thank you. Mister McKing. How may I assist you today? Are you looking to book a tea time, inquire about our rates, or is there something else I can help with? User: McChain's hours. AI: Certainly. McCann's Bar and Grill. Pronounced moo cans, is open Monday through Thursday from 8 o'clock AM to 7 o'clock PM and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Full lunch service begins at 11 o'clock AM. It's casual patio dining and strictly first come, first served. So no reservations are needed. Is there anything else I can help you with today? User: Yes. AI: Of course. What else can I assist you with today? User: Do they serve breakfast? AI: McCann's Bar and Grill opens early each day. But full lunch service begins a…"
+      },
+      {
+        "call_id": "019f99d8-979a-7dd6-8ab4-97292c8619bd",
+        "date": "2026-07-25",
+        "time": "15:15:39",
+        "duration": "0:20",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. User: Thank you AI: I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Is the range open? AI: Yes. Our driving range is open daily from 6 o'clock AM to 7 o'clock PM. Just a quick reminder,"
+      },
+      {
+        "call_id": "019f9738-66dc-7558-b8fe-6df303734324",
+        "date": "2026-07-25",
+        "time": "03:01:26",
+        "duration": "1:18",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to change a reservation. AI: I cannot process tea time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect User: No. AI: No problem at all. If you decide you'd like assistance with your reservation later, User: Restaurant. AI: just let me know. Is there anything else I can help you with today? User: Restaurant. Restaurant. AI: Of course. We have 2 dining options at San Juan Oaks. McCann's Bar and Grill is our casual, open air patio restaurant. It's open daily and operates on a first come. First served basis. No reservations are needed. 36 degrees north is our upscale dinner restaurant. Open Thursday through Saturday, from 4 30 PM to 9 o'cl…"
+      },
+      {
+        "call_id": "019f96e4-07ae-7aa4-9928-0925d6dc9cc2",
+        "date": "2026-07-25",
+        "time": "01:29:16",
+        "duration": "1:49",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, David. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I wanna make a tea time. AI: Absolutely. I'd be happy to help you book a tea time. What date would you like to play? User: Wednesday, the 20 ninth. AI: Great. That's Wednesday, July 20 ninth. How many players will be in your group? User: 4. AI: Perfect. 4 players. What time are you hoping to play on Wednesday? July 20 ninth? User: 1 50. AI: 1 moment. AI: We have 1 50 PM available, as well as 1 30 1 40, and 2 o'clock PM. Would you like to book the 1 50 PM tea time for your group? User: Please. User: Yes. AI: Your tee time for 4 players on Wednesday, July twentieth ninth at 1 50 PM is confirmed. Since we use dynamic pricing, your exact final rate will be calculated at the golf shop when you check-in. Just a quick reminder, San Juan Oa…"
+      },
+      {
+        "call_id": "019f968b-b2ce-7dd7-87cb-1815fd988249",
+        "date": "2026-07-24",
+        "time": "23:52:47",
+        "duration": "0:47",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: 36 degrees north. AI: 36 degrees North is our dining experience here at San Juan Oaks. We are open for dinner on Thursday, Friday, and Saturday evenings from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made directly through our website. Using OpenTable. Would you like me to transfer you to 36 degrees north for more information? Or to speak with someone directly? User: Yes. AI: Transferring you to the 36 degree north. Please wait a moment."
+      },
+      {
+        "call_id": "019f9686-8b17-7558-907f-72ac42cd621f",
+        "date": "2026-07-24",
+        "time": "23:47:11",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: 36 degrees north. AI: 36 degrees north is our upscale dining experience here at San Juan Oaks. It's open for dinner on Thursday, Friday, and Saturday evenings from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made directly through our website. Using OpenTable. Would you like me to transfer you to 36 degrees north for more information? Or to speak with someone directly? User: Yes. AI: Transferring you to the 36 degree north. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019f966e-07f6-7ff1-bd66-c73211b92bb4",
+        "date": "2026-07-24",
+        "time": "23:20:23",
+        "duration": "0:57",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I have a question about the restaurant. AI: Of course. We have 2 main dining options here at San Juan Oaks. Are you interested in McCann's Bar and Grill, which offers casual patio dining, or 36 degrees north, our upscale dinner restaurant, Let me know which 1 you'd like information about, or feel free to ask your specific question. User: Does McCann serve breakfast on Sunday? AI: Yes, McCann's Bar and Grill is open on Sundays starting at 7 o'clock AM. You're welcome to come in for breakfast. No reservation is needed as seating is strictly first come first served. Is there anything else I can help you with today? User: No."
+      },
+      {
+        "call_id": "019f964c-7f99-7557-adb1-d7fef1f7996e",
+        "date": "2026-07-24",
+        "time": "22:43:45",
+        "duration": "0:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: McCann. AI: McCann's Bar and Grill is our casual, open air patio dining option overlooking the course. User: Connect me. AI: We're open Monday through Thursday from 8 o'clock AM to 7 o'clock PM and Friday through Sunday from 7 o'clock AM to 7 o'clock PM. Lunch service begins at 11 o'clock AM. Please note, seating is strictly first come, first served. No reservations are needed. Is there something specific you'd like to know about McCann's? Such as menu options or hours for a particular day? User: Connect me. Connect me. Stupid Connect me. You AI: Transferring you to the McCann's restaurant. Please wait a moment."
+      },
+      {
+        "call_id": "019f95cf-23b0-7000-9586-c2bde1a497a2",
+        "date": "2026-07-24",
+        "time": "20:26:50",
+        "duration": "1:25",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Mark. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yeah. I'd like to go ahead and schedule a 2 10 tee time. For 1 as a single. AI: Great, Mark. I can help you with that. What date would you like to play at 2 10? User: Today. AI: 1 moment. AI: We do have a 2 10 tee time available today for a single player. Would you like me to go ahead and book that for you? User: Please. AI: Your tee time for 1 player today at 2 10 PM is confirmed. Since we use dynamic pricing, your exact fine rate will be calculated at the golf shop when you As a reminder, San Juan Oaks is a completely cashless facility, so please bring a credit card, Apple Pay, or Google Pay for your visit. We also require collared shirts and do not permit denim. Is there anything else I can help you with today? User: No. That's pe…"
+      },
+      {
+        "call_id": "019f95c4-f8c6-7772-aed3-dbb09c524185",
+        "date": "2026-07-24",
+        "time": "20:15:43",
+        "duration": "0:32",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Slices. AI: The hours for slices, our snack bar vary based on the number of golfers scheduled for the day. I can transfer you to our Snack Shack team to confirm if Slices is open right now. Would you like me to transfer you? User: Yes. AI: Transferring you to the Snack Shack. Please wait a moment."
+      },
+      {
+        "call_id": "019f957f-922e-788c-b65f-8a7930aad591",
+        "date": "2026-07-24",
+        "time": "18:59:55",
+        "duration": "3:48",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. May I help you today? User: I would like to book a tea time for Friday. AI: Great. Just to confirm, you'd like to book a tee time for this coming Friday. Could you please tell me how many players will be in your group? User: 4. AI: Thank you. And what time are you hoping to play on Friday? User: 7 30 AM. AI: 1 moment. AI: It looks like our earliest available tee times for 4 players this Friday are 12 20 PM, 12 30 PM, 1 o'clock PM, and 1 10 PM. Would you like to book 1 of these times, or would you prefer a different day? User: A different day. AI: No problem at all. What date would you like to play instead? User: July 30 first. AI: Thank you. July 30 first falls on a Friday. What time are you hoping to play on that day? User: 7 30 AM. AI: This will just take a sec. AI: We hav…"
+      },
+      {
+        "call_id": "019f957a-d450-7cc7-a608-945894dd9504",
+        "date": "2026-07-24",
+        "time": "18:54:44",
+        "duration": "1:17",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to make a dinner reservation. For August first AI: Thank you for your interest in dining with us. We have 2 dining options. McCann's bar and grill. Which is strictly first come, first served, and does not take reservations. And 36 degrees north, our upscale dinner restaurant, which does accept reservations. Just to confirm, are you looking to make a reservation at 36 degrees north for dinner on August first? User: Yes. AI: Wonderful. 36 degrees north is our upscale dining experience. Open for dinner on Thursdays, Fridays, and Saturdays from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made directly through OpenTable on our website. I'm unable to make the reservation myself, but our restaurant team can assist…"
+      },
+      {
+        "call_id": "019f9575-0f86-766b-ba53-4b9c08cde7c9",
+        "date": "2026-07-24",
+        "time": "18:48:26",
+        "duration": "1:20",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Front desk. AI: You've reached the main reception for San Juan Oaks. How can I assist you today? User: Dining. AI: We have 2 dining options here at San Juan Oaks. For casual, open air patio dining, McCann's Bar and Grill is open daily and operates on a first come first served basis. No reservations are needed. For a more upscale experience, 36 degrees north offers dinner service Thursday through Saturday evenings, and reservations are highly recommended through our website. Are you interested in McCann's Bar and Grill, 36 degrees north? Or do you have a specific dining question I can help with? User: 10 golf and dining gift cards be used together? AI: I don't have that specific information right in front of me, but I can transfer you to the go…"
+      },
+      {
+        "call_id": "019f956e-7a4d-7bb5-af99-90efef754b3b",
+        "date": "2026-07-24",
+        "time": "18:41:15",
+        "duration": "0:41",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to make a reservation for dinner. AI: We have 2 dining options at San Juan Oaks. For casual, open air patio dining, McCann's Bar and Grill is strictly first come. First served, so no reservations are needed. For a more upscale experience, 36 degrees north is open for dinner Thursday through Saturday, and reservations are highly recommended. Would you like me to transfer you to 36 degrees north to assist with your dinner reservation?"
+      },
+      {
+        "call_id": "019f955c-ed38-7665-b136-1c31da26a457",
+        "date": "2026-07-24",
+        "time": "18:22:05",
+        "duration": "3:26",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Next Wednesday, the 20 sixth. AI: Thank you. How many players will be in your group for Wednesday, August 20 sixth? User: 4. AI: Perfect. What time are you hoping to play on Wednesday, August 20 sixth? User: 9 30 AM. AI: Just a sec. AI: It looks like there are no t times available at 9 30 AM for Wednesday, August twentieth sixth. Would you like me to check for times a little earlier or later that morning? If you have a specific window in mind, just let me know. User: Alright. July 20 ninth at 9 30 AM. AI: Give me a moment. AI: We have several tee times available for Wednesday. July 20 ninth. 9 10 AM 9 20 AM, 9 30 AM, and 9 40 AM. Would you li…"
+      },
+      {
+        "call_id": "019f9533-18a9-7cce-9497-9ed6f736a005",
+        "date": "2026-07-24",
+        "time": "17:36:25",
+        "duration": "4:34",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I would like to schedule a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Tuesday, June 28 July 20 eighth. AI: Just to confirm, you're looking to book a tee time for Tuesday, July 20 eighth. How many players will be in your group? User: 4. AI: Great. 4 players for Tuesday, July 20 eighth. What time are you hoping to play that day? User: 10 AM. AI: This'll just take a sec. AI: The closest available tea time is to 10 o'clock AM on Tuesday, July twentieth eighth are 9 40, 9 50, 10 10, and 10 20. Which of these would you prefer? User: Sounds funny. AI: Thank you for your patience. Let me clarify. For Tuesday, July 20 eighth, the available tee times closest to 10 o'clock AM are 9 49 50, 10 10, and 10…"
+      },
+      {
+        "call_id": "019f9516-7c59-700a-9cf4-1f2c09706542",
+        "date": "2026-07-24",
+        "time": "17:05:08",
+        "duration": "1:45",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. User: Hello? Hello? Go. AI: How may I help you today? User: Come here. Hello? Book this time. No. Bye bye. Woo hoo. Where do you go? AI: It sounds like you I'm here to help with anything User: And you gotta call a public tree over there. AI: San Juan Oaks is a publicly User: Roach. AI: accessible golf course, so everyone is welcome to play here. No membership is required. If you have a specific question or need assistance with booking a tea time or anything else, just let me know how I can help. User: Boat, come here. AI: I'm here to assist you with anything related to San Juan Oaks. How may I help you today? If you have a question about golf, dining, or our facility, please let me know. AI: I'll proceed with scheduling unless you have any questions. AI: Sorry. I kind of los…"
+      },
+      {
+        "call_id": "019f94f6-6689-7cce-9105-d82c4527be5f",
+        "date": "2026-07-24",
+        "time": "16:30:09",
+        "duration": "1:37",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Yes. I have a question regarding the driving range. AI: Of course. What would you like to know about the driving range? User: What is the charge? AI: The daily access fee for our practice facility, which includes unlimited use of the driving range, short game chipping areas, and the pudding green is 35 dollars. If you are a players club member, you receive 10 dollars off that fee. Is there anything else I can help you with regarding the driving range or anything else today? User: Yes. Do you provide the balls? AI: Yes. Range balls are fully included with your daily practice facility fee. You'll have unlimited access to balls for the driving range, chipping areas, and the pudding green throughout your visit. Is there anything else I can assist…"
+      },
+      {
+        "call_id": "019f94de-e666-7000-8830-eed09686d0a9",
+        "date": "2026-07-24",
+        "time": "16:04:25",
+        "duration": "1:53",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Oscar. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. May I help you today? User: Reserve tea time. AI: Absolutely, Oscar. What date would you like to play your round of golf? User: Tomorrow. AI: Great. Tomorrow is Saturday. How many players will be in your group for your tee time? User: 3. AI: Thank you. Time are you hoping to play tomorrow? User: 11 20. AI: Hold on a sec. AI: We have t times available at 11 10, 11 20, 11 30, and 11 40 tomorrow. Would you like to book the 11 20 slot for your group of 3? User: Yes. AI: Your tee time for 3 players is confirmed for tomorrow. Saturday, at 11 20 AM. Since we use dynamic pricing, your exact final rate will be at the golf shop when you check-in. Just a quick reminder, San Juan Oaks is a completely cashless facility so please bring a credit card, Apple Pay, or Google Pay fo…"
+      },
+      {
+        "call_id": "019f94b9-ed8e-7000-816a-2a31c9a914c8",
+        "date": "2026-07-24",
+        "time": "15:24:02",
+        "duration": "3:41",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: 2 times. AI: Just to clarify, are you to book 2 separate tea times, or are you asking about available times for 2 players? Could you please let me know which date you'd like to play? User: August seventh. AI: August seventh falls on a Friday. Are you looking to book 2 separate tea times, or are you about available times for a group of 2 players on that date? User: Tea time for 4 people. AI: Great. A tee time for 4 players on Friday. August seventh. What time are you hoping to play that day? User: 11 o'clock. AI: Hold on a sec. AI: We have tea times available for 4 players at 10 40, 10 50, 11 o'clock, and 11 10 on Friday. August seventh. Would you like to book the 11 o'clock time? Or would you prefer 1 of the others? User: 11 o'clock is fine. A…"
+      },
+      {
+        "call_id": "019f923b-ae93-7779-bb69-34a6f5a74ff7",
+        "date": "2026-07-24",
+        "time": "03:46:54",
+        "duration": "0:50",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: 36 North Dining. AI: 36 degrees north is our upscale dining option here at San Juan Oaks. It's open for dinner Thursday, Friday, and Saturday from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made direct through our website using OpenTable. If you'd like to speak with someone at 36 degrees north about reservations, menus, or operations, I can transfer you right now. Would you like me to connect you? User: Yes. AI: Transferring you to the 36 degree north. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019f9238-ae9d-7ffb-8f93-84c17b3e6357",
+        "date": "2026-07-24",
+        "time": "03:43:40",
+        "duration": "0:49",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Dining. Dining. 3 36 North. Degree. AI: Absolutely. 36 degrees north is our upscale dining experience. Open for dinner Thursday, Friday, and Saturday from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made through OpenTable on our website. Would you like me to transfer you directly to 36 degrees North for more information? Or to assist with a reservation? User: Yes. AI: Transferring you to the 36 degree north. Please wait a moment. User: Yes."
+      },
+      {
+        "call_id": "019f91f1-1823-711e-965e-b373709c7d7b",
+        "date": "2026-07-24",
+        "time": "02:25:28",
+        "duration": "2:47",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: July 20 fourth, AI: July 20 fourth falls on a Friday. How many players will be in your group? User: 4 AI: Great. 4 players. What time are you hoping to play on Friday? July 20 fourth? User: 8 10 AM. AI: Hold on a sec. AI: We do have an 8 10 AM tee time available for 4 players on Friday, July 20 fourth. May I please have the first and last name for the booking? User: Beth Shoemake. AI: Thank you, Beth. May I have your email address to complete the booking? I'll confirm it back using the phonetic alpha to ensure accuracy. User: J seth shumake at gmail dot com. AI: Thank you. To confirm, is your email spelled j s e t h s h u m a k e at gmail dot…"
+      },
+      {
+        "call_id": "019f9172-d9c6-7880-b76d-4cec1f0b1ff0",
+        "date": "2026-07-24",
+        "time": "00:07:32",
+        "duration": "0:50",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I have a question about dinner reservations. AI: Of course. We have 2 dining options at San Juan Oaks. For dinner, 36 degrees north is our upscale restaurant, open Thursday through Saturday from 4 30 PM to 9 o'clock PM. Reservations are highly recommended and can be made directly through our website using OpenTable. If you'd like, I can transfer you to 36 degrees north for a assistance with reservations or any specific questions. Would you like me to connect you now? User: Yes, please. AI: Transferring you to the 36 degree north. Please wait a"
+      }
+    ],
+    "booking_link_offered": [],
+    "booking_link_sent": [],
+    "booking_intent_routed": [
+      {
+        "call_id": "019fba9d-ca26-7770-adc4-2d8b953e79a7",
+        "date": "2026-07-31",
+        "time": "23:58:52",
+        "duration": "0:51",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: At Pro Shop. AI: Thank you for letting me know you're at the golf shop. How may I assist you today? Are you looking for tea User: I'd like to talk to the pro top. 3 times. AI: Just to confirm, would you like to speak with our head golf professional, or are you looking to book 3 tee times? Could you please clarify your request so I can assist you properly? User: I'd like to speak to somebody in the pro shop. AI: Absolutely. I can connect you directly to the golf shop so you can speak with someone right away. Would you like me to transfer you now? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fba1c-5c66-7dd4-b0a5-fe15e9451642",
+        "date": "2026-07-31",
+        "time": "21:37:30",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservation. AI: Absolutely. I'd be happy to help you with a tea time reservation. What date would you like to play? User: Can I talk to pro shop? AI: I can't transfer you myself. But the golf shop team can assist you directly. Would you like me to transfer you to the golf shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fba03-9845-7dda-9579-4b1d426ff3e0",
+        "date": "2026-07-31",
+        "time": "21:10:28",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reservation change. AI: I cannot process tea time cancellations or the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019fb8c5-600f-7224-bbc0-237916276f85",
+        "date": "2026-07-31",
+        "time": "15:22:52",
+        "duration": "2:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Jim. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Oh, Emily, can I have the pork chop AI: Jim. I'd be happy to help clarify. If you're asking about dining, our pork chop is a featured dish at 36 degrees north, which is our upscale dinner restaurant. 36 degrees North is open for dinner Thursday, Friday, and Saturday from 4 30 PM to 9 o'clock PM. Reservations are highly recommended can be made through our website. If you're looking for food at McCann's Bar and Grill, their menu is more casual and does not feature a pork chop. McCann's is strictly first come, first served. No reservations needed. Would you like me to transfer you to 36 degrees North to check on tonight's pork chop availability or make a reservation? User: Pro chop? AI: Thank you for clarifying, Jim. If you're asking abo…"
+      },
+      {
+        "call_id": "019fb5e8-be2f-7331-8b7f-505e0477939c",
+        "date": "2026-07-31",
+        "time": "02:02:40",
+        "duration": "3:25",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality How may I help you today? User: Schedule a tea time. AI: I'd be to help you schedule a tea time. What date would you like to play? User: Saturday, August first. AI: Great. That's Saturday. August first. How many players will be in your group? User: 2. AI: What time are you hoping to play on Saturday, August first? User: 8 o'clock. AI: This will just take a sec. AI: We have 8 o'clock AM available as well as 7 27 30, and 8 10 AM. Would you like to book the 8 o'clock AM tee time for 2 players? User: Yes, please. AI: Perfect. May I have your first and last name to complete the booking? User: First name, Doug. D o u g. Last name, Heeter, h e AI: Thank you. Doug. Thank you, Doug. Could you please spell your last name Heater for me using the natto phonetic alphabet? For example, h as in hote…"
+      },
+      {
+        "call_id": "019fb5e6-a9ea-7776-97bb-83d65aa5e9cc",
+        "date": "2026-07-31",
+        "time": "02:00:29",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Talk to someone about a tea time AI: I'd be happy to help you with your tea time request. Just to clarify, I can assist with booking new tea times for groups of up to 4 players. If you need to modify or cancel an existing or if your group is larger than 4, the golf shop team will need to assist you directly. Would you like me to transfer you to the golf shop? To speak with someone about your tee time? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb55f-e39e-7000-88f3-4e574ae48b38",
+        "date": "2026-07-30",
+        "time": "23:33:10",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August fourth. AI: August fourth falls on a Tuesday. How many players will be in your group? User: Operator. AI: I can connect you directly with our golf shop team for further assistance. Would you like me to transfer you to the golf shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb500-183a-7ccc-b687-870d14975e34",
+        "date": "2026-07-30",
+        "time": "21:48:37",
+        "duration": "0:30",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel it 2 times. AI: I am not able to process tee time cancellations directly. The golf shop team can assist you with that right away. Would you like me to transfer you to the golf shop to handle your cancellation? User: Yes. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019fb4fc-20b5-700d-af1e-eee76c6a243a",
+        "date": "2026-07-30",
+        "time": "21:44:12",
+        "duration": "0:53",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Golf reservation. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August thirteenth. AI: August thirteenth falls on a How many players will be in your group? User: 8. AI: We have a strict maximum of 4 players per group. And fivesomes are never permitted. If you are looking to book consecutive tee times for a larger party, I will need to transfer you to the golf shop. Would you like me to connect you? User: Yeah. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019fb4bb-2f37-7553-a2ca-9bf3eef03ba5",
+        "date": "2026-07-30",
+        "time": "20:33:15",
+        "duration": "4:07",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Reserve tea time for tomorrow. At 8 50 AM. AI: Great. You'd like to reserve a tee time for tomorrow, which is Friday, July 30 first, at 8 50 AM. How many players will be in your group? User: 2. AI: Give me a moment. AI: We have 8 50 AM available for 2 players tomorrow as well as 7 40, 9 30, and 9 50 AM. Would you like to book the 8 50 AM slot, or would you prefer a different time? User: Changed for 1 person. AI: Hold on a sec. AI: No problem. For a single player tomorrow, we have 8 30, 8 50, 9 20, and 9 30 AM available. Would you like to book the 8 50 AM tee time for 1 player? User: Yes. AI: Perfect. May I have your first and last name? Please? User: Jesus. Morales. AI: Thank you, Jesus Morales. May I have your email address to complete your b…"
+      },
+      {
+        "call_id": "019fb448-ddf2-7112-b80b-18685365ca14",
+        "date": "2026-07-30",
+        "time": "18:28:24",
+        "duration": "1:28",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Speak to representative. AI: I'd be happy to connect you with a representative. May I ask which department or type of assistance you need? For example, are you looking for help with tea times? The golf shop, dining, events? Or something else. This will help me transfer you to the right person. User: Pizza. AI: Thank you for letting me know. If you're interested in pizza, our slices snack bar offers grab and go options. Including pizza, when it's open. The hours for slices vary based on the number of golfers scheduled for the day. You like me to transfer you to our snack shack to check if Slices is open and take pizza orders right now? User: No. Tea time. AI: Of course. I can help you with a tea time booking. What date would you like to play? U…"
+      },
+      {
+        "call_id": "019fb3a4-4dac-7dd0-b057-34523230d67d",
+        "date": "2026-07-30",
+        "time": "15:28:39",
+        "duration": "0:35",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi Linda, Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to verify a tee time. AI: I'd be happy to help with that. I don't have access to existing tea time reservations directly, but the golf shop team can quickly verify your booking details for you. Would you like me to transfer you to the golf shop to assist with your tee time verification? User: Yeah. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb32c-6bf0-799b-bc86-6c1953311939",
+        "date": "2026-07-30",
+        "time": "13:17:42",
+        "duration": "0:32",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Edit reservation. AI: I cannot process tea time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fb03a-89a6-700f-a456-b1cd20d8f505",
+        "date": "2026-07-29",
+        "time": "23:34:16",
+        "duration": "2:21",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Looking to book a tee time for Saturday morning. AI: Great. I'd be happy to help you with that. Could you please confirm which Saturday you're interested in? Are you looking to play this coming Saturday? Which is August first? Or a different date? User: Yes. User: August first. AI: Thank you for confirming. Saturday, August first. How many players will be in your group? User: 2. AI: Thank you. What time on Saturday morning are you hoping to play? User: 8 AM. AI: 1 moment. AI: We have several tee times available on Saturday, August first for 2 players. 7 20 7 38 o'clock, and 8 40 AM. Would you like to book the 8 o'clock AM slot, or would you prefer a different time? User: Yes. 8 o'clock. AI: Perfect. I'll reserve the 8 o'clock AM tee time for 2…"
+      },
+      {
+        "call_id": "019fb02c-999b-7dd6-bbe5-1b1f1e9f2b99",
+        "date": "2026-07-29",
+        "time": "23:19:03",
+        "duration": "2:08",
+        "ended_reason": "customer-ended-call",
+        "transcript": "AI: Hi, Manny. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hysteria. I wanna book a tea time. AI: Absolutely. I can help you book a tea time. What date would you like to play? User: Tomorrow at 8 AM. And can you tell me the price? AI: Just a sec. AI: We have tee times available tomorrow, Thursday, at 7 40 8 o'clock, 8 10, and 8 20 AM. Which time would you prefer? As for pricing, we use a dynamic pricing model. User: 8 AI: So green fees vary based on demand and time of day. Your golf cart and range balls are included in the standard green fee. If you'd like, I can confirm your tee time, and you'll see your exact rate at check-in. Which time works best for you? User: 8 AM. AI: Great. I'll reserve your tea time for 8 o'clock AM tomorrow for 1 May I confirm your email as m fritas at sand juan o…"
+      },
+      {
+        "call_id": "019fb029-b5a6-799c-89c9-53fbea020ddf",
+        "date": "2026-07-29",
+        "time": "23:15:53",
+        "duration": "1:21",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Pax. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. User: Operator. AI: How may I help you today? User: Can I talk to the operator? AI: I can help route your call to the right department or person. Could you please let me know what you need assistance with? So I can connect you to the best team member? User: Your time. AI: The current time is 4 15 PM. Is there anything else I can help you with today? User: Tea time. Starts AI: Just to clarify, are you looking to book a tee time to play golf at San Juan Oaks? If so, what date would you like to play? User: Can I get an operator? AI: Of course. May I ask which department or type of assistance you need? So I can connect you to the right person? For example, User: Scotia. AI: are you looking for help with tee times, events, dining, or something else? User: Gosha. Golf shop. AI:…"
+      },
+      {
+        "call_id": "019fb026-6b95-7ee1-a382-770f5dfaba6f",
+        "date": "2026-07-29",
+        "time": "23:12:17",
+        "duration": "1:00",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Nick. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Memberships. AI: Absolutely. I'd be happy to share information about our memberships at San Juan Oaks. We offer tiered memberships under the Oaks Club program. The elite membership gives you 50 percent off website, green fees every day. A 5 day advanced booking window, up to 3 guest rates per day at a 10 percent discount, and a 10 percent discount in the pro shop. The player's membership offers 20 percent off website green fees, a 5 day advance booking window, and a 10 dollar discount on facility usage fees. If you'd like full details or wanna purchase a membership, the golf shop team can assist you directly. Would you like me to transfer you to the golf shop to discuss membership options? User: Yes. Yes. AI: Transferring you to the pro sh…"
+      },
+      {
+        "call_id": "019faff9-7f68-7667-ac31-1b367b0bafbf",
+        "date": "2026-07-29",
+        "time": "22:23:13",
+        "duration": "2:00",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Golf course. AI: San Juan Oaks is a championship caliber. Publicly accessible golf course located in the beautiful San Juan Valley in Jas California. We offer 18 holes of exceptional golf, a full practice facility, and great dining options. Is there something specific about the golf course I can assist you with today? Such as booking a tee time, learning about our rates, or inform User: Booking key type. AI: Just to clarify, are you to book a tee time to play golf at San Juan Oaks? If so, I can help you with that right now. User: Yes. AI: May I ask what date you would like to play? User: Friday. AI: Thank you. This Friday is July 30 first. How many players will be in your group? User: Yeah. 2. AI: Great. 2 players for this Friday. What time ar…"
+      },
+      {
+        "call_id": "019fafbb-3d92-7000-855d-a846a442819a",
+        "date": "2026-07-29",
+        "time": "21:15:14",
+        "duration": "2:21",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Michael. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Set up a tea time. AI: I'd be happy to help you book a tea time at San Juan Oaks. What date would you like to play? User: Friday. AI: Just to confirm, you'd like to play this Friday. Which is July 30 first. How many players will be in your group? User: Yes. 2. We're looking for dynamic pricing. AI: Great. 2 players for this Friday. July 30 first. What time are you hoping to play? If you have a general window, I can check available tee times and let you know the dynamic pricing options. User: 8 50. AI: Hold on a sec. AI: We have tea times available at 8 48 50, 9 30, and 9 50 in the morning this Friday. Would you like to book the 8 50 AM slot for your group of 2? User: Yes. AI: Your tee time for 2 players on Friday, July 30 first at 8 50…"
+      },
+      {
+        "call_id": "019fafba-9c88-7ff7-84f5-ed1b524d0a58",
+        "date": "2026-07-29",
+        "time": "21:14:33",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, John. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to change the tee time that I made on August eleventh. From 9 30 to hopefully 8 30 if it's available. AI: I'm not able to process tea time changes or cancellations directly through the automated system. However, the golf shop team can assist you right away. Would you like me to transfer you to the golf shop to help with that? User: Yes, please. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019faf3a-f26b-7000-9a52-b3beaf4a8b43",
+        "date": "2026-07-29",
+        "time": "18:55:05",
+        "duration": "2:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Today, AI: Great. You're looking to play today. Which is Wednesday. How many players will be in your group? User: 1. AI: Thank you. What time are you hoping to play today? User: 2 40. AI: Hold on a sec. AI: We have 2 20 PM 2 30 PM, 2 40 PM, and 2 50 PM available today. Would you like to book the 2 40 PM tea time, or would you prefer a different 1? User: 2 40 PM. AI: Perfect. May I please have your first and last name for the booking? User: Steve Stewart. AI: Thank you, Steve Stewart. May I have your email address to complete your booking? If you spell it out, I'll confirm it back using the NATO phonetic alphabet for accuracy. User: S t e v e at s g…"
+      },
+      {
+        "call_id": "019faeed-354b-7887-850c-cc6de7eab17d",
+        "date": "2026-07-29",
+        "time": "17:30:11",
+        "duration": "2:00",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Golf tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: August fifth. AI: August fifth falls on a Wednesday. How many players will be in your group? User: 2. AI: Great. 2 players. What time are you hoping to play on Wednesday, August fifth? User: 2 PM. AI: Hold on a sec. AI: We have 2 o'clock PM and 2 10 PM available as well as 1 40 and 1 50 PM. Which time would you prefer? User: 2 PM. AI: Perfect. I'll reserve your tee time for 2 o'clock PM on Wednesday, August fifth for 2 players. May I please have your first and last name for the booking? User: Mel Badgett. B a d g e t t. AI: Thank you, Mel Badgett. Could I please have your email address to complete your reservation? If you'd like, I can verify i…"
+      },
+      {
+        "call_id": "019fae97-fc73-7bb5-8b3f-548e87910f09",
+        "date": "2026-07-29",
+        "time": "15:57:06",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to cancel it to you, Tom. AI: I am not able to process tee time cancellations directly through the auto automated system. I can transfer you to the golf shop, and they will be happy to assist you with canceling your tee time. Would you like me to connect you to the golf shop now? User: Course. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fae21-6036-7778-bb98-af9de43cf882",
+        "date": "2026-07-29",
+        "time": "13:47:32",
+        "duration": "1:05",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Gilbert. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I just wanted to check to make sure I got my tea time reserved because I didn't receive an email. AI: I don't have access to existing tea time reservations or confirmation emails, but the golf shop team can look up your booking and confirm everything for you. Would you like me to transfer you to the golf shop to help with that? User: Sure. Can you just let me know if our shorts permitted AI: Absolutely. Shorts are permitted at San Juan Oaks. As long as they are tailored golf shorts. Just a quick reminder, denim is not allowed anywhere on the course or practice areas, and collar shirts are required for men. 1 moment, transferring you now so the golf shop can confirm your tee time. Transferring you to the pro shop. Please wait a mom…"
+      },
+      {
+        "call_id": "019faabf-6373-7553-a36d-be66ae03f743",
+        "date": "2026-07-28",
+        "time": "22:01:39",
+        "duration": "0:51",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Booking on hold. AI: Of course. Are you looking to place a tea time reservation on hold, or did you wanna discuss a specific booking? Just to clarify, I am not able to place bookings on hold directly. But I can assist you with tee time reservations or connect you with the golf shop for special requests. Could you please let me know what you'd like to do? User: That's also I'm looking. Connect with the golf shop. AI: Thank you for clarifying. Would you like me to transfer you to the golf shop now so they can assist you with your booking request? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019faa83-e268-7003-9687-5c253193e485",
+        "date": "2026-07-28",
+        "time": "20:56:39",
+        "duration": "0:41",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Alex. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Live agent. AI: Of course. May I ask which department or topic you need assistance with? Such as tea times, dining, events, or something else. User: Tea time. AI: That way, I can connect you with the right person. User: Tea time. AI: Thank you for clarifying. User: Tea time. AI: Would you like me to transfer you to the golf shop to assist with your tee time request? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019faa32-bff5-733b-abd4-3be01d6d8219",
+        "date": "2026-07-28",
+        "time": "19:28:02",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: On 10 motion. AI: Thank you Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? Could you please clarify what you mean by on 10 motion? Are you looking to book a tee time for October tenth, or is there something else I can assist you with? User: May I speak to the pro shop? AI: Of course, Would you like me to transfer you to the golf shop now to assist you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa9da-b248-7993-9dcd-8a4ebdb02690",
+        "date": "2026-07-28",
+        "time": "17:51:52",
+        "duration": "1:28",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Customer service. AI: Of course. To make sure I connect you with the right person, could you please tell me a bit more about your customer service need? For example, is this about a recent visit, a billing question, a golf reservation, or something else? User: Golf. Gift certificate. AI: Thank you for clarifying. Are you looking for help with booking a tee time, modifying, or existing reservation, or do you have a different golf related question? User: Different golf related question. AI: Thank you for letting me know. Could you please share a bit more detail about your golf related question regarding gift certificates? That way, I can make sure to get you the most accurate information or connect you with the right team member. User: Trying to…"
+      },
+      {
+        "call_id": "019fa9ce-7990-700d-a925-14dcb386cc3f",
+        "date": "2026-07-28",
+        "time": "17:38:30",
+        "duration": "0:35",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: Need to speak to an agent. AI: I can connect you with a member of our team to assist you further. Would you like me to transfer you to the golf shop for help with your tee time request? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa9c2-d6ab-7cca-9060-23f79ea83234",
+        "date": "2026-07-28",
+        "time": "17:25:48",
+        "duration": "0:51",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Kade. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Hi. I wanna move my tea time from 1 40 today to 2 20. Possible. 2 20 to 2 30 area. Is there any time available then? AI: I'm not able to modify existing tee times directly, but I can check if there are any available t times around 2 22 30 this afternoon. If you'd like to make a change, the golf shop will need to assist you with moving your reservation. Would you like me to check availability for you first, or would you prefer I transfer you to the golf shop right away to handle the change? User: Transfer me to the golf shop, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa97a-ea6d-711c-b588-6291a7a841fe",
+        "date": "2026-07-28",
+        "time": "16:07:14",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Sam. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel reservation. AI: I cannot process tea time cancellations through the automated I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you now? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa978-fbba-7001-8af0-ee54b1335ea6",
+        "date": "2026-07-28",
+        "time": "16:05:09",
+        "duration": "1:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi Vince. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'm looking to get a tea time for a single this morning. AI: Absolutely. I can help you with that. Just to confirm, you'd like to book a tee time for 1 player today. Which is Tuesday, July 20 eighth. Is that correct? If so, what time this morning are you hoping to play? User: Correct. Around 10 15. AI: Give me a moment. AI: We have several tee times available this morning for a single player. The closest options to 10 15 are 10 o'clock, 10 10, 10 20, and 10 30. Which of these would you prefer? User: Let's go with AI: It looks like your message got cut off. User: 10 o'clock. AI: Could you please let me know which time you'd like to book? 10 o'clock, 10 10, 10 20, or 10 30? User: Let's go 10 o'clock. AI: I'm having a little trouble wit…"
+      },
+      {
+        "call_id": "019fa94e-cb05-7882-a821-f5182a7979c8",
+        "date": "2026-07-28",
+        "time": "15:19:03",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel our reservation. AI: I cannot process tea time cancellations through the automated system. I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019fa657-e02d-7115-93c9-9f208c6af4d2",
+        "date": "2026-07-28",
+        "time": "01:30:07",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Dave. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Please. AI: Of course. Dave. What can I assist you with today? Are you looking to book a tea time? Have questions about your membership? Or is there something else I can help with? User: Please contact me with the pro shop. AI: I can't connect you to the pro shop myself. But I can transfer you directly so they can assist you. Would you like me to transfer you to the pro shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa611-9f2c-7000-8c80-586670d82245",
+        "date": "2026-07-28",
+        "time": "00:13:25",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Teantime reservation. AI: I'd be happy to help you reserve a tea time. What date would you like to play? User: Speak with a representative. AI: Of course. May I ask which department you'd like to speak with? For example, the golf shop, events, User: Golf shop. AI: or dining. If you're looking to book a tee time or have general golf questions, User: Golf shop. AI: I can connect you with the golf shop. Would you like me to transfer you to the golf shop to assist you further? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa4d8-10c1-7000-9106-64aa6d0f862c",
+        "date": "2026-07-27",
+        "time": "18:30:53",
+        "duration": "1:54",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a tea time. AI: I'd be happy to help you book a tea time. What date would you like to play? User: This Saturday. AI: Great. You're looking to play this Saturday. Which is August first. How many players will be in your group? User: 1. AI: Thank you. What time are you hoping to play on Saturday, August first? User: Morning. AI: Give me a moment. AI: We have several morning tea times available this Saturday. For example, you can choose 6 50, 7 10, 7 27 37 40, or 8 o'clock AM. Would you like 1 of these, or is there a specific time you prefer? User: 8 o'clock. AI: Perfect. I have you down for 1 player at 8 o'clock AM on Saturday, August first. May I have your first and last name, please? User: Cameron Igala. AI: Thank you, Cameron. May I have…"
+      },
+      {
+        "call_id": "019fa495-efe4-7dd8-a939-e8fa971c2869",
+        "date": "2026-07-27",
+        "time": "17:18:39",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, David. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. May I help you today? User: Change reservation. AI: I am not able to process t time cancellations or modifications through the automated system. I can transfer you to the golf shop so they can assist you with changing your reservation. Would you like me to connect you now? User: Yes. AI: Transferring you to the Pro Shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa488-ca0f-7880-97c3-3c57bfe8c5df",
+        "date": "2026-07-27",
+        "time": "17:04:18",
+        "duration": "0:34",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Pulp shop. AI: It sounds like you may be asking about our golf shop. Also known as the pro shop. We handle all golf related questions, tee time bookings, merchandise, and more through the golf shop. Would you like me to transfer you to the golf shop to assist you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019fa470-af36-7dd2-9a68-b02f7b99dc4d",
+        "date": "2026-07-27",
+        "time": "16:37:58",
+        "duration": "0:44",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Jose. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Tea time. AI: Great. I'd be happy to help you book a tea time. What date would you like to play? User: Can I talk to someone, please? AI: Of course. I can connect you with a member of our team. Is there a specific department or topic you'd like to discuss? Such as tee times, the golf shop, User: The clubhouse. AI: dining, or something else? User: Golf shop. AI: Or would you like me to transfer you to the golf shop for general assistance? User: Golf shop. Transfer me. AI: Transferring you to the pro shop. Please wait a"
+      },
+      {
+        "call_id": "019fa443-0270-733f-b2f5-a6ec70fe9375",
+        "date": "2026-07-27",
+        "time": "15:48:05",
+        "duration": "0:34",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Cameron. You for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I'd like to modify a tea time. AI: I cannot process tee time modifications through the automated system. I will transfer you to the golf shop so they can assist you with your request. Would you like me to connect you? User: Thank you. Yes, please. AI: Transferring you to the pro shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019fa418-9df7-7000-813c-064de24076fc",
+        "date": "2026-07-27",
+        "time": "15:01:51",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, James. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Confirm tea time. AI: James, I'd be happy to help you confirm your tea time. Just to clarify, don't have access to existing reservations, but the golf shop team can look up and confirm your booking right away. Would you like me to transfer you to the golf shop to assist with that? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9ad9-7d39-7000-b87a-2e8c7835affe",
+        "date": "2026-07-25",
+        "time": "19:56:15",
+        "duration": "0:30",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Nate. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Just wanna cancel the feed time. AI: I cannot process tee time cancellations or modifications the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9ac6-3948-7332-a04b-018fcb8ca1e9",
+        "date": "2026-07-25",
+        "time": "19:35:12",
+        "duration": "0:56",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Representative. AI: Of course. May I ask which department or type of assistance you need? For example, are you looking for help with tee times, events, dining? Or something else? This will help me connect you with the right person. User: Tea time. Tea time. AI: Thank you for clarifying. I can help you book a tee time directly. What date would you like to play? User: Representative. AI: I understand you'd like to speak with someone directly about tea times. Can transfer you to our golf shop. Where a team member can assist you further. Would you like me to transfer you to the golf shop now? User: Yes. AI: Transferring you to the pro shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019f9a9d-9d4a-7112-9d49-bafd867f2047",
+        "date": "2026-07-25",
+        "time": "18:50:51",
+        "duration": "0:33",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Talk to front desk. AI: Just to clarify, at San Juan Oaks, our golf shop team serves as the main front desk for all golf, tee time, and general facility questions. Would you like me to transfer you to the golf shop to assist you? User: Yes. Yes. AI: Transferring you to the pro shop. Please wait a moment. Please wait a moment."
+      },
+      {
+        "call_id": "019f9a18-a32a-7dda-b714-34a8f4cfb529",
+        "date": "2026-07-25",
+        "time": "16:25:35",
+        "duration": "1:25",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Scott. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Make it tea time. AI: Absolutely, Scott. I'd be happy to help you book a tea time. What date would you like to play? User: September the eighth, AI: September eighth falls on a Tuesday. How many players will be in your group? User: 6. AI: We have a strict maximum of 4 players per group. And fivesoms are never permitted. If you are looking to book User: In groups of 3. AI: Thank you for clarifying. Scott. I can help you book 2 separate tee times for groups of 3 on Tuesday, September eighth. What time are you hoping to play that day? User: Uh, 9 30. AI: This will just take a sec. AI: It looks like I'm not seeing any available tee times for 3 players at 9 30 on Tuesday, September eighth. Would you like me to check for other times that…"
+      },
+      {
+        "call_id": "019f9738-66dc-7558-b8fe-6df303734324",
+        "date": "2026-07-25",
+        "time": "03:01:26",
+        "duration": "1:18",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to change a reservation. AI: I cannot process tea time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect User: No. AI: No problem at all. If you decide you'd like assistance with your reservation later, User: Restaurant. AI: just let me know. Is there anything else I can help you with today? User: Restaurant. Restaurant. AI: Of course. We have 2 dining options at San Juan Oaks. McCann's Bar and Grill is our casual, open air patio restaurant. It's open daily and operates on a first come. First served basis. No reservations are needed. 36 degrees north is our upscale dinner restaurant. Open Thursday through Saturday, from 4 30 PM to 9 o'cl…"
+      },
+      {
+        "call_id": "019f96ea-d696-7aa4-9946-79fd483ed073",
+        "date": "2026-07-25",
+        "time": "01:36:42",
+        "duration": "0:37",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Daniel. Thank you for calling San Juan Oaks. User: Daniel. AI: I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Have a reservation. For 4, and I wanna cancel 1 of the players. AI: I cannot process tea time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9677-ea69-722e-b492-4f4832996de9",
+        "date": "2026-07-24",
+        "time": "23:31:11",
+        "duration": "0:39",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "User: Nothing is coming. AI: Hi. Hi, Leo. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Like to cancel my peak time for Sunday. At 7 30 AM. AI: I cannot process tee time cancellations through the automated system. I will transfer you to the golf shop so they can assist you with canceling your Sunday 7 30 AM tee time. Would you like me to connect you now? User: Yes, please. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9646-d156-7222-8914-602b7bbbd38c",
+        "date": "2026-07-24",
+        "time": "22:37:33",
+        "duration": "0:29",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Cancel reservation. AI: I cannot process tee time cancellations through the automated system. I will transfer you to the golf shop so they can assist you right away. Would you like me to connect you? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f9643-f086-7002-a5cf-8b38a7670532",
+        "date": "2026-07-24",
+        "time": "22:34:25",
+        "duration": "0:48",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I want to check on a tea time. AI: Absolutely. I'd be happy to help you with your tea time. Are you looking to book a new tea time, do you need to check or modify an existing reservation? User: I need to check an existing reservation. AI: I'm not able to access or look up existing reservations directly. However, the golf shop team can assist you right away. Would you like me to transfer you to the golf shop to check on your reservation? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f95a8-381b-7000-86af-3820f24e20e4",
+        "date": "2026-07-24",
+        "time": "19:44:19",
+        "duration": "0:38",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I will be a little late for my tea time. AI: Thank you for letting me know. I am unable to adjust or modify existing tee times directly. The golf shop team can assist you with your arrival and any changes to your reservation. Would you like me to transfer you to the golf shop for assistance? User: Yes. AI: Transferring you to the pro shop. Please wait a moment."
+      },
+      {
+        "call_id": "019f95a7-2dde-788d-9f83-642ce37833a7",
+        "date": "2026-07-24",
+        "time": "19:43:11",
+        "duration": "0:40",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, Joe. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to verify I made a key time. And make an adjustment. AI: I can't act I can't access or modify existing tea time reservations directly through the automated system. I'll need to connect you with the golf shop so they can verify your booking and assist with any adjustments. Would you like me to transfer you to the golf shop now? User: Yes, please. AI: Transferring you to the pro shop. Please wait a Please wait a moment."
+      },
+      {
+        "call_id": "019f9583-7b84-733d-b7e8-758da06ce0f7",
+        "date": "2026-07-24",
+        "time": "19:04:13",
+        "duration": "0:36",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Hi, David. Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: I need to change the date of my repeat time. AI: I'm not able to process tee time changes or cancel cancellations directly through the automated system. I can transfer you to the golf shop, and they'll be happy to help you update your reservation. Would you like me to connect you now? User: Yes. AI: Transferring you to the Pro Shop. Please wait a"
+      },
+      {
+        "call_id": "019f9518-a771-7774-8d47-cb2bd4457166",
+        "date": "2026-07-24",
+        "time": "17:07:31",
+        "duration": "1:03",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Book a 10 time. AI: I'd be happy to help you book a tea time. Just to confirm, are you looking to play at 10 o'clock AM? And for which date would you like to schedule your round? User: August fourth. User: At 2 PM. AI: Great. And how players will be in your group for Tuesday, August fourth at 2 o'clock PM? User: 8 player. AI: We have a strict maximum of 4 players per group, and fivesomes are never permitted. If you are looking to book consecutive tee times for a larger party, I will need to transfer you to the golf shop. Would you like me to connect you? User: Yes. AI: Transferring you to the ProShop. Please wait a moment."
+      },
+      {
+        "call_id": "019f94ad-c518-7777-89dd-0bdadbd90465",
+        "date": "2026-07-24",
+        "time": "15:10:46",
+        "duration": "0:45",
+        "ended_reason": "assistant-forwarded-call",
+        "transcript": "AI: Thank you for calling San Juan Oaks. I'm Emily. This call will be recorded for training and quality purposes. How may I help you today? User: Detime reservation. AI: I'd be happy to help you with a tea time reservation. What date would you like to play? User: I wanna cancel my tea time reservation. Talk to an agent. AI: I cannot process tee time cancellations or modifications through the automated system. I will transfer you to the golf shop to handle that for you. Would you like me to connect you now? User: Yes. AI: Transferring you to the Pro Shop. Please wait a moment. Please wait a moment."
+      }
+    ]
+  }
+}

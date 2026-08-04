@@ -1,0 +1,23 @@
+{
+  "findings": [
+    {
+      "code": "MISSING_SHOP_TRANSFER_DEFLECTION",
+      "location": null,
+      "message": "Facility enables first-shop-transfer deflection, but the prompt does not include it",
+      "severity": "error"
+    },
+    {
+      "code": "PHONE_NUMBER_IN_PROMPT",
+      "location": null,
+      "message": "Phone numbers are disallowed by the current global convention",
+      "severity": "error"
+    }
+  ],
+  "metrics": {
+    "core_shell_words": 964,
+    "knowledge_base_words": 1782,
+    "logic_module_words": 1504,
+    "total_words": 4646
+  },
+  "valid": false
+}

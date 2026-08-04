@@ -1,0 +1,51 @@
+schema_version: "1"
+status: owner_confirmed_2026_07_22
+
+format:
+  initialization_heading: "Initialize the following variables:"
+  rules_heading: "Apply these rules in order:"
+  initialize_with_single_quoted_machine_name: true
+  later_rules_use_plain_semantic_names: true
+  later_rules_do_not_repeat_single_quoted_machine_names: true
+  one_concise_rule_per_bullet: true
+  preserve_owner_supplied_reasons_exactly: true
+  end_with_explicit_no_other_criteria_rule: true
+  do_not_include_json: true
+  do_not_include_implementation_notes: true
+  do_not_include_markdown_code_fences: true
+
+booking_eligibility:
+  variables:
+    date: "string; requested booking date; YYYY-MM-DD, with MM-DD-YYYY also accepted; required"
+    time: "string; requested tee time; 24-hour HH:MM, with 12-hour time also accepted; required"
+    num_players: "integer; requested number of players"
+    course_name: "string; optional course or tee-sheet name for multi-course facilities"
+    booking_date_readable: "string; requested date formatted server-side as weekday plus full date"
+    current_date: "string; today's date in the facility local timezone; YYYY-MM-DD"
+    customer_passes: "list of strings; caller's active pass or membership labels; empty when none"
+    customer_has_card_on_file: "boolean; whether the caller has a saved card on file"
+    price_class: "string; caller's GMS price class when known"
+    customer_groups: "list of strings; caller's GMS group memberships"
+  output_fields: [eligible, reason]
+  orchestration:
+    always_collect_before_check: [date, time]
+    collect_num_players_before_check_only_when_policy_uses_it: true
+    do_not_collect_before_check: [num_holes, riding, first_name, last_name, email]
+
+cancellation_eligibility:
+  variables:
+    date: "string; reservation date; YYYY-MM-DD, with MM-DD-YYYY also accepted; required"
+    time: "string; reservation tee time; 24-hour HH:MM, with 12-hour time also accepted; required"
+    num_players: "integer; number of players on the reservation"
+    course_name: "string; optional course or tee-sheet name for multi-course facilities"
+    booking_reference: "string; optional booking reference for authoritative GMS lookup"
+    booking_date_readable: "string; reservation date formatted server-side as weekday plus full date"
+    current_date: "string; today's date in the facility local timezone; YYYY-MM-DD"
+    current_datetime: "string; current timestamp in the facility local timezone"
+    hours_until_tee_off: "number; exact server-computed hours from now until tee-off"
+    customer_passes: "list of strings; caller's active pass or membership labels; empty when none"
+    customer_has_card_on_file: "boolean; whether the caller has a saved card on file"
+    price_class: "string; caller's GMS price class when known"
+    customer_groups: "list of strings; caller's GMS group memberships"
+  output_fields: [eligible, reason]
+  preferred_time_comparison_variable: hours_until_tee_off

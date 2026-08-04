@@ -1,0 +1,79 @@
+{
+  "facility": "Paako Ridge Golf Club",
+  "operating_model": "non_integrated",
+  "service_model_label": "Online booking link + staff hand-off",
+  "report_date": "31 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {"label": "Booking opportunities captured", "value": "109"},
+    {"label": "Calls handled", "value": "4,592"},
+    {"label": "Time saved", "value": "47h 19m"},
+    {"label": "Estimated cost saved", "value": "$993.88"}
+  ],
+  "kpi_note": {
+    "title": "A new view of booking demand",
+    "text": "Booking Opportunities Captured was introduced in the last week of July, so 109 is a partial-period baseline rather than a since-launch total. It counts calls where someone expressed an intent to book, play or reserve and SpeakSport took the correct next action—sending the booking link or transferring the caller to staff."
+  },
+  "after_hours_metrics": [
+    {"label": "After-hours opportunities", "value": "64"},
+    {"label": "After-hours calls", "value": "2,867"},
+    {"label": "After-hours time saved", "value": "29h 49m"}
+  ],
+  "call_review_period": "24–31 July 2026",
+  "call_review_count": 288,
+  "highlights": [
+    {
+      "title": "A booking request became an immediate online path",
+      "summary": "A caller looking for an August tee time chose the digital route. SpeakSport explained the online-booking option for reservations within 30 days and sent the tee-sheet link directly to the caller’s phone.",
+      "source": "Call on 29 July at 5:46 PM",
+      "quote": "“Would you like me to transfer you to the golf shop or text you the link to the online tee sheet?” The caller chose the link, and SpeakSport confirmed it was sent."
+    },
+    {
+      "title": "A booking-intent caller reached staff by preference",
+      "summary": "When a caller wanted to schedule a tee time for 20 August and preferred personal help over the online route, SpeakSport gave the choice clearly and transferred the call to the golf shop.",
+      "source": "Call on 31 July at 7:27 PM",
+      "quote": "“Transfer me to the golf shop, please.” SpeakSport responded: “Transferring you to the golf shop.”"
+    },
+    {
+      "title": "Practice-facility availability was resolved without a transfer",
+      "summary": "A caller received a complete answer about seasonal and in-season practice-facility access, including the operating days and hours for the range, chipping and putting areas.",
+      "source": "Call on 28 July at 4:34 PM",
+      "quote": "“During the golf season, the driving range and practice facilities, including the chipping and putting areas, are open daily from 7:30 AM to 5:00 PM.”"
+    }
+  ],
+  "features_intro": "For Paako Ridge, we have focused recent improvements on capturing booking demand reliably, giving callers the right online path and making each hand-off easier to understand.",
+  "features": [
+    {
+      "title": "Booking-opportunity tracking",
+      "description": "The new KPI makes previously invisible booking demand measurable, including both text-link delivery and appropriate transfers to staff."
+    },
+    {
+      "title": "Stronger booking-intent recognition",
+      "description": "SpeakSport is better able to recognise when a caller wants to book, reserve or play—even when speech recognition turns “tee time” into something less obvious."
+    },
+    {
+      "title": "Clearer online-booking hand-off",
+      "description": "Standard booking callers can receive the direct link by text, while exceptions and callers who need human help are routed to the golf shop."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports filtering calls by intent, category and outcome, making demand patterns and operational opportunities easier to find."
+    }
+  ],
+  "future_note": "We will continue enriching SpeakSport with capabilities such as self-serve knowledge-base updates and even better reporting. We would love Paako Ridge to remain part of that journey—please keep sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep answers, hours and operating information current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, link delivery, hand-offs and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the Paako Ridge SpeakSport dashboard. Booking Opportunities Captured was introduced in the last week of July 2026. Call excerpts were selected from 288 calls reviewed for 24–31 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

@@ -1,0 +1,48 @@
+schema_version: '1'
+slug: gypsum-creek-golf
+display_name: Gypsum Creek Golf Course
+website_url: https://www.gypsumcreekgolf.com/
+timezone: America/Denver
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_destinations:
+- identifier: club_house
+  responsibility: General inquiries, tee-time assistance, and group bookings for groups larger than 8 players.
+  display_name: Club House
+booking_rules:
+- Players can book tee times up to fourteen calendar days in advance, inclusive of the fourteenth future date.
+- For groups larger than eight players, transfer the caller to the Club House immediately.
+- For bookings of 5 to 8 players, book consecutive tee times (e.g., 6 players is split into a foursome and a twosome; 8 players is split into two foursomes).
+- Both nine-hole and eighteen-hole tee times are supported.
+- This is a single-course facility; omit course and course_name filters from availability searches.
+- When booking, preserve and pass the exact course returned with the selected availability slot.
+cancellation_modification_policy: ''
+walking_riding_cart_policies: []
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls:
+- https://www.gypsumcreekgolf.com/
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

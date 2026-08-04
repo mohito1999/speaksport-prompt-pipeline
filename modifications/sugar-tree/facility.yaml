@@ -1,0 +1,116 @@
+schema_version: '1'
+slug: sugar-tree
+display_name: Sugar Tree Golf Club
+website_url: https://sugartreegolf.com/
+timezone: America/Chicago
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- get-bookings
+- get-eligibility-for-cancellation
+- cancel-reservation
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_policy:
+  first_shop_transfer_deflection: true
+availability_policy:
+  single_player_requires_partially_filled_slot: false
+transfer_destinations:
+- identifier: pro_shop
+  responsibility: >-
+    All non-restaurant assistance, including tee times, booking lookup,
+    cancellations and modifications the AI cannot complete, lodging and Stay &
+    Play, golf outings and tournaments, memberships, instruction, practice
+    facilities, account and profile help, course conditions, merchandise, and
+    general facility operations.
+  display_name: Pro Shop
+- identifier: eatery
+  responsibility: >-
+    The Eatery at Sugar Tree, including dining, bar service, menu and hours,
+    to-go food and drink orders, and food orders from the turn.
+  display_name: The Eatery
+booking_rules:
+- >-
+  If the requested booking date is before the facility-local current date, the
+  caller is not eligible. Exact reason: "That date has already passed."
+- >-
+  A minimum of 2 players is required for an automated booking. If the requested
+  player count is fewer than 2, the caller is not eligible. Exact reason: "Sugar
+  Tree does not allow single-player tee-time bookings through the automated
+  system. The Pro Shop may be able to pair you with an existing group."
+- >-
+  A maximum of 4 players is permitted in one automated booking. If the requested
+  player count is greater than 4, the caller is not eligible. Exact reason:
+  "Automated tee-time bookings are limited to four players. The Pro Shop can
+  help with larger groups or multiple tee times."
+- >-
+  Do not apply an advance-booking-window restriction because none is supplied
+  in the original approved prompt.
+- >-
+  Do not apply any other eligibility restrictions based on memberships, passes,
+  groups, price classes, card-on-file status, course, day of week, time of day,
+  or any other criteria.
+- >-
+  If none of the approved rules makes the caller ineligible, the caller is
+  eligible. Exact reason: "Eligible to book."
+- >-
+  Only standard 18-hole tee times are supported by the automated booking flow.
+  Do not ask how many holes; pass num_holes as 18. If a caller requests 9 holes,
+  explain that the AI supports only 18-hole bookings and offer the Pro Shop
+  through the normal transfer protocol if they do not want 18 holes.
+- >-
+  This is a single-course facility. Omit course and course_name from
+  availability searches, retain every returned time-and-course record, and pass
+  the selected result's exact course to booking.
+- >-
+  Green fees include a cart for the supported standard round, so do not ask
+  riding or walking and pass riding as true when booking.
+- >-
+  If asked about a returned slot's rate, quote price_per_player as the current
+  tee-sheet rate per player, state that the exact rate may vary by status or
+  check-in treatment, remind the caller that the original approved policy says
+  prices exclude eight point two five percent sales tax, and never calculate a
+  final group total.
+cancellation_modification_policy: >-
+  Preserve the original golf tee-time policy: the AI cannot cancel, modify, or
+  reschedule an existing tee time because no approved self-service golf
+  cancellation window is supplied. The assistant may use get-bookings to find,
+  confirm, and conversationally summarize existing bookings without speaking
+  booking references. For a golf cancellation request, locate the reservation
+  when useful, but do not call cancel-reservation; explain that the Pro Shop must
+  process the cancellation and use the normal two-step transfer protocol. If a
+  cancellation eligibility decision is required, return ineligible. Exact
+  reason: "The Pro Shop must process tee-time cancellations for Sugar Tree Golf
+  Club." Booking modifications and rescheduling also route to the Pro Shop.
+  Preserve the separate Lodge cancellation policy only as knowledge for lodge
+  questions; lodge cancellations also route to the Pro Shop and must never be
+  passed to tee-time cancellation tools.
+walking_riding_cart_policies:
+- >-
+  The supported standard 18-hole green fee includes a cart. Do not ask a
+  riding-or-walking preference during automated booking and pass riding as true.
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls: []
+included_source_paths: []
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

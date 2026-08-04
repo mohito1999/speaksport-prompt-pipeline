@@ -1,0 +1,56 @@
+schema_version: '1'
+slug: honeybrook-golf
+display_name: Honeybrook Golf Club
+website_url: https://www.honeybrookgolf.com/
+timezone: America/New_York
+integration_type: integrated
+course_configuration: single_course
+exact_course_values: []
+references:
+  prompt: '2026-07-10'
+  eligibility: '2026-07-10'
+enabled_tools:
+- check-booking-eligibility-staging
+- get-available-tee-times-staging
+- book-tee-time-staging
+- transfer_call-staging
+- get-day-of-week-staging
+- fetch-inventory-for-date
+- get-weather-forecast-staging
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: null
+transfer_destinations:
+- identifier: golf_shop
+  responsibility: Tee-time assistance, booking changes, cancellations, course conditions, and general golf operations.
+  display_name: Golf Shop
+- identifier: kristin_bender
+  responsibility: Golf Operations Manager Kristin Bender inquiries.
+  display_name: Kristin Bender (Golf Operations Manager)
+- identifier: greenside_grill
+  responsibility: Restaurant hours, dining questions, reservations, and Greenside Grill inquiries.
+  display_name: Greenside Grill
+- identifier: christel_jenkinson
+  responsibility: Events and catering related inquiries.
+  display_name: Christel Jenkinson (Events & Catering)
+booking_rules:
+- Daily fee players can book tee times up to fourteen calendar days in advance, inclusive of the fourteenth future date.
+- Members (identified via price_class) can book tee times up to twenty-one calendar days in advance, inclusive of the twenty-first future date.
+- Both nine-hole and eighteen-hole tee times are supported.
+- This is a single-course facility; omit course and course_name filters from availability searches.
+- When booking, preserve and pass the exact course returned with the selected availability slot.
+cancellation_modification_policy: ''
+walking_riding_cart_policies: []
+caller_details:
+  first_name: true
+  last_name: true
+  email: true
+  confirm_existing_email: true
+allowed_source_urls:
+- https://www.honeybrookgolf.com/
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []

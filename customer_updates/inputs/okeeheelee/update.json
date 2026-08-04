@@ -1,0 +1,108 @@
+{
+  "facility": "Okeeheelee Golf Course",
+  "operating_model": "integrated",
+  "service_model_label": "Direct booking integration",
+  "report_date": "25 July 2026",
+  "dashboard_period": "Since launch · dashboard view: Last 1 Year",
+  "logo": "../speaksport-logo.png",
+  "dashboard_screenshot": "dashboard.png",
+  "calls_csv": "calls.csv",
+  "headline_metrics": [
+    {
+      "label": "Calls handled",
+      "value": "2,184"
+    },
+    {
+      "label": "Bookings completed",
+      "value": "182"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$4,892.99"
+    },
+    {
+      "label": "Time saved",
+      "value": "11h 37m"
+    },
+    {
+      "label": "First-call resolution",
+      "value": "40.7%"
+    },
+    {
+      "label": "Estimated cost saved",
+      "value": "$748.04"
+    }
+  ],
+  "after_hours_metrics": [
+    {
+      "label": "Calls",
+      "value": "1,027"
+    },
+    {
+      "label": "Bookings",
+      "value": "85"
+    },
+    {
+      "label": "Booking revenue",
+      "value": "$2,038.67"
+    },
+    {
+      "label": "First-call resolution",
+      "value": "40.8%"
+    }
+  ],
+  "call_review_count": 563,
+  "call_review_period": "16–23 July 2026",
+  "highlights": [
+    {
+      "title": "Resident privileges applied correctly—and the booking completed",
+      "summary": "A Palm Beach County resident requested a three-player, nine-hole tee time for 6 August. SpeakSport correctly recognized the caller’s FPC access and 14-day booking window, offered nearby availability and completed the reservation for 7:57 AM on Heron.",
+      "source": "Call on 23 July at 10:53 AM",
+      "quote": "“August 6 is exactly 14 days from today, so you’re eligible to book.” SpeakSport then offered nearby options and confirmed three players at 7:57 AM on the Heron course."
+    },
+    {
+      "title": "A single-player request converted with a helpful alternative",
+      "summary": "When the caller’s requested 9:30 AM time did not have a group available, SpeakSport kept the conversation moving by offering the closest viable options. The caller selected 9:18 AM on Osprey and the booking was confirmed.",
+      "source": "Call on 22 July at 8:25 PM",
+      "quote": "“There’s one spot remaining at 9:18 AM on Osprey.” The caller accepted, and SpeakSport confirmed the 18-hole booking with a golf cart."
+    },
+    {
+      "title": "An out-of-window request was protected and routed correctly",
+      "summary": "A caller requested a date beyond their seven-day booking window. SpeakSport explained the applicable limit, identified the furthest eligible date and transferred the caller to the golf shop when they asked to speak with a representative.",
+      "source": "Call on 22 July at 12:30 PM",
+      "quote": "“The furthest date I can book for you right now is Wednesday, July 29.” When the caller requested a representative, SpeakSport routed the call to the golf shop."
+    }
+  ],
+  "features_intro": "We have continued strengthening the integrated experience around booking accuracy, reservation servicing and clearer operational insight.",
+  "features": [
+    {
+      "title": "Cancellations on call",
+      "description": "Callers can now cancel eligible bookings through the same conversational experience, reducing another common reason for staff intervention."
+    },
+    {
+      "title": "Stronger booking-eligibility verification",
+      "description": "SpeakSport now applies booking-window and account-eligibility checks more rigorously, helping prevent ineligible reservations while giving callers a clear next step."
+    },
+    {
+      "title": "Upcoming-booking confirmations",
+      "description": "When callers ask about an upcoming tee time, SpeakSport can confirm the relevant booking details without requiring a staff handoff."
+    },
+    {
+      "title": "Richer back-office reporting",
+      "description": "The dashboard now supports deeper filtering by call intent, category and outcome, making it easier to understand demand and identify opportunities."
+    }
+  ],
+  "future_note": "We plan to keep enriching SpeakSport for Okeeheelee Golf Course, including self-serve knowledge-base updates and even better reporting. We would love for your team to help shape that journey by sharing feedback, ideas and initiatives you would like us to explore.",
+  "future_priorities": [
+    {
+      "title": "Self-serve knowledge base",
+      "description": "Make it easier for your team to keep rates, policies, facility information and caller guidance current."
+    },
+    {
+      "title": "Even better reporting",
+      "description": "Add clearer views of booking demand, eligibility, course preferences and caller outcomes."
+    }
+  ],
+  "contact_line": "Email BK at bk@speaksport.ai or Mohit at mohit@speaksport.ai.",
+  "method_note": "Dashboard figures were supplied from the Okeeheelee SpeakSport dashboard. Call excerpts were selected from 563 calls reviewed for 16–23 July 2026 and lightly edited only for transcription clarity; personal contact details were omitted."
+}

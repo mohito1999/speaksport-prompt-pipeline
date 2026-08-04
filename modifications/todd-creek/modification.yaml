@@ -1,0 +1,21 @@
+schema_version: '1'
+slug: todd-creek
+display_name: Todd Creek Golf Club
+original_prompt_file: original-prompt.md
+update_notes_file: update-notes.md
+additional_context_files:
+- verified-context.md
+required_output_markers:
+- 'The Pro Shop is currently closed'
+- 'after eight o''clock A M tomorrow'
+- 'Never call `transfer_call-staging` with `destination: pro_shop` during an after-hours call.'
+forbidden_output_patterns:
+- 'returns-500'
+- '(?<![A-Za-z0-9_-])get-available-tee-times(?!-staging)'
+- '(?<![A-Za-z0-9_-])book-tee-time(?!-staging)'
+- '<fetch-inventory-for-date'
+preservation:
+  knowledge_base: exact
+  identity_and_voice: preserve
+  transfer_destinations: preserve
+  unmentioned_behavior: preserve_when_compatible

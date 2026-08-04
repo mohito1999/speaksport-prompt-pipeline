@@ -1,0 +1,168 @@
+schema_version: '1'
+slug: tpc-scottsdale
+display_name: TPC Scottsdale
+website_url: https://tpc.com/scottsdale/
+timezone: America/Phoenix
+integration_type: non_integrated
+course_configuration: multi_course
+exact_course_values:
+  - Stadium Course
+  - Champions Course
+
+references:
+  prompt: '2026-07-10'
+
+enabled_tools:
+  - transfer_call-staging
+  - get-weather-forecast-staging
+  - send_sms
+
+greeting: ''
+disclaimer: ''
+announcement: ''
+booking_url: https://tpcscottsdale.ezlinksgolf.com/
+
+transfer_destinations:
+  - identifier: champions_shop
+    responsibility: Champions Shop and Champions Course golf-operation inquiries.
+    display_name: Champions Shop
+
+  - identifier: brian_onorato
+    responsibility: Direct requests for Brian Onorato.
+    display_name: Brian Onorato
+
+  - identifier: krista_reyes
+    responsibility: Direct requests for Krista Reyes.
+    display_name: Krista Reyes
+
+  - identifier: adam_gilbertsen
+    responsibility: Direct requests for Adam Gilbertsen.
+    display_name: Adam Gilbertsen
+
+  - identifier: logan_downey
+    responsibility: Direct requests for Logan Downey.
+    display_name: Logan Downey
+
+  - identifier: draftkings_gm
+    responsibility: Direct requests for the DraftKings General Manager.
+    display_name: DraftKings GM
+
+  - identifier: brad_williams
+    responsibility: Direct requests for Brad Williams.
+    display_name: Brad Williams
+
+  - identifier: matt_williamson
+    responsibility: Direct requests for Matt Williamson.
+    display_name: Matt Williamson
+
+  - identifier: stadium_shop
+    responsibility: Stadium Shop and Stadium Course golf-operation inquiries.
+    display_name: Stadium Shop
+
+  - identifier: doug_hodge
+    responsibility: Direct requests for Doug Hodge.
+    display_name: Doug Hodge
+
+  - identifier: uro_vazquez
+    responsibility: Direct requests for Uro Vazquez.
+    display_name: Uro Vazquez
+
+  - identifier: abby_muhlenbruch
+    responsibility: Direct requests for Abby Muhlenbruch.
+    display_name: Abby Muhlenbruch
+
+  - identifier: randy_waymire
+    responsibility: Direct requests for Randy Waymire.
+    display_name: Randy Waymire
+
+  - identifier: brandon_reese
+    responsibility: Direct requests for Brandon Reese.
+    display_name: Brandon Reese
+
+  - identifier: julie_custer
+    responsibility: Direct requests for Julie Custer.
+    display_name: Julie Custer
+
+  - identifier: aric_runge
+    responsibility: Direct requests for Aric Runge.
+    display_name: Aric Runge
+
+  - identifier: assistant_gc
+    responsibility: Direct requests for the Assistant GC.
+    display_name: Assistant GC
+
+  - identifier: william_kenworthy
+    responsibility: Direct requests for William Kenworthy.
+    display_name: William Kenworthy
+
+  - identifier: michelle_seman
+    responsibility: Direct requests for Michelle Seman.
+    display_name: Michelle Seman
+
+  - identifier: rob_rashell
+    responsibility: Direct requests for Rob Rashell.
+    display_name: Rob Rashell
+
+  - identifier: haley_martin
+    responsibility: Direct requests for Haley Martin.
+    display_name: Haley Martin
+
+  - identifier: angie_knope
+    responsibility: Direct requests for Angie Knope.
+    display_name: Angie Knope
+
+  - identifier: andrew_yoder
+    responsibility: Direct requests for Andrew Yoder.
+    display_name: Andrew Yoder
+
+  - identifier: craig_smith
+    responsibility: Direct requests for Craig Smith.
+    display_name: Craig Smith
+
+  - identifier: chris_mccluskie
+    responsibility: Direct requests for Chris McCluskie.
+    display_name: Chris McCluskie
+
+  - identifier: caddie_master
+    responsibility: Caddie services and direct requests for the Caddie Master.
+    display_name: Caddie Master
+
+  - identifier: hostess_1
+    responsibility: Direct requests for Hostess 1 and applicable host-stand assistance.
+    display_name: Hostess 1
+
+  - identifier: draftkings_bar
+    responsibility: DraftKings bar inquiries and direct requests for the bar.
+    display_name: DraftKings Bar
+
+  - identifier: isabel_batchelor
+    responsibility: Direct requests for Isabel Batchelor.
+    display_name: Isabel Batchelor
+
+  - identifier: casey_harrell
+    responsibility: Direct requests for Casey Harrell.
+    display_name: Casey Harrell
+
+booking_rules: []
+cancellation_modification_policy: >-
+  This is a non-integrated, SMS-only flow. The assistant cannot directly check,
+  modify, reschedule, or cancel tee-time reservations. For existing tee-time
+  assistance, first determine whether the reservation concerns the Stadium
+  Course or Champions Course, then offer the corresponding Stadium Shop or
+  Champions Shop transfer under the normal two-step transfer protocol.
+walking_riding_cart_policies: []
+
+caller_details:
+  first_name: false
+  last_name: false
+  email: false
+  confirm_existing_email: false
+
+allowed_source_urls:
+  - https://tpc.com/scottsdale/
+
+excluded_source_paths: []
+crawl_entire_domain: false
+allow_subdomains: false
+ignored_facts: []
+reference_leakage_exceptions: []
