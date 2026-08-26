@@ -23,6 +23,24 @@ class CourseConfiguration(StrEnum):
     MULTI_COURSE = "multi_course"
 
 
+class CourseValuesSource(StrEnum):
+    CONFIGURED = "configured"
+    RUNTIME = "runtime"
+
+
+class TeeSheetProvider(StrEnum):
+    UNSPECIFIED = "unspecified"
+    FOREUP = "foreup"
+    CLUB_PROPHET = "club_prophet"
+    OTHER = "other"
+
+
+class BookingFeeApplication(StrEnum):
+    NONE = "none"
+    ALL_CALLERS = "all_callers"
+    CONDITIONAL = "conditional"
+
+
 class ReferenceStatus(StrEnum):
     DRAFT = "draft"
     ACTIVE = "active"
@@ -68,6 +86,36 @@ class AvailabilityPolicy(StrictModel):
     single_player_requires_partially_filled_slot: bool = False
 
 
+class AvailabilityPricingPolicy(StrictModel):
+    speaksport_per_booking_model: bool = False
+    booking_fee_application: BookingFeeApplication = BookingFeeApplication.NONE
+    disclose_booking_fee_when_applied: bool = False
+    booking_fee_rules: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def validate_booking_fee_configuration(self) -> AvailabilityPricingPolicy:
+        if (
+            not self.speaksport_per_booking_model
+            and self.booking_fee_application != BookingFeeApplication.NONE
+        ):
+            raise ValueError(
+                "booking fees require speaksport_per_booking_model to be true"
+            )
+        if (
+            self.booking_fee_application == BookingFeeApplication.CONDITIONAL
+            and not self.booking_fee_rules
+        ):
+            raise ValueError("conditional booking fees require booking_fee_rules")
+        if (
+            self.booking_fee_application != BookingFeeApplication.CONDITIONAL
+            and self.booking_fee_rules
+        ):
+            raise ValueError(
+                "booking_fee_rules are valid only for conditional booking fees"
+            )
+        return self
+
+
 class FacilityConfig(StrictModel):
     schema_version: Literal["1"] = "1"
     slug: str = Field(pattern=r"^[a-z0-9][a-z0-9-]*[a-z0-9]$|^[a-z0-9]$")
@@ -75,7 +123,11 @@ class FacilityConfig(StrictModel):
     website_url: HttpUrl
     timezone: str = Field(min_length=1)
     integration_type: IntegrationType
+    tee_sheet: TeeSheetProvider = TeeSheetProvider.UNSPECIFIED
     course_configuration: CourseConfiguration
+    course_values_source: CourseValuesSource = CourseValuesSource.CONFIGURED
+    expected_course_count: int | None = Field(default=None, ge=2)
+    search_all_courses_for_availability: bool = False
     exact_course_values: list[str] = Field(default_factory=list)
     references: ReferenceSelection
     enabled_tools: list[str] = Field(default_factory=list)
@@ -85,6 +137,9 @@ class FacilityConfig(StrictModel):
     booking_url: HttpUrl | None = None
     transfer_policy: TransferPolicy = Field(default_factory=TransferPolicy)
     availability_policy: AvailabilityPolicy = Field(default_factory=AvailabilityPolicy)
+    availability_pricing: AvailabilityPricingPolicy = Field(
+        default_factory=AvailabilityPricingPolicy
+    )
     transfer_destinations: list[TransferDestination] = Field(default_factory=list)
     booking_rules: list[str] = Field(default_factory=list)
     cancellation_modification_policy: str = ""
@@ -101,16 +156,53 @@ class FacilityConfig(StrictModel):
     @model_validator(mode="after")
     def validate_mode_requirements(self) -> FacilityConfig:
         if self.course_configuration == CourseConfiguration.MULTI_COURSE:
-            if not self.exact_course_values:
+            if (
+                self.course_values_source == CourseValuesSource.CONFIGURED
+                and not self.exact_course_values
+            ):
                 raise ValueError("multi_course facilities require exact_course_values")
             if len(set(self.exact_course_values)) != len(self.exact_course_values):
                 raise ValueError("exact_course_values must not contain duplicates")
+            if self.course_values_source == CourseValuesSource.RUNTIME:
+                if self.exact_course_values:
+                    raise ValueError(
+                        "runtime course values must come from {{courses}}, not exact_course_values"
+                    )
+                if self.expected_course_count is None:
+                    raise ValueError(
+                        "runtime multi_course facilities require expected_course_count"
+                    )
+        else:
+            if self.course_values_source != CourseValuesSource.CONFIGURED:
+                raise ValueError("runtime course values require multi_course configuration")
+            if self.expected_course_count is not None:
+                raise ValueError("expected_course_count is only valid for runtime course values")
+            if self.search_all_courses_for_availability:
+                raise ValueError(
+                    "search_all_courses_for_availability requires multi_course configuration"
+                )
         if self.integration_type == IntegrationType.NON_INTEGRATED and self.booking_url is None:
             raise ValueError("non_integrated facilities require booking_url")
         if self.integration_type == IntegrationType.INTEGRATED and not self.references.eligibility:
             raise ValueError("integrated facilities require an eligibility reference version")
         if len(set(self.enabled_tools)) != len(self.enabled_tools):
             raise ValueError("enabled_tools must not contain duplicates")
+        identity_tools = {"get_customer_records", "confirm_identity"}
+        enabled_identity_tools = identity_tools & set(self.enabled_tools)
+        if self.tee_sheet == TeeSheetProvider.CLUB_PROPHET:
+            if self.integration_type != IntegrationType.INTEGRATED:
+                raise ValueError("club_prophet tee sheets require integrated mode")
+            missing = identity_tools - set(self.enabled_tools)
+            if missing:
+                raise ValueError(
+                    "club_prophet facilities require identity tools: "
+                    + ", ".join(sorted(missing))
+                )
+        elif enabled_identity_tools:
+            raise ValueError(
+                "get_customer_records and confirm_identity may be enabled only when "
+                "tee_sheet is club_prophet"
+            )
         return self
 
 
@@ -253,8 +345,12 @@ class CrawlRequest(StrictModel):
     ignore_robots_txt: bool = False
     exclude_paths: list[str] = Field(default_factory=list)
     include_paths: list[str] = Field(default_factory=list)
-    only_main_content: bool = True
-    max_age: int = 172800000
+    # Golf-facility sites commonly use WordPress page builders whose actual body is
+    # incorrectly discarded by Firecrawl's main-content heuristic. Full-page mode
+    # retains that body; repeated navigation is handled during extraction.
+    only_main_content: bool = False
+    # Provisioning must reflect the site as it exists now, not a cached scrape.
+    max_age: int = 0
     parsers: list[str] = Field(default_factory=lambda: ["pdf"])
     formats: list[str] = Field(default_factory=lambda: ["markdown"])
 

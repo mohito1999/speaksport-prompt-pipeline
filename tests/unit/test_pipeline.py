@@ -17,10 +17,14 @@ from speaksport_pipeline.models import (
     LLMResult,
     NormalizedPage,
     ReferenceSelection,
+    TeeSheetProvider,
 )
 from speaksport_pipeline.pipeline import (
     BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    CLUB_PROPHET_IDENTITY_GUARDRAILS,
     MANDATORY_AVAILABILITY_GUARDRAILS,
+    MANDATORY_DATE_RESOLUTION_GUARDRAILS,
+    MANDATORY_TRANSFER_PROTOCOL,
     SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL,
     SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
     PromptPipeline,
@@ -143,7 +147,13 @@ def test_pipeline_caches_fact_and_generation_stages(tmp_path: Path) -> None:
     prompt = prompt_path.read_text(encoding="utf-8")
     assert "<knowledge-base>" in prompt
     assert "{{phone_recognized}}" in prompt
+    assert "{{current_status}}" in prompt
+    assert "{{opening_time}}" in prompt
+    assert "{{closing_time}}" in prompt
+    assert MANDATORY_TRANSFER_PROTOCOL in prompt
+    assert MANDATORY_DATE_RESOLUTION_GUARDRAILS in prompt
     assert MANDATORY_AVAILABILITY_GUARDRAILS in prompt
+    assert "## Mandatory Availability Pricing Policy" in prompt
     assert SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL in prompt
     assert (tmp_path / "output" / "eligibility-backoffice-policy.md").is_file()
 
@@ -175,6 +185,60 @@ def test_pipeline_writes_restricted_single_player_policy(tmp_path: Path) -> None
 
     assert SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL in prompt
     assert SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL not in prompt
+
+
+def test_pipeline_writes_club_prophet_identity_runtime_and_guardrails(tmp_path: Path) -> None:
+    facility = FacilityConfig(
+        slug="cps-club",
+        display_name="CPS Club",
+        website_url="https://example.com",
+        timezone="America/New_York",
+        integration_type=IntegrationType.INTEGRATED,
+        tee_sheet=TeeSheetProvider.CLUB_PROPHET,
+        course_configuration=CourseConfiguration.SINGLE_COURSE,
+        references=ReferenceSelection(prompt="2026-07-10", eligibility="2026-07-10"),
+        enabled_tools=["get_customer_records", "confirm_identity"],
+    )
+    sections = GeneratedSections(
+        core_shell=(
+            "Identity Confirmed: {{identity_confirmed}}, initialized to false.\n"
+            "Use the configured runtime context."
+        ),
+        knowledge_base="CPS Club is a golf facility.",
+        logic_module=(
+            "## Club Prophet On-Call Identity — Mandatory\nPartial model section.\n\n"
+            "## Mandatory Availability Search Guardrails\nPartial model section."
+        ),
+        eligibility_policy=(
+            "Initialize the following variables:\n"
+            "'date' = requested booking date.\n"
+            "'time' = requested tee time.\n"
+            "'current_date' = today's date.\n\n"
+            "Apply these rules in order:\n"
+            "- Do not apply any other eligibility criteria."
+        ),
+    )
+
+    prompt = write_generation_outputs(
+        tmp_path / "output", facility, FactInventory(facts=[]), sections
+    ).read_text()
+
+    assert "Identity Confirmed: {{identity_confirmed}}" in prompt
+    assert "initialized to false" not in prompt
+    assert CLUB_PROPHET_IDENTITY_GUARDRAILS in prompt
+
+
+def test_mandatory_transfer_protocol_keeps_self_service_available_after_hours() -> None:
+    assert (
+        "Current Operating Status controls only whether `transfer_call-staging` may be called."
+        in MANDATORY_TRANSFER_PROTOCOL
+    )
+    assert "every enabled non-transfer tool operate twenty-four hours a day" in (
+        MANDATORY_TRANSFER_PROTOCOL
+    )
+    assert "Never treat `after_hours` as a booking restriction" in (
+        MANDATORY_TRANSFER_PROTOCOL
+    )
 
 
 def test_eligibility_policy_rejects_quoted_variables_after_initialization() -> None:
@@ -213,6 +277,29 @@ Apply these rules in order:
     assert "'date' = requested booking date." in normalized
     assert "- 'date':" not in normalized
     assert "Do not apply any other eligibility criteria" in normalized
+    _validate_eligibility_decision_prompt(
+        normalized,
+        label="Booking eligibility policy",
+        required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    )
+
+
+def test_eligibility_policy_restores_missing_required_runtime_inputs() -> None:
+    policy = """Initialize the following variables:
+'date' = requested booking date.
+'current_date' = today's date.
+
+Apply these rules in order:
+- If the requested date has passed, the caller is not eligible.
+- Do not apply any other eligibility criteria.
+"""
+
+    normalized = _normalize_eligibility_decision_prompt(
+        policy,
+        required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    )
+
+    assert "'time' = requested tee time." in normalized
     _validate_eligibility_decision_prompt(
         normalized,
         label="Booking eligibility policy",

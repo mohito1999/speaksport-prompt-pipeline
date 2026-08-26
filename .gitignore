@@ -12,7 +12,14 @@ build/
 dist/
 *.egg-info/
 tmp/
+.ui/
 
 # Runtime artifacts are local and may contain client-confidential material.
 runs/*
+modification-runs/*
+modifications/*
+customer_updates/*
 !runs/.gitkeep
+eligibility-eval/*
+SpeakSport-Customer-Docs/*
+facilities/*

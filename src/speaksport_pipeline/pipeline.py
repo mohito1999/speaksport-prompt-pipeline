@@ -12,6 +12,7 @@ from .exceptions import ConfigurationError
 from .generation import assemble_prompt
 from .hashing import stable_hash
 from .models import (
+    BookingFeeApplication,
     FacilityConfig,
     FactInventory,
     GeneratedSections,
@@ -32,6 +33,74 @@ CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES = {
     "current_datetime",
     "hours_until_tee_off",
 }
+BOOKING_ELIGIBILITY_VARIABLE_MEANINGS = {
+    "date": "requested booking date.",
+    "time": "requested tee time.",
+    "current_date": "today's date in the facility's local timezone.",
+}
+CANCELLATION_ELIGIBILITY_VARIABLE_MEANINGS = {
+    "date": "reservation date.",
+    "time": "reservation tee time.",
+    "current_date": "today's date in the facility's local timezone.",
+    "current_datetime": "current date and time in the facility's local timezone.",
+    "hours_until_tee_off": (
+        "exact number of hours between the current time and the reservation tee time."
+    ),
+}
+ELIGIBILITY_VARIABLE_ORDER = (
+    "date",
+    "time",
+    "current_date",
+    "current_datetime",
+    "hours_until_tee_off",
+)
+MANDATORY_DATE_RESOLUTION_GUARDRAILS = "\n".join(
+    [
+        "## Mandatory Date and Weekday Resolution",
+        "",
+        (
+            "- `get-day-of-week-staging` is universal across integrated GMS flows and is "
+            "not specific to any tee-sheet provider. Never guess whether a calendar date "
+            "and weekday agree, and never perform calendar math yourself."
+        ),
+        (
+            "- If the caller gives only a calendar date, call `get-day-of-week-staging` "
+            "with only `date` in `YYYY-MM-DD` format. Use the returned `day_of_week` and "
+            "`readable` as authoritative."
+        ),
+        (
+            "- If the caller gives only a weekday, call `get-day-of-week-staging` with "
+            "only `day_of_week`. Present the returned `upcoming_dates` naturally, ask the "
+            "caller to choose one exact returned date, then stop and wait."
+        ),
+        (
+            "- If the caller states both a calendar date and a weekday, pass both `date` "
+            "and `day_of_week` in the same `get-day-of-week-staging` call."
+        ),
+        (
+            "- If the response returns `matches: false`, explain that the stated weekday "
+            "and calendar date conflict. Use `provided_day_of_week`, the resolved weekday "
+            "from `resolved_day_of_week` when present or `day_of_week` otherwise, and "
+            "`readable` when present to ask whether the caller means the stated calendar "
+            "date or the intended weekday. Stop and wait for clarification."
+        ),
+        (
+            "- While a date-and-weekday conflict is unresolved, do not call "
+            "`fetch-inventory-for-date`, `check-booking-eligibility-staging`, "
+            "`get-available-tee-times-staging`, or `book-tee-time-staging`."
+        ),
+        (
+            "- If both inputs match, or after the caller resolves a conflict, continue "
+            "using the exact confirmed date and the tool-returned readable date. Call "
+            "`fetch-inventory-for-date` only after this date-resolution gate succeeds."
+        ),
+        (
+            "- Speak dates using the tool-returned `readable` value, normally omitting "
+            "the year under the voice conventions. Never silently substitute a different "
+            "date or weekday."
+        ),
+    ]
+)
 MANDATORY_AVAILABILITY_GUARDRAILS = "\n".join(
     [
         "## Mandatory Availability Search Guardrails",
@@ -52,14 +121,21 @@ MANDATORY_AVAILABILITY_GUARDRAILS = "\n".join(
         ),
         (
             "- Each returned slot is one inseparable record containing `time`, `course`, "
-            "`spots_remaining`, and `price_per_player`. Retain those values together for "
+            "`spots_remaining`, and whichever of `base_price_per_player`, "
+            "`base_price_per_player_riding`, `price_per_player`, and "
+            "`price_per_player_riding` the tool returns. Retain those values together for "
             "every option."
         ),
         (
-            "- If the caller asks about price, quote `price_per_player` as the current "
-            "tee-sheet price per player for that returned slot. Explain that the caller's "
-            "exact rate may vary based on status, eligibility, discounts, or check-in "
-            "treatment. Never invent a price when the field is absent."
+            "- Do not ask whether the caller will ride or walk before calling "
+            "`get-available-tee-times-staging`; riding is not an availability argument. "
+            "After the caller selects an exact returned slot, ask riding or walking before "
+            "booking unless facility policy fixes `riding` to a predetermined value."
+        ),
+        (
+            "- Quote rates only from pricing fields actually returned for that exact slot "
+            "and follow the facility's Mandatory Availability Pricing Policy. Never invent "
+            "a missing rate or use a fee-inclusive field for a fee-exempt caller."
         ),
         (
             "- If the tool returns an empty list, it means there are no tee times available "
@@ -82,6 +158,68 @@ MANDATORY_AVAILABILITY_GUARDRAILS = "\n".join(
         ),
     ]
 )
+
+
+def availability_pricing_guardrail(facility: FacilityConfig) -> str:
+    policy = facility.availability_pricing
+    lines = [
+        "## Mandatory Availability Pricing Policy",
+        "",
+        (
+            "- `base_price_per_player` is the walking rate without a SpeakSport booking "
+            "fee, and `base_price_per_player_riding` is the riding rate without that fee."
+        ),
+        (
+            "- `price_per_player` is the walking rate including the SpeakSport booking "
+            "fee, and `price_per_player_riding` is the riding rate including that fee."
+        ),
+        (
+            "- Quote only a field returned for the caller-selected slot. Never calculate, "
+            "infer, or invent a missing rate."
+        ),
+    ]
+    if (
+        not policy.speaksport_per_booking_model
+        or policy.booking_fee_application == BookingFeeApplication.NONE
+    ):
+        lines.append(
+            "- This facility does not charge the caller a SpeakSport booking fee. Quote "
+            "`base_price_per_player` for walking and `base_price_per_player_riding` for "
+            "riding. Do not describe or add a booking fee."
+        )
+    elif policy.booking_fee_application == BookingFeeApplication.ALL_CALLERS:
+        disclosure = (
+            "Explicitly tell the caller that the quoted rate includes the booking fee."
+            if policy.disclose_booking_fee_when_applied
+            else "Quote the returned total without separately describing the booking fee."
+        )
+        lines.append(
+            "- The booking fee applies to every caller. Quote `price_per_player` for walking "
+            "and `price_per_player_riding` for riding. " + disclosure
+        )
+    else:
+        rules = " ".join(policy.booking_fee_rules)
+        disclosure = (
+            "When the fee applies, explicitly tell the caller that the quoted rate includes "
+            "the booking fee."
+            if policy.disclose_booking_fee_when_applied
+            else "When the fee applies, quote the returned total without separately "
+            "describing the booking fee."
+        )
+        lines.extend(
+            [
+                (
+                    "- Booking-fee application is conditional. Apply only these configured "
+                    f"rules using initialized price class, passes, and groups: {rules}"
+                ),
+                (
+                    "- For a caller subject to the fee, quote `price_per_player` for walking "
+                    "or `price_per_player_riding` for riding. For an exempt caller, quote "
+                    "`base_price_per_player` or `base_price_per_player_riding`. " + disclosure
+                ),
+            ]
+        )
+    return "\n".join(lines)
 SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL = "\n".join(
     [
         "## Single-Player Availability Policy",
@@ -110,26 +248,299 @@ SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL = "\n".join(
         ),
     ]
 )
-MANDATORY_TRANSFER_PROTOCOL = "\n".join(
-    [
-        "## Mandatory Transfer Confirmation Guardrails",
+
+
+def all_courses_availability_guardrail(expected_course_count: int | None) -> str:
+    count_text = (
+        f" exactly {expected_course_count} exact course values"
+        if expected_course_count is not None
+        else " every exact course value"
+    )
+    return "\n".join(
+        [
+            "## All-Course Availability Search Policy",
+            "",
+            (
+                "- Initialize Available Courses from `{{courses}}` and treat its entries as "
+                "opaque backend identifiers. Do not rename, normalize, combine, or invent them."
+            ),
+            (
+                f"- For every availability search, including every targeted re-query, read"
+                f"{count_text} from Available Courses and call "
+                "`get-available-tee-times-staging` once per course. Each call must preserve "
+                "the same date, exact `when`, `num_players`, and `num_holes`, and pass only "
+                "that call's exact runtime course value as `course_name`."
+            ),
+            (
+                "- Combine the returned options for presentation while retaining each slot's "
+                "exact time, course, spots remaining, and price as one inseparable record. "
+                "Pass the exact course paired with the selected slot to booking."
+            ),
+            (
+                "- If every raw course result is an empty list, there is no availability for "
+                "the requested date. Offer another date only; do not offer another exact time "
+                "or an already-searched course. If one course is empty and another has valid "
+                "results, present the valid results. If raw results exist but the configured "
+                "single-player filter removes them all, offer another exact time or date."
+            ),
+        ]
+    )
+
+
+def runtime_course_selection_guardrail(expected_course_count: int | None) -> str:
+    count_text = (
+        f" exactly {expected_course_count} exact course values"
+        if expected_course_count is not None
+        else " the exact course values"
+    )
+    return "\n".join(
+        [
+            "## Runtime Course Selection Policy",
+            "",
+            (
+                f"- Initialize Available Courses from `{{{{courses}}}}`; it contains"
+                f"{count_text}. Treat every value as an opaque backend identifier. Never "
+                "rename, normalize, combine, infer, or invent a course value."
+            ),
+            (
+                "- Ask the caller which exact Available Courses value they want before "
+                "searching availability, then pass that exact selected value as "
+                "`course_name` to `get-available-tee-times-staging`."
+            ),
+            (
+                "- Preserve the same exact `course_name` during every targeted availability "
+                "re-query. When booking, pass the exact `course` returned with the selected "
+                "slot rather than a rewritten display name."
+            ),
+        ]
+    )
+
+
+def existing_reservation_guardrails(*, club_prophet: bool, cancellation: bool) -> str:
+    reference_rule = (
+        "For Club Prophet, preserve the caller-supplied numeric reference exactly and never "
+        "add or expect a `TTID_` prefix."
+        if club_prophet
+        else "Apply the configured tee-sheet provider's booking-reference format exactly."
+    )
+    lines = [
+        "## Mandatory Existing Reservation Tool Flow",
         "",
         (
-            "- Never call `transfer_call-staging` for a normal transfer without explicit, "
-            "verbal confirmation from the caller in the current turn."
+            "- For an existing-booking lookup, first call `get-bookings` with no arguments "
+            "so it searches using the caller's phone number."
         ),
         (
-            "- Do not ask the transfer-confirmation question and call the transfer tool in "
-            "the same response or turn. Ask, stop, and wait; only after the caller gives "
-            "affirmative confirmation in a later turn may you speak the transition and call "
-            "the tool."
+            "- If the first lookup is empty and the caller supplies a reference, call "
+            "`get-bookings` again with only `booking_reference`; do not pass `course_name`. "
+            + reference_rule
+        ),
+        (
+            "- Never speak a booking reference. Retain each hidden exact reference paired "
+            "with its reservation date, time, player count, and course."
+        ),
+    ]
+    if cancellation:
+        lines.extend(
+            [
+                "",
+                "### Mandatory Cancellation Tool Order",
+                "",
+                (
+                    "- For cancellation, first use `get-bookings` through the lookup flow. "
+                    "Present reservation details without references, ask which exact tee time "
+                    "the caller wants to cancel, then stop and wait."
+                ),
+                (
+                    "- After the caller selects one reservation, call "
+                    "`get-eligibility-for-cancellation` with only that reservation's exact "
+                    "`date` and `time`."
+                ),
+                (
+                    "- If eligible, immediately call `cancel-reservation` with only the "
+                    "selected reservation's hidden exact `booking_reference`. Do not ask for "
+                    "another cancellation confirmation. Confirm cancellation only after the "
+                    "tool reports success."
+                ),
+            ]
+        )
+    return "\n".join(lines)
+
+
+def _repair_generated_section_boundaries(
+    core_shell: str, knowledge_base: str
+) -> tuple[str, str]:
+    """Recover a knowledge base accidentally nested inside the generated core shell."""
+    marker = re.search(r"(?im)^# Knowledge Base\s*$", core_shell)
+    if marker is None or len(knowledge_base.split()) >= 100:
+        return core_shell, knowledge_base
+    recovered = core_shell[marker.end() :].strip()
+    if len(recovered.split()) <= len(knowledge_base.split()):
+        return core_shell, knowledge_base
+    return core_shell[: marker.start()].rstrip(), recovered
+
+
+MANDATORY_TRANSFER_PROTOCOL = "\n".join(
+    [
+        "## Mandatory Hours-Aware Transfer Handling",
+        "",
+        (
+            "- Initialize Current Operating Status from `{{current_status}}`, Opening Time "
+            "from `{{opening_time}}`, and Closing Time from `{{closing_time}}`. Check Current "
+            "Operating Status before every transfer attempt."
+        ),
+        (
+            "- If Current Operating Status is `after_hours`, never call "
+            "`transfer_call-staging`, including for normally automatic failure-recovery "
+            "transfers. Explain that the requested team is closed, offer to help directly, "
+            "and say the caller may call back at Opening Time."
+        ),
+        (
+            "- Current Operating Status controls only whether `transfer_call-staging` may be "
+            "called. It must never block, stop, delay, or change any non-transfer workflow."
+        ),
+        (
+            "- The assistant and every enabled non-transfer tool operate twenty-four hours a "
+            "day, seven days a week. Continue booking, availability searches, identity "
+            "resolution, eligibility checks, existing-booking lookups, cancellations, weather "
+            "requests, SMS, and all other enabled self-service actions normally when Current "
+            "Operating Status is `after_hours`."
+        ),
+        (
+            "- Never treat `after_hours` as a booking restriction, technical failure, reason to "
+            "abandon a selected tee time, or reason to skip any enabled tool other than "
+            "`transfer_call-staging`."
+        ),
+        (
+            "- A caller's explicit direct request such as 'transfer me to the Pro Shop' is "
+            "already consent to transfer. When open, do not ask whether they want the "
+            "transfer again; say a brief transition and call `transfer_call-staging` in the "
+            "same response."
+        ),
+        (
+            "- When the caller has not directly requested a transfer and you offer one as "
+            "the next best action, ask whether they would like the transfer, then stop and "
+            "wait. After an affirmative later reply, say the transition and call "
+            "`transfer_call-staging` in that same response."
+        ),
+        (
+            "- Never ask a redundant transfer-confirmation question after a direct request "
+            "or after the caller already accepted an assistant-offered transfer."
+        ),
+    ]
+)
+SOFT_SHOP_TRANSFER_DEFLECTION = "\n".join(
+    [
+        "## Optional First Shop Transfer Assistance Check",
+        "",
+        (
+            "- On the caller's first open-hours direct request for the Golf Shop, Pro Shop, "
+            "or a general transfer, ask: 'Is there something I can assist you with first?' "
+            "Then stop and wait. Do not say or imply that the shop is busy."
+        ),
+        (
+            "- If the caller says no, repeats the request, or still wants the transfer, treat "
+            "that as consent already given. Say the transition and call "
+            "`transfer_call-staging` immediately without another confirmation question."
+        ),
+    ]
+)
+CLUB_PROPHET_IDENTITY_GUARDRAILS = "\n".join(
+    [
+        "## Club Prophet On-Call Identity — Mandatory",
+        "",
+        (
+            "- Gate this workflow only on initialized Identity Confirmed "
+            "(`{{identity_confirmed}}`). Do not use Phone Recognized Status, Caller Is "
+            "Customer, or any other variable as a substitute."
+        ),
+        (
+            "- If Identity Confirmed is true, the caller previously confirmed the linked "
+            "Club Prophet account. Use the initialized first name, last name, email, price "
+            "class, passes, and groups normally; do not run identity lookup or ask again."
+        ),
+        (
+            "- If Identity Confirmed is false, do not rely on initialized profile name, "
+            "email, price class, passes, groups, or membership status. Use a generic greeting "
+            "even if the phone is recognized."
+        ),
+        (
+            "- When Identity Confirmed is false and the caller wants to book, asks about "
+            "pricing, or asks about membership, tell the caller that you will first look for "
+            "their customer record, then first call `get_customer_records` with no arguments. "
+            "Do not silently perform the lookup."
+        ),
+        (
+            "- For every booking request, complete this identity branch before asking for the "
+            "requested date, time, player count, or other booking details and before calling "
+            "booking eligibility or availability. Resume booking only with a linked identity "
+            "or after this workflow explicitly reaches the new-guest outcome."
+        ),
+        (
+            "- If the initial lookup returns zero records, tell the caller that no customer "
+            "record was found under the current phone number. Ask whether they have played at "
+            "the facility before, then stop and wait. Do not silently continue booking."
+        ),
+        (
+            "- If the caller says they have not played before, do not have an existing record, "
+            "or want to proceed as a new player, continue as a new guest. Collect their first "
+            "name, last name, and email later in the normal booking-details stage."
+        ),
+        (
+            "- If the caller says they have played before, collect exactly one lookup value: "
+            "either their email address or an alternate phone number. Do not collect both. "
+            "For email, read it back phonetically; for phone, repeat the digits. Obtain explicit "
+            "confirmation, tell the caller you will check that value, then call "
+            "`get_customer_records` one final time with only `email` or only `phone`."
+        ),
+        (
+            "- Apply the same single fallback lookup if records were returned initially but the "
+            "caller says none belongs to them. Never make more than one fallback lookup. If the "
+            "fallback returns zero records, explain that no matching record was found and "
+            "continue as a new guest."
+        ),
+        (
+            "- If exactly one record is returned, say the person's name and only the "
+            "distinguishing ending or domain of the email address, then ask whether that "
+            "profile is theirs. One match is not proof; stop and wait for confirmation."
+        ),
+        (
+            "- If two or more records are returned, explain that several profiles share "
+            "the phone number. Present every profile by name and only the distinguishing "
+            "email ending or domain, then ask which is theirs. Never read a full email "
+            "address, rank candidates, auto-select the first record, prefer a member record, "
+            "or infer from an email domain. Stop and wait for the caller's choice."
+        ),
+        (
+            "- After the caller verbally confirms one returned profile, call "
+            "`confirm_identity` with only `acct`, set to that profile's exact `customer_id`. "
+            "On `status: linked`, treat the returned customer as confirmed for the remainder "
+            "of the call and continue the interrupted request."
+        ),
+        (
+            "- Use `confirm_identity` only after the caller selects a returned customer record. "
+            "Call `confirm_identity` with only `acct`, using that record's exact `customer_id`. "
+            "Never pass email or phone to `confirm_identity`."
+        ),
+        (
+            "- On `status: not_found`, continue as a new guest. On an error from either "
+            "identity tool, speak the returned `detail` naturally and continue the caller's "
+            "request without ending the call or transferring because of that error. Do not "
+            "trust or quote from an unconfirmed profile."
+        ),
+        (
+            "- Never state a profile-dependent price, membership status, member booking "
+            "window, pass benefit, or other account-specific fact before the caller confirms "
+            "the profile and `confirm_identity` returns `status: linked`."
         ),
     ]
 )
 
 
-def _normalize_eligibility_decision_prompt(content: str) -> str:
-    """Canonicalize common model variations in variable initialization syntax."""
+def _normalize_eligibility_decision_prompt(
+    content: str, *, required_variables: set[str] | None = None
+) -> str:
+    """Canonicalize initialization syntax and restore mandatory runtime inputs."""
     rules_heading = "Apply these rules in order:"
     if rules_heading not in content:
         return content.strip()
@@ -144,6 +555,27 @@ def _normalize_eligibility_decision_prompt(content: str) -> str:
         else:
             normalized_lines.append(line.rstrip())
     normalized_initialization = "\n".join(normalized_lines).strip()
+    initialized = set(
+        re.findall(
+            r"(?m)^\s*[-*]?\s*'([a-z_][a-z0-9_]*)'\s*=",
+            normalized_initialization,
+        )
+    )
+    missing = (required_variables or set()) - initialized
+    if missing:
+        meanings = (
+            CANCELLATION_ELIGIBILITY_VARIABLE_MEANINGS
+            if "hours_until_tee_off" in (required_variables or set())
+            else BOOKING_ELIGIBILITY_VARIABLE_MEANINGS
+        )
+        additions = [
+            f"'{name}' = {meanings[name]}"
+            for name in ELIGIBILITY_VARIABLE_ORDER
+            if name in missing
+        ]
+        normalized_initialization = "\n".join(
+            [normalized_initialization, *additions]
+        ).strip()
     normalized_rules = re.sub(
         r"(?i)\bdo not apply any additional\b",
         "Do not apply any other",
@@ -439,20 +871,58 @@ class PromptPipeline:
                     "eligibility decision rules only in the separate eligibility policies. "
                     "The core shell must explicitly initialize each runtime placeholder using "
                     "its exact double-curly-brace spelling before later logic refers to its "
-                    "semantic name. First-shop-transfer deflection is strictly controlled by "
-                    "facility.transfer_policy.first_shop_transfer_deflection. Include the "
-                    "busy-shop/help-first guardrail only when it is true. When false, omit all "
-                    "first-request resistance or gatekeeping and use the normal transfer "
-                    "confirmation flow immediately. When send_sms is enabled for an integrated "
+                    "semantic name. Always initialize {{current_status}}, {{opening_time}}, and "
+                    "{{closing_time}}. Current status affects human transfers only. Every enabled "
+                    "non-transfer capability and tool remains available twenty-four hours a day, "
+                    "seven days a week, including booking, availability, identity, eligibility, "
+                    "existing-booking lookup, cancellation, weather, and SMS. Never stop, alter, "
+                    "or skip one of those workflows merely because current status is after_hours. "
+                    "Never transfer when current status is after_hours; offer help and tell the "
+                    "caller to call back at opening time. A caller's explicit "
+                    "direct transfer request is already consent and must not be reconfirmed. "
+                    "Only an assistant-offered transfer requires a question and later affirmative "
+                    "reply. First-shop-transfer deflection is strictly controlled by "
+                    "facility.transfer_policy.first_shop_transfer_deflection. When true, ask "
+                    "only whether there is something the assistant can help with first; never "
+                    "claim the shop is busy. If the caller declines or repeats the request, "
+                    "transfer without another confirmation. When false, do not resist or "
+                    "gatekeep a direct request. When send_sms is enabled for an integrated "
                     "facility, initialize Caller Phone as {{caller_phone}} and Booking URL as "
                     "{{booking_url}}. Ask for explicit permission before sending a text, stop and "
                     "wait for the caller's answer, and call send_sms only after affirmative "
                     "consent, passing the initialized caller phone and a concise message "
                     "containing the initialized booking URL. Never claim the message was sent "
                     "unless the tool "
-                    "reports success. Availability behavior is controlled by "
+                    "reports success. When facility.tee_sheet is club_prophet, initialize "
+                    "{{identity_confirmed}} and implement the complete on-call identity flow "
+                    "from the tool contracts and global conventions. For every booking request "
+                    "when Identity Confirmed is false, complete the identity flow before asking "
+                    "for the requested date or time and before inventory warm-up, booking "
+                    "eligibility, or availability, even when eligibility itself does not use "
+                    "profile variables. Do not generate a later booking step that postpones "
+                    "identity until after eligibility. Never auto-select a customer "
+                    "record or transfer because an identity tool failed. Do not include this "
+                    "flow for any other tee sheet. "
+                    "The enhanced `get-day-of-week-staging` contract is universal for every "
+                    "integrated facility, regardless of tee-sheet provider. Implement the "
+                    "complete date-only, weekday-only, and date-plus-weekday validation flow "
+                    "from the tool contract and global conventions. A `matches: false` result "
+                    "is a mandatory conversational stop before inventory warm-up, eligibility, "
+                    "availability, or booking. "
+                    "Availability behavior is controlled by "
                     "facility.availability_policy.single_player_requires_partially_filled_slot; "
-                    "follow the deterministic availability guardrails exactly. Generate each "
+                    "follow the deterministic availability guardrails exactly. Do not ask "
+                    "riding or walking before availability; ask only after exact slot selection "
+                    "and before booking unless facility policy fixes riding. Use "
+                    "facility.availability_pricing to choose base walking/riding fields versus "
+                    "fee-inclusive walking/riding fields and whether to disclose a booking fee. "
+                    "Never invent a missing returned price. When "
+                    "facility.course_values_source is runtime, treat {{courses}} as the sole "
+                    "source of exact course identifiers and never invent or normalize them. "
+                    "When facility.search_all_courses_for_availability is true, every initial "
+                    "availability search and targeted re-query must call availability separately "
+                    "for every exact course value and combine the slot results without losing "
+                    "their course pairing. Generate each "
                     "eligibility policy as a "
                     "compact ordered "
                     "decision prompt using the supplied eligibility conventions. Start with "
@@ -493,12 +963,18 @@ class PromptPipeline:
         sections = sections.model_copy(
             update={
                 "eligibility_policy": (
-                    _normalize_eligibility_decision_prompt(sections.eligibility_policy)
+                    _normalize_eligibility_decision_prompt(
+                        sections.eligibility_policy,
+                        required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+                    )
                     if sections.eligibility_policy
                     else None
                 ),
                 "cancellation_eligibility_policy": (
-                    _normalize_eligibility_decision_prompt(sections.cancellation_eligibility_policy)
+                    _normalize_eligibility_decision_prompt(
+                        sections.cancellation_eligibility_policy,
+                        required_variables=CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES,
+                    )
                     if sections.cancellation_eligibility_policy
                     else None
                 ),
@@ -592,6 +1068,9 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
 - Customer Price Class: {{price_class}}
 - Customer has card on file: {{customer_has_card_on_file}}
 - Courses available: {{courses}}
+- Current Operating Status: {{current_status}}
+- Opening Time: {{opening_time}}
+- Closing Time: {{closing_time}}
 
 ## Greeting the caller
 - If Phone Recognized Status is true, say "Hi {{first_name}}, {{greeting}}."
@@ -604,6 +1083,12 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
         "{{greeting}}",
         "{{disclaimer}}",
         "{{announcement}}",
+        "{{current_status}}",
+        "{{opening_time}}",
+        "{{closing_time}}",
+    )
+    core_shell, knowledge_base = _repair_generated_section_boundaries(
+        sections.core_shell, sections.knowledge_base
     )
     if "send_sms" in facility.enabled_tools:
         required_runtime_block += """
@@ -613,21 +1098,45 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
 - Booking URL: {{booking_url}}
 """
         required_placeholders += ("{{caller_phone}}", "{{booking_url}}")
-    core_shell = sections.core_shell
+    if facility.tee_sheet.value == "club_prophet":
+        core_shell = re.sub(
+            r"({{identity_confirmed}})\s*,?\s*initialized to false\.?",
+            r"\1",
+            core_shell,
+            flags=re.IGNORECASE,
+        )
+        required_runtime_block = required_runtime_block.replace(
+            "- Phone Recognized Status: {{phone_recognized}}",
+            "- Phone Recognized Status: {{phone_recognized}}\n"
+            "- Identity Confirmed: {{identity_confirmed}}",
+        )
+        required_placeholders += ("{{identity_confirmed}}",)
     if any(placeholder not in core_shell for placeholder in required_placeholders):
         core_shell = required_runtime_block.strip() + "\n\n" + core_shell.strip()
-    if (
-        facility.integration_type == IntegrationType.INTEGRATED
-        and "## Mandatory Transfer Confirmation Guardrails" not in core_shell
-    ):
+    if "## Mandatory Hours-Aware Transfer Handling" not in core_shell:
         core_shell = core_shell.strip() + "\n\n" + MANDATORY_TRANSFER_PROTOCOL.strip()
+    if (
+        facility.transfer_policy.first_shop_transfer_deflection
+        and "## Optional First Shop Transfer Assistance Check" not in core_shell
+    ):
+        core_shell = core_shell.strip() + "\n\n" + SOFT_SHOP_TRANSFER_DEFLECTION.strip()
     logic_module = sections.logic_module
     if (
         facility.integration_type == IntegrationType.INTEGRATED
-        and "## Mandatory Availability Search Guardrails" not in logic_module
+        and MANDATORY_DATE_RESOLUTION_GUARDRAILS not in logic_module
+    ):
+        logic_module = (
+            logic_module.strip() + "\n\n" + MANDATORY_DATE_RESOLUTION_GUARDRAILS.strip()
+        )
+    if (
+        facility.integration_type == IntegrationType.INTEGRATED
+        and MANDATORY_AVAILABILITY_GUARDRAILS not in logic_module
     ):
         logic_module = logic_module.strip() + "\n\n" + MANDATORY_AVAILABILITY_GUARDRAILS.strip()
     if facility.integration_type == IntegrationType.INTEGRATED:
+        pricing_guardrail = availability_pricing_guardrail(facility)
+        if "## Mandatory Availability Pricing Policy" not in logic_module:
+            logic_module = logic_module.strip() + "\n\n" + pricing_guardrail
         single_player_guardrail = (
             SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL
             if facility.availability_policy.single_player_requires_partially_filled_slot
@@ -635,10 +1144,42 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
         )
         if single_player_guardrail not in logic_module:
             logic_module = logic_module.strip() + "\n\n" + single_player_guardrail.strip()
+        if facility.search_all_courses_for_availability:
+            all_courses_guardrail = all_courses_availability_guardrail(
+                facility.expected_course_count
+            )
+            if "## All-Course Availability Search Policy" not in logic_module:
+                logic_module = logic_module.strip() + "\n\n" + all_courses_guardrail
+        elif (
+            facility.course_configuration.value == "multi_course"
+            and facility.course_values_source.value == "runtime"
+            and "## Runtime Course Selection Policy" not in logic_module
+        ):
+            logic_module = logic_module.strip() + "\n\n" + runtime_course_selection_guardrail(
+                facility.expected_course_count
+            )
+        if "get-bookings" in facility.enabled_tools:
+            reservation_guardrails = existing_reservation_guardrails(
+                club_prophet=facility.tee_sheet.value == "club_prophet",
+                cancellation={
+                    "get-bookings",
+                    "get-eligibility-for-cancellation",
+                    "cancel-reservation",
+                }.issubset(set(facility.enabled_tools)),
+            )
+            if "## Mandatory Existing Reservation Tool Flow" not in logic_module:
+                logic_module = logic_module.strip() + "\n\n" + reservation_guardrails
+    if (
+        facility.tee_sheet.value == "club_prophet"
+        and CLUB_PROPHET_IDENTITY_GUARDRAILS not in logic_module
+    ):
+        logic_module = (
+            logic_module.strip() + "\n\n" + CLUB_PROPHET_IDENTITY_GUARDRAILS.strip()
+        )
     prompt = assemble_prompt(
         PromptSectionBundle(
             core_shell=core_shell,
-            knowledge_base=sections.knowledge_base,
+            knowledge_base=knowledge_base,
             logic_module=logic_module,
             closing_core_shells=sections.closing_core_shells,
         )

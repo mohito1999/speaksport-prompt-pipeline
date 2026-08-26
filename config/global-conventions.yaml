@@ -9,9 +9,11 @@ prompt_architecture:
   knowledge_base_embedded: true
   allow_multiple_core_shells: true
 transfer_protocol:
-  status: owner_confirmed_from_reference_prompts
+  status: owner_confirmed_2026_08_25_after_hours_is_transfer_only
   integrated:
-    require_current_turn_verbal_confirmation: true
+    caller_direct_request_is_consent: true
+    do_not_reconfirm_direct_request: true
+    assistant_offered_transfer_requires_later_affirmative_consent: true
     first_general_golf_shop_request_uses_deflection: facility_configured
     default_first_shop_transfer_deflection: false
     automatic_transfer_exceptions:
@@ -19,15 +21,90 @@ transfer_protocol:
       - post-booking profile email update already explained to caller
       - general tool failure when the reference flow explicitly requires golf shop recovery
   non_integrated:
-    require_current_turn_verbal_confirmation: false
+    caller_direct_request_is_consent: true
+    do_not_reconfirm_direct_request: true
+    assistant_offered_transfer_requires_later_affirmative_consent: true
     transfer_transition_and_tool_call_must_share_response: true
     first_general_golf_shop_request_uses_deflection: facility_configured
     default_first_shop_transfer_deflection: false
   all_modes:
     destination_identifier_must_match_vapi_configuration: true
+    runtime_hours_variables: [current_status, opening_time, closing_time]
+    after_hours_value: after_hours
+    after_hours_scope: transfer_only
+    after_hours_behavior:
+      transfer_tool_prohibited: true
+      tell_caller_department_is_closed: true
+      offer_assistant_help: true
+      tell_caller_to_call_back_at_opening_time: true
+      assistant_self_service_operates_24_7: true
+      enabled_non_transfer_tools_remain_available: true
+      do_not_stop_or_change_booking_flow: true
+      do_not_treat_as_booking_restriction_or_tool_failure: true
+      unaffected_capabilities:
+        - booking
+        - availability
+        - identity resolution
+        - booking eligibility
+        - existing-booking lookup
+        - cancellation
+        - weather
+        - SMS
+    optional_shop_deflection:
+      wording: "Is there something I can assist you with first?"
+      prohibit_busy_shop_claim: true
+      caller_declines_or_repeats_request_means_transfer_now: true
 phone_numbers_in_prompts:
   status: owner_confirmed
   allowed: false
+club_prophet_on_call_identity:
+  status: owner_confirmed_2026_08_20_with_fallback_lookup
+  configuration_path: tee_sheet
+  enabled_value: club_prophet
+  gate_variable: identity_confirmed
+  tools:
+    lookup: get_customer_records
+    confirm: confirm_identity
+  trigger_intents:
+    - booking
+    - pricing
+    - membership
+  lookup:
+    call_when_identity_confirmed_false: true
+    call_once_early: true
+    announce_before_call: true
+    initial_arguments: none
+    zero_records:
+      tell_caller_no_records_found_under_current_phone: true
+      ask_whether_caller_has_played_before: true
+      caller_says_no_or_no_existing_record: continue_as_new_guest
+      caller_says_yes:
+        collect_exactly_one_of: [email, alternate_phone]
+        confirm_collected_identifier_before_lookup: true
+        email_uses_phonetic_readback: true
+        fallback_call_tool: get_customer_records
+        fallback_call_passes_only_collected_identifier: true
+        maximum_fallback_calls: 1
+        second_empty_result: explain_and_continue_as_new_guest
+    one_record: caller_confirmation_required
+    multiple_records: caller_selects_without_assistant_ranking
+    distinguishing_email_content: ending_or_domain_only
+    never_speak_full_email: true
+    failure: speak_detail_and_continue_without_transfer
+  confirmation:
+    selected_record_argument: acct
+    selected_record_value: exact_customer_id
+    no_candidate_matches:
+      use_same_single_fallback_lookup_as_zero_records: true
+    confirm_identity_lookup_arguments_prohibited: [email, phone]
+    linked_status_means_identity_confirmed_for_remainder_of_call: true
+    not_found: continue_as_guest
+    failure: speak_detail_and_continue_without_transfer
+  privacy_and_safety:
+    never_auto_select: true
+    never_prefer_member_record: true
+    never_use_phone_recognized_or_caller_is_customer_as_gate: true
+    prohibit_profile_dependent_price_membership_or_booking_window_before_confirmation: true
 booking:
   pass_returned_course_for_single_course:
     status: owner_confirmed
@@ -65,11 +142,27 @@ availability_when:
     - time
     - course
     - spots_remaining
+    - base_price_per_player
+    - base_price_per_player_riding
     - price_per_player
+    - price_per_player_riding
   price_quoting:
     quote_when_caller_asks: true
-    describe_as_current_tee_sheet_price_per_player: true
-    qualify_that_exact_rate_may_vary_by_caller_status_or_discount: true
+    configuration_path: availability_pricing
+    base_price_per_player: walking_without_booking_fee
+    base_price_per_player_riding: riding_without_booking_fee
+    price_per_player: walking_with_booking_fee
+    price_per_player_riding: riding_with_booking_fee
+    never_invent_missing_field: true
+    fee_application_values: [none, all_callers, conditional]
+    conditional_fee_inputs: [price_class, customer_passes, customer_groups]
+    disclosure_is_facility_configured: true
+  riding_collection:
+    availability_argument: false
+    ask_before_availability: false
+    ask_after_exact_slot_selection: true
+    ask_before_booking: true
+    fixed_facility_policy_overrides_question: true
   empty_result:
     means_no_times_for_full_requested_date: true
     scoped_to_requested_num_holes_and_course_filter: true
@@ -90,6 +183,32 @@ date_time_context:
   sentence_template: >-
     Today is {{"now" | date: "%A, %B %d, %Y", "<facility timezone>"}},
     and the current time is {{"now" | date: "%I:%M %p", "<facility timezone>"}}.
+date_resolution:
+  status: owner_confirmed_2026_08_21
+  universal_for_integrated_gms: true
+  tool: get-day-of-week-staging
+  at_least_one_input_required: [date, day_of_week]
+  date_only:
+    pass_only: date
+    use_returned_fields: [day_of_week, readable]
+  weekday_only:
+    pass_only: day_of_week
+    returned_candidates: next_four_facility_local_dates
+    caller_must_select_an_exact_returned_date: true
+  stated_date_and_weekday:
+    pass_together: [date, day_of_week]
+    validate_matches: true
+    resolved_weekday_field_preference: [resolved_day_of_week, day_of_week]
+  mismatch:
+    hard_stop: true
+    explain_conflict_and_ask_which_the_caller_meant: true
+    prohibited_before_clarification:
+      - fetch-inventory-for-date
+      - check-booking-eligibility-staging
+      - get-available-tee-times-staging
+      - book-tee-time-staging
+  readable_is_authoritative_for_speech: true
+  assistant_calendar_guessing_prohibited: true
 existing_bookings:
   status: owner_confirmed_2026_07_22
   initial_lookup:

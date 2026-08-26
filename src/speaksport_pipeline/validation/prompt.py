@@ -6,7 +6,14 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
-from ..models import FacilityConfig, IntegrationType, RuntimeVariableRegistry, ToolContractRegistry
+from ..models import (
+    BookingFeeApplication,
+    FacilityConfig,
+    IntegrationType,
+    RuntimeVariableRegistry,
+    TeeSheetProvider,
+    ToolContractRegistry,
+)
 from ..security import scan_text
 
 TAG_PATTERN = re.compile(r"<(/?)(core-shell|knowledge-base|logic-module)>")
@@ -61,6 +68,7 @@ class PromptValidator:
         findings.extend(self._validate_tools(prompt, facility))
         findings.extend(self._validate_booking_flow(prompt, facility))
         findings.extend(self._validate_existing_booking_and_cancellation_flow(prompt, facility))
+        findings.extend(self._validate_club_prophet_identity_flow(prompt, facility))
         findings.extend(self._validate_reference_fidelity(prompt, facility))
         findings.extend(
             self._validate_forbidden_content(
@@ -234,6 +242,7 @@ class PromptValidator:
                     )
                 )
         generic_tool_labels = {
+            "a",
             "approved",
             "availability",
             "booking",
@@ -383,6 +392,20 @@ class PromptValidator:
                         ),
                     )
                 )
+            for marker in self.config.get(
+                "integrated_required_date_resolution_markers", []
+            ):
+                if marker not in prompt:
+                    findings.append(
+                        ValidationFinding(
+                            code="MISSING_DATE_RESOLUTION_GUARDRAIL",
+                            severity="error",
+                            message=(
+                                "Integrated prompt omitted mandatory date-resolution "
+                                f"guardrail: {marker}"
+                            ),
+                        )
+                    )
             for marker in self.config.get("integrated_required_availability_markers", []):
                 if marker not in prompt:
                     findings.append(
@@ -395,6 +418,31 @@ class PromptValidator:
                             ),
                         )
                     )
+            pricing_markers = {
+                BookingFeeApplication.NONE: (
+                    "This facility does not charge the caller a SpeakSport booking fee."
+                ),
+                BookingFeeApplication.ALL_CALLERS: (
+                    "The booking fee applies to every caller."
+                ),
+                BookingFeeApplication.CONDITIONAL: (
+                    "Booking-fee application is conditional."
+                ),
+            }
+            expected_pricing_marker = pricing_markers[
+                facility.availability_pricing.booking_fee_application
+            ]
+            if expected_pricing_marker not in prompt:
+                findings.append(
+                    ValidationFinding(
+                        code="MISSING_AVAILABILITY_PRICING_POLICY",
+                        severity="error",
+                        message=(
+                            "Integrated prompt does not match the configured availability "
+                            "pricing policy"
+                        ),
+                    )
+                )
             restricted_marker = (
                 "This facility restricts solo bookings to partially filled tee times."
             )
@@ -468,7 +516,7 @@ class PromptValidator:
         flow_lower = flow_text.casefold()
         if lookup and lookup in enabled:
             if not re.search(
-                r"(?is)(?:booking_reference|with only (?:that )?(?:exact )?"
+                r"(?is)(?:booking_reference|(?:with|using) only (?:that |the )?(?:supplied )?(?:exact )?"
                 r"(?:numeric )?booking reference)",
                 flow_text,
             ):
@@ -489,8 +537,12 @@ class PromptValidator:
                 )
 
         if all(name and name in enabled for name in cancellation_chain):
-            positions = [flow_text.find(name) for name in cancellation_chain if name]
-            if any(position < 0 for position in positions) or positions != sorted(positions):
+            ordered_chain = re.search(
+                rf"(?is){re.escape(lookup or '')}.*"
+                rf"{re.escape(eligibility or '')}.*{re.escape(cancellation or '')}",
+                flow_text,
+            )
+            if ordered_chain is None:
                 findings.append(
                     ValidationFinding(
                         code="INVALID_CANCELLATION_TOOL_ORDER",
@@ -501,6 +553,81 @@ class PromptValidator:
                         ),
                     )
                 )
+        return findings
+
+    def _validate_club_prophet_identity_flow(
+        self, prompt: str, facility: FacilityConfig
+    ) -> list[ValidationFinding]:
+        findings: list[ValidationFinding] = []
+        is_club_prophet = facility.tee_sheet == TeeSheetProvider.CLUB_PROPHET
+        uses_identity_variable = "identity_confirmed" in set(
+            PLACEHOLDER_PATTERN.findall(prompt)
+        )
+        if not is_club_prophet:
+            if uses_identity_variable:
+                findings.append(
+                    ValidationFinding(
+                        code="UNREQUESTED_CLUB_PROPHET_IDENTITY_FLOW",
+                        severity="error",
+                        message=(
+                            "Only club_prophet facilities may initialize "
+                            "{{identity_confirmed}}"
+                        ),
+                    )
+                )
+            return findings
+
+        if not uses_identity_variable:
+            findings.append(
+                ValidationFinding(
+                    code="MISSING_CLUB_PROPHET_IDENTITY_VARIABLE",
+                    severity="error",
+                    message=(
+                        "Club Prophet prompts must initialize {{identity_confirmed}}"
+                    ),
+                )
+            )
+        if re.search(
+            r"{{identity_confirmed}}\s*,?\s*initialized to false",
+            prompt,
+            flags=re.IGNORECASE,
+        ):
+            findings.append(
+                ValidationFinding(
+                    code="INVALID_CLUB_PROPHET_IDENTITY_INITIALIZATION",
+                    severity="error",
+                    message=(
+                        "Identity Confirmed must use the runtime boolean value and must not "
+                        "be hard-coded or described as initialized to false"
+                    ),
+                )
+            )
+        for marker in self.config.get("club_prophet_identity_required_markers", []):
+            if marker not in prompt:
+                findings.append(
+                    ValidationFinding(
+                        code="MISSING_CLUB_PROPHET_IDENTITY_GUARDRAIL",
+                        severity="error",
+                        message=f"Club Prophet identity flow omitted: {marker}",
+                    )
+                )
+        booking_flow_conflicts = (
+            r"(?is)#\s*Booking(?: a Tee Time)? Flow.{0,2600}"
+            r"check-booking-eligibility-staging.{0,1400}"
+            r"(?:complete|run|perform).{0,100}(?:Club Prophet )?Identity Flow",
+            r"(?is)do not ask.{0,120}identity.{0,120}before eligibility succeeds",
+        )
+        if any(re.search(pattern, prompt) for pattern in booking_flow_conflicts):
+            findings.append(
+                ValidationFinding(
+                    code="CLUB_PROPHET_IDENTITY_AFTER_ELIGIBILITY",
+                    severity="error",
+                    message=(
+                        "Club Prophet booking flow must complete identity resolution before "
+                        "collecting booking details or calling booking eligibility"
+                    ),
+                )
+            )
         return findings
 
     def _validate_reference_fidelity(
@@ -545,6 +672,49 @@ class PromptValidator:
                     message=(
                         "Facility disables first-shop-transfer deflection, but the prompt "
                         "still gatekeeps the caller's first transfer request"
+                    ),
+                )
+            )
+        busy_shop_pattern = str(self.config.get("busy_shop_claim_pattern", ""))
+        # Mandatory guardrails commonly say "do not say the Pro Shop is busy".
+        # Remove those explicit prohibitions before looking for an affirmative
+        # busy-shop claim so the validator does not reject its own guardrail.
+        busy_claim_scan_text = re.sub(
+            r"(?is)\b(?:do not|never)\s+(?:say|claim|state|imply)\b.{0,140}?\bbusy\b",
+            "",
+            prompt,
+        )
+        if busy_shop_pattern and re.search(busy_shop_pattern, busy_claim_scan_text):
+            findings.append(
+                ValidationFinding(
+                    code="OBSOLETE_BUSY_SHOP_DEFLECTION",
+                    severity="error",
+                    message=(
+                        "Transfer assistance checks must not claim that the Golf/Pro Shop "
+                        "is busy"
+                    ),
+                )
+            )
+        for marker in self.config.get("all_modes_required_transfer_markers", []):
+            if marker not in prompt:
+                findings.append(
+                    ValidationFinding(
+                        code="MISSING_HOURS_AWARE_TRANSFER_GUARDRAIL",
+                        severity="error",
+                        message=f"Prompt omitted mandatory transfer behavior: {marker}",
+                    )
+                )
+        after_hours_block_pattern = str(
+            self.config.get("after_hours_non_transfer_block_pattern", "")
+        )
+        if after_hours_block_pattern and re.search(after_hours_block_pattern, prompt):
+            findings.append(
+                ValidationFinding(
+                    code="AFTER_HOURS_BLOCKS_SELF_SERVICE",
+                    severity="error",
+                    message=(
+                        "Current operating status may restrict only transfer_call-staging; "
+                        "enabled non-transfer tools and workflows must remain available 24/7"
                     ),
                 )
             )

@@ -6,6 +6,11 @@ variables:
     required: true
     value_type: boolean
     owner: phone_integration
+  - name: identity_confirmed
+    placeholder: "{{identity_confirmed}}"
+    required: false
+    value_type: boolean
+    owner: phone_integration
   - name: first_name
     placeholder: "{{first_name}}"
     required: false
@@ -115,4 +120,19 @@ variables:
     placeholder: "{{booking_requires_card_on_file}}"
     required: false
     value_type: boolean
+    owner: phone_integration
+  - name: current_status
+    placeholder: "{{current_status}}"
+    required: true
+    value_type: string
+    owner: phone_integration
+  - name: opening_time
+    placeholder: "{{opening_time}}"
+    required: true
+    value_type: string
+    owner: phone_integration
+  - name: closing_time
+    placeholder: "{{closing_time}}"
+    required: true
+    value_type: string
     owner: phone_integration

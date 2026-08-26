@@ -23,11 +23,30 @@ python -m pip install -e '.[dev]'
 
 Do not paste credentials into chat, source files, fixtures, or commands. Copy `.env.example` to the ignored `.env`, rotate the previously exposed Firecrawl key, and set credentials locally.
 
+## Local Control Room
+
+The easiest way to use the pipeline is the local Control Room. On macOS,
+double-click `start-control-room.command` in the project folder. It opens a
+guided interface for new facilities, existing-prompt updates, configuration
+editing, explicit external-processing approval, live run progress, and prior
+run artifacts.
+
+You can also start it from the project virtual environment:
+
+```bash
+source .venv/bin/activate
+speaksport ui
+```
+
+Open `http://127.0.0.1:8765` and press Control-C when finished. The service is
+local-only by default and does not expose `.env` credentials. See
+[`docs/CONTROL_ROOM.md`](docs/CONTROL_ROOM.md) for the short operator guide.
+
 ## Current CLI
 
 ```text
 speaksport init
-speaksport facility create <slug> --name <name> --website <https-url> --mode <mode> --timezone <iana-zone>
+speaksport facility create <slug> --name <name> --website <https-url> --mode <mode> --timezone <iana-zone> --tee-sheet <foreup|club_prophet|other>
 speaksport facility show <slug>
 speaksport manifest create <slug>
 speaksport references list
@@ -41,6 +60,7 @@ speaksport generate <slug> [--run-id <run-id>]
 speaksport run <slug>
 speaksport diff <slug> [--against <run-id>]
 speaksport package <slug> [--run-id <run-id>]
+speaksport ui [--host 127.0.0.1] [--port 8765]
 ```
 
 `speaksport run` is the fastest path: it starts a resumable Firecrawl job, stores immutable raw pages, normalizes and deduplicates them, extracts a provenance-bearing fact inventory, generates the prompt package, and runs deterministic validation. Successful LLM stage results are cached by input and instruction hash.
@@ -54,6 +74,24 @@ speaksport generate <slug> --run-id <run-id>
 The pipeline reserves thirty-five percent of the configured OpenRouter run ceiling for final prompt generation. Facility configuration and client policy files are extracted once, while website pages are processed in balanced batches.
 
 For a non-integrated facility, pass `--booking-url`. For a multi-course facility, pass `--course` once per exact runtime course value.
+
+New integrated facility scaffolds require `--tee-sheet`. This records the GMS
+explicitly instead of inferring it from booking-reference wording:
+
+```yaml
+tee_sheet: club_prophet # or foreup / other
+```
+
+When `club_prophet` is selected, the scaffold automatically enables
+`get_customer_records` and `confirm_identity`. Generated prompts initialize
+`{{identity_confirmed}}` and add the mandatory on-call identity flow. When that
+value is false, profile-dependent booking, pricing, and membership handling
+first looks up all phone-matched records and lets the caller choose; no match
+continues as a new guest. One match still requires confirmation, multiple
+matches are never ranked or auto-selected, only an email ending/domain may be
+spoken, and identity-tool errors continue without a transfer. When the value is
+true, the stored identity is reused without asking again. ForeUp and `other`
+tee sheets never receive this flow.
 
 Integrated facilities can enable existing-booking lookup and cancellation by adding these exact logical names to `enabled_tools` in `facility.yaml`:
 
@@ -87,9 +125,22 @@ transfer_policy:
 ```
 
 Use `true` only when the assistant should respond to the caller's first general
-or shop-transfer request with the “shop is busy, let me help first” guardrail.
-With `false` (the default), the assistant must not gatekeep the request and
-instead follows the normal two-step transfer protocol immediately.
+or shop-transfer request with: “Is there something I can assist you with
+first?” It must never claim that the shop is busy. If the caller declines or
+repeats the request, the assistant transfers without asking for confirmation
+again. With `false` (the default), a caller's direct transfer request is already
+consent and transfers immediately when the destination is open. A transfer the
+assistant merely offers still requires the caller to accept before it executes.
+
+Every generated prompt initializes `{{current_status}}`, `{{opening_time}}`,
+and `{{closing_time}}`. When current status is `after_hours`, the assistant
+never calls the transfer tool—even for normal automatic-recovery scenarios. It
+explains that the team is closed, offers to help directly, and tells the caller
+they may call back at the configured opening time. This status affects human
+transfers only: the assistant and all enabled non-transfer tools continue to
+operate 24/7. Booking, availability, identity resolution, eligibility, booking
+lookup, cancellation, weather, SMS, and other self-service flows must continue
+normally after hours.
 
 Single-player availability filtering is also configured per facility:
 
@@ -104,10 +155,29 @@ may be offered any otherwise valid returned slot, including one with all four
 spots remaining. The setup command supports the matching
 `--single-player-requires-partially-filled-slot` option.
 
+Availability pricing is configured independently per facility:
+
+```yaml
+availability_pricing:
+  speaksport_per_booking_model: false
+  booking_fee_application: none # none, all_callers, or conditional
+  disclose_booking_fee_when_applied: false
+  booking_fee_rules: [] # required only for conditional
+```
+
+For facilities outside the SpeakSport per-booking model, returned base fields
+are quoted: `base_price_per_player` for walking and
+`base_price_per_player_riding` for riding. Per-booking facilities may also
+return `price_per_player` and `price_per_player_riding`, which include the
+booking fee. Conditional fee rules may use price class, active passes, or
+customer groups. Prompts quote only returned fields and follow the configured
+fee application and disclosure policy.
+
 Integrated prompts treat every availability slot as a single record containing
-`time`, `course`, `spots_remaining`, and `price_per_player`. They may quote the
-current tee-sheet price per player when asked, with a qualification that the
-caller's exact rate can vary. An empty availability list means no tee times are
+`time`, `course`, `spots_remaining`, and its returned pricing fields. They do
+not ask riding or walking before availability because riding is not an
+availability argument; they ask after exact slot selection and before booking,
+unless facility policy fixes `riding`. An empty availability list means no tee times are
 available for the full requested date under the selected holes and course
 criteria, not merely that no times are close to the requested clock time.
 3. Add the rotated Firecrawl and OpenRouter keys to the local `.env`.
@@ -127,6 +197,7 @@ speaksport modify create legacy-club \
   --source-prompt /path/to/current-vapi-prompt.md \
   --website https://example.com/ \
   --timezone America/New_York \
+  --tee-sheet foreup \
   --single-player-requires-partially-filled-slot
 ```
 

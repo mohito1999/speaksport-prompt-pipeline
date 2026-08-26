@@ -103,8 +103,22 @@ class PromptModificationPipeline:
                     "core-shell blocks, booking eligibility policy, and cancellation eligibility "
                     "policy when enabled. Existing booking lookup and cancellation must follow the "
                     "current ordered contracts. Current availability results contain time, course, "
-                    "spots_remaining, and price_per_player, and current single-player behavior is "
-                    "controlled by facility availability policy. Keep booking references hidden. "
+                    "spots_remaining, base walking and riding prices, and optional fee-inclusive "
+                    "walking and riding prices. Follow facility availability_pricing and never "
+                    "ask riding before availability. Current single-player behavior is controlled "
+                    "by facility availability policy. Keep booking references hidden. Initialize "
+                    "current_status, opening_time, and closing_time. Current status governs only "
+                    "whether a human transfer is possible; all enabled non-transfer tools and "
+                    "self-service workflows remain available twenty-four hours a day, seven days "
+                    "a week. Never stop booking, availability, identity, eligibility, reservation "
+                    "lookup, cancellation, weather, SMS, or another enabled action merely because "
+                    "the facility is after hours. Never transfer after hours. "
+                    "Treat a direct caller transfer request as consent without reconfirmation; "
+                    "assistant-offered transfers still wait for a yes. Use only the softer optional "
+                    "shop assistance check when configured and never claim the shop is busy. "
+                    "When the target tee_sheet is club_prophet, initialize identity_confirmed and "
+                    "apply the complete get_customer_records and confirm_identity flow from the "
+                    "current contracts; never import that flow for another tee sheet. "
                     "Never mention endpoint versions. Preserve the configured transfer identifiers "
                     "exactly. In generation_notes, list the material changes made and any original "
                     "instruction intentionally removed as obsolete or conflicting. Include every "
@@ -162,12 +176,18 @@ class PromptModificationPipeline:
         if modification.preservation.knowledge_base == "exact":
             knowledge_base = extract_original_knowledge_base(original_prompt)
         eligibility_policy = (
-            _normalize_eligibility_decision_prompt(sections.eligibility_policy)
+            _normalize_eligibility_decision_prompt(
+                sections.eligibility_policy,
+                required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+            )
             if sections.eligibility_policy
             else None
         )
         cancellation_policy = (
-            _normalize_eligibility_decision_prompt(sections.cancellation_eligibility_policy)
+            _normalize_eligibility_decision_prompt(
+                sections.cancellation_eligibility_policy,
+                required_variables=CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES,
+            )
             if sections.cancellation_eligibility_policy
             else None
         )

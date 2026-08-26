@@ -3,7 +3,8 @@ from pathlib import Path
 
 import httpx
 
-from speaksport_pipeline.models import CrawlRequest, CrawlStatus
+from speaksport_pipeline.hashing import sha256_text, stable_hash
+from speaksport_pipeline.models import CrawledPage, CrawlRequest, CrawlState, CrawlStatus
 from speaksport_pipeline.providers.firecrawl import FirecrawlClient, normalize_crawl_url
 
 
@@ -83,6 +84,8 @@ def test_crawl_persists_job_pages_pagination_and_no_secret(tmp_path: Path) -> No
     posted = json.loads(requests[0].content)
     assert posted["limit"] == 50
     assert posted["scrapeOptions"]["parsers"] == ["pdf"]
+    assert posted["scrapeOptions"]["onlyMainContent"] is False
+    assert posted["scrapeOptions"]["maxAge"] == 0
     assert posted["allowExternalLinks"] is False
     assert all(request.headers["Authorization"] == f"Bearer {secret}" for request in requests)
 
@@ -109,3 +112,59 @@ def test_firecrawl_retries_429_with_retry_after(tmp_path: Path) -> None:
 
     assert attempts == 2
     assert sleeps == [2]
+
+
+def test_recover_missing_navigation_pages_scrapes_prominent_uncrawled_target(
+    tmp_path: Path,
+) -> None:
+    target = "https://example.com/rates"
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.method == "POST" and request.url.path == "/v2/scrape":
+            return httpx.Response(
+                200,
+                json={
+                    "success": True,
+                    "data": {
+                        "markdown": "# Rates\nCurrent detailed rates.",
+                        "metadata": {"sourceURL": target, "statusCode": 200},
+                    },
+                },
+            )
+        raise AssertionError(request.url)
+
+    client = FirecrawlClient(
+        "secret",
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+        base_url="https://firecrawl.test",
+    )
+    state_path = tmp_path / "state.json"
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    request = CrawlRequest(url="https://example.com")
+    payload = client.request_payload(request)
+    state = CrawlState(
+        job_id="job-123",
+        status_url="https://firecrawl.test/v2/crawl/job-123",
+        status=CrawlStatus.COMPLETED,
+        request=request,
+        request_hash=stable_hash(payload),
+    )
+    client._save_state(state_path, state)
+    for index in range(4):
+        markdown = f"# Page {index}\n[Rates]({target})\nDistinct body {index}."
+        page = CrawledPage(
+            source_url=f"https://example.com/page-{index}",
+            markdown=markdown,
+            content_hash=sha256_text(markdown),
+            crawl_job_id=state.job_id,
+            request_options_hash=state.request_hash,
+        )
+        (raw / f"page-{index}.json").write_text(
+            page.model_dump_json(), encoding="utf-8"
+        )
+
+    recovered = client.recover_missing_navigation_pages(state_path, raw)
+
+    assert recovered == [target]
+    assert any("Current detailed rates" in path.read_text() for path in raw.glob("*.json"))

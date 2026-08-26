@@ -1,6 +1,6 @@
 schema_version: "1"
 forbidden_endpoint_version_patterns:
-  - "(?i)\\bv[0-9]+\\b"
+  - "(?i)(?:\\b(?:endpoint|api|tool|backend)\\b.{0,20}\\bv[0-9]+\\b|/vapi/v[0-9]+(?:/|\\b))"
 forbidden_reference_leakage_terms:
   integrated:
     - Sugarmill Woods
@@ -28,18 +28,64 @@ integrated_forbidden_runtime_variables:
   - caller_phone
   - booking_url
 integrated_required_reference_patterns:
-  - name: explicit verbal transfer confirmation
-    pattern: "(?is)(?:(?:never call|strictly forbidden from calling).{0,80}transfer_call-staging.{0,120}without explicit\\s*,?\\s*verbal confirmation|never transfer.{0,100}without.{0,60}explicit\\s*,?\\s*verbal confirmation|(?:normal integrated )?transfer.{0,100}(?:obtain|require).{0,50}explicit\\s*,?\\s*verbal confirmation.{0,80}before transfer)"
-  - name: confirmation and transfer cannot share a response
-    pattern: "(?is)(?:(?:do not|never).{0,20}ask.{0,50}(?:transfer[- ]confirmation|confirmation question).{0,60}(?:call )?(?:the )?transfer(?: tool)?.{0,80}same (?:response|turn)|(?:do not|never).{0,20}(?:call )?(?:the )?transfer tool.{0,60}ask.{0,50}(?:transfer[- ]confirmation|confirmation question).{0,80}same (?:response|turn))"
-shop_transfer_deflection_pattern: "(?is)(?:Our staff in the (?:Golf|Pro) Shop is currently busy (?:with guests|helping (?:guests|golfers)(?: check in)?)|(?:first|initial)(?:-request)?.{0,80}(?:Golf|Pro) Shop.{0,140}(?:(?:must|should|do) (?:not transfer|be deflected)|help.{0,40}first))"
+  - name: direct transfer request is consent
+    pattern: "(?is)explicit direct request.{0,160}(?:already consent|itself consent).{0,160}(?:do not ask|must not be reconfirmed|without another confirmation)"
+  - name: assistant-offered transfer waits for consent
+    pattern: "(?is)(?:caller has not directly requested|assistant[- ]offered transfer).{0,180}(?:ask whether|requires).{0,100}(?:stop and wait|later affirmative)"
+  - name: after-hours transfers are prohibited
+    pattern: "(?is)(?:current operating status|current_status).{0,100}after_hours.{0,120}(?:never call|do not call|transfer tool is prohibited).{0,80}transfer_call-staging"
+all_modes_required_transfer_markers:
+  - "## Mandatory Hours-Aware Transfer Handling"
+  - "{{current_status}}"
+  - "{{opening_time}}"
+  - "{{closing_time}}"
+  - "If Current Operating Status is `after_hours`, never call `transfer_call-staging`"
+  - "Current Operating Status controls only whether `transfer_call-staging` may be called."
+  - "every enabled non-transfer tool operate twenty-four hours a day, seven days a week"
+  - "Continue booking, availability searches, identity resolution, eligibility checks, existing-booking lookups, cancellations, weather requests, SMS"
+  - "Never treat `after_hours` as a booking restriction"
+  - "A caller's explicit direct request"
+  - "already consent to transfer"
+  - "When the caller has not directly requested a transfer and you offer one"
+shop_transfer_deflection_pattern: "(?is)(?:## Optional First Shop Transfer Assistance Check|Is there something I can assist you with first\\?)"
+busy_shop_claim_pattern: "(?is)(?:Golf|Pro) Shop.{0,80}(?:is|are|currently).{0,30}busy"
+after_hours_non_transfer_block_pattern: >-
+  (?is)(?:(?:after[_ -]?hours|current operating status is [`'"]?after_hours).{0,180}\b(?:cannot|can't|must not|do not)\s+(?:continue\s+|complete\s+|perform\s+|process\s+|call\s+|use\s+|run\s+|execute\s+|offer\s+)?(?:a\s+|the\s+|any\s+)?(?:booking|book(?:ing)?|availability|identity|eligibility|existing[- ]booking|reservation lookup|cancellation|weather|SMS|non-transfer tool)|(?:cannot|can't|must not|do not)\s+(?:continue\s+|complete\s+|perform\s+|process\s+|call\s+|use\s+|run\s+|execute\s+|offer\s+)?(?:a\s+|the\s+|any\s+)?(?:booking|book(?:ing)?|availability|identity|eligibility|existing[- ]booking|reservation lookup|cancellation|weather|SMS|non-transfer tool).{0,120}(?:after[_ -]?hours|after_hours))
+club_prophet_identity_required_markers:
+  - "## Club Prophet On-Call Identity — Mandatory"
+  - "tell the caller that you will first look for their customer record"
+  - "first call `get_customer_records` with no arguments"
+  - "Ask whether they have played at the facility before"
+  - "exactly one lookup value: either their email address or an alternate phone number"
+  - "call `get_customer_records` one final time with only `email` or only `phone`"
+  - "One match is not proof"
+  - "Never read a full email address, rank candidates, auto-select the first record, prefer a member record"
+  - "call `confirm_identity` with only `acct`"
+  - "continue as a new guest"
+  - "continue the caller's request without ending the call or transferring because of that error"
+  - "Never state a profile-dependent price, membership status, member booking window"
+integrated_required_date_resolution_markers:
+  - "## Mandatory Date and Weekday Resolution"
+  - "`get-day-of-week-staging` is universal across integrated GMS flows"
+  - "If the caller gives only a calendar date"
+  - "If the caller gives only a weekday"
+  - "Present the returned `upcoming_dates` naturally"
+  - "If the caller states both a calendar date and a weekday, pass both `date` and `day_of_week`"
+  - "If the response returns `matches: false`"
+  - "While a date-and-weekday conflict is unresolved, do not call `fetch-inventory-for-date`, `check-booking-eligibility-staging`, `get-available-tee-times-staging`, or `book-tee-time-staging`."
+  - "Call `fetch-inventory-for-date` only after this date-resolution gate succeeds."
+  - "Never silently substitute a different date or weekday."
 integrated_required_availability_markers:
   - "## Mandatory Availability Search Guardrails"
   - "Before every `get-available-tee-times-staging` call, the caller's exact `num_players` and `num_holes` must be known."
   - "Every availability call must pass both `num_players` and `num_holes`"
   - "The returned times are nearest-time matches around the queried `when`, not an exhaustive list of the day's availability."
-  - "Each returned slot is one inseparable record containing `time`, `course`, `spots_remaining`, and `price_per_player`."
-  - "quote `price_per_player` as the current tee-sheet price per player"
+  - "Each returned slot is one inseparable record containing `time`, `course`, `spots_remaining`, and whichever of `base_price_per_player`, `base_price_per_player_riding`, `price_per_player`, and `price_per_player_riding` the tool returns."
+  - "Do not ask whether the caller will ride or walk before calling `get-available-tee-times-staging`"
+  - "After the caller selects an exact returned slot, ask riding or walking before booking unless facility policy fixes `riding` to a predetermined value."
+  - "## Mandatory Availability Pricing Policy"
+  - "`base_price_per_player` is the walking rate without a SpeakSport booking fee"
+  - "`price_per_player_riding` is the riding rate including that fee"
   - "If the tool returns an empty list, it means there are no tee times available for the full requested date under the supplied `num_holes` and course criteria"
   - "call `get-available-tee-times-staging` again"
   - "Do not say the new time is unavailable and do not claim a website or inventory discrepancy before that targeted re-query returns."

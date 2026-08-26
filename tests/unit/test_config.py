@@ -36,8 +36,28 @@ def test_runtime_and_tool_registries_are_typed() -> None:
     assert {"eligibility", "booking_lookup", "cancellation_eligibility", "cancellation"} <= (
         capabilities
     )
-    assert tools.version == "2026-07-31"
-    assert tools.status == "owner_confirmed_with_rich_availability_results"
+    assert {"customer_record_lookup", "identity_confirmation"} <= capabilities
+    assert "identity_confirmed" in {variable.name for variable in runtime.variables}
+    assert {"current_status", "opening_time", "closing_time"} <= {
+        variable.name for variable in runtime.variables
+    }
+    assert tools.version == "2026-08-25"
+    assert tools.status == "owner_confirmed_after_hours_transfer_only_with_rich_pricing"
+    by_name = {tool.logical_name: tool for tool in tools.tools}
+    assert set(by_name["get_customer_records"].optional_arguments) == {"email", "phone"}
+    assert set(by_name["confirm_identity"].optional_arguments) == {"acct"}
+    day_tool = by_name["get-day-of-week-staging"]
+    assert day_tool.required_arguments == {}
+    assert set(day_tool.optional_arguments) == {"date", "day_of_week"}
+    assert day_tool.optional_arguments["day_of_week"].allowed_values == [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+    ]
     assert model.model_slug == "openai/gpt-5.6-terra"
     assert model.max_cost_usd == 1.5
     assert model.reproducibility_requires_pinned_model

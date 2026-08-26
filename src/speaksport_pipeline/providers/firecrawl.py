@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+import math
 import random
+import re
 import time
+from collections import Counter
 from collections.abc import Callable
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse, urlunparse
 
 import httpx
 
@@ -136,6 +139,103 @@ class FirecrawlClient:
             f"Crawl {state.job_id} is still running; resume with `speaksport crawl "
             f"{state.request.url} --resume`"
         )
+
+    def recover_missing_navigation_pages(
+        self,
+        state_path: Path,
+        raw_directory: Path,
+        *,
+        max_pages: int = 20,
+    ) -> list[str]:
+        """Scrape prominent same-domain navigation targets omitted by the bounded crawl."""
+        state = self._load_state(state_path)
+        raw_pages = [
+            CrawledPage.model_validate_json(path.read_text(encoding="utf-8"))
+            for path in sorted(raw_directory.glob("*.json"))
+        ]
+        if len(raw_pages) < 3:
+            return []
+
+        crawled_urls = {
+            self._comparable_url(page.canonical_url or page.source_url) for page in raw_pages
+        }
+        root_host = urlparse(state.request.url).hostname
+        occurrence: Counter[str] = Counter()
+        for page in raw_pages:
+            page_links: set[str] = set()
+            for raw_link in re.findall(r"\]\(([^)]+)\)", page.markdown):
+                candidate = urljoin(page.source_url, raw_link.strip())
+                parsed = urlparse(candidate)
+                if parsed.scheme not in {"http", "https"} or parsed.hostname != root_host:
+                    continue
+                if re.search(
+                    r"\.(?:png|jpe?g|gif|webp|svg|ico|mp4|mov|avi|zip)(?:$|[?#])",
+                    parsed.path,
+                    flags=re.IGNORECASE,
+                ):
+                    continue
+                page_links.add(self._comparable_url(candidate))
+            occurrence.update(page_links)
+
+        prominence = max(3, math.ceil(len(raw_pages) * 0.30))
+        missing = [
+            url
+            for url, count in occurrence.most_common()
+            if count >= prominence and url not in crawled_urls
+        ][:max_pages]
+        recovered: list[str] = []
+        for url in missing:
+            payload: dict[str, object] = {
+                "url": url,
+                "formats": state.request.formats,
+                "onlyMainContent": False,
+                "maxAge": 0,
+                "parsers": state.request.parsers,
+            }
+            response = self._request_json(
+                "POST", f"{self.base_url}/v2/scrape", json_body=payload
+            )
+            item = response.get("data")
+            if not isinstance(item, dict):
+                continue
+            markdown = str(item.get("markdown") or "").strip()
+            if not markdown:
+                continue
+            metadata = item.get("metadata") if isinstance(item.get("metadata"), dict) else {}
+            content_hash = sha256_text(markdown)
+            page = CrawledPage(
+                source_url=str(metadata.get("sourceURL") or url),
+                canonical_url=str(metadata.get("url")) if metadata.get("url") else url,
+                title=str(metadata.get("title")) if metadata.get("title") else None,
+                status_code=(
+                    int(metadata["statusCode"])
+                    if metadata.get("statusCode") is not None
+                    else None
+                ),
+                markdown=markdown,
+                content_hash=content_hash,
+                crawl_job_id=state.job_id,
+                request_options_hash=stable_hash(payload),
+            )
+            path = raw_directory / f"{content_hash}.json"
+            if not path.exists():
+                path.write_text(
+                    json.dumps(page.model_dump(mode="json"), indent=2, sort_keys=True) + "\n",
+                    encoding="utf-8",
+                )
+            if content_hash not in state.page_hashes:
+                state.page_hashes.append(content_hash)
+            recovered.append(url)
+        if recovered:
+            state.updated_at = datetime.now(UTC)
+            self._save_state(state_path, state)
+        return recovered
+
+    @staticmethod
+    def _comparable_url(value: str) -> str:
+        parsed = urlparse(value)
+        path = parsed.path.rstrip("/") or "/"
+        return urlunparse((parsed.scheme.lower(), parsed.netloc.lower(), path, "", "", ""))
 
     def _store_response_pages(
         self, response: dict[str, object], state: CrawlState, raw_directory: Path

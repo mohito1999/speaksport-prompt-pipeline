@@ -13,12 +13,18 @@ from speaksport_pipeline.models import (
     IntegrationType,
     PromptSectionBundle,
     ReferenceSelection,
+    TeeSheetProvider,
     TransferPolicy,
 )
 from speaksport_pipeline.pipeline import (
+    CLUB_PROPHET_IDENTITY_GUARDRAILS,
     MANDATORY_AVAILABILITY_GUARDRAILS,
+    MANDATORY_DATE_RESOLUTION_GUARDRAILS,
+    MANDATORY_TRANSFER_PROTOCOL,
+    SOFT_SHOP_TRANSFER_DEFLECTION,
     SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL,
     SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
+    availability_pricing_guardrail,
 )
 from speaksport_pipeline.validation import PromptValidator
 
@@ -45,6 +51,8 @@ def _facility(mode: IntegrationType = IntegrationType.INTEGRATED) -> FacilityCon
                 "get-available-tee-times-staging",
                 "book-tee-time-staging",
                 "transfer_call-staging",
+                "get-day-of-week-staging",
+                "fetch-inventory-for-date",
             ]
             if mode == IntegrationType.INTEGRATED
             else ["send_sms", "transfer_call-staging"]
@@ -61,22 +69,38 @@ def _validator() -> PromptValidator:
     )
 
 
+def _prompt_core_with_identity() -> str:
+    return (
+        "Use {{identity_confirmed}}, {{phone_recognized}}, {{greeting}}, {{disclaimer}}, "
+        "{{announcement}}, {{current_status}}, {{opening_time}}, and {{closing_time}}. "
+        'Today is {{"now" | date: "%A, %B %d, %Y", "America/New_York"}}, '
+        'and the current time is {{"now" | date: "%I:%M %p", "America/New_York"}}. '
+        + MANDATORY_TRANSFER_PROTOCOL
+        + "\n"
+        + SOFT_SHOP_TRANSFER_DEFLECTION
+    )
+
+
 def _prompt(
     core: str = (
         "Use {{phone_recognized}}, {{greeting}}, {{disclaimer}}, and {{announcement}}. "
+        "Use {{current_status}}, {{opening_time}}, and {{closing_time}}. "
         'Today is {{"now" | date: "%A, %B %d, %Y", "America/New_York"}}, '
         'and the current time is {{"now" | date: "%I:%M %p", "America/New_York"}}. '
-        "You are strictly forbidden from calling the `transfer_call-staging` tool without "
-        "explicit, verbal confirmation. Our staff in the Golf Shop is currently busy with "
-        "guests. Do not call the transfer tool and ask the confirmation question in the same "
-        "response turn."
+        + MANDATORY_TRANSFER_PROTOCOL
+        + "\n"
+        + SOFT_SHOP_TRANSFER_DEFLECTION
     ),
     logic: str = (
         "Call check-booking-eligibility-staging, then get-available-tee-times-staging, "
         "then book-tee-time-staging. Use transfer_call-staging when confirmed."
     )
     + "\n"
+    + MANDATORY_DATE_RESOLUTION_GUARDRAILS
+    + "\n"
     + MANDATORY_AVAILABILITY_GUARDRAILS
+    + "\n"
+    + availability_pricing_guardrail(_facility())
     + "\n"
     + SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
     knowledge: str = "Example Club is an example facility.",
@@ -102,11 +126,11 @@ def test_missing_or_wrong_local_time_context_is_rejected() -> None:
     missing_time = _prompt(
         core=(
             "Use {{phone_recognized}}, {{greeting}}, {{disclaimer}}, and {{announcement}}. "
+            "Use {{current_status}}, {{opening_time}}, and {{closing_time}}. "
             'Today is {{"now" | date: "%A, %B %d, %Y", "America/New_York"}}. '
-            "You are strictly forbidden from calling the `transfer_call-staging` tool "
-            "without explicit, verbal confirmation. Our staff in the Golf Shop is currently "
-            "busy with guests. Do not call the transfer tool and ask the confirmation "
-            "question in the same response turn."
+            + MANDATORY_TRANSFER_PROTOCOL
+            + "\n"
+            + SOFT_SHOP_TRANSFER_DEFLECTION
         )
     )
     wrong_timezone = _prompt().replace("America/New_York", "America/Detroit")
@@ -126,9 +150,7 @@ def test_shop_transfer_deflection_is_controlled_by_facility_policy() -> None:
         for finding in report_with_unrequested_deflection.findings
     )
 
-    prompt_without_deflection = _prompt().replace(
-        "Our staff in the Golf Shop is currently busy with guests. ", ""
-    )
+    prompt_without_deflection = _prompt().replace(SOFT_SHOP_TRANSFER_DEFLECTION, "")
     report_without_requested_deflection = _validator().validate(
         prompt_without_deflection, _facility()
     )
@@ -152,6 +174,62 @@ def test_unknown_variable_endpoint_version_and_phone_are_rejected() -> None:
 
     assert not report.valid
     assert {"UNKNOWN_RUNTIME_VARIABLE", "ENDPOINT_VERSION_LABEL", "PHONE_NUMBER_IN_PROMPT"} <= codes
+
+
+def test_product_name_v1_video_is_not_treated_as_endpoint_version() -> None:
+    prompt = _prompt(knowledge="Golf instruction may use V1 Video during lessons.")
+
+    report = _validator().validate(prompt, _facility())
+
+    assert not any(
+        finding.code == "ENDPOINT_VERSION_LABEL" for finding in report.findings
+    )
+
+
+def test_busy_shop_prohibition_is_not_treated_as_busy_shop_claim() -> None:
+    prompt = _prompt(
+        core=(
+            "Do not say or imply that the Pro Shop is busy. "
+            "Ask whether there is something you can assist with first."
+        )
+    )
+
+    report = _validator().validate(prompt, _facility())
+
+    assert not any(
+        finding.code == "OBSOLETE_BUSY_SHOP_DEFLECTION"
+        for finding in report.findings
+    )
+
+
+def test_affirmative_busy_shop_claim_is_rejected() -> None:
+    prompt = _prompt(core="Tell the caller that the Pro Shop is currently busy.")
+
+    report = _validator().validate(prompt, _facility())
+
+    assert any(
+        finding.code == "OBSOLETE_BUSY_SHOP_DEFLECTION"
+        for finding in report.findings
+    )
+
+
+def test_after_hours_may_not_block_booking_or_other_self_service() -> None:
+    conflicts = (
+        "When the facility is after hours, do not continue booking.",
+        "Do not book tee times after hours.",
+    )
+    for conflict in conflicts:
+        prompt = _prompt().replace(
+            MANDATORY_TRANSFER_PROTOCOL,
+            MANDATORY_TRANSFER_PROTOCOL + "\n" + conflict,
+        )
+
+        report = _validator().validate(prompt, _facility())
+
+        assert any(
+            finding.code == "AFTER_HOURS_BLOCKS_SELF_SERVICE"
+            for finding in report.findings
+        )
 
 
 def test_exact_preserved_knowledge_base_may_retain_phone_without_allowing_it_elsewhere() -> None:
@@ -207,6 +285,19 @@ def test_missing_availability_guardrails_are_rejected() -> None:
     assert any(finding.code == "MISSING_AVAILABILITY_GUARDRAIL" for finding in report.findings)
 
 
+def test_missing_date_resolution_guardrails_are_rejected() -> None:
+    prompt = _prompt().replace(
+        MANDATORY_DATE_RESOLUTION_GUARDRAILS,
+        "Call get-day-of-week-staging with the requested date.",
+    )
+    report = _validator().validate(prompt, _facility())
+
+    assert any(
+        finding.code == "MISSING_DATE_RESOLUTION_GUARDRAIL"
+        for finding in report.findings
+    )
+
+
 def test_single_player_availability_policy_must_match_facility() -> None:
     restricted_facility = _facility().model_copy(
         update={
@@ -248,7 +339,11 @@ def test_complete_existing_booking_and_cancellation_flow_passes() -> None:
             "and time, then call cancel-reservation with the hidden booking_reference only."
         )
         + "\n"
+        + MANDATORY_DATE_RESOLUTION_GUARDRAILS
+        + "\n"
         + MANDATORY_AVAILABILITY_GUARDRAILS
+        + "\n"
+        + availability_pricing_guardrail(facility)
         + "\n"
         + SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL
     )
@@ -270,7 +365,11 @@ def test_booking_lookup_accepts_no_arguments_wording() -> None:
             "again with only booking_reference."
         )
         + "\n"
+        + MANDATORY_DATE_RESOLUTION_GUARDRAILS
+        + "\n"
         + MANDATORY_AVAILABILITY_GUARDRAILS
+        + "\n"
+        + availability_pricing_guardrail(facility)
         + "\n"
         + SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL
     )
@@ -283,8 +382,8 @@ def test_do_not_deflect_wording_is_not_mistaken_for_deflection() -> None:
         update={"transfer_policy": TransferPolicy(first_shop_transfer_deflection=False)}
     )
     prompt = _prompt().replace(
-        "Our staff in the Golf Shop is currently busy with guests. ",
-        "If a caller initially requests the Pro Shop, do not deflect or delay the request. ",
+        SOFT_SHOP_TRANSFER_DEFLECTION,
+        "If a caller initially requests the Pro Shop, do not deflect or delay the request.",
     )
 
     report = _validator().validate(prompt, facility)
@@ -307,3 +406,76 @@ def test_partial_cancellation_tool_set_is_rejected() -> None:
     report = _validator().validate(_prompt(), facility)
 
     assert any(finding.code == "INCOMPLETE_CANCELLATION_TOOL_SET" for finding in report.findings)
+
+
+def test_club_prophet_identity_flow_is_required_and_validated() -> None:
+    facility = FacilityConfig(
+        slug="cps-club",
+        display_name="CPS Club",
+        website_url="https://example.com",
+        timezone="America/New_York",
+        integration_type=IntegrationType.INTEGRATED,
+        tee_sheet=TeeSheetProvider.CLUB_PROPHET,
+        course_configuration=CourseConfiguration.SINGLE_COURSE,
+        transfer_policy=TransferPolicy(first_shop_transfer_deflection=True),
+        references=ReferenceSelection(prompt="2026-07-10", eligibility="2026-07-10"),
+        enabled_tools=[
+            "check-booking-eligibility-staging",
+            "get-available-tee-times-staging",
+            "book-tee-time-staging",
+            "transfer_call-staging",
+            "get-day-of-week-staging",
+            "fetch-inventory-for-date",
+            "get_customer_records",
+            "confirm_identity",
+        ],
+    )
+    prompt = _prompt(
+        core=_prompt_core_with_identity(),
+        logic=(
+            "Call check-booking-eligibility-staging, then "
+            "get-available-tee-times-staging, then book-tee-time-staging. "
+            "Use transfer_call-staging when confirmed.\n"
+            + MANDATORY_DATE_RESOLUTION_GUARDRAILS
+            + "\n"
+            + MANDATORY_AVAILABILITY_GUARDRAILS
+            + "\n"
+            + availability_pricing_guardrail(facility)
+            + "\n"
+            + SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL
+            + "\n"
+            + CLUB_PROPHET_IDENTITY_GUARDRAILS
+        ),
+    )
+
+    assert _validator().validate(prompt, facility).valid
+
+    eligibility_before_identity = prompt.replace(
+        "Call check-booking-eligibility-staging, then ",
+        (
+            "# Booking Flow\nCall check-booking-eligibility-staging, then continue. "
+            "After eligibility succeeds, complete the Club Prophet Identity Flow, then "
+        ),
+        1,
+    )
+    sequencing_report = _validator().validate(eligibility_before_identity, facility)
+    assert any(
+        finding.code == "CLUB_PROPHET_IDENTITY_AFTER_ELIGIBILITY"
+        for finding in sequencing_report.findings
+    )
+
+    hard_coded_false = prompt.replace(
+        "{{identity_confirmed}}", "{{identity_confirmed}}, initialized to false", 1
+    )
+    report = _validator().validate(hard_coded_false, facility)
+    assert any(
+        finding.code == "INVALID_CLUB_PROPHET_IDENTITY_INITIALIZATION"
+        for finding in report.findings
+    )
+
+    incomplete = prompt.replace("One match is not proof", "A match may be used")
+    report = _validator().validate(incomplete, facility)
+    assert any(
+        finding.code == "MISSING_CLUB_PROPHET_IDENTITY_GUARDRAIL"
+        for finding in report.findings
+    )

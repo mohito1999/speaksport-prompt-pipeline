@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Local control room for SpeakSport facility prompting." />
+    <title>SpeakSport Control Room</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">S</div>
+          <div><strong>SpeakSport</strong><span>Control Room</span></div>
+        </div>
+        <nav aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard"><span>⌂</span>Overview</button>
+          <button class="nav-item" data-view="facility"><span>＋</span>New facility</button>
+          <button class="nav-item" data-view="modification"><span>↻</span>Prompt update</button>
+          <button class="nav-item" data-view="runs"><span>◫</span>Run history</button>
+        </nav>
+        <div class="sidebar-foot">
+          <span class="status-dot"></span>
+          <div><strong>Local & private</strong><small id="contract-version">Loading tools…</small></div>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="view-eyebrow">Workspace</p>
+            <h1 id="view-title">Prompt operations at a glance</h1>
+          </div>
+          <div class="top-actions">
+            <button class="button ghost" id="refresh-button">Refresh</button>
+            <button class="button primary" data-go="facility">Create facility</button>
+          </div>
+        </header>
+
+        <section class="view active" id="view-dashboard">
+          <div class="hero-panel">
+            <div>
+              <span class="kicker">Provision with confidence</span>
+              <h2>From facility details to a validated voice prompt.</h2>
+              <p>Build structured configurations, update live-customer prompts, and follow every run without touching YAML.</p>
+              <div class="hero-actions">
+                <button class="button light" data-go="facility">Set up a facility</button>
+                <button class="button subtle" data-go="modification">Update a prompt</button>
+              </div>
+            </div>
+            <div class="hero-orbit" aria-hidden="true"><span></span><i>AI</i></div>
+          </div>
+
+          <div class="metrics" id="metrics"></div>
+
+          <div class="dashboard-grid">
+            <article class="panel span-two">
+              <div class="panel-head"><div><p class="eyebrow">Recent activity</p><h3>Latest runs</h3></div><button class="text-button" data-go="runs">View all</button></div>
+              <div id="recent-runs" class="run-list"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><p class="eyebrow">Configured</p><h3>Facilities</h3></div></div>
+              <div id="facility-list" class="entity-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-facility">
+          <div class="form-intro">
+            <div><span class="step-badge">Guided setup</span><h2 id="facility-form-title">Create a new facility</h2><p>Choose the operating model, write policies in plain English, and let the control room produce validated project files.</p></div>
+            <div class="autosave-note"><span>✓</span>Nothing is sent externally until you explicitly start a run.</div>
+          </div>
+          <form id="facility-form" class="builder-form">
+            <input type="hidden" id="facility-editing-slug" />
+            <article class="form-card">
+              <div class="form-card-head"><span>01</span><div><h3>Facility basics</h3><p>The identity and local operating context.</p></div></div>
+              <div class="field-grid three">
+                <label>Facility name<input id="facility-name" required placeholder="Gold Hills Golf Club" /></label>
+                <label>Slug<input id="facility-slug" required pattern="[a-z0-9-]+" placeholder="gold-hills-golf" /></label>
+                <label>Timezone<select id="facility-timezone"></select></label>
+                <label class="wide">Website URL<input id="facility-website" required type="url" placeholder="https://example.com/" /></label>
+                <label>Integration<select id="facility-mode"><option value="integrated">Integrated booking</option><option value="non_integrated">SMS / non-integrated</option></select></label>
+                <label>Tee sheet<select id="facility-tee-sheet"><option value="foreup">ForeUp</option><option value="club_prophet">Club Prophet</option><option value="other">Other</option><option value="unspecified">Unspecified</option></select></label>
+                <label class="wide conditional booking-url-field hidden">Booking URL<input id="facility-booking-url" type="url" placeholder="https://example.com/book" /></label>
+              </div>
+            </article>
+
+            <article class="form-card integrated-only">
+              <div class="form-card-head"><span>02</span><div><h3>Course & availability</h3><p>How inventory should be searched and presented.</p></div></div>
+              <div class="field-grid three">
+                <label>Course setup<select id="facility-course-configuration"><option value="single_course">Single course</option><option value="multi_course">Multiple courses</option></select></label>
+                <label class="course-source-field hidden">Course values<select id="facility-course-source"><option value="configured">Enter exact values</option><option value="runtime">Use runtime {{courses}}</option></select></label>
+                <label class="expected-course-field hidden">Expected course count<input id="facility-course-count" type="number" min="2" value="2" /></label>
+                <label class="wide exact-courses-field hidden">Exact course values<textarea id="facility-courses" rows="3" placeholder="One exact course value per line"></textarea></label>
+              </div>
+              <div class="toggle-grid">
+                <label class="toggle-card"><input id="facility-search-all-courses" type="checkbox" /><span class="switch"></span><div><strong>Search every course</strong><small>Run availability separately across all configured courses.</small></div></label>
+                <label class="toggle-card"><input id="facility-single-partial" type="checkbox" /><span class="switch"></span><div><strong>Pair single players</strong><small>Only show solo callers slots with fewer than four spots.</small></div></label>
+                <label class="toggle-card"><input id="facility-guardrail" type="checkbox" /><span class="switch"></span><div><strong>Soft shop guardrail</strong><small>Ask “Is there something I can assist you with first?” once.</small></div></label>
+              </div>
+            </article>
+
+            <article class="form-card integrated-only">
+              <div class="form-card-head"><span>03</span><div><h3>Rates & booking fee</h3><p>Control which returned per-player rate the assistant quotes.</p></div></div>
+              <div class="toggle-grid compact">
+                <label class="toggle-card"><input id="facility-per-booking" type="checkbox" /><span class="switch"></span><div><strong>SpeakSport booking-fee model</strong><small>Enable fee-inclusive availability fields.</small></div></label>
+                <label class="toggle-card"><input id="facility-disclose-fee" type="checkbox" /><span class="switch"></span><div><strong>Disclose the fee</strong><small>Name the booking fee when it applies.</small></div></label>
+              </div>
+              <div class="field-grid two fee-fields">
+                <label>Fee applies to<select id="facility-fee-application"><option value="none">Nobody</option><option value="all_callers">All callers</option><option value="conditional">Conditional callers</option></select></label>
+                <label class="conditional-fee-rules hidden">Conditional rules<textarea id="facility-fee-rules" rows="3" placeholder="One price-class, pass, or group rule per line"></textarea></label>
+              </div>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>04</span><div><h3>Enabled tools</h3><p>Recommended tools are selected automatically as the setup changes.</p></div><button class="text-button" type="button" id="recommended-tools">Reset recommended</button></div>
+              <div id="facility-tools" class="tool-grid"></div>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>05</span><div><h3>Transfer destinations</h3><p>Use the exact logical identifiers configured in Vapi.</p></div><button class="button mini" type="button" id="add-facility-destination">Add destination</button></div>
+              <div id="facility-destinations" class="repeat-list"></div>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>06</span><div><h3>Policies & conversation notes</h3><p>Write naturally. Each booking rule or cart policy goes on its own line.</p></div></div>
+              <div class="field-grid two">
+                <label>Booking eligibility rules<textarea id="facility-booking-rules" rows="8" placeholder="Members may book up to 10 future calendar days…"></textarea></label>
+                <label>Cancellation & modification policy<textarea id="facility-cancellation" rows="8" placeholder="The AI may cancel when the tee time is at least 24 hours away…"></textarea></label>
+                <label>Walking, riding & cart rules<textarea id="facility-cart-policies" rows="5" placeholder="One policy per line"></textarea></label>
+                <label>Client notes<textarea id="facility-client-notes" rows="5" placeholder="Anything the prompt generator must understand"></textarea></label>
+                <label>Transfer notes<textarea id="facility-transfer-notes" rows="5" placeholder="Routing nuance and staff responsibilities"></textarea></label>
+                <label>Known exclusions<textarea id="facility-exclusions" rows="5" placeholder="Facts or sources that must not be used"></textarea></label>
+                <label class="wide">Additional approved source URLs<textarea id="facility-source-urls" rows="3" placeholder="One URL per line; the primary website is included automatically"></textarea></label>
+              </div>
+            </article>
+
+            <div class="form-actions">
+              <div><strong>Ready to save?</strong><span>The YAML and supporting notes will be generated together.</span></div>
+              <button type="button" class="button ghost hidden" id="cancel-facility-edit">Cancel editing</button>
+              <button class="button primary" type="submit" id="save-facility">Save facility</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="view" id="view-modification">
+          <div class="form-intro">
+            <div><span class="step-badge">Existing customer</span><h2 id="mod-form-title">Create a prompt update</h2><p>Preserve a live prompt’s valuable context while moving it onto current tools and conventions.</p></div>
+          </div>
+          <form id="modification-form" class="builder-form">
+            <input type="hidden" id="mod-editing-slug" />
+            <article class="form-card">
+              <div class="form-card-head"><span>01</span><div><h3>Update identity</h3><p>Name this change and define its runtime.</p></div></div>
+              <div class="field-grid three">
+                <label>Customer / facility name<input id="mod-name" required /></label>
+                <label>Update slug<input id="mod-slug" required pattern="[a-z0-9-]+" placeholder="facility-v6-update" /></label>
+                <label>Timezone<select id="mod-timezone"></select></label>
+                <label class="wide">Website URL<input id="mod-website" type="url" required /></label>
+                <label>Tee sheet<select id="mod-tee-sheet"><option value="foreup">ForeUp</option><option value="club_prophet">Club Prophet</option><option value="other">Other</option><option value="unspecified">Unspecified</option></select></label>
+                <label>Knowledge base<select id="mod-kb-mode"><option value="exact">Preserve exactly</option><option value="revise">Revise as requested</option></select></label>
+              </div>
+              <div class="toggle-grid compact">
+                <label class="toggle-card"><input id="mod-guardrail" type="checkbox" /><span class="switch"></span><div><strong>Soft shop guardrail</strong><small>Offer assistant help once before the first shop transfer.</small></div></label>
+                <label class="toggle-card"><input id="mod-single-partial" type="checkbox" /><span class="switch"></span><div><strong>Pair single players</strong><small>Hide empty foursomes from solo callers.</small></div></label>
+                <label class="toggle-card"><input id="mod-search-all-courses" type="checkbox" /><span class="switch"></span><div><strong>Search every course</strong><small>Query availability separately for every configured course.</small></div></label>
+                <label class="toggle-card"><input id="mod-per-booking" type="checkbox" /><span class="switch"></span><div><strong>Booking-fee model</strong><small>Use fee-inclusive returned prices where configured.</small></div></label>
+              </div>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>02</span><div><h3>Original production prompt</h3><p>Paste it or choose a local text/Markdown file. It never leaves your machine until you run the update.</p></div><label class="file-button">Choose file<input id="mod-file" type="file" accept=".txt,.md,text/plain,text/markdown" /></label></div>
+              <textarea id="mod-original" class="code-area" rows="14" required placeholder="<core-shell>…"></textarea>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>03</span><div><h3>What should change?</h3><p>Describe policy, logic, tools, knowledge, transfers, or customer-requested behavior.</p></div></div>
+              <textarea id="mod-notes" rows="10" required placeholder="Migrate booking calls to the current tool stack…"></textarea>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>04</span><div><h3>Tools & transfer map</h3><p>The full integrated suite is recommended; tailor it where necessary.</p></div><button class="button mini" type="button" id="add-mod-destination">Add destination</button></div>
+              <div id="mod-tools" class="tool-grid"></div>
+              <div id="mod-destinations" class="repeat-list separated"></div>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>05</span><div><h3>Course and validation controls</h3><p>Optional advanced controls for multi-course migrations and required output language.</p></div></div>
+              <div class="field-grid two">
+                <label>Course setup<select id="mod-course-configuration"><option value="single_course">Single course</option><option value="multi_course">Multiple courses</option></select></label>
+                <label>Course values<select id="mod-course-source"><option value="configured">Enter exact values</option><option value="runtime">Use runtime {{courses}}</option></select></label>
+                <label>Exact courses / expected count<textarea id="mod-courses" rows="4" placeholder="One course per line, or enter a number when using runtime values"></textarea></label>
+                <label>Required output markers<textarea id="mod-required-markers" rows="4" placeholder="One exact phrase per line"></textarea></label>
+                <label>Forbidden output patterns<textarea id="mod-forbidden-patterns" rows="4" placeholder="One regular expression per line"></textarea></label>
+                <label>Pricing rules<textarea id="mod-fee-rules" rows="4" placeholder="Conditional booking-fee rules, one per line"></textarea></label>
+              </div>
+            </article>
+
+            <div class="form-actions">
+              <div><strong>Create the update workspace</strong><span>You can review every generated input before starting OpenRouter.</span></div>
+              <button type="button" class="button ghost hidden" id="cancel-mod-edit">Cancel editing</button>
+              <button class="button primary" type="submit" id="save-modification">Save prompt update</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="view" id="view-runs">
+          <div class="runs-toolbar">
+            <div class="segmented"><button class="active" data-run-filter="all">All</button><button data-run-filter="facility">New facilities</button><button data-run-filter="modification">Prompt updates</button></div>
+            <input id="run-search" class="search" placeholder="Search facility or run ID" />
+          </div>
+          <div id="active-jobs"></div>
+          <article class="panel"><div id="all-runs" class="run-table"></div></article>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="run-dialog">
+      <form method="dialog" class="dialog-card">
+        <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+        <span class="step-badge">External processing</span>
+        <h2>Start this pipeline run?</h2>
+        <p id="run-dialog-copy">The approved materials will be sent to the configured providers.</p>
+        <label class="approval-check"><input id="run-approval" type="checkbox" /><span>I approve sending these facility materials and public website content to Firecrawl and OpenRouter.</span></label>
+        <div class="dialog-actions"><button class="button ghost" value="cancel">Not yet</button><button class="button primary" id="confirm-run" type="button" disabled>Start run</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="log-dialog">
+      <div class="dialog-card log-card"><button class="dialog-close" data-close-log aria-label="Close">×</button><span class="step-badge">Live progress</span><h2 id="log-title">Pipeline run</h2><pre id="job-log">Starting…</pre></div>
+    </dialog>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

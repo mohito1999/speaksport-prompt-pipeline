@@ -1,3 +1,3 @@
-from .normalizer import normalize_raw_pages
+from .normalizer import assess_crawl_quality, normalize_raw_pages
 
-__all__ = ["normalize_raw_pages"]
+__all__ = ["assess_crawl_quality", "normalize_raw_pages"]

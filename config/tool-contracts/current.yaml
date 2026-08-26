@@ -1,7 +1,90 @@
 schema_version: "1"
-version: "2026-07-31"
-status: owner_confirmed_with_rich_availability_results
+version: "2026-08-25"
+status: owner_confirmed_after_hours_transfer_only_with_rich_pricing
 tools:
+  - capability: customer_record_lookup
+    logical_name: get_customer_records
+    compatible_modes: [integrated]
+    required_arguments: {}
+    optional_arguments:
+      email:
+        type: string
+        format: email
+        description: >-
+          Caller-confirmed email used by itself for one fallback lookup only
+          after the initial no-argument phone lookup returns no usable records.
+      phone:
+        type: string
+        description: >-
+          Caller-confirmed alternate phone number used by itself for one
+          fallback lookup only after the initial no-argument phone lookup
+          returns no usable records.
+    result_fields:
+      count:
+        type: integer
+        required: false
+        description: Number of distinct matching Club Prophet customer records.
+      records:
+        type: array_of_customer_records
+        required: false
+        description: >-
+          Every distinct match, without ranking. Each record contains
+          customer_id, first_name, last_name, email, price_class, and is_member.
+      status:
+        type: string
+        required: false
+        allowed_values: [error]
+      detail:
+        type: string
+        required: false
+    preconditions:
+      - facility tee_sheet is club_prophet
+      - identity_confirmed is false
+      - caller wants to book, asks about pricing, or asks about membership
+      - announce the lookup to the caller before calling
+      - first call is early with no arguments and never auto-selects a returned record
+      - if the first call returns no usable records, ask whether the caller has played before
+      - if the caller has played before, collect and confirm exactly one fallback identifier, email or alternate phone
+      - second and final lookup passes only email or only phone
+      - after a second empty result, or when the caller says they are new, continue as a new guest
+      - a lookup error is spoken from detail and the caller flow continues without transfer
+  - capability: identity_confirmation
+    logical_name: confirm_identity
+    compatible_modes: [integrated]
+    required_arguments: {}
+    optional_arguments:
+      acct:
+        type: string
+        description: >-
+          Exact customer_id of the record the caller confirmed. Links the caller
+          immediately. Pass by itself after verbal confirmation.
+    result_fields:
+      status:
+        type: string
+        required: true
+        allowed_values: [linked, needs_confirmation, not_found, error]
+      customer:
+        type: object
+        required: false
+        description: Confirmed customer returned when status is linked.
+      acct:
+        type: string
+        required: false
+        description: Candidate account returned by email lookup for later confirmation.
+      first_name:
+        type: string
+        required: false
+        description: Name to confirm aloud when status is needs_confirmation.
+      detail:
+        type: string
+        required: false
+    preconditions:
+      - facility tee_sheet is club_prophet
+      - acct is passed only after the caller confirms the matching profile or needs_confirmation name
+      - confirm_identity is called with only acct after the caller verbally selects a record returned by get_customer_records
+      - needs_confirmation requires an audible name confirmation before another call with acct
+      - not_found continues as a guest
+      - an error is spoken from detail and the caller flow continues without transfer
   - capability: eligibility
     logical_name: check-booking-eligibility-staging
     compatible_modes: [integrated]
@@ -60,24 +143,32 @@ tools:
         description: Usually omitted for a single-course facility; required as a filter for the owner-approved multi-course flow.
     result_fields:
       results:
-        type: array_of_availability_records_with_time_course_spots_remaining_and_price_per_player
+        type: array_of_rich_availability_records
         required: true
         description: >-
           The result is a list whose individual slot objects each contain
           time (caller-facing tee time), course (exact value to preserve for
-          booking), spots_remaining (integer bookable capacity), and
-          price_per_player (current tee-sheet rate per player). The price may
-          be quoted when asked, with the qualification that the caller's exact
-          rate may vary based on status, eligibility, discounts, or check-in
-          treatment. An empty list means no tee times are available for the
-          requested date under the supplied holes and course criteria; it does
-          not mean merely that nothing is close to when.
+          booking), and spots_remaining (integer bookable capacity). Pricing
+          fields are optional by facility commercial model:
+          base_price_per_player is the walking rate without a SpeakSport
+          booking fee; base_price_per_player_riding is the riding rate without
+          that fee; price_per_player is the walking rate including the fee;
+          and price_per_player_riding is the riding rate including the fee.
+          Facilities outside the SpeakSport per-booking model normally return
+          only the applicable base fields. Quote only fields actually returned
+          and follow the facility availability_pricing configuration when
+          deciding whether fee-inclusive or base values apply and whether the
+          fee is disclosed. An empty list means no tee times are available for
+          the requested date under the supplied holes and course criteria; it
+          does not mean merely that nothing is close to when.
     preconditions:
       - eligibility succeeded
       - requested date and preferred time are known
       - caller explicitly provided number of players
       - caller explicitly selected 9 or 18 holes
       - every availability call passes num_players and num_holes
+      - riding or walking is not collected before availability because it is not an availability argument
+      - riding is collected after the caller selects a returned slot and before booking unless facility policy fixes the value
       - returned nearest-time results are not treated as exhaustive inventory
       - facility single-player presentation policy is applied to spots_remaining
       - an empty list is treated as no availability for the full requested date and supplied search criteria
@@ -176,17 +267,73 @@ tools:
       success: {type: boolean, required: true}
     preconditions:
       - destination is configured in Vapi and facility intake with exactly matching spelling
-      - integrated normal transfers have current-turn verbal confirmation unless an approved reference exception applies
+      - current_status, opening_time, and closing_time are initialized
+      - when current_status is after_hours the transfer tool is never called
+      - current_status governs only transfer_call-staging and never blocks or changes any enabled non-transfer tool or self-service workflow
+      - booking, availability, identity, eligibility, existing-booking lookup, cancellation, weather, SMS, and other enabled non-transfer actions remain available 24 hours a day, 7 days a week
+      - a caller's explicit direct transfer request is itself consent and must not be reconfirmed
+      - when the assistant offers a transfer without a direct caller request it waits for affirmative consent
+      - the optional first-shop-transfer deflection asks whether the assistant can help first and never claims the shop is busy
   - capability: day_of_week
     logical_name: get-day-of-week-staging
     compatible_modes: [integrated]
-    required_arguments:
-      date: {type: string, format: YYYY-MM-DD}
-    optional_arguments: {}
+    required_arguments: {}
+    optional_arguments:
+      date:
+        type: string
+        format: YYYY-MM-DD
+        description: >-
+          Pass by itself when the caller gives a calendar date. Pass together
+          with day_of_week when the caller states both a calendar date and a
+          weekday so the backend can validate the pair.
+      day_of_week:
+        type: string
+        allowed_values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
+        description: >-
+          Pass by itself when the caller gives only a weekday. The tool returns
+          the next four matching facility-local dates. Pass together with date
+          when the caller states both values.
     result_fields:
-      day_of_week: {type: string, required: true}
+      status:
+        type: string
+        required: false
+        allowed_values: [success]
+      date:
+        type: string
+        required: false
+        description: Resolved or validated calendar date when applicable.
+      readable:
+        type: string
+        required: false
+        description: Facility-local caller-readable date returned for date-only or matching-pair calls.
+      day_of_week:
+        type: string
+        required: false
+        description: Resolved weekday for date-only calls, or requested weekday for weekday-only calls.
+      resolved_day_of_week:
+        type: string
+        required: false
+        description: Actual weekday for the supplied date when both date and day_of_week are passed.
+      provided_day_of_week:
+        type: string
+        required: false
+        description: Caller-provided weekday echoed when both inputs are passed.
+      matches:
+        type: boolean
+        required: false
+        description: Whether a supplied calendar date and caller-stated weekday agree.
+      upcoming_dates:
+        type: array_of_date_readable_records
+        required: false
+        description: >-
+          The next four facility-local dates matching a weekday-only request;
+          each record contains date and readable.
     preconditions:
-      - caller provided a valid requested date
+      - at least one of date or day_of_week is supplied
+      - date-only calls resolve the actual weekday and return readable
+      - weekday-only calls return the next four facility-local matching dates
+      - calls with both date and day_of_week validate the caller-stated pair
+      - when matches is false, clarification is mandatory before inventory warm-up, eligibility, availability, or booking
   - capability: inventory_warmup
     logical_name: fetch-inventory-for-date
     compatible_modes: [integrated]

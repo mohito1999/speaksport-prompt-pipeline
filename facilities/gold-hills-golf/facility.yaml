@@ -4,7 +4,10 @@ display_name: Gold Hills Golf Club
 website_url: https://www.goldhillsgolf.com/
 timezone: America/Los_Angeles
 integration_type: integrated
+tee_sheet: foreup
 course_configuration: single_course
+course_values_source: configured
+search_all_courses_for_availability: false
 exact_course_values: []
 references:
   prompt: '2026-07-10'
@@ -13,6 +16,9 @@ enabled_tools:
 - check-booking-eligibility-staging
 - get-available-tee-times-staging
 - book-tee-time-staging
+- get-bookings
+- get-eligibility-for-cancellation
+- cancel-reservation
 - transfer_call-staging
 - get-day-of-week-staging
 - fetch-inventory-for-date
@@ -21,27 +27,103 @@ greeting: ''
 disclaimer: ''
 announcement: ''
 booking_url: null
+transfer_policy:
+  first_shop_transfer_deflection: true
+availability_policy:
+  single_player_requires_partially_filled_slot: true
+availability_pricing:
+  speaksport_per_booking_model: false
+  booking_fee_application: none
+  disclose_booking_fee_when_applied: false
+  booking_fee_rules: []
 transfer_destinations:
-- identifier: golf_shop
-  responsibility: Tee-time assistance, booking changes, cancellations, course conditions, and general golf operations.
-  display_name: Golf Shop
-- identifier: events
-  responsibility: Outings, tournaments, private events, and event planning.
-  display_name: Events Team
-- identifier: the_grille
-  responsibility: Restaurant hours, dining questions, reservations, and The Grille inquiries.
-  display_name: The Grille
+- identifier: pro_shop
+  responsibility: Tee-time assistance, booking modifications and rescheduling, cancellations within 24 hours, prepaid cancellation refunds, course conditions, merchandise, and general golf operations.
+  display_name: Pro Shop
+- identifier: maintenance
+  responsibility: Course maintenance, turf and grounds, agronomy, irrigation, and maintenance-team inquiries.
+  display_name: Maintenance
+- identifier: jeff_thomason
+  responsibility: Requests for Golf Professional Jeff Thomason by name or title, including golf instruction and professional golf-service inquiries.
+  display_name: Jeff Thomason (Golf Professional)
+- identifier: grill_restaurant
+  responsibility: Grill and restaurant hours, dining, menus, food and beverage service, reservations, and restaurant inquiries.
+  display_name: Grill/Restaurant
 - identifier: chad_white
-  responsibility: Director of Golf Chad White, PGA inquiries.
+  responsibility: Requests for Director of Golf Chad White by name or title, golf-department leadership, and escalated golf-operation inquiries.
   display_name: Chad White (Director of Golf)
+- identifier: beth_havsgaard
+  responsibility: Requests for Office Manager Beth Havsgaard by name or title, office administration, billing, paperwork, and administrative inquiries.
+  display_name: Beth Havsgaard (Office Manager)
 booking_rules:
-- Public players can book tee times up to seven calendar days in advance, inclusive of the current day (meaning the current day plus six future calendar days).
-- Members can book tee times up to fourteen calendar days in advance, inclusive of the current day (meaning the current day plus thirteen future calendar days).
+- >-
+  If the requested date is before the facility-local current date, the caller
+  is not eligible. Exact reason: "The requested date has already passed. Please
+  choose a future date."
+- >-
+  Classify the caller as a Member if at least one customer_passes record has
+  expired set to false, or if any customer_groups value semantically equals
+  "member" case-insensitively. Otherwise classify the caller as a Public Player
+  (Non-Member).
+- >-
+  Members have a 14-day booking window inclusive of the current date. The
+  latest eligible date is the facility-local current date plus 13 calendar
+  days. A later date is ineligible. Exact reason: "Members can only book up to
+  14 days in advance (including today). Please choose a date on or before the
+  latest available booking date."
+- >-
+  Public Players have a 7-day booking window inclusive of the current date.
+  The latest eligible date is the facility-local current date plus 6 calendar
+  days. A later date is ineligible. Exact reason: "Public players can only book
+  up to 7 days in advance (including today). Please choose a date on or before
+  the latest available booking date."
+- >-
+  If none of the approved rules makes the caller ineligible, the caller is
+  eligible. Exact reason: "Eligibility confirmed."
+- >-
+  Eligibility receives only date in YYYY-MM-DD and the approximate requested
+  time in 24-hour HH:MM. Do not pass players, holes, riding preference,
+  identity fields, or course_name.
 - Both nine-hole and eighteen-hole tee times are supported.
-- This is a single-course facility; omit course and course_name filters from availability searches.
-- When booking, preserve and pass the exact course returned with the selected availability slot.
-cancellation_modification_policy: ''
-walking_riding_cart_policies: []
+- >-
+  This is a single-course facility. Do not ask for course preference and omit
+  course and course_name from every availability call.
+- >-
+  After eligibility succeeds, collect exact player count and nine or eighteen
+  holes before availability. Do not ask riding or walking before availability.
+- >-
+  After the caller selects an exact returned slot, ask whether they will ride
+  or walk, then pass the resulting riding boolean to book-tee-time-staging.
+- >-
+  For one player, present only returned slots whose spots_remaining is less
+  than 4 so the caller joins an existing group.
+- >-
+  Gold Hills does not charge a SpeakSport booking fee. Quote returned
+  base_price_per_player as the walking rate and
+  base_price_per_player_riding as the riding rate. Do not add or describe a
+  booking fee, and never invent a rate when a field is absent.
+- >-
+  Preserve each returned time, course, spots remaining, and pricing fields as
+  one record. Pass the selected slot's exact returned course to booking.
+cancellation_modification_policy: >-
+  Gold Hills uses ForeUp. Booking references use the TTID_ prefix. The initial
+  get-bookings lookup uses no parameters; a fallback lookup passes only the
+  exact booking_reference and restores TTID_ when transcription clearly omitted
+  it. Never speak a booking reference. The AI may cancel only when the tee time
+  is at least 24 exact hours after the facility-local current date and time. If
+  hours until tee off is less than 24, cancellation eligibility returns false.
+  Exact reason: "I can only process cancellations for tee times that are at
+  least 24 hours from now. The Pro Shop can help you with this cancellation."
+  If hours until tee off is exactly 24 or greater, return eligible. Exact
+  reason: "Eligible for cancellation." Apply no other cancellation criteria.
+  Modifications and rescheduling must route to the Pro Shop. After a successful
+  cancellation, explain that if a prepaid tee time is eligible for a refund,
+  the Pro Shop can process it, and offer the transfer under the current
+  hours-aware transfer flow.
+walking_riding_cart_policies:
+- Do not ask riding or walking before availability because it does not affect the search.
+- Ask riding or walking only after the caller selects an exact slot and before booking.
+- Pass riding as true for riding and false for walking.
 caller_details:
   first_name: true
   last_name: true
@@ -50,6 +132,7 @@ caller_details:
 allowed_source_urls:
 - https://www.goldhillsgolf.com/
 excluded_source_paths: []
+included_source_paths: []
 crawl_entire_domain: false
 allow_subdomains: false
 ignored_facts: []

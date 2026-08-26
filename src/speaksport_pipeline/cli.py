@@ -25,7 +25,7 @@ from .config import (
     load_tool_registry,
     load_yaml,
 )
-from .crawling import normalize_raw_pages
+from .crawling import assess_crawl_quality, normalize_raw_pages
 from .exceptions import BudgetExceededError, SpeakSportError
 from .generation import assemble_prompt
 from .hashing import sha256_file
@@ -37,7 +37,10 @@ from .manifests import (
 )
 from .models import (
     AvailabilityPolicy,
+    AvailabilityPricingPolicy,
+    BookingFeeApplication,
     CourseConfiguration,
+    CourseValuesSource,
     CrawlRequest,
     FacilityConfig,
     InputArtifact,
@@ -47,6 +50,7 @@ from .models import (
     PromptSectionBundle,
     ReferenceMode,
     ReferenceSelection,
+    TeeSheetProvider,
     TransferDestination,
     TransferPolicy,
 )
@@ -131,6 +135,25 @@ def initialize() -> None:
         _fail(exc)
 
 
+@app.command("ui")
+def launch_ui(
+    host: Annotated[str, typer.Option(help="Local interface host.")] = "127.0.0.1",
+    port: Annotated[int, typer.Option(min=1, max=65535, help="Local interface port.")] = 8765,
+) -> None:
+    """Launch the local facility and prompt-management control panel."""
+    try:
+        from .webui import serve
+
+        root = _root()
+        typer.secho(f"SpeakSport Control Room: http://{host}:{port}", fg=typer.colors.GREEN)
+        typer.echo(
+            "Press Control-C to stop it. Pipeline runs continue only while this app is open."
+        )
+        serve(root, host=host, port=port)
+    except (OSError, SpeakSportError) as exc:
+        _fail(exc)
+
+
 @facility_app.command("create")
 def create_facility(
     slug: Annotated[str, typer.Argument(help="Lowercase facility slug.")],
@@ -138,6 +161,13 @@ def create_facility(
     website: Annotated[str, typer.Option("--website", help="Primary website with scheme.")],
     mode: Annotated[IntegrationType, typer.Option("--mode")],
     timezone: Annotated[str, typer.Option("--timezone")],
+    tee_sheet: Annotated[
+        TeeSheetProvider | None,
+        typer.Option(
+            "--tee-sheet",
+            help="Integrated tee sheet: foreup, club_prophet, or other.",
+        ),
+    ] = None,
     course_configuration: Annotated[
         CourseConfiguration, typer.Option("--course-configuration")
     ] = CourseConfiguration.SINGLE_COURSE,
@@ -145,6 +175,28 @@ def create_facility(
         list[str] | None,
         typer.Option("--course", help="Exact runtime course value; repeat for multiple courses."),
     ] = None,
+    course_values_source: Annotated[
+        CourseValuesSource,
+        typer.Option(
+            "--course-values-source",
+            help="Use configured --course values or exact values supplied by runtime {{courses}}.",
+        ),
+    ] = CourseValuesSource.CONFIGURED,
+    expected_course_count: Annotated[
+        int | None,
+        typer.Option(
+            "--expected-course-count",
+            min=2,
+            help="Expected number of exact values in runtime {{courses}}.",
+        ),
+    ] = None,
+    search_all_courses_for_availability: Annotated[
+        bool,
+        typer.Option(
+            "--search-all-courses-for-availability",
+            help="Run availability separately for every exact configured/runtime course value.",
+        ),
+    ] = False,
     booking_url: Annotated[
         str | None, typer.Option("--booking-url", help="Required for non-integrated facilities.")
     ] = None,
@@ -153,8 +205,8 @@ def create_facility(
         typer.Option(
             "--first-shop-transfer-deflection",
             help=(
-                "Deflect the caller's first general or Golf/Pro Shop transfer request "
-                "before using the normal transfer flow."
+                "Ask whether the assistant can help first on the caller's initial general "
+                "or Golf/Pro Shop transfer request."
             ),
         ),
     ] = False,
@@ -168,6 +220,34 @@ def create_facility(
             ),
         ),
     ] = False,
+    speaksport_per_booking_model: Annotated[
+        bool,
+        typer.Option(
+            "--speaksport-per-booking-model",
+            help="Availability returns base and booking-fee-inclusive rate fields.",
+        ),
+    ] = False,
+    booking_fee_application: Annotated[
+        BookingFeeApplication,
+        typer.Option(
+            "--booking-fee-application",
+            help="Whether the SpeakSport booking fee applies to none, all, or conditional callers.",
+        ),
+    ] = BookingFeeApplication.NONE,
+    disclose_booking_fee_when_applied: Annotated[
+        bool,
+        typer.Option(
+            "--disclose-booking-fee-when-applied",
+            help="Explicitly identify the booking fee when quoting fee-inclusive rates.",
+        ),
+    ] = False,
+    booking_fee_rule: Annotated[
+        list[str] | None,
+        typer.Option(
+            "--booking-fee-rule",
+            help="Conditional fee rule using price class, passes, or groups; repeat as needed.",
+        ),
+    ] = None,
 ) -> None:
     """Create a validated, human-editable facility intake directory."""
     try:
@@ -177,11 +257,28 @@ def create_facility(
             raise SpeakSportError(f"Facility already exists: {slug}")
         tool_registry = load_tool_registry(root)
         active = ReferenceRegistry(root).active_versions()
+        if mode == IntegrationType.INTEGRATED and tee_sheet in {
+            None,
+            TeeSheetProvider.UNSPECIFIED,
+        }:
+            raise SpeakSportError(
+                "Integrated facilities require --tee-sheet "
+                "(foreup, club_prophet, or other)"
+            )
         core_capabilities = (
-            {"eligibility", "availability", "booking", "transfer"}
+            {
+                "eligibility",
+                "availability",
+                "booking",
+                "transfer",
+                "day_of_week",
+                "inventory_warmup",
+            }
             if mode == IntegrationType.INTEGRATED
             else {"sms", "transfer"}
         )
+        if tee_sheet == TeeSheetProvider.CLUB_PROPHET:
+            core_capabilities |= {"customer_record_lookup", "identity_confirmation"}
         enabled_tools = [
             tool.logical_name
             for tool in tool_registry.tools
@@ -193,7 +290,11 @@ def create_facility(
             website_url=website,
             timezone=timezone,
             integration_type=mode,
+            tee_sheet=tee_sheet or TeeSheetProvider.UNSPECIFIED,
             course_configuration=course_configuration,
+            course_values_source=course_values_source,
+            expected_course_count=expected_course_count,
+            search_all_courses_for_availability=search_all_courses_for_availability,
             exact_course_values=course or [],
             references=ReferenceSelection(
                 prompt=active[mode.value],
@@ -210,6 +311,12 @@ def create_facility(
                 single_player_requires_partially_filled_slot=(
                     single_player_requires_partially_filled_slot
                 )
+            ),
+            availability_pricing=AvailabilityPricingPolicy(
+                speaksport_per_booking_model=speaksport_per_booking_model,
+                booking_fee_application=booking_fee_application,
+                disclose_booking_fee_when_applied=disclose_booking_fee_when_applied,
+                booking_fee_rules=booking_fee_rule or [],
             ),
         )
         facility_dir.mkdir(parents=True)
@@ -237,6 +344,13 @@ def create_modification(
     source_prompt: Annotated[Path, typer.Option("--source-prompt", exists=True, dir_okay=False)],
     website: Annotated[str, typer.Option("--website", help="Facility website metadata.")],
     timezone: Annotated[str, typer.Option("--timezone")],
+    tee_sheet: Annotated[
+        TeeSheetProvider,
+        typer.Option(
+            "--tee-sheet",
+            help="Integrated tee sheet: foreup, club_prophet, other, or unspecified.",
+        ),
+    ] = TeeSheetProvider.UNSPECIFIED,
     course_configuration: Annotated[
         CourseConfiguration, typer.Option("--course-configuration")
     ] = CourseConfiguration.SINGLE_COURSE,
@@ -244,6 +358,16 @@ def create_modification(
         list[str] | None,
         typer.Option("--course", help="Exact runtime course value; repeat when needed."),
     ] = None,
+    course_values_source: Annotated[
+        CourseValuesSource,
+        typer.Option("--course-values-source"),
+    ] = CourseValuesSource.CONFIGURED,
+    expected_course_count: Annotated[
+        int | None, typer.Option("--expected-course-count", min=2)
+    ] = None,
+    search_all_courses_for_availability: Annotated[
+        bool, typer.Option("--search-all-courses-for-availability")
+    ] = False,
     knowledge_base_mode: Annotated[
         str,
         typer.Option(
@@ -257,6 +381,18 @@ def create_modification(
     single_player_requires_partially_filled_slot: Annotated[
         bool, typer.Option("--single-player-requires-partially-filled-slot")
     ] = False,
+    speaksport_per_booking_model: Annotated[
+        bool, typer.Option("--speaksport-per-booking-model")
+    ] = False,
+    booking_fee_application: Annotated[
+        BookingFeeApplication, typer.Option("--booking-fee-application")
+    ] = BookingFeeApplication.NONE,
+    disclose_booking_fee_when_applied: Annotated[
+        bool, typer.Option("--disclose-booking-fee-when-applied")
+    ] = False,
+    booking_fee_rule: Annotated[
+        list[str] | None, typer.Option("--booking-fee-rule")
+    ] = None,
 ) -> None:
     """Scaffold a separate existing-prompt modification project."""
     try:
@@ -282,6 +418,8 @@ def create_modification(
             "inventory_warmup",
             "weather",
         }
+        if tee_sheet == TeeSheetProvider.CLUB_PROPHET:
+            enabled_capabilities |= {"customer_record_lookup", "identity_confirmation"}
         enabled_tools = [
             tool.logical_name
             for tool in tool_registry.tools
@@ -311,7 +449,11 @@ def create_modification(
             website_url=website,
             timezone=timezone,
             integration_type=IntegrationType.INTEGRATED,
+            tee_sheet=tee_sheet,
             course_configuration=course_configuration,
+            course_values_source=course_values_source,
+            expected_course_count=expected_course_count,
+            search_all_courses_for_availability=search_all_courses_for_availability,
             exact_course_values=course or [],
             references=ReferenceSelection(
                 prompt=active[ReferenceMode.INTEGRATED.value],
@@ -325,6 +467,12 @@ def create_modification(
                 single_player_requires_partially_filled_slot=(
                     single_player_requires_partially_filled_slot
                 )
+            ),
+            availability_pricing=AvailabilityPricingPolicy(
+                speaksport_per_booking_model=speaksport_per_booking_model,
+                booking_fee_application=booking_fee_application,
+                disclose_booking_fee_when_applied=disclose_booking_fee_when_applied,
+                booking_fee_rules=booking_fee_rule or [],
             ),
             transfer_destinations=destinations,
         )
@@ -808,6 +956,15 @@ def _crawl_run(root: Path, facility: FacilityConfig, run_directory: Path) -> Non
         run_directory / "crawl" / "raw",
         progress=progress,
     )
+    recovered_urls = client.recover_missing_navigation_pages(
+        state_path, run_directory / "crawl" / "raw"
+    )
+    if recovered_urls:
+        typer.echo(
+            "Recovered prominent navigation pages omitted by the bounded crawl: "
+            + ", ".join(recovered_urls)
+        )
+        state = client._load_state(state_path)
     manifest = load_manifest(run_directory)
     manifest.status = "CRAWLED"
     manifest.crawl_job_id = state.job_id
@@ -834,6 +991,31 @@ def _extract_run(
     )
     if not pages:
         raise SpeakSportError("No non-empty crawled pages are available for extraction")
+    quality = assess_crawl_quality(pages)
+    quality_payload = {
+        "examined_page_count": quality.examined_page_count,
+        "hollow_page_count": len(quality.hollow_page_urls),
+        "hollow_ratio": quality.hollow_ratio,
+        "hollow_page_urls": list(quality.hollow_page_urls),
+    }
+    (run_directory / "crawl" / "quality-report.json").write_text(
+        json.dumps(quality_payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    if quality.examined_page_count >= 8 and quality.hollow_ratio >= 0.40:
+        examples = ", ".join(quality.hollow_page_urls[:8])
+        raise SpeakSportError(
+            "Crawl content quality check failed: "
+            f"{len(quality.hollow_page_urls)}/{quality.examined_page_count} HTML pages "
+            "contain almost no unique body text after repeated navigation is removed. "
+            f"Examples: {examples}. Open crawl/quality-report.json before extraction."
+        )
+    if quality.hollow_page_urls:
+        typer.echo(
+            "Crawl quality warning: "
+            f"{len(quality.hollow_page_urls)}/{quality.examined_page_count} pages appear thin; "
+            "details are in crawl/quality-report.json."
+        )
     typer.echo(
         "Sending normalized website content and facility documents to OpenRouter for extraction."
     )
