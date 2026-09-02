@@ -80,6 +80,7 @@ class CallerDetailRequirements(StrictModel):
 
 class TransferPolicy(StrictModel):
     first_shop_transfer_deflection: bool = False
+    allow_after_hours_transfers: bool = False
 
 
 class AvailabilityPolicy(StrictModel):

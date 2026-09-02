@@ -210,6 +210,16 @@ def create_facility(
             ),
         ),
     ] = False,
+    allow_after_hours_transfers: Annotated[
+        bool,
+        typer.Option(
+            "--allow-after-hours-transfers",
+            help=(
+                "Allow transfers while the destination is closed so callers can leave a "
+                "voicemail."
+            ),
+        ),
+    ] = False,
     single_player_requires_partially_filled_slot: Annotated[
         bool,
         typer.Option(
@@ -305,7 +315,8 @@ def create_facility(
             enabled_tools=enabled_tools,
             booking_url=booking_url,
             transfer_policy=TransferPolicy(
-                first_shop_transfer_deflection=first_shop_transfer_deflection
+                first_shop_transfer_deflection=first_shop_transfer_deflection,
+                allow_after_hours_transfers=allow_after_hours_transfers,
             ),
             availability_policy=AvailabilityPolicy(
                 single_player_requires_partially_filled_slot=(
@@ -377,6 +388,13 @@ def create_modification(
     ] = "exact",
     first_shop_transfer_deflection: Annotated[
         bool, typer.Option("--first-shop-transfer-deflection")
+    ] = False,
+    allow_after_hours_transfers: Annotated[
+        bool,
+        typer.Option(
+            "--allow-after-hours-transfers",
+            help="Allow closed-department transfers to reach voicemail.",
+        ),
     ] = False,
     single_player_requires_partially_filled_slot: Annotated[
         bool, typer.Option("--single-player-requires-partially-filled-slot")
@@ -461,7 +479,8 @@ def create_modification(
             ),
             enabled_tools=enabled_tools,
             transfer_policy=TransferPolicy(
-                first_shop_transfer_deflection=first_shop_transfer_deflection
+                first_shop_transfer_deflection=first_shop_transfer_deflection,
+                allow_after_hours_transfers=allow_after_hours_transfers,
             ),
             availability_policy=AvailabilityPolicy(
                 single_player_requires_partially_filled_slot=(

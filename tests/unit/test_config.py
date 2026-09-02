@@ -41,8 +41,10 @@ def test_runtime_and_tool_registries_are_typed() -> None:
     assert {"current_status", "opening_time", "closing_time"} <= {
         variable.name for variable in runtime.variables
     }
-    assert tools.version == "2026-08-25"
-    assert tools.status == "owner_confirmed_after_hours_transfer_only_with_rich_pricing"
+    assert tools.version == "2026-09-02"
+    assert tools.status == (
+        "owner_confirmed_facility_configured_after_hours_voicemail_with_rich_pricing"
+    )
     by_name = {tool.logical_name: tool for tool in tools.tools}
     assert set(by_name["get_customer_records"].optional_arguments) == {"email", "phone"}
     assert set(by_name["confirm_identity"].optional_arguments) == {"acct"}

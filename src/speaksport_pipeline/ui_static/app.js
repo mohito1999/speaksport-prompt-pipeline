@@ -260,7 +260,10 @@ function facilityConfig() {
     disclaimer: "",
     announcement: "",
     booking_url: integrated ? null : $("#facility-booking-url").value.trim(),
-    transfer_policy: { first_shop_transfer_deflection: Boolean(integrated && $("#facility-guardrail").checked) },
+    transfer_policy: {
+      first_shop_transfer_deflection: Boolean(integrated && $("#facility-guardrail").checked),
+      allow_after_hours_transfers: $("#facility-after-hours-transfer").checked,
+    },
     availability_policy: { single_player_requires_partially_filled_slot: Boolean(integrated && $("#facility-single-partial").checked) },
     availability_pricing: {
       speaksport_per_booking_model: perBooking,
@@ -340,6 +343,7 @@ async function editFacility(slug) {
     $("#facility-search-all-courses").checked = c.search_all_courses_for_availability;
     $("#facility-single-partial").checked = c.availability_policy.single_player_requires_partially_filled_slot;
     $("#facility-guardrail").checked = c.transfer_policy.first_shop_transfer_deflection;
+    $("#facility-after-hours-transfer").checked = c.transfer_policy.allow_after_hours_transfers;
     $("#facility-per-booking").checked = c.availability_pricing.speaksport_per_booking_model;
     $("#facility-fee-application").value = c.availability_pricing.booking_fee_application;
     $("#facility-disclose-fee").checked = c.availability_pricing.disclose_booking_fee_when_applied;
@@ -397,7 +401,10 @@ function modificationPayload() {
       exact_course_values: multi && source === "configured" ? courseInput : [],
       references: { prompt: state.data.references.integrated, eligibility: state.data.references.eligibility },
       enabled_tools: selectedTools("mod-tools"), greeting: "", disclaimer: "", announcement: "", booking_url: null,
-      transfer_policy: { first_shop_transfer_deflection: $("#mod-guardrail").checked },
+      transfer_policy: {
+        first_shop_transfer_deflection: $("#mod-guardrail").checked,
+        allow_after_hours_transfers: $("#mod-after-hours-transfer").checked,
+      },
       availability_policy: { single_player_requires_partially_filled_slot: $("#mod-single-partial").checked },
       availability_pricing: {
         speaksport_per_booking_model: perBooking,
@@ -456,6 +463,7 @@ async function editModification(slug) {
     $("#mod-tee-sheet").value = f.tee_sheet;
     $("#mod-kb-mode").value = c.preservation.knowledge_base;
     $("#mod-guardrail").checked = f.transfer_policy.first_shop_transfer_deflection;
+    $("#mod-after-hours-transfer").checked = f.transfer_policy.allow_after_hours_transfers;
     $("#mod-single-partial").checked = f.availability_policy.single_player_requires_partially_filled_slot;
     $("#mod-search-all-courses").checked = f.search_all_courses_for_availability;
     $("#mod-per-booking").checked = f.availability_pricing.speaksport_per_booking_model;

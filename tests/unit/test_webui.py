@@ -42,7 +42,10 @@ def _facility_config(slug: str = "example-golf") -> dict[str, object]:
         "disclaimer": "",
         "announcement": "",
         "booking_url": None,
-        "transfer_policy": {"first_shop_transfer_deflection": True},
+        "transfer_policy": {
+            "first_shop_transfer_deflection": True,
+            "allow_after_hours_transfers": True,
+        },
         "availability_policy": {"single_player_requires_partially_filled_slot": False},
         "availability_pricing": {
             "speaksport_per_booking_model": False,
@@ -99,6 +102,7 @@ def test_write_and_edit_facility_without_hand_editing_yaml(tmp_path: Path) -> No
     saved = _facility_payload(tmp_path, "example-golf")
     assert saved["config"]["display_name"] == "Example Golf Club"
     assert saved["config"]["transfer_policy"]["first_shop_transfer_deflection"] is True
+    assert saved["config"]["transfer_policy"]["allow_after_hours_transfers"] is True
     assert saved["notes"]["client_notes"].startswith("# Client notes")
 
     payload["config"]["display_name"] = "Edited Golf Club"

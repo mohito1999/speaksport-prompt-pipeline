@@ -17,13 +17,14 @@ from speaksport_pipeline.models import (
     TransferPolicy,
 )
 from speaksport_pipeline.pipeline import (
+    AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL,
     CLUB_PROPHET_IDENTITY_GUARDRAILS,
     MANDATORY_AVAILABILITY_GUARDRAILS,
     MANDATORY_DATE_RESOLUTION_GUARDRAILS,
     MANDATORY_TRANSFER_PROTOCOL,
-    SOFT_SHOP_TRANSFER_DEFLECTION,
     SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL,
     SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
+    SOFT_SHOP_TRANSFER_DEFLECTION,
     availability_pricing_guardrail,
 )
 from speaksport_pipeline.validation import PromptValidator
@@ -163,6 +164,33 @@ def test_shop_transfer_deflection_is_controlled_by_facility_policy() -> None:
         prompt_without_deflection, deflection_disabled
     )
     assert report_without_unrequested_deflection.valid
+
+
+def test_after_hours_transfer_policy_is_controlled_by_facility_setting() -> None:
+    voicemail_facility = _facility().model_copy(
+        update={
+            "transfer_policy": TransferPolicy(
+                first_shop_transfer_deflection=True,
+                allow_after_hours_transfers=True,
+            )
+        }
+    )
+    voicemail_prompt = _prompt().replace(
+        MANDATORY_TRANSFER_PROTOCOL, AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL
+    )
+
+    assert _validator().validate(voicemail_prompt, voicemail_facility).valid
+    wrong_voicemail_prompt = _validator().validate(_prompt(), voicemail_facility)
+    assert any(
+        finding.code == "AFTER_HOURS_TRANSFER_INCORRECTLY_PROHIBITED"
+        for finding in wrong_voicemail_prompt.findings
+    )
+
+    wrong_default_prompt = _validator().validate(voicemail_prompt, _facility())
+    assert any(
+        finding.code == "UNREQUESTED_AFTER_HOURS_TRANSFER"
+        for finding in wrong_default_prompt.findings
+    )
 
 
 def test_unknown_variable_endpoint_version_and_phone_are_rejected() -> None:

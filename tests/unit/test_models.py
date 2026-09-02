@@ -11,6 +11,7 @@ from speaksport_pipeline.models import (
     IntegrationType,
     ReferenceSelection,
     TeeSheetProvider,
+    TransferPolicy,
 )
 
 
@@ -59,6 +60,24 @@ def test_single_player_partial_slot_policy_defaults_false_and_accepts_true() -> 
         }
     )
     assert configured.availability_policy.single_player_requires_partially_filled_slot
+
+
+def test_after_hours_transfers_default_off_and_can_enable_voicemail() -> None:
+    base = FacilityConfig(
+        slug="example-club",
+        display_name="Example Club",
+        website_url="https://example.com",
+        timezone="America/New_York",
+        integration_type=IntegrationType.INTEGRATED,
+        course_configuration=CourseConfiguration.SINGLE_COURSE,
+        references=ReferenceSelection(prompt="2026-07-10", eligibility="2026-07-10"),
+    )
+
+    assert not base.transfer_policy.allow_after_hours_transfers
+    configured = base.model_copy(
+        update={"transfer_policy": TransferPolicy(allow_after_hours_transfers=True)}
+    )
+    assert configured.transfer_policy.allow_after_hours_transfers
 
 
 def test_non_integrated_facility_requires_booking_url() -> None:

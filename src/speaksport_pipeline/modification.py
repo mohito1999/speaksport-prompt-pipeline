@@ -67,6 +67,17 @@ class PromptModificationPipeline:
         audit_directory: Path,
     ) -> tuple[GeneratedSections, LLMResult, bool]:
         preservation = modification.preservation
+        after_hours_transfer_instruction = (
+            "When current_status is after_hours, transfer_call-staging remains available so "
+            "callers can leave voicemail. Explain that the requested team is closed and the "
+            "call may reach voicemail before transferring. Do not prohibit or defer the transfer "
+            "because the facility is closed."
+            if facility.transfer_policy.allow_after_hours_transfers
+            else (
+                "When current_status is after_hours, do not transfer; offer help and tell the "
+                "caller to call back at opening_time."
+            )
+        )
         knowledge_instruction = (
             "Return the exact sentinel "
             f"{PRESERVE_KNOWLEDGE_BASE_SENTINEL!r} in knowledge_base; code will restore the "
@@ -112,10 +123,12 @@ class PromptModificationPipeline:
                     "self-service workflows remain available twenty-four hours a day, seven days "
                     "a week. Never stop booking, availability, identity, eligibility, reservation "
                     "lookup, cancellation, weather, SMS, or another enabled action merely because "
-                    "the facility is after hours. Never transfer after hours. "
+                    "the facility is after hours. "
+                    f"{after_hours_transfer_instruction} "
                     "Treat a direct caller transfer request as consent without reconfirmation; "
-                    "assistant-offered transfers still wait for a yes. Use only the softer optional "
-                    "shop assistance check when configured and never claim the shop is busy. "
+                    "assistant-offered transfers still wait for a yes. Use only the softer "
+                    "optional shop assistance check when configured and never claim the shop "
+                    "is busy. "
                     "When the target tee_sheet is club_prophet, initialize identity_confirmed and "
                     "apply the complete get_customer_records and confirm_identity flow from the "
                     "current contracts; never import that flow for another tee sheet. "

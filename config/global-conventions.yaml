@@ -9,7 +9,7 @@ prompt_architecture:
   knowledge_base_embedded: true
   allow_multiple_core_shells: true
 transfer_protocol:
-  status: owner_confirmed_2026_08_25_after_hours_is_transfer_only
+  status: owner_confirmed_2026_09_02_after_hours_transfer_is_facility_configured
   integrated:
     caller_direct_request_is_consent: true
     do_not_reconfirm_direct_request: true
@@ -31,12 +31,20 @@ transfer_protocol:
     destination_identifier_must_match_vapi_configuration: true
     runtime_hours_variables: [current_status, opening_time, closing_time]
     after_hours_value: after_hours
-    after_hours_scope: transfer_only
+    after_hours_transfer_configuration:
+      config_path: transfer_policy.allow_after_hours_transfers
+      default: false
     after_hours_behavior:
-      transfer_tool_prohibited: true
-      tell_caller_department_is_closed: true
-      offer_assistant_help: true
-      tell_caller_to_call_back_at_opening_time: true
+      when_transfers_disabled:
+        transfer_tool_prohibited: true
+        tell_caller_department_is_closed: true
+        offer_assistant_help: true
+        tell_caller_to_call_back_at_opening_time: true
+      when_transfers_enabled:
+        transfer_tool_prohibited: false
+        tell_caller_department_is_closed: true
+        explain_transfer_may_reach_voicemail: true
+        continue_normal_transfer_consent_protocol: true
       assistant_self_service_operates_24_7: true
       enabled_non_transfer_tools_remain_available: true
       do_not_stop_or_change_booking_flow: true

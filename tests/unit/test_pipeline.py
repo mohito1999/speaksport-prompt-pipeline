@@ -18,8 +18,10 @@ from speaksport_pipeline.models import (
     NormalizedPage,
     ReferenceSelection,
     TeeSheetProvider,
+    TransferPolicy,
 )
 from speaksport_pipeline.pipeline import (
+    AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL,
     BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
     CLUB_PROPHET_IDENTITY_GUARDRAILS,
     MANDATORY_AVAILABILITY_GUARDRAILS,
@@ -156,6 +158,34 @@ def test_pipeline_caches_fact_and_generation_stages(tmp_path: Path) -> None:
     assert "## Mandatory Availability Pricing Policy" in prompt
     assert SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL in prompt
     assert (tmp_path / "output" / "eligibility-backoffice-policy.md").is_file()
+
+
+def test_pipeline_writes_after_hours_voicemail_transfer_policy_when_enabled(
+    tmp_path: Path,
+) -> None:
+    facility = _facility().model_copy(
+        update={"transfer_policy": TransferPolicy(allow_after_hours_transfers=True)}
+    )
+    sections = GeneratedSections(
+        core_shell="Use the initialized runtime variables.",
+        knowledge_base="Example Club is a golf facility.",
+        logic_module="Use the configured booking tools in order.",
+        eligibility_policy=(
+            "Initialize the following variables:\n"
+            "'date' = requested booking date.\n"
+            "'time' = requested tee time.\n"
+            "'current_date' = today's date.\n\n"
+            "Apply these rules in order:\n"
+            "- Do not apply any other eligibility criteria."
+        ),
+    )
+
+    prompt = write_generation_outputs(
+        tmp_path / "output", facility, FactInventory(facts=[]), sections
+    ).read_text()
+
+    assert AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL in prompt
+    assert MANDATORY_TRANSFER_PROTOCOL not in prompt
 
 
 def test_pipeline_writes_restricted_single_player_policy(tmp_path: Path) -> None:

@@ -429,6 +429,62 @@ MANDATORY_TRANSFER_PROTOCOL = "\n".join(
         ),
     ]
 )
+AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL = "\n".join(
+    [
+        "## Mandatory Hours-Aware Transfer Handling",
+        "",
+        (
+            "- Initialize Current Operating Status from `{{current_status}}`, Opening Time "
+            "from `{{opening_time}}`, and Closing Time from `{{closing_time}}`. Check Current "
+            "Operating Status before every transfer attempt."
+        ),
+        (
+            "- If Current Operating Status is `after_hours`, `transfer_call-staging` remains "
+            "available so the caller can leave a voicemail. Before transferring, explain that "
+            "the requested team is closed and that the call may reach voicemail."
+        ),
+        (
+            "- After-hours status changes only the caller expectation for a transfer. It must "
+            "never block, stop, delay, or change a transfer or any non-transfer workflow."
+        ),
+        (
+            "- The assistant and every enabled non-transfer tool operate twenty-four hours a "
+            "day, seven days a week. Continue booking, availability searches, identity "
+            "resolution, eligibility checks, existing-booking lookups, cancellations, weather "
+            "requests, SMS, and all other enabled self-service actions normally when Current "
+            "Operating Status is `after_hours`."
+        ),
+        (
+            "- Never treat `after_hours` as a booking restriction, technical failure, reason to "
+            "abandon a selected tee time, or reason to skip any enabled tool."
+        ),
+        (
+            "- A caller's explicit direct request such as 'transfer me to the Pro Shop' is "
+            "already consent to transfer. Do not ask whether they want the transfer again; say "
+            "a brief transition and call `transfer_call-staging` in the same response."
+        ),
+        (
+            "- When the caller has not directly requested a transfer and you offer one as "
+            "the next best action, ask whether they would like the transfer, then stop and "
+            "wait. After an affirmative later reply, say the transition and call "
+            "`transfer_call-staging` in that same response."
+        ),
+        (
+            "- Never ask a redundant transfer-confirmation question after a direct request "
+            "or after the caller already accepted an assistant-offered transfer."
+        ),
+    ]
+)
+
+
+def transfer_protocol_guardrail(facility: FacilityConfig) -> str:
+    return (
+        AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL
+        if facility.transfer_policy.allow_after_hours_transfers
+        else MANDATORY_TRANSFER_PROTOCOL
+    )
+
+
 SOFT_SHOP_TRANSFER_DEFLECTION = "\n".join(
     [
         "## Optional First Shop Transfer Assistance Check",
@@ -833,6 +889,17 @@ class PromptPipeline:
         eligibility_conventions: str,
         audit_directory: Path,
     ) -> tuple[GeneratedSections, LLMResult, bool]:
+        after_hours_transfer_instruction = (
+            "When current_status is after_hours, transfer_call-staging remains available so "
+            "callers can leave voicemail. Explain that the requested team is closed and the "
+            "call may reach voicemail before transferring. Do not prohibit, defer, or replace "
+            "the transfer merely because the facility is closed."
+            if facility.transfer_policy.allow_after_hours_transfers
+            else (
+                "Never transfer when current_status is after_hours; offer help and tell the "
+                "caller to call back at opening_time."
+            )
+        )
         messages = [
             {
                 "role": "system",
@@ -877,8 +944,7 @@ class PromptPipeline:
                     "seven days a week, including booking, availability, identity, eligibility, "
                     "existing-booking lookup, cancellation, weather, and SMS. Never stop, alter, "
                     "or skip one of those workflows merely because current status is after_hours. "
-                    "Never transfer when current status is after_hours; offer help and tell the "
-                    "caller to call back at opening time. A caller's explicit "
+                    f"{after_hours_transfer_instruction} A caller's explicit "
                     "direct transfer request is already consent and must not be reconfirmed. "
                     "Only an assistant-offered transfer requires a question and later affirmative "
                     "reply. First-shop-transfer deflection is strictly controlled by "
@@ -1114,7 +1180,7 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
     if any(placeholder not in core_shell for placeholder in required_placeholders):
         core_shell = required_runtime_block.strip() + "\n\n" + core_shell.strip()
     if "## Mandatory Hours-Aware Transfer Handling" not in core_shell:
-        core_shell = core_shell.strip() + "\n\n" + MANDATORY_TRANSFER_PROTOCOL.strip()
+        core_shell = core_shell.strip() + "\n\n" + transfer_protocol_guardrail(facility).strip()
     if (
         facility.transfer_policy.first_shop_transfer_deflection
         and "## Optional First Shop Transfer Assistance Check" not in core_shell

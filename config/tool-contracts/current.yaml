@@ -1,6 +1,6 @@
 schema_version: "1"
-version: "2026-08-25"
-status: owner_confirmed_after_hours_transfer_only_with_rich_pricing
+version: "2026-09-02"
+status: owner_confirmed_facility_configured_after_hours_voicemail_with_rich_pricing
 tools:
   - capability: customer_record_lookup
     logical_name: get_customer_records
@@ -268,7 +268,7 @@ tools:
     preconditions:
       - destination is configured in Vapi and facility intake with exactly matching spelling
       - current_status, opening_time, and closing_time are initialized
-      - when current_status is after_hours the transfer tool is never called
+      - when current_status is after_hours, follow transfer_policy.allow_after_hours_transfers; false prohibits the tool, while true permits the transfer after explaining the closed team and possible voicemail
       - current_status governs only transfer_call-staging and never blocks or changes any enabled non-transfer tool or self-service workflow
       - booking, availability, identity, eligibility, existing-booking lookup, cancellation, weather, SMS, and other enabled non-transfer actions remain available 24 hours a day, 7 days a week
       - a caller's explicit direct transfer request is itself consent and must not be reconfirmed

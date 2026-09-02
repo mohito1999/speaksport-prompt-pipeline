@@ -516,7 +516,8 @@ class PromptValidator:
         flow_lower = flow_text.casefold()
         if lookup and lookup in enabled:
             if not re.search(
-                r"(?is)(?:booking_reference|(?:with|using) only (?:that |the )?(?:supplied )?(?:exact )?"
+                r"(?is)(?:booking_reference|(?:with|using) only (?:that |the )?"
+                r"(?:supplied )?(?:exact )?"
                 r"(?:numeric )?booking reference)",
                 flow_text,
             ):
@@ -704,6 +705,46 @@ class PromptValidator:
                         message=f"Prompt omitted mandatory transfer behavior: {marker}",
                     )
                 )
+        allows_after_hours = facility.transfer_policy.allow_after_hours_transfers
+        required_hours_key = (
+            "after_hours_transfers_enabled_required_markers"
+            if allows_after_hours
+            else "after_hours_transfers_disabled_required_markers"
+        )
+        for marker in self.config.get(required_hours_key, []):
+            if marker not in prompt:
+                findings.append(
+                    ValidationFinding(
+                        code="MISSING_AFTER_HOURS_TRANSFER_POLICY",
+                        severity="error",
+                        message=f"Prompt omitted configured after-hours behavior: {marker}",
+                    )
+                )
+        prohibited_pattern = str(
+            self.config.get("after_hours_transfer_prohibited_pattern", "")
+        )
+        allowed_pattern = str(self.config.get("after_hours_transfer_allowed_pattern", ""))
+        if allows_after_hours and prohibited_pattern and re.search(prohibited_pattern, prompt):
+            findings.append(
+                ValidationFinding(
+                    code="AFTER_HOURS_TRANSFER_INCORRECTLY_PROHIBITED",
+                    severity="error",
+                    message=(
+                        "Facility allows after-hours voicemail transfers, but the prompt "
+                        "prohibits the transfer tool while closed"
+                    ),
+                )
+            )
+        elif not allows_after_hours and allowed_pattern and re.search(allowed_pattern, prompt):
+            findings.append(
+                ValidationFinding(
+                    code="UNREQUESTED_AFTER_HOURS_TRANSFER",
+                    severity="error",
+                    message=(
+                        "Facility disables after-hours transfers, but the prompt allows them"
+                    ),
+                )
+            )
         after_hours_block_pattern = str(
             self.config.get("after_hours_non_transfer_block_pattern", "")
         )

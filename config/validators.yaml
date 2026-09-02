@@ -32,21 +32,27 @@ integrated_required_reference_patterns:
     pattern: "(?is)explicit direct request.{0,160}(?:already consent|itself consent).{0,160}(?:do not ask|must not be reconfirmed|without another confirmation)"
   - name: assistant-offered transfer waits for consent
     pattern: "(?is)(?:caller has not directly requested|assistant[- ]offered transfer).{0,180}(?:ask whether|requires).{0,100}(?:stop and wait|later affirmative)"
-  - name: after-hours transfers are prohibited
-    pattern: "(?is)(?:current operating status|current_status).{0,100}after_hours.{0,120}(?:never call|do not call|transfer tool is prohibited).{0,80}transfer_call-staging"
 all_modes_required_transfer_markers:
   - "## Mandatory Hours-Aware Transfer Handling"
   - "{{current_status}}"
   - "{{opening_time}}"
   - "{{closing_time}}"
-  - "If Current Operating Status is `after_hours`, never call `transfer_call-staging`"
-  - "Current Operating Status controls only whether `transfer_call-staging` may be called."
   - "every enabled non-transfer tool operate twenty-four hours a day, seven days a week"
   - "Continue booking, availability searches, identity resolution, eligibility checks, existing-booking lookups, cancellations, weather requests, SMS"
   - "Never treat `after_hours` as a booking restriction"
   - "A caller's explicit direct request"
   - "already consent to transfer"
   - "When the caller has not directly requested a transfer and you offer one"
+after_hours_transfers_disabled_required_markers:
+  - "If Current Operating Status is `after_hours`, never call `transfer_call-staging`"
+  - "Current Operating Status controls only whether `transfer_call-staging` may be called."
+after_hours_transfers_enabled_required_markers:
+  - "If Current Operating Status is `after_hours`, `transfer_call-staging` remains available so the caller can leave a voicemail."
+  - "Before transferring, explain that the requested team is closed and that the call may reach voicemail."
+after_hours_transfer_prohibited_pattern: >-
+  (?is)(?:current operating status|current_status).{0,100}after_hours.{0,140}(?:never call|do not call|must not call|transfer tool is prohibited).{0,80}transfer_call-staging
+after_hours_transfer_allowed_pattern: >-
+  (?is)(?:current operating status|current_status).{0,100}after_hours.{0,160}transfer_call-staging.{0,120}(?:remains available|may be called|can be called|voicemail)
 shop_transfer_deflection_pattern: "(?is)(?:## Optional First Shop Transfer Assistance Check|Is there something I can assist you with first\\?)"
 busy_shop_claim_pattern: "(?is)(?:Golf|Pro) Shop.{0,80}(?:is|are|currently).{0,30}busy"
 after_hours_non_transfer_block_pattern: >-

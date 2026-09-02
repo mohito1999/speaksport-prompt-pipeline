@@ -38,7 +38,8 @@ def test_crawl_quality_detects_pages_that_are_only_repeated_boilerplate() -> Non
             if index < 5
             else (
                 f"# Useful Page {index}\n"
-                f"Page {index} has detailed rates, operating policies, amenities, event packages, and caller "
+                f"Page {index} has detailed rates, operating policies, amenities, event "
+                "packages, and caller "
                 "information that is distinct to this page and long enough to be useful. "
                 f"Additional exact details for section {index} make this genuine body content."
             )

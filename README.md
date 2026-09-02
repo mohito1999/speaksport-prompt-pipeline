@@ -122,6 +122,7 @@ First-request Golf Shop or Pro Shop deflection is opt-in per facility:
 ```yaml
 transfer_policy:
   first_shop_transfer_deflection: false
+  allow_after_hours_transfers: false
 ```
 
 Use `true` only when the assistant should respond to the caller's first general
@@ -132,15 +133,20 @@ again. With `false` (the default), a caller's direct transfer request is already
 consent and transfers immediately when the destination is open. A transfer the
 assistant merely offers still requires the caller to accept before it executes.
 
+After-hours voicemail transfers are opt-in. Keep
+`allow_after_hours_transfers: false` when a closed facility must not receive
+transfers. Set it to `true` when callers may still be transferred after hours
+to leave a voicemail. In that mode, the assistant explains that the requested
+team is closed and the call may reach voicemail before following the normal
+transfer consent rules. The Control Room exposes the same setting as
+**After-hours voicemail transfers**, and both scaffold commands support
+`--allow-after-hours-transfers`.
+
 Every generated prompt initializes `{{current_status}}`, `{{opening_time}}`,
-and `{{closing_time}}`. When current status is `after_hours`, the assistant
-never calls the transfer tool—even for normal automatic-recovery scenarios. It
-explains that the team is closed, offers to help directly, and tells the caller
-they may call back at the configured opening time. This status affects human
-transfers only: the assistant and all enabled non-transfer tools continue to
-operate 24/7. Booking, availability, identity resolution, eligibility, booking
-lookup, cancellation, weather, SMS, and other self-service flows must continue
-normally after hours.
+and `{{closing_time}}`. Current status changes transfer behavior according to
+the facility setting above; it never restricts the assistant itself. Booking,
+availability, identity resolution, eligibility, booking lookup, cancellation,
+weather, SMS, and every other enabled non-transfer flow continue normally 24/7.
 
 Single-player availability filtering is also configured per facility:
 

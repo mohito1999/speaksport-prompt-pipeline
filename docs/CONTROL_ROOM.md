@@ -21,7 +21,7 @@ The server listens only on this computer by default. Credentials remain in the l
 
 1. Open **New facility**.
 2. Enter the facility basics and choose the integration and tee sheet.
-3. Configure the course layout, optional single-player pairing rule, transfer guardrail, pricing model, tools, transfer destinations, and policies.
+3. Configure the course layout, optional single-player pairing rule, transfer guardrail, after-hours voicemail behavior, pricing model, tools, transfer destinations, and policies.
 4. Select **Save facility**. The Control Room validates the configuration and writes `facility.yaml` plus the supporting notes files together.
 5. Review the external-processing message. Check the approval box only when the facility materials are ready to be sent to Firecrawl and OpenRouter, then start the run.
 6. Follow live progress under **Run history**.
