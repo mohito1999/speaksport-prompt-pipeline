@@ -62,6 +62,33 @@ def test_single_player_partial_slot_policy_defaults_false_and_accepts_true() -> 
     assert configured.availability_policy.single_player_requires_partially_filled_slot
 
 
+def test_club_caddie_rejects_identity_tools_and_accepts_booking_fee_model() -> None:
+    common = dict(
+        slug="club-caddie-course",
+        display_name="ClubCaddie Course",
+        website_url="https://example.com",
+        timezone="America/New_York",
+        integration_type=IntegrationType.INTEGRATED,
+        tee_sheet=TeeSheetProvider.CLUB_CADDIE,
+        course_configuration=CourseConfiguration.SINGLE_COURSE,
+        references=ReferenceSelection(prompt="2026-07-10", eligibility="2026-07-10"),
+    )
+    facility = FacilityConfig(**common)
+    assert facility.tee_sheet == TeeSheetProvider.CLUB_CADDIE
+
+    with pytest.raises(ValidationError, match="only when tee_sheet is club_prophet"):
+        FacilityConfig(**common, enabled_tools=["get_customer_records"])
+
+    fee_facility = FacilityConfig(
+        **common,
+        availability_pricing=AvailabilityPricingPolicy(
+            speaksport_per_booking_model=True,
+            booking_fee_application=BookingFeeApplication.ALL_CALLERS,
+        ),
+    )
+    assert fee_facility.availability_pricing.speaksport_per_booking_model
+
+
 def test_after_hours_transfers_default_off_and_can_enable_voicemail() -> None:
     base = FacilityConfig(
         slug="example-club",

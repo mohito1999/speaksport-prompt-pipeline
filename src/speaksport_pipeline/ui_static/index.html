@@ -81,7 +81,7 @@
                 <label>Timezone<select id="facility-timezone"></select></label>
                 <label class="wide">Website URL<input id="facility-website" required type="url" placeholder="https://example.com/" /></label>
                 <label>Integration<select id="facility-mode"><option value="integrated">Integrated booking</option><option value="non_integrated">SMS / non-integrated</option></select></label>
-                <label>Tee sheet<select id="facility-tee-sheet"><option value="foreup">ForeUp</option><option value="club_prophet">Club Prophet</option><option value="other">Other</option><option value="unspecified">Unspecified</option></select></label>
+                <label>Tee sheet<select id="facility-tee-sheet"><option value="foreup">ForeUp</option><option value="club_prophet">Club Prophet</option><option value="club_caddie">ClubCaddie</option><option value="other">Other</option><option value="unspecified">Unspecified</option></select></label>
                 <label class="wide conditional booking-url-field hidden">Booking URL<input id="facility-booking-url" type="url" placeholder="https://example.com/book" /></label>
               </div>
             </article>
@@ -105,7 +105,7 @@
             <article class="form-card integrated-only">
               <div class="form-card-head"><span>03</span><div><h3>Rates & booking fee</h3><p>Control which returned per-player rate the assistant quotes.</p></div></div>
               <div class="toggle-grid compact">
-                <label class="toggle-card"><input id="facility-per-booking" type="checkbox" /><span class="switch"></span><div><strong>SpeakSport booking-fee model</strong><small>Enable fee-inclusive availability fields.</small></div></label>
+                <label class="toggle-card"><input id="facility-per-booking" type="checkbox" /><span class="switch"></span><div><strong>SpeakSport booking-fee model</strong><small>Expect all four base and fee-inclusive walking/riding prices.</small></div></label>
                 <label class="toggle-card"><input id="facility-disclose-fee" type="checkbox" /><span class="switch"></span><div><strong>Disclose the fee</strong><small>Name the booking fee when it applies.</small></div></label>
               </div>
               <div class="field-grid two fee-fields">
@@ -158,7 +158,7 @@
                 <label>Update slug<input id="mod-slug" required pattern="[a-z0-9-]+" placeholder="facility-v6-update" /></label>
                 <label>Timezone<select id="mod-timezone"></select></label>
                 <label class="wide">Website URL<input id="mod-website" type="url" required /></label>
-                <label>Tee sheet<select id="mod-tee-sheet"><option value="foreup">ForeUp</option><option value="club_prophet">Club Prophet</option><option value="other">Other</option><option value="unspecified">Unspecified</option></select></label>
+                <label>Tee sheet<select id="mod-tee-sheet"><option value="foreup">ForeUp</option><option value="club_prophet">Club Prophet</option><option value="club_caddie">ClubCaddie</option><option value="other">Other</option><option value="unspecified">Unspecified</option></select></label>
                 <label>Knowledge base<select id="mod-kb-mode"><option value="exact">Preserve exactly</option><option value="revise">Revise as requested</option></select></label>
               </div>
               <div class="toggle-grid compact">
@@ -166,7 +166,7 @@
                 <label class="toggle-card"><input id="mod-after-hours-transfer" type="checkbox" /><span class="switch"></span><div><strong>After-hours voicemail transfers</strong><small>Allow closed-team transfers to reach voicemail.</small></div></label>
                 <label class="toggle-card"><input id="mod-single-partial" type="checkbox" /><span class="switch"></span><div><strong>Pair single players</strong><small>Hide empty foursomes from solo callers.</small></div></label>
                 <label class="toggle-card"><input id="mod-search-all-courses" type="checkbox" /><span class="switch"></span><div><strong>Search every course</strong><small>Query availability separately for every configured course.</small></div></label>
-                <label class="toggle-card"><input id="mod-per-booking" type="checkbox" /><span class="switch"></span><div><strong>Booking-fee model</strong><small>Use fee-inclusive returned prices where configured.</small></div></label>
+                <label class="toggle-card"><input id="mod-per-booking" type="checkbox" /><span class="switch"></span><div><strong>Booking-fee model</strong><small>Expect all four prices and set apply_booking_fee when booking.</small></div></label>
               </div>
             </article>
 

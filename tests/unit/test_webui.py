@@ -85,6 +85,12 @@ def test_ui_static_product_surface_exists() -> None:
     assert (STATIC_ROOT / "app.js").is_file()
     assert "New facility" in (STATIC_ROOT / "index.html").read_text(encoding="utf-8")
     assert "Prompt update" in (STATIC_ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'value="club_caddie"' in (STATIC_ROOT / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "SpeakSport booking-fee model" in (
+        STATIC_ROOT / "index.html"
+    ).read_text(encoding="utf-8")
 
 
 def test_write_and_edit_facility_without_hand_editing_yaml(tmp_path: Path) -> None:

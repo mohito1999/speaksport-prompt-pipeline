@@ -165,6 +165,14 @@ availability_when:
     fee_application_values: [none, all_callers, conditional]
     conditional_fee_inputs: [price_class, customer_passes, customer_groups]
     disclosure_is_facility_configured: true
+    booking_fee_toggle_on_returns_all_four_price_fields: true
+    booking_fee_toggle_off_does_not_require_all_four_price_fields: true
+    equal_base_and_non_base_values_mean_no_fee_difference: true
+    riding_only_facility_ignores_walking_fields: true
+    booking_argument: apply_booking_fee
+    supported_providers: [foreup, club_prophet, club_caddie]
+    pass_true_only_when_fee_applies_to_caller: true
+    pass_false_when_fee_does_not_apply: true
   riding_collection:
     availability_argument: false
     ask_before_availability: false
@@ -228,6 +236,22 @@ existing_bookings:
     pass_only_booking_reference: true
     pass_course_name: false
     foreup_reference_prefix: TTID_
+  provider_rules:
+    foreup:
+      reference_format: TTID_prefixed
+      fallback_arguments: [booking_reference]
+    club_prophet:
+      reference_format: numeric
+      fallback_arguments: [booking_reference]
+      identity_resolution_required_when_identity_confirmed_is_false: true
+    club_caddie:
+      reference_format: short_numeric_string
+      fallback_arguments: [booking_reference, date]
+      date_required_without_authoritative_internal_booking_row: true
+      phone_lookup_horizon_days: 14
+      cancelled_records_remain_on_provider_tee_sheet: true
+      distinguish_already_cancelled_from_not_found: true
+      identity_resolution_tools_prohibited: [get_customer_records, confirm_identity]
   spoken_results:
     fields: [date, time, num_players, course_name]
     never_speak_booking_reference: true
@@ -247,5 +271,25 @@ cancellations:
     cancel_immediately_without_reconfirming: true
     cancellation_argument: booking_reference
     confirm_only_after_success: true
+  provider_rules:
+    foreup:
+      cancellation_arguments: [booking_reference]
+    club_prophet:
+      cancellation_arguments: [booking_reference]
+    club_caddie:
+      cancellation_arguments:
+        - booking_reference
+        - date
+        - time
+        - num_players
+        - num_holes_when_known
+        - course_name
+      success_field: status
+      success_value: success
+      failure_values: [not_found, gms_error, error]
+      attempt_with_known_details_when_lookup_unavailable: true
+      booking_confirmation_email_supported: false
+      speaksport_booking_fee_supported: true
+      availability_spots_remaining_semantics: largest_bookable_party_size
   modifications_and_rescheduling_remain_transfer_only: true
 human_approval_required: true

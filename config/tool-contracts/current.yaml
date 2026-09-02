@@ -1,6 +1,6 @@
 schema_version: "1"
-version: "2026-09-02"
-status: owner_confirmed_facility_configured_after_hours_voicemail_with_rich_pricing
+version: "2026-09-03-booking-fees-all-providers"
+status: owner_confirmed_foreup_club_prophet_clubcaddie_selective_booking_fees
 tools:
   - capability: customer_record_lookup
     logical_name: get_customer_records
@@ -154,11 +154,14 @@ tools:
           booking fee; base_price_per_player_riding is the riding rate without
           that fee; price_per_player is the walking rate including the fee;
           and price_per_player_riding is the riding rate including the fee.
-          Facilities outside the SpeakSport per-booking model normally return
-          only the applicable base fields. Quote only fields actually returned
-          and follow the facility availability_pricing configuration when
-          deciding whether fee-inclusive or base values apply and whether the
-          fee is disclosed. An empty list means no tee times are available for
+          When the facility's SpeakSport booking-fee toggle is enabled, all
+          four price fields are returned so the assistant can select the
+          walking or riding rate with or without the fee for that caller. When
+          the toggle is disabled, the provider may return its existing subset;
+          when both corresponding base and non-base values are returned they
+          are equal because no fee applies. Quote only fields actually returned
+          and follow facility availability_pricing when choosing the caller's
+          walking/riding and fee treatment. An empty list means no tee times are available for
           the requested date under the supplied holes and course criteria; it
           does not mean merely that nothing is close to when.
     preconditions:
@@ -192,14 +195,22 @@ tools:
       email: {type: string, format: email}
     optional_arguments:
       riding: {type: boolean, description: Cart versus walk.}
+      apply_booking_fee:
+        type: boolean
+        description: >-
+          Supported for ForeUp, Club Prophet, and ClubCaddie. Pass true only
+          when the configured facility booking-fee policy applies to this
+          caller; otherwise pass false. This must agree with the fee-inclusive
+          or base availability price quoted to the caller.
     result_fields:
       result: {type: string, required: true, allowed_values: [success]}
-      booking_reference: {type: integer, required: false}
+      booking_reference: {type: string_or_integer, required: false}
       amount_due: {type: number, required: false}
     preconditions:
       - caller selected an exact returned time and course pair
       - first name, last name, email, players, holes, and riding preference are known
       - returned 12-hour time has been converted to 24-hour HH:MM
+      - apply_booking_fee is true or false according to facility availability_pricing and the caller's applicable class, passes, or groups
   - capability: booking_lookup
     logical_name: get-bookings
     compatible_modes: [integrated]
@@ -207,15 +218,42 @@ tools:
     optional_arguments:
       booking_reference:
         type: string
-        description: Pass only as the fallback after a phone-number search returns no bookings and the caller supplies a reference. Do not pass course_name. ForeUp references must use the TTID_ prefix.
+        description: >-
+          Fallback after a phone-number search returns no bookings and the
+          caller supplies a reference. ForeUp references use TTID_; Club
+          Prophet and ClubCaddie references are numeric and must never gain a
+          TTID_ prefix.
+      date:
+        type: string
+        format: YYYY-MM-DD_or_MM-DD-YYYY
+        description: >-
+          Required with a ClubCaddie reference lookup unless the authoritative
+          internal booking row already supplies its date. ForeUp and Club
+          Prophet ignore this argument.
+      course_name:
+        type: string
+        description: Optional provider course context; omit from normal fallback lookup.
     result_fields:
+      status:
+        type: string
+        required: false
+        allowed_values: [success, not_found, error]
+      source: {type: string, required: false}
       bookings:
         type: array_of_booking_records
         required: true
-        description: Zero or more records containing the internal booking reference and caller-facing reservation details such as date, time, player count, and course name. Never speak the booking reference to the caller.
+        description: >-
+          Zero or more records containing date, time, num_players, num_holes,
+          course_name, hidden booking_reference, and optional provider detail.
+          ClubCaddie cancelled entries may remain on its tee sheet and must be
+          distinguished from a genuinely missing booking. Never speak the
+          booking reference to the caller.
+      detail: {type: string, required: false}
     preconditions:
       - initial lookup is called with no parameters so the tool uses the caller phone number automatically
-      - fallback lookup passes only booking_reference
+      - ForeUp and Club Prophet fallback lookup passes only booking_reference
+      - ClubCaddie fallback lookup passes booking_reference and date and omits course_name
+      - ClubCaddie caller-phone lookup covers the next fourteen facility-local dates per configured course
   - capability: cancellation_eligibility
     logical_name: get-eligibility-for-cancellation
     compatible_modes: [integrated]
@@ -237,15 +275,28 @@ tools:
       booking_reference:
         type: string
         description: Exact internal reference associated with the caller-selected reservation returned by get-bookings.
-    optional_arguments: {}
+    optional_arguments:
+      date: {type: string, format: YYYY-MM-DD_or_MM-DD-YYYY}
+      time: {type: string, format: "HH:MM_or_12_hour"}
+      num_players: {type: integer}
+      num_holes: {type: integer, allowed_values: [9, 18]}
+      course_name: {type: string}
     result_fields:
-      success:
-        type: boolean
+      status:
+        type: string
         required: true
-        description: The assistant may confirm cancellation only after the tool reports success.
+        allowed_values: [success, not_found, gms_error, error]
+        description: The assistant may confirm cancellation only when status is success.
+      detail:
+        type: string
+        required: false
+        description: Normalized caller-safe result detail; never expose raw provider errors.
     preconditions:
       - get-eligibility-for-cancellation returned eligible true
       - booking_reference is the exact hidden reference associated with the selected reservation
+      - ForeUp and Club Prophet cancellation normally passes only booking_reference
+      - ClubCaddie cancellation passes the selected reservation booking_reference, date, time, num_players, course_name, and num_holes when known
+      - ClubCaddie cancellation may still be attempted with known reservation details when a provider lookup is temporarily unavailable
   - capability: sms
     logical_name: send_sms
     compatible_modes: [integrated, non_integrated]

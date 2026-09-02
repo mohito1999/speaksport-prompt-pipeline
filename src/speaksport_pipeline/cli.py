@@ -165,7 +165,7 @@ def create_facility(
         TeeSheetProvider | None,
         typer.Option(
             "--tee-sheet",
-            help="Integrated tee sheet: foreup, club_prophet, or other.",
+            help="Integrated tee sheet: foreup, club_prophet, club_caddie, or other.",
         ),
     ] = None,
     course_configuration: Annotated[
@@ -273,7 +273,7 @@ def create_facility(
         }:
             raise SpeakSportError(
                 "Integrated facilities require --tee-sheet "
-                "(foreup, club_prophet, or other)"
+                "(foreup, club_prophet, club_caddie, or other)"
             )
         core_capabilities = (
             {

@@ -223,10 +223,17 @@ function syncFacilityFields(resetTools = false) {
   $(".expected-course-field").classList.toggle("hidden", !multi || !runtime);
   $(".exact-courses-field").classList.toggle("hidden", !multi || runtime);
   $("#facility-search-all-courses").disabled = !multi;
+  $("#facility-per-booking").disabled = false;
   $("#facility-disclose-fee").disabled = !$("#facility-per-booking").checked;
   $("#facility-fee-application").disabled = !$("#facility-per-booking").checked;
   $(".conditional-fee-rules").classList.toggle("hidden", $("#facility-fee-application").value !== "conditional" || !$("#facility-per-booking").checked);
   if (resetTools) renderTools("facility-tools", mode, teeSheet);
+}
+
+function syncModificationFields(resetTools = false) {
+  const teeSheet = $("#mod-tee-sheet").value;
+  $("#mod-per-booking").disabled = false;
+  if (resetTools) renderTools("mod-tools", "integrated", teeSheet);
 }
 
 function facilityConfig() {
@@ -437,6 +444,7 @@ function resetModificationForm() {
   $("#mod-destinations").innerHTML = "";
   addDestination("mod-destinations", { identifier: "pro_shop", display_name: "Pro Shop", responsibility: "General golf operations and requests the assistant cannot complete." });
   renderTools("mod-tools", "integrated", "foreup");
+  syncModificationFields();
   state.editingModification = null;
   state.editingModificationData = null;
   state.slugTouched.modification = false;
@@ -481,6 +489,7 @@ async function editModification(slug) {
     (f.transfer_destinations || []).forEach((item) => addDestination("mod-destinations", item));
     if (!f.transfer_destinations?.length) addDestination("mod-destinations");
     renderTools("mod-tools", "integrated", f.tee_sheet, new Set(f.enabled_tools));
+    syncModificationFields();
     go("modification");
   } catch (error) { toast(error.message, true); }
 }
@@ -586,7 +595,7 @@ function wireEvents() {
   $("#recommended-tools").onclick = () => renderTools("facility-tools", $("#facility-mode").value, $("#facility-tee-sheet").value);
   $("#add-facility-destination").onclick = () => addDestination("facility-destinations");
   $("#add-mod-destination").onclick = () => addDestination("mod-destinations");
-  $("#mod-tee-sheet").onchange = () => renderTools("mod-tools", "integrated", $("#mod-tee-sheet").value);
+  $("#mod-tee-sheet").onchange = () => syncModificationFields(true);
   $("#mod-file").onchange = async (event) => {
     const [file] = event.target.files;
     if (file) $("#mod-original").value = await file.text();

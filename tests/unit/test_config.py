@@ -41,9 +41,9 @@ def test_runtime_and_tool_registries_are_typed() -> None:
     assert {"current_status", "opening_time", "closing_time"} <= {
         variable.name for variable in runtime.variables
     }
-    assert tools.version == "2026-09-02"
+    assert tools.version == "2026-09-03-booking-fees-all-providers"
     assert tools.status == (
-        "owner_confirmed_facility_configured_after_hours_voicemail_with_rich_pricing"
+        "owner_confirmed_foreup_club_prophet_clubcaddie_selective_booking_fees"
     )
     by_name = {tool.logical_name: tool for tool in tools.tools}
     assert set(by_name["get_customer_records"].optional_arguments) == {"email", "phone"}
@@ -60,6 +60,21 @@ def test_runtime_and_tool_registries_are_typed() -> None:
         "Saturday",
         "Sunday",
     ]
+    lookup_tool = by_name["get-bookings"]
+    assert set(lookup_tool.optional_arguments) == {
+        "booking_reference",
+        "date",
+        "course_name",
+    }
+    cancellation_tool = by_name["cancel-reservation"]
+    assert set(cancellation_tool.optional_arguments) == {
+        "date",
+        "time",
+        "num_players",
+        "num_holes",
+        "course_name",
+    }
+    assert "apply_booking_fee" in by_name["book-tee-time-staging"].optional_arguments
     assert model.model_slug == "openai/gpt-5.6-terra"
     assert model.max_cost_usd == 1.5
     assert model.reproducibility_requires_pinned_model

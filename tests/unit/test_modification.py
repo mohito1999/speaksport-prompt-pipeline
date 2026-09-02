@@ -4,6 +4,8 @@ import pytest
 from pydantic import ValidationError
 
 from speaksport_pipeline.models import (
+    AvailabilityPricingPolicy,
+    BookingFeeApplication,
     CourseConfiguration,
     FacilityConfig,
     GeneratedSections,
@@ -11,6 +13,7 @@ from speaksport_pipeline.models import (
     ModificationPreservationPolicy,
     PromptModificationConfig,
     ReferenceSelection,
+    TeeSheetProvider,
 )
 from speaksport_pipeline.modification import (
     PromptModificationPipeline,
@@ -145,3 +148,42 @@ def test_modification_specific_required_and_forbidden_content_is_validated() -> 
     codes = {finding.code for finding in findings}
     assert "MISSING_MODIFICATION_REQUIREMENT" in codes
     assert "FORBIDDEN_MODIFICATION_CONTENT" in codes
+
+
+def test_club_caddie_modification_adds_cancellation_and_booking_fee_rules(
+    tmp_path: Path,
+) -> None:
+    facility = _facility().model_copy(
+        update={
+            "tee_sheet": TeeSheetProvider.CLUB_CADDIE,
+            "enabled_tools": [
+                *_facility().enabled_tools,
+                "get-bookings",
+                "get-eligibility-for-cancellation",
+                "cancel-reservation",
+            ],
+            "availability_pricing": AvailabilityPricingPolicy(
+                speaksport_per_booking_model=True,
+                booking_fee_application=BookingFeeApplication.ALL_CALLERS,
+            ),
+        }
+    )
+    modification = PromptModificationConfig(
+        slug="legacy-club",
+        display_name="Legacy Club",
+        preservation=ModificationPreservationPolicy(knowledge_base="exact"),
+    )
+
+    prompt_path = write_modification_outputs(
+        run_directory=tmp_path,
+        facility=facility,
+        modification=modification,
+        original_prompt=ORIGINAL,
+        sections=_sections(),
+    )
+    updated = prompt_path.read_text(encoding="utf-8")
+
+    assert "## ClubCaddie Provider Rules — Mandatory" in updated
+    assert "with only `booking_reference` and `date`" in updated
+    assert "`apply_booking_fee: true`" in updated
+    assert "expected to return all four" in updated

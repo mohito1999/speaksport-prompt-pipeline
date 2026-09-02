@@ -18,6 +18,7 @@ from speaksport_pipeline.models import (
 )
 from speaksport_pipeline.pipeline import (
     AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL,
+    CLUB_CADDIE_GUARDRAILS,
     CLUB_PROPHET_IDENTITY_GUARDRAILS,
     MANDATORY_AVAILABILITY_GUARDRAILS,
     MANDATORY_DATE_RESOLUTION_GUARDRAILS,
@@ -26,6 +27,7 @@ from speaksport_pipeline.pipeline import (
     SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
     SOFT_SHOP_TRANSFER_DEFLECTION,
     availability_pricing_guardrail,
+    existing_reservation_guardrails,
 )
 from speaksport_pipeline.validation import PromptValidator
 
@@ -403,6 +405,42 @@ def test_booking_lookup_accepts_no_arguments_wording() -> None:
     )
 
     assert _validator().validate(prompt, facility).valid
+
+
+def test_club_caddie_provider_flow_passes_without_identity_tools() -> None:
+    facility = _facility().model_copy(
+        update={
+            "tee_sheet": TeeSheetProvider.CLUB_CADDIE,
+            "enabled_tools": [
+                *_facility().enabled_tools,
+                "get-bookings",
+                "get-eligibility-for-cancellation",
+                "cancel-reservation",
+            ],
+        }
+    )
+    logic = (
+        "Call check-booking-eligibility-staging, then "
+        "get-available-tee-times-staging, then book-tee-time-staging. "
+        "Use transfer_call-staging when confirmed.\n"
+        + MANDATORY_DATE_RESOLUTION_GUARDRAILS
+        + "\n"
+        + MANDATORY_AVAILABILITY_GUARDRAILS
+        + "\n"
+        + availability_pricing_guardrail(facility)
+        + "\n"
+        + SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL
+        + "\n"
+        + existing_reservation_guardrails(
+            tee_sheet=facility.tee_sheet, cancellation=True
+        )
+        + "\n"
+        + CLUB_CADDIE_GUARDRAILS
+    )
+
+    report = _validator().validate(_prompt(logic=logic), facility)
+
+    assert report.valid
 
 
 def test_do_not_deflect_wording_is_not_mistaken_for_deflection() -> None:

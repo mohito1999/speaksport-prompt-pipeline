@@ -32,6 +32,7 @@ class TeeSheetProvider(StrEnum):
     UNSPECIFIED = "unspecified"
     FOREUP = "foreup"
     CLUB_PROPHET = "club_prophet"
+    CLUB_CADDIE = "club_caddie"
     OTHER = "other"
 
 

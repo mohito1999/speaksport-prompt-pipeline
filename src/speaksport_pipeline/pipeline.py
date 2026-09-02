@@ -20,6 +20,7 @@ from .models import (
     LLMResult,
     NormalizedPage,
     PromptSectionBundle,
+    TeeSheetProvider,
 )
 
 OutputT = TypeVar("OutputT", bound=BaseModel)
@@ -177,6 +178,11 @@ def availability_pricing_guardrail(facility: FacilityConfig) -> str:
             "- Quote only a field returned for the caller-selected slot. Never calculate, "
             "infer, or invent a missing rate."
         ),
+        (
+            "- Use walking fields only for a caller who will walk and riding fields only "
+            "for a caller who will ride. If facility policy makes every tee time riding-only "
+            "or fixes `riding` to true, ignore the walking fields."
+        ),
     ]
     if (
         not policy.speaksport_per_booking_model
@@ -184,8 +190,11 @@ def availability_pricing_guardrail(facility: FacilityConfig) -> str:
     ):
         lines.append(
             "- This facility does not charge the caller a SpeakSport booking fee. Quote "
-            "`base_price_per_player` for walking and `base_price_per_player_riding` for "
-            "riding. Do not describe or add a booking fee."
+            "the matching walking or riding base field when returned. If the provider "
+            "instead returns only the corresponding fee-free `price_per_player` or "
+            "`price_per_player_riding`, that returned value may be quoted. Do not assume "
+            "all four fields will be present, and do not describe or add a booking fee. "
+            "Pass `apply_booking_fee: false` to `book-tee-time-staging`."
         )
     elif policy.booking_fee_application == BookingFeeApplication.ALL_CALLERS:
         disclosure = (
@@ -194,8 +203,11 @@ def availability_pricing_guardrail(facility: FacilityConfig) -> str:
             else "Quote the returned total without separately describing the booking fee."
         )
         lines.append(
-            "- The booking fee applies to every caller. Quote `price_per_player` for walking "
-            "and `price_per_player_riding` for riding. " + disclosure
+            "- The booking-fee toggle is on, so availability is expected to return all four "
+            "base and fee-inclusive walking/riding price fields. The booking fee applies to "
+            "every caller. Quote `price_per_player` for walking and "
+            "`price_per_player_riding` for riding, and pass `apply_booking_fee: true` to "
+            "`book-tee-time-staging`. " + disclosure
         )
     else:
         rules = " ".join(policy.booking_fee_rules)
@@ -213,9 +225,15 @@ def availability_pricing_guardrail(facility: FacilityConfig) -> str:
                     f"rules using initialized price class, passes, and groups: {rules}"
                 ),
                 (
+                    "- The booking-fee toggle is on, so availability is expected to return "
+                    "all four base and fee-inclusive walking/riding price fields."
+                ),
+                (
                     "- For a caller subject to the fee, quote `price_per_player` for walking "
-                    "or `price_per_player_riding` for riding. For an exempt caller, quote "
-                    "`base_price_per_player` or `base_price_per_player_riding`. " + disclosure
+                    "or `price_per_player_riding` for riding and pass "
+                    "`apply_booking_fee: true` to booking. For an exempt caller, quote "
+                    "`base_price_per_player` or `base_price_per_player_riding` and pass "
+                    "`apply_booking_fee: false`. " + disclosure
                 ),
             ]
         )
@@ -316,13 +334,23 @@ def runtime_course_selection_guardrail(expected_course_count: int | None) -> str
     )
 
 
-def existing_reservation_guardrails(*, club_prophet: bool, cancellation: bool) -> str:
-    reference_rule = (
-        "For Club Prophet, preserve the caller-supplied numeric reference exactly and never "
-        "add or expect a `TTID_` prefix."
-        if club_prophet
-        else "Apply the configured tee-sheet provider's booking-reference format exactly."
-    )
+def existing_reservation_guardrails(
+    *, tee_sheet: TeeSheetProvider, cancellation: bool
+) -> str:
+    if tee_sheet == TeeSheetProvider.CLUB_PROPHET:
+        reference_rule = (
+            "For Club Prophet, preserve the caller-supplied numeric reference exactly and "
+            "never add or expect a `TTID_` prefix."
+        )
+    elif tee_sheet == TeeSheetProvider.CLUB_CADDIE:
+        reference_rule = (
+            "For ClubCaddie, preserve the caller-supplied short numeric reference exactly "
+            "and never add or expect a `TTID_` prefix."
+        )
+    else:
+        reference_rule = (
+            "Apply the configured tee-sheet provider's booking-reference format exactly."
+        )
     lines = [
         "## Mandatory Existing Reservation Tool Flow",
         "",
@@ -330,10 +358,36 @@ def existing_reservation_guardrails(*, club_prophet: bool, cancellation: bool) -
             "- For an existing-booking lookup, first call `get-bookings` with no arguments "
             "so it searches using the caller's phone number."
         ),
-        (
-            "- If the first lookup is empty and the caller supplies a reference, call "
-            "`get-bookings` again with only `booking_reference`; do not pass `course_name`. "
-            + reference_rule
+        *(
+            [
+                (
+                    "- If the first lookup is empty, ask for the booking reference and the "
+                    "reservation date. Stop and wait for any missing value. ClubCaddie cannot "
+                    "reliably look up an external reservation by reference without its date."
+                ),
+                (
+                    "- When both are known, call `get-bookings` again with only "
+                    "`booking_reference` and `date`; do not pass `course_name`. "
+                    + reference_rule
+                ),
+                (
+                    "- A ClubCaddie phone lookup scans only the provider's next fourteen "
+                    "facility-local dates. Explain that limit when a reservation outside the "
+                    "scan window may exist."
+                ),
+                (
+                    "- If the tool identifies the reservation as already cancelled, say that "
+                    "it is already cancelled. Do not describe it merely as not found."
+                ),
+            ]
+            if tee_sheet == TeeSheetProvider.CLUB_CADDIE
+            else [
+                (
+                    "- If the first lookup is empty and the caller supplies a reference, call "
+                    "`get-bookings` again with only `booking_reference`; do not pass "
+                    "`course_name`. " + reference_rule
+                )
+            ]
         ),
         (
             "- Never speak a booking reference. Retain each hidden exact reference paired "
@@ -356,15 +410,79 @@ def existing_reservation_guardrails(*, club_prophet: bool, cancellation: bool) -
                     "`get-eligibility-for-cancellation` with only that reservation's exact "
                     "`date` and `time`."
                 ),
-                (
-                    "- If eligible, immediately call `cancel-reservation` with only the "
-                    "selected reservation's hidden exact `booking_reference`. Do not ask for "
-                    "another cancellation confirmation. Confirm cancellation only after the "
-                    "tool reports success."
+                *(
+                    [
+                        (
+                            "- If eligible, immediately call `cancel-reservation` with the "
+                            "selected reservation's hidden exact `booking_reference`, `date`, "
+                            "`time`, `num_players`, and `course_name`; also pass `num_holes` "
+                            "when the lookup returned it. Preserve these values from the same "
+                            "selected record and never invent a missing value."
+                        ),
+                        (
+                            "- If provider lookup is unavailable but the caller's exact "
+                            "reference, date, and time are known, do not block the cancellation "
+                            "attempt solely because lookup failed; pass every known reservation "
+                            "detail to `cancel-reservation`."
+                        ),
+                        (
+                            "- Do not ask for another cancellation confirmation. Confirm only "
+                            "when `cancel-reservation` returns `status: success`. Treat "
+                            "`not_found`, `gms_error`, and `error` as failures and explain the "
+                            "normalized `detail` without reading raw provider output."
+                        ),
+                    ]
+                    if tee_sheet == TeeSheetProvider.CLUB_CADDIE
+                    else [
+                        (
+                            "- If eligible, immediately call `cancel-reservation` with only the "
+                            "selected reservation's hidden exact `booking_reference`. Do not "
+                            "ask for another cancellation confirmation. Confirm cancellation "
+                            "only after the tool reports success."
+                        )
+                    ]
                 ),
             ]
         )
     return "\n".join(lines)
+
+
+CLUB_CADDIE_GUARDRAILS = "\n".join(
+    [
+        "## ClubCaddie Provider Rules — Mandatory",
+        "",
+        (
+            "- ClubCaddie does not use the Club Prophet identity flow. Do not initialize "
+            "the `identity_confirmed` runtime variable or use customer-record lookup or "
+            "identity-confirmation tools."
+        ),
+        (
+            "- In ClubCaddie availability, `spots_remaining` is the largest party size that "
+            "the slot can currently accept, not a literal count of seats remaining. Use it "
+            "for capacity and configured single-player filtering, but never describe it to "
+            "the caller as an exact number of open seats."
+        ),
+        (
+            "- Preserve each returned time and course pair exactly. For a multi-course "
+            "facility, pass the exact configured course to availability and round-trip the "
+            "exact returned course to booking; never silently substitute a default course."
+        ),
+        (
+            "- ClubCaddie booking references are short numeric strings. Keep them hidden. "
+            "ClubCaddie does not send a booking confirmation email, so never promise one; "
+            "confirm only what the successful booking response establishes."
+        ),
+        (
+            "- ClubCaddie supports the configured SpeakSport booking-fee behavior. Follow "
+            "the Mandatory Availability Pricing Policy and pass its resulting "
+            "`apply_booking_fee` boolean to booking."
+        ),
+        (
+            "- ClubCaddie does not support reservation modification. Route modifications "
+            "and rescheduling according to the configured transfer policy."
+        ),
+    ]
+)
 
 
 def _repair_generated_section_boundaries(
@@ -969,6 +1087,17 @@ class PromptPipeline:
                     "identity until after eligibility. Never auto-select a customer "
                     "record or transfer because an identity tool failed. Do not include this "
                     "flow for any other tee sheet. "
+                    "When facility.tee_sheet is club_caddie, do not initialize "
+                    "{{identity_confirmed}} and do not use get_customer_records or "
+                    "confirm_identity. Apply the ClubCaddie provider rules from the tool "
+                    "contracts and global conventions: availability spots_remaining is the "
+                    "largest bookable party rather than a literal open-seat count; apply the "
+                    "same configured four-field walking/riding booking-fee behavior used by "
+                    "other supported providers and pass apply_booking_fee when booking; "
+                    "preserve short numeric booking references; require the reservation date "
+                    "for fallback reference lookup; pass the selected reservation's available "
+                    "date, time, players, holes, course, and hidden reference when cancelling; "
+                    "and never promise a booking confirmation email. "
                     "The enhanced `get-day-of-week-staging` contract is universal for every "
                     "integrated facility, regardless of tee-sheet provider. Implement the "
                     "complete date-only, weekday-only, and date-plus-weekday validation flow "
@@ -982,7 +1111,11 @@ class PromptPipeline:
                     "and before booking unless facility policy fixes riding. Use "
                     "facility.availability_pricing to choose base walking/riding fields versus "
                     "fee-inclusive walking/riding fields and whether to disclose a booking fee. "
-                    "Never invent a missing returned price. When "
+                    "When the booking-fee toggle is enabled, expect all four price fields and "
+                    "pass apply_booking_fee as true or false based on the configured caller "
+                    "rules. When disabled, pass false and do not require all four fields. "
+                    "For riding-only facilities, ignore walking rates. Never invent a missing "
+                    "returned price. When "
                     "facility.course_values_source is runtime, treat {{courses}} as the sole "
                     "source of exact course identifiers and never invent or normalize them. "
                     "When facility.search_all_courses_for_availability is true, every initial "
@@ -1226,7 +1359,7 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
             )
         if "get-bookings" in facility.enabled_tools:
             reservation_guardrails = existing_reservation_guardrails(
-                club_prophet=facility.tee_sheet.value == "club_prophet",
+                tee_sheet=facility.tee_sheet,
                 cancellation={
                     "get-bookings",
                     "get-eligibility-for-cancellation",
@@ -1242,6 +1375,11 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
         logic_module = (
             logic_module.strip() + "\n\n" + CLUB_PROPHET_IDENTITY_GUARDRAILS.strip()
         )
+    if (
+        facility.tee_sheet == TeeSheetProvider.CLUB_CADDIE
+        and CLUB_CADDIE_GUARDRAILS not in logic_module
+    ):
+        logic_module = logic_module.strip() + "\n\n" + CLUB_CADDIE_GUARDRAILS.strip()
     prompt = assemble_prompt(
         PromptSectionBundle(
             core_shell=core_shell,

@@ -79,7 +79,7 @@ New integrated facility scaffolds require `--tee-sheet`. This records the GMS
 explicitly instead of inferring it from booking-reference wording:
 
 ```yaml
-tee_sheet: club_prophet # or foreup / other
+tee_sheet: club_prophet # or foreup / club_caddie / other
 ```
 
 When `club_prophet` is selected, the scaffold automatically enables
@@ -90,8 +90,18 @@ first looks up all phone-matched records and lets the caller choose; no match
 continues as a new guest. One match still requires confirmation, multiple
 matches are never ranked or auto-selected, only an email ending/domain may be
 spoken, and identity-tool errors continue without a transfer. When the value is
-true, the stored identity is reused without asking again. ForeUp and `other`
-tee sheets never receive this flow.
+true, the stored identity is reused without asking again. ForeUp, ClubCaddie,
+and `other` tee sheets never receive this flow.
+
+When `club_caddie` is selected, generated prompts use short numeric booking
+references and require the reservation date for a fallback reference lookup.
+Cancellation sends the selected reservation's reference, date, time, players,
+course, and holes when known. ClubCaddie availability's `spots_remaining` is
+treated as the largest party the slot can accept—not a literal open-seat
+count—and only a returned positive `price_per_player` may be quoted.
+ClubCaddie does not send booking confirmation emails. SpeakSport booking fees
+are supported for ForeUp, Club Prophet, and ClubCaddie through the same
+facility-level pricing configuration.
 
 Integrated facilities can enable existing-booking lookup and cancellation by adding these exact logical names to `enabled_tools` in `facility.yaml`:
 
@@ -171,13 +181,15 @@ availability_pricing:
   booking_fee_rules: [] # required only for conditional
 ```
 
-For facilities outside the SpeakSport per-booking model, returned base fields
-are quoted: `base_price_per_player` for walking and
-`base_price_per_player_riding` for riding. Per-booking facilities may also
-return `price_per_player` and `price_per_player_riding`, which include the
-booking fee. Conditional fee rules may use price class, active passes, or
-customer groups. Prompts quote only returned fields and follow the configured
-fee application and disclosure policy.
+When the booking-fee toggle is on, availability returns all four fields:
+`base_price_per_player` and `base_price_per_player_riding` without the fee,
+plus `price_per_player` and `price_per_player_riding` with it. Generated prompts
+select the walking or riding field appropriate to the caller, ignore walking
+fields for riding-only facilities, and pass `apply_booking_fee` to booking.
+Conditional fee rules may use price class, active passes, or customer groups.
+When the toggle is off, prompts do not require all four fields and pass
+`apply_booking_fee: false`; if corresponding base and non-base values are both
+returned, they are equal because no booking fee applies.
 
 Integrated prompts treat every availability slot as a single record containing
 `time`, `course`, `spots_remaining`, and its returned pricing fields. They do

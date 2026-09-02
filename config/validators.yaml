@@ -70,6 +70,21 @@ club_prophet_identity_required_markers:
   - "continue as a new guest"
   - "continue the caller's request without ending the call or transferring because of that error"
   - "Never state a profile-dependent price, membership status, member booking window"
+club_caddie_required_markers:
+  - "## ClubCaddie Provider Rules — Mandatory"
+  - "ClubCaddie does not use the Club Prophet identity flow"
+  - "largest party size that the slot can currently accept, not a literal count of seats remaining"
+  - "ClubCaddie booking references are short numeric strings"
+  - "ClubCaddie does not send a booking confirmation email"
+  - "ClubCaddie supports the configured SpeakSport booking-fee behavior"
+club_caddie_lookup_required_markers:
+  - "ClubCaddie cannot reliably look up an external reservation by reference without its date"
+  - "with only `booking_reference` and `date`"
+  - "never add or expect a `TTID_` prefix"
+club_caddie_cancellation_required_markers:
+  - "selected reservation's hidden exact `booking_reference`, `date`, `time`, `num_players`, and `course_name`"
+  - "also pass `num_holes` when the lookup returned it"
+  - "returns `status: success`"
 integrated_required_date_resolution_markers:
   - "## Mandatory Date and Weekday Resolution"
   - "`get-day-of-week-staging` is universal across integrated GMS flows"

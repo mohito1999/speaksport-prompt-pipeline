@@ -69,6 +69,7 @@ class PromptValidator:
         findings.extend(self._validate_booking_flow(prompt, facility))
         findings.extend(self._validate_existing_booking_and_cancellation_flow(prompt, facility))
         findings.extend(self._validate_club_prophet_identity_flow(prompt, facility))
+        findings.extend(self._validate_club_caddie_flow(prompt, facility))
         findings.extend(self._validate_reference_fidelity(prompt, facility))
         findings.extend(
             self._validate_forbidden_content(
@@ -443,6 +444,29 @@ class PromptValidator:
                         ),
                     )
                 )
+            expected_fee_arguments = (
+                ["`apply_booking_fee: false`"]
+                if facility.availability_pricing.booking_fee_application
+                == BookingFeeApplication.NONE
+                else ["`apply_booking_fee: true`"]
+            )
+            if (
+                facility.availability_pricing.booking_fee_application
+                == BookingFeeApplication.CONDITIONAL
+            ):
+                expected_fee_arguments.append("`apply_booking_fee: false`")
+            for marker in expected_fee_arguments:
+                if marker not in prompt:
+                    findings.append(
+                        ValidationFinding(
+                            code="MISSING_BOOKING_FEE_ARGUMENT_POLICY",
+                            severity="error",
+                            message=(
+                                "Integrated prompt omitted the configured booking fee "
+                                f"argument rule: {marker}"
+                            ),
+                        )
+                    )
             restricted_marker = (
                 "This facility restricts solo bookings to partially filled tee times."
             )
@@ -629,6 +653,60 @@ class PromptValidator:
                     ),
                 )
             )
+        return findings
+
+    def _validate_club_caddie_flow(
+        self, prompt: str, facility: FacilityConfig
+    ) -> list[ValidationFinding]:
+        findings: list[ValidationFinding] = []
+        is_club_caddie = facility.tee_sheet == TeeSheetProvider.CLUB_CADDIE
+        provider_heading = "## ClubCaddie Provider Rules — Mandatory"
+        if not is_club_caddie:
+            if provider_heading in prompt:
+                findings.append(
+                    ValidationFinding(
+                        code="UNREQUESTED_CLUB_CADDIE_FLOW",
+                        severity="error",
+                        message="ClubCaddie provider rules appeared for another tee sheet",
+                    )
+                )
+            return findings
+
+        marker_groups: list[tuple[str, list[str]]] = [
+            (
+                "MISSING_CLUB_CADDIE_PROVIDER_RULE",
+                self.config.get("club_caddie_required_markers", []),
+            )
+        ]
+        enabled = set(facility.enabled_tools)
+        if "get-bookings" in enabled:
+            marker_groups.append(
+                (
+                    "MISSING_CLUB_CADDIE_LOOKUP_RULE",
+                    self.config.get("club_caddie_lookup_required_markers", []),
+                )
+            )
+        if {
+            "get-bookings",
+            "get-eligibility-for-cancellation",
+            "cancel-reservation",
+        }.issubset(enabled):
+            marker_groups.append(
+                (
+                    "MISSING_CLUB_CADDIE_CANCELLATION_RULE",
+                    self.config.get("club_caddie_cancellation_required_markers", []),
+                )
+            )
+        for code, markers in marker_groups:
+            for marker in markers:
+                if marker not in prompt:
+                    findings.append(
+                        ValidationFinding(
+                            code=code,
+                            severity="error",
+                            message=f"ClubCaddie prompt omitted required rule: {marker}",
+                        )
+                    )
         return findings
 
     def _validate_reference_fidelity(

@@ -26,7 +26,7 @@ The server listens only on this computer by default. Credentials remain in the l
 5. Review the external-processing message. Check the approval box only when the facility materials are ready to be sent to Firecrawl and OpenRouter, then start the run.
 6. Follow live progress under **Run history**.
 
-Club Prophet automatically selects and locks the customer-record and identity-confirmation tools. Non-integrated setups switch to the appropriate SMS-oriented tool recommendations. Existing facilities can be opened with **Edit**, so the same form handles later configuration changes.
+Club Prophet automatically selects and locks the customer-record and identity-confirmation tools. ClubCaddie is available as a separate tee-sheet option and does not select identity tools. The SpeakSport booking-fee controls work for ForeUp, Club Prophet, and ClubCaddie. Non-integrated setups switch to the appropriate SMS-oriented tool recommendations. Existing facilities can be opened with **Edit**, so the same form handles later configuration changes.
 
 ## Update an existing customer prompt
 
