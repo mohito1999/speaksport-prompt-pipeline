@@ -419,8 +419,10 @@ function modificationPayload() {
         disclose_booking_fee_when_applied: false,
         booking_fee_rules: perBooking ? feeRules : [],
       },
-      transfer_destinations: destinations("mod-destinations"), booking_rules: [],
-      cancellation_modification_policy: "", walking_riding_cart_policies: [],
+      transfer_destinations: destinations("mod-destinations"),
+      booking_rules: lines($("#mod-booking-rules").value),
+      cancellation_modification_policy: $("#mod-cancellation-policy").value.trim(),
+      walking_riding_cart_policies: [],
       caller_details: { first_name: true, last_name: true, email: true, confirm_existing_email: true },
       allowed_source_urls: [$("#mod-website").value.trim()], included_source_paths: [], excluded_source_paths: [],
       crawl_entire_domain: false, allow_subdomains: false, ignored_facts: [], reference_leakage_exceptions: [],
@@ -441,6 +443,8 @@ function resetModificationForm() {
   $("#mod-tee-sheet").value = "foreup";
   $("#mod-course-configuration").value = "single_course";
   $("#mod-course-source").value = "configured";
+  $("#mod-booking-rules").value = "";
+  $("#mod-cancellation-policy").value = "";
   $("#mod-destinations").innerHTML = "";
   addDestination("mod-destinations", { identifier: "pro_shop", display_name: "Pro Shop", responsibility: "General golf operations and requests the assistant cannot complete." });
   renderTools("mod-tools", "integrated", "foreup");
@@ -477,6 +481,8 @@ async function editModification(slug) {
     $("#mod-per-booking").checked = f.availability_pricing.speaksport_per_booking_model;
     $("#mod-original").value = data.original_prompt;
     $("#mod-notes").value = data.update_notes;
+    $("#mod-booking-rules").value = (f.booking_rules || []).join("\n");
+    $("#mod-cancellation-policy").value = f.cancellation_modification_policy || "";
     $("#mod-course-configuration").value = f.course_configuration;
     $("#mod-course-source").value = f.course_values_source;
     $("#mod-courses").value = f.course_values_source === "runtime"

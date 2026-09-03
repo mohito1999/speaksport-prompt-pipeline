@@ -227,6 +227,17 @@ This creates `modifications/<slug>/` with:
 - `update-notes.md`: free-form customer-requested logic, routing, knowledge, or
   workflow changes.
 
+For modification runs, put approved natural-language booking eligibility rules
+in `facility.yaml` under `booking_rules`, and the cancellation eligibility and
+modification policy under `cancellation_modification_policy`. The Control Room
+exposes both fields directly. Explicit values take precedence; when a field is
+blank, the generator infers the corresponding policy from the complete original
+prompt and receives highlighted matching evidence so booking windows, member or
+public distinctions, player limits, card/prepayment requirements, cancellation
+thresholds, penalties, exceptions, routing, and caller-facing reasons are not
+lost. Validation rejects a shallow date/time-only artifact when substantive
+policy guidance exists.
+
 By default, the original `<knowledge-base>` block is restored byte-for-byte:
 
 ```yaml

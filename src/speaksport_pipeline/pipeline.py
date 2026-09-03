@@ -48,6 +48,19 @@ CANCELLATION_ELIGIBILITY_VARIABLE_MEANINGS = {
         "exact number of hours between the current time and the reservation tee time."
     ),
 }
+
+
+def _normalize_deprecated_runtime_placeholders(content: str) -> str:
+    """Translate obsolete prompt variables into supported semantic runtime context."""
+    return re.sub(
+        r"{{\s*customer_is_member\s*}}",
+        (
+            "membership status inferred from initialized Customer Passes, "
+            "Customer Price Class, and Customer Groups"
+        ),
+        content,
+        flags=re.IGNORECASE,
+    )
 ELIGIBILITY_VARIABLE_ORDER = (
     "date",
     "time",
@@ -210,7 +223,9 @@ def availability_pricing_guardrail(facility: FacilityConfig) -> str:
             "`book-tee-time-staging`. " + disclosure
         )
     else:
-        rules = " ".join(policy.booking_fee_rules)
+        rules = _normalize_deprecated_runtime_placeholders(
+            " ".join(policy.booking_fee_rules)
+        )
         disclosure = (
             "When the fee applies, explicitly tell the caller that the quoted rate includes "
             "the booking fee."
@@ -755,6 +770,21 @@ def _normalize_eligibility_decision_prompt(
         "Do not apply any other",
         rules,
     )
+    criteria_kind = (
+        "cancellation"
+        if "hours_until_tee_off" in (required_variables or set())
+        else "eligibility"
+    )
+    normalized_rules = re.sub(
+        rf"(?im)^\s*-\s*no other {criteria_kind} criteria may be applied\.?\s*$",
+        f"- Do not apply any other {criteria_kind} criteria.",
+        normalized_rules,
+    )
+    if "do not apply any other" not in normalized_rules.casefold():
+        normalized_rules = (
+            normalized_rules.rstrip()
+            + f"\n- Do not apply any other {criteria_kind} criteria."
+        )
     return f"{normalized_initialization}\n\n{rules_heading}{normalized_rules}".strip()
 
 
@@ -1289,6 +1319,7 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
     core_shell, knowledge_base = _repair_generated_section_boundaries(
         sections.core_shell, sections.knowledge_base
     )
+    core_shell = _normalize_deprecated_runtime_placeholders(core_shell)
     if "send_sms" in facility.enabled_tools:
         required_runtime_block += """
 
@@ -1319,7 +1350,7 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
         and "## Optional First Shop Transfer Assistance Check" not in core_shell
     ):
         core_shell = core_shell.strip() + "\n\n" + SOFT_SHOP_TRANSFER_DEFLECTION.strip()
-    logic_module = sections.logic_module
+    logic_module = _normalize_deprecated_runtime_placeholders(sections.logic_module)
     if (
         facility.integration_type == IntegrationType.INTEGRATED
         and MANDATORY_DATE_RESOLUTION_GUARDRAILS not in logic_module
@@ -1385,7 +1416,10 @@ system. Refer to the initialized semantic names in later logic, not raw curly-br
             core_shell=core_shell,
             knowledge_base=knowledge_base,
             logic_module=logic_module,
-            closing_core_shells=sections.closing_core_shells,
+            closing_core_shells=[
+                _normalize_deprecated_runtime_placeholders(shell)
+                for shell in sections.closing_core_shells
+            ],
         )
     )
     prompt_path = output_directory / "unified-vapi-prompt.md"

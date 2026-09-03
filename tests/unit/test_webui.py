@@ -91,6 +91,12 @@ def test_ui_static_product_surface_exists() -> None:
     assert "SpeakSport booking-fee model" in (
         STATIC_ROOT / "index.html"
     ).read_text(encoding="utf-8")
+    assert 'id="mod-booking-rules"' in (
+        STATIC_ROOT / "index.html"
+    ).read_text(encoding="utf-8")
+    assert 'id="mod-cancellation-policy"' in (
+        STATIC_ROOT / "index.html"
+    ).read_text(encoding="utf-8")
 
 
 def test_write_and_edit_facility_without_hand_editing_yaml(tmp_path: Path) -> None:
@@ -152,6 +158,12 @@ def test_write_modification_preserves_original_prompt_and_notes(tmp_path: Path) 
     saved = _modification_payload(tmp_path, "example-update")
     assert "<knowledge-base>Facts</knowledge-base>" in saved["original_prompt"]
     assert "Club Prophet identity" in saved["update_notes"]
+    assert saved["facility"]["booking_rules"] == [
+        "Public players may book seven days in advance."
+    ]
+    assert saved["facility"]["cancellation_modification_policy"] == (
+        "Cancellations require 24 hours."
+    )
 
     payload["update_notes"] = "Keep the identity flow and revise transfer routing."
     _write_modification(tmp_path, payload, replace=True)

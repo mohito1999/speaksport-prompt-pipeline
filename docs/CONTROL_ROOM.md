@@ -33,10 +33,13 @@ Club Prophet automatically selects and locks the customer-record and identity-co
 1. Open **Prompt update**.
 2. Paste the production prompt or choose a local Markdown/text file.
 3. Describe the requested changes in plain language.
-4. Configure the tee sheet, tools, transfer destinations, course behavior, preservation mode, and validation markers.
-5. Save the update workspace, approve OpenRouter processing, and start the run.
+4. Describe the booking eligibility rules and cancellation eligibility/modification policy in their dedicated natural-language fields. If the uploaded production prompt already contains a complete policy, the field may be left blank and the pipeline will infer and preserve those rules from the prompt.
+5. Configure the tee sheet, tools, transfer destinations, course behavior, preservation mode, and validation markers.
+6. Save the update workspace, approve OpenRouter processing, and start the run.
 
 The original prompt and update instructions remain in the separate `modifications/<slug>/` workflow. Existing prompt updates can also be reopened with **Edit**. Modification runs continue to produce the review package and original-versus-updated diff under `modification-runs/`.
+
+Explicit policy text entered in the Control Room takes precedence. When either policy field is blank, generation receives highlighted policy evidence extracted from the original prompt as well as the complete original prompt. Validation rejects a generic date/time-only eligibility artifact when the supplied guidance or original prompt contains substantive business rules.
 
 ## Review prior work
 

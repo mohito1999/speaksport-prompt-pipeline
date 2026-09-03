@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
+from speaksport_pipeline.exceptions import ConfigurationError
 from speaksport_pipeline.models import (
     AvailabilityPricingPolicy,
     BookingFeeApplication,
@@ -18,6 +19,7 @@ from speaksport_pipeline.models import (
 from speaksport_pipeline.modification import (
     PromptModificationPipeline,
     extract_original_knowledge_base,
+    extract_original_policy_evidence,
     validate_modification_requirements,
     write_modification_outputs,
 )
@@ -87,6 +89,22 @@ def test_extract_original_knowledge_base_requires_one_block() -> None:
         extract_original_knowledge_base("No knowledge block")
 
 
+def test_extract_original_policy_evidence_finds_business_rules() -> None:
+    original = ORIGINAL.replace(
+        "Use legacy booking tools.",
+        "Public players may book seven calendar days in advance.\n"
+        "Members may book fourteen calendar days in advance.\n"
+        "Cancellations require at least twenty-four hours notice.",
+    )
+
+    booking = extract_original_policy_evidence(original, kind="booking")
+    cancellation = extract_original_policy_evidence(original, kind="cancellation")
+
+    assert "seven calendar days" in booking
+    assert "fourteen calendar days" in booking
+    assert "twenty-four hours" in cancellation
+
+
 def test_exact_mode_restores_original_knowledge_base_and_writes_diffs(tmp_path: Path) -> None:
     modification = PromptModificationConfig(
         slug="legacy-club",
@@ -125,6 +143,34 @@ def test_revise_mode_accepts_updated_knowledge_base() -> None:
     )
 
     assert finalized.knowledge_base == "Approved revised knowledge."
+
+
+def test_modification_rejects_shallow_policy_when_original_has_booking_rules() -> None:
+    original = ORIGINAL.replace(
+        "Use legacy booking tools.",
+        "Public players may book seven calendar days in advance.",
+    )
+    shallow = _sections().model_copy(
+        update={
+            "eligibility_policy": (
+                "Initialize the following variables:\n"
+                "'date' = requested booking date.\n"
+                "'time' = requested booking time.\n"
+                "'current_date' = today's local date.\n\n"
+                "Apply these rules in order:\n"
+                "- The requested booking date and time must be valid.\n"
+                "- Do not apply any other eligibility criteria."
+            )
+        }
+    )
+
+    with pytest.raises(ConfigurationError, match="ignored substantive rules"):
+        PromptModificationPipeline._finalize(
+            shallow,
+            _facility(),
+            PromptModificationConfig(slug="legacy-club", display_name="Legacy Club"),
+            original,
+        )
 
 
 def test_modification_config_rejects_paths_outside_project() -> None:

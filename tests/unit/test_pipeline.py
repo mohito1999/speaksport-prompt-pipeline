@@ -25,6 +25,7 @@ from speaksport_pipeline.models import (
 from speaksport_pipeline.pipeline import (
     AFTER_HOURS_VOICEMAIL_TRANSFER_PROTOCOL,
     BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES,
     CLUB_CADDIE_GUARDRAILS,
     CLUB_PROPHET_IDENTITY_GUARDRAILS,
     MANDATORY_AVAILABILITY_GUARDRAILS,
@@ -33,6 +34,7 @@ from speaksport_pipeline.pipeline import (
     SINGLE_PLAYER_PARTIAL_SLOT_GUARDRAIL,
     SINGLE_PLAYER_UNRESTRICTED_GUARDRAIL,
     PromptPipeline,
+    _normalize_deprecated_runtime_placeholders,
     _normalize_eligibility_decision_prompt,
     _validate_eligibility_decision_prompt,
     availability_pricing_guardrail,
@@ -387,6 +389,59 @@ Apply these rules in order:
         label="Booking eligibility policy",
         required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
     )
+
+
+def test_eligibility_normalizer_canonicalizes_no_other_criteria_wording() -> None:
+    booking = """Initialize the following variables:
+- 'date': requested booking date
+- 'time': requested tee time
+- 'current_date': today's local date
+
+Apply these rules in order:
+- The requested date and time must be valid.
+- No other eligibility criteria may be applied.
+"""
+    cancellation = """Initialize the following variables:
+- 'date': reservation date
+- 'time': reservation time
+- 'current_date': today's local date
+- 'current_datetime': current local timestamp
+- 'hours_until_tee_off': exact hours until tee off
+
+Apply these rules in order:
+- No other cancellation criteria may be applied.
+"""
+
+    normalized_booking = _normalize_eligibility_decision_prompt(
+        booking, required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES
+    )
+    normalized_cancellation = _normalize_eligibility_decision_prompt(
+        cancellation, required_variables=CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES
+    )
+
+    assert "Do not apply any other eligibility criteria" in normalized_booking
+    assert "Do not apply any other cancellation criteria" in normalized_cancellation
+    _validate_eligibility_decision_prompt(
+        normalized_booking,
+        label="Booking eligibility policy",
+        required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
+    )
+    _validate_eligibility_decision_prompt(
+        normalized_cancellation,
+        label="Cancellation eligibility policy",
+        required_variables=CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES,
+    )
+
+
+def test_deprecated_member_boolean_is_translated_to_supported_profile_context() -> None:
+    normalized = _normalize_deprecated_runtime_placeholders(
+        "Determine member pricing using {{customer_is_member}}."
+    )
+
+    assert "{{customer_is_member}}" not in normalized
+    assert "Customer Passes" in normalized
+    assert "Customer Price Class" in normalized
+    assert "Customer Groups" in normalized
 
 
 def test_eligibility_policy_restores_missing_required_runtime_inputs() -> None:

@@ -32,6 +32,48 @@ from .validation.prompt import ValidationFinding
 
 PRESERVE_KNOWLEDGE_BASE_SENTINEL = "__PRESERVE_ORIGINAL_KNOWLEDGE_BASE_EXACTLY__"
 
+BOOKING_POLICY_EVIDENCE_PATTERN = re.compile(
+    r"(?i)(?:booking window|book.{0,28}(?:days? in advance|calendar days?|before|after|through)|"
+    r"(?:maximum|minimum).{0,20}players?|fivesomes?|single golfers?|card on file|prepay|"
+    r"public players?|members?.{0,24}book|cannot book|may book)"
+)
+CANCELLATION_POLICY_EVIDENCE_PATTERN = re.compile(
+    r"(?i)(?:cancel(?:lation|led|ing)?|no[- ]show|refund|reschedul|modif(?:y|ication))"
+)
+
+
+def extract_original_policy_evidence(original_prompt: str, *, kind: str) -> str:
+    """Highlight likely policy lines so migration generation cannot overlook them."""
+    pattern = (
+        BOOKING_POLICY_EVIDENCE_PATTERN
+        if kind == "booking"
+        else CANCELLATION_POLICY_EVIDENCE_PATTERN
+    )
+    source_lines = original_prompt.splitlines()
+    selected: set[int] = set()
+    for index, line in enumerate(source_lines):
+        if pattern.search(line):
+            selected.update(range(max(0, index - 1), min(len(source_lines), index + 2)))
+    evidence = "\n".join(source_lines[index] for index in sorted(selected)).strip()
+    return evidence[:16_000]
+
+
+def _policy_has_substantive_decision_rule(content: str) -> bool:
+    if "Apply these rules in order:" not in content:
+        return False
+    rules = content.split("Apply these rules in order:", maxsplit=1)[1]
+    candidates = [
+        line.strip().lstrip("-* ").strip()
+        for line in rules.splitlines()
+        if line.strip().startswith(("-", "*"))
+        and "do not apply any other" not in line.casefold()
+    ]
+    generic = re.compile(
+        r"(?i)^(?:the )?(?:requested booking|reservation)?\s*date(?: and .{0,30}time)? "
+        r"must be (?:present and )?valid\.?$"
+    )
+    return any(candidate and not generic.fullmatch(candidate) for candidate in candidates)
+
 
 def extract_original_knowledge_base(prompt: str) -> str:
     matches = re.findall(r"<knowledge-base>\s*(.*?)\s*</knowledge-base>", prompt, flags=re.DOTALL)
@@ -93,6 +135,30 @@ class PromptModificationPipeline:
             f"ADDITIONAL CONTEXT FILE {name}\n{content}"
             for name, content in additional_context.items()
         )
+        booking_evidence = extract_original_policy_evidence(
+            original_prompt, kind="booking"
+        )
+        cancellation_evidence = extract_original_policy_evidence(
+            original_prompt, kind="cancellation"
+        )
+        booking_guidance = (
+            "\n".join(facility.booking_rules)
+            if facility.booking_rules
+            else (
+                "No explicit UI override was supplied. Infer and preserve every booking "
+                "eligibility rule from the original prompt evidence below."
+            )
+        )
+        cancellation_guidance = (
+            facility.cancellation_modification_policy
+            if facility.cancellation_modification_policy.strip()
+            else (
+                "No explicit UI override was supplied. Infer and preserve every cancellation "
+                "eligibility rule from the original prompt evidence below. If the original "
+                "contains no AI-cancellation threshold, do not invent one; retain the supported "
+                "restriction and flag the missing policy in open_questions."
+            )
+        )
         messages = [
             {
                 "role": "system",
@@ -112,7 +178,17 @@ class PromptModificationPipeline:
                     "define actionable scope; disabled tools must not be mentioned. Generate a "
                     "canonical core-shell, knowledge-base, logic-module, optional closing "
                     "core-shell blocks, booking eligibility policy, and cancellation eligibility "
-                    "policy when enabled. Existing booking lookup and cancellation must follow the "
+                    "policy when enabled. Eligibility artifacts are business decision policies, "
+                    "not input-schema checks. Apply explicit UI policy guidance first; otherwise "
+                    "infer every relevant rule from the original prompt, including booking "
+                    "windows, membership or public distinctions, player limits, card or prepayment "
+                    "requirements, date/time restrictions, cancellation thresholds, penalties, "
+                    "exceptions, routing outcomes, and exact caller-facing reasons. Never replace "
+                    "those rules with only a generic statement that date and time must be valid. "
+                    "When an old prompt says the assistant cannot cancel and supplies no "
+                    "threshold, do not invent a standard threshold: preserve the ineligible "
+                    "behavior and add "
+                    "an open question. Existing booking lookup and cancellation must follow the "
                     "current ordered contracts. Current availability results contain time, course, "
                     "spots_remaining, and returned walking/riding price fields. When the facility "
                     "booking-fee toggle is on, expect all four base and fee-inclusive price "
@@ -158,6 +234,14 @@ class PromptModificationPipeline:
                     f"MODIFICATION CONFIGURATION\n{modification.model_dump_json(indent=2)}\n\n"
                     f"TARGET FACILITY CONFIGURATION\n{facility.model_dump_json(indent=2)}\n\n"
                     f"EXPLICIT UPDATE NOTES\n{update_notes}\n\n"
+                    f"BOOKING ELIGIBILITY POLICY GUIDANCE\n{booking_guidance}\n\n"
+                    f"CANCELLATION ELIGIBILITY POLICY GUIDANCE\n"
+                    f"{cancellation_guidance}\n\n"
+                    f"HIGHLIGHTED ORIGINAL BOOKING POLICY EVIDENCE\n"
+                    f"{booking_evidence or 'No likely booking-policy lines detected.'}\n\n"
+                    f"HIGHLIGHTED ORIGINAL CANCELLATION POLICY EVIDENCE\n"
+                    f"{cancellation_evidence or 'No likely cancellation-policy lines detected.'}"
+                    "\n\n"
                     f"{context_bundle}\n\n"
                     f"ORIGINAL PRODUCTION PROMPT\n{original_prompt}\n\n"
                     f"CURRENT GENERATION INSTRUCTIONS\n{generation_instructions}\n\n"
@@ -224,6 +308,17 @@ class PromptModificationPipeline:
                 label="Booking eligibility policy",
                 required_variables=BOOKING_ELIGIBILITY_REQUIRED_VARIABLES,
             )
+            booking_source_exists = bool(
+                facility.booking_rules
+                or extract_original_policy_evidence(original_prompt, kind="booking")
+            )
+            if booking_source_exists and not _policy_has_substantive_decision_rule(
+                eligibility_policy
+            ):
+                raise ConfigurationError(
+                    "Modified booking eligibility policy ignored substantive rules from the "
+                    "facility guidance or original prompt"
+                )
             cancellation_enabled = "get-eligibility-for-cancellation" in facility.enabled_tools
             if cancellation_enabled and not cancellation_policy:
                 raise ConfigurationError("Modified prompt omitted cancellation eligibility policy")
@@ -233,6 +328,22 @@ class PromptModificationPipeline:
                     label="Cancellation eligibility policy",
                     required_variables=CANCELLATION_ELIGIBILITY_REQUIRED_VARIABLES,
                 )
+                cancellation_source_exists = bool(
+                    facility.cancellation_modification_policy.strip()
+                    or extract_original_policy_evidence(
+                        original_prompt, kind="cancellation"
+                    )
+                )
+                if (
+                    cancellation_source_exists
+                    and not _policy_has_substantive_decision_rule(
+                        cancellation_policy or ""
+                    )
+                ):
+                    raise ConfigurationError(
+                        "Modified cancellation eligibility policy ignored substantive rules "
+                        "from the facility guidance or original prompt"
+                    )
             if not cancellation_enabled and cancellation_policy:
                 raise ConfigurationError(
                     "Cancellation eligibility policy requires its enabled tool"

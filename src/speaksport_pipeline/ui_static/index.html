@@ -181,13 +181,21 @@
             </article>
 
             <article class="form-card">
-              <div class="form-card-head"><span>04</span><div><h3>Tools & transfer map</h3><p>The full integrated suite is recommended; tailor it where necessary.</p></div><button class="button mini" type="button" id="add-mod-destination">Add destination</button></div>
+              <div class="form-card-head"><span>04</span><div><h3>Eligibility policies</h3><p>Describe the actual business rules naturally. Leave either field blank only when the original prompt already contains the complete policy.</p></div></div>
+              <div class="field-grid two">
+                <label>Booking eligibility rules<textarea id="mod-booking-rules" rows="8" placeholder="Example: Public players may book seven calendar days ahead; members may book fourteen. Include player minimums, card requirements, exceptions, and exact reasons."></textarea></label>
+                <label>Cancellation eligibility and modification policy<textarea id="mod-cancellation-policy" rows="8" placeholder="Example: The AI may cancel tee times at least twenty-four hours away. Inside twenty-four hours, return ineligible with the approved reason and route to the Pro Shop."></textarea></label>
+              </div>
+            </article>
+
+            <article class="form-card">
+              <div class="form-card-head"><span>05</span><div><h3>Tools & transfer map</h3><p>The full integrated suite is recommended; tailor it where necessary.</p></div><button class="button mini" type="button" id="add-mod-destination">Add destination</button></div>
               <div id="mod-tools" class="tool-grid"></div>
               <div id="mod-destinations" class="repeat-list separated"></div>
             </article>
 
             <article class="form-card">
-              <div class="form-card-head"><span>05</span><div><h3>Course and validation controls</h3><p>Optional advanced controls for multi-course migrations and required output language.</p></div></div>
+              <div class="form-card-head"><span>06</span><div><h3>Course and validation controls</h3><p>Optional advanced controls for multi-course migrations and required output language.</p></div></div>
               <div class="field-grid two">
                 <label>Course setup<select id="mod-course-configuration"><option value="single_course">Single course</option><option value="multi_course">Multiple courses</option></select></label>
                 <label>Course values<select id="mod-course-source"><option value="configured">Enter exact values</option><option value="runtime">Use runtime {{courses}}</option></select></label>
